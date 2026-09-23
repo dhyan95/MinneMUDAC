@@ -1,0 +1,7 @@
+year,metric,n_counties,pearson_counts,spearman_counts,spearman_rate
+2023,households,86,0.952,0.889,-0.146
+2023,pounds,86,0.976,0.907,-0.203
+2023,individuals,86,0.937,0.891,-0.156
+2024,households,86,0.946,0.901,-0.294
+2024,pounds,86,0.969,0.918,-0.285
+2024,individuals,86,0.932,0.905,-0.262
