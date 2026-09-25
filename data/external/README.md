@@ -5,8 +5,13 @@ and nothing here gets used without a row in the registry at the bottom of
 [../../docs/DATA_SOURCES.md](../../docs/DATA_SOURCES.md).
 
 ```
-census/    SAIPE poverty, PEP population, ACS tables, 2020 Gazetteer, tract relationship files
-bls/       CPI food-at-home series, LAUS county unemployment
+census/saipe/      SAIPE county poverty and median income (est22all.xls ...)
+census/acs/        ACS tables, named acs5_<endyear>_<table>.csv (renamed from the
+                   data.census.gov export name; contents untouched)
+census/gazetteer/  Gazetteer tracts, CenPop2020 tract centres of population
+bls/laus/          LAUS county unemployment, annual averages
+bls/               CPI food-at-home series
+mn_sdc/            MN State Demographic Center population and household estimates
 usda/      Food Access Research Atlas, Rural-Urban Continuum Codes, FNS SNAP tables
 mn_dhs/    Minnesota SNAP county caseloads
 ```

@@ -104,6 +104,15 @@ def marketbucks() -> pd.DataFrame:
     return pd.read_parquet(C.P_MARKETBUCKS)
 
 
+def covariates(years: list[int] | None = None) -> pd.DataFrame:
+    """Public county characteristics, one row per county-year.
+    Built by src/build_covariates.py; sources registered in docs/DATA_SOURCES.md."""
+    d = pd.read_parquet(C.P_COVARIATES)
+    if years:
+        d = d[d["year"].isin(years)]
+    return d
+
+
 # --------------------------------------------------------------- derived frames
 def county_year(years: list[int] | None = None, food_shelf_only: bool = False) -> pd.DataFrame:
     """

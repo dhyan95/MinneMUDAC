@@ -31,18 +31,19 @@ def main() -> None:
     print("Q1 -- Need estimates against observed activity")
     print("=" * 70)
 
-    # Step 1. County-year frame: activity + Map the Meal Gap, 2023 and 2024.
-    df = qkit.county_year(years=[2023, 2024])
+    # Step 1. County-year frame: activity + Map the Meal Gap, 2022-2024.
+    df = qkit.county_year(years=C.Q1_YEARS)
     print(f"{len(df)} county-years, {df['fips'].nunique()} counties")
 
-    # TODO Step 2. Join public covariates on `fips`:
-    #   SAIPE poverty rate, PEP population, ACS no-vehicle share,
-    #   distance to nearest site, SNAP caseload.
-    #   Download them first and register each one in docs/DATA_SOURCES.md.
+    # Step 2. Public covariates (build with: python src/build_covariates.py).
+    cov = qkit.covariates(years=C.Q1_YEARS).drop(columns="county_name")
+    df = df.merge(cov, on=["fips", "year"], how="left", validate="1:1")
+    for m in C.THREE_METRICS:
+        df[f"{m}_per_1k"] = 1000 * df[m] / df["population"]
 
     # Step 3. Correlations: each metric against need, counts AND rates, per year.
     rows = []
-    for year in (2023, 2024):
+    for year in C.Q1_YEARS:
         sub = df[df["year"] == year].dropna(subset=["fi_persons"])
         for m in C.THREE_METRICS:
             s = sub.dropna(subset=[m])

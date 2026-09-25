@@ -43,6 +43,7 @@ P_SITE_MONTH = PROCESSED / "site_month.parquet"        # cleaned, flagged, one r
 P_COUNTY_MONTH = PROCESSED / "county_month.parquet"    # aggregated to county x month
 P_SITES = PROCESSED / "sites.parquet"                  # site master incl. geography
 P_MMG = PROCESSED / "mmg_county.parquet"               # Map the Meal Gap, MN, 2019-2024
+P_COVARIATES = PROCESSED / "county_covariates.parquet" # public county data, src/build_covariates.py
 P_CALLS = PROCESSED / "calls_clean.parquet"
 P_MARKETBUCKS = PROCESSED / "marketbucks_clean.parquet"
 P_COUNTY_XWALK = PROCESSED / "county_crosswalk.csv"    # TFG label -> FIPS
@@ -59,6 +60,11 @@ M_POUNDS = "pounds"            # PoundsReg
 M_INDIVIDUALS = "individuals"  # IndividualsReg
 THREE_METRICS = [M_VISITS, M_POUNDS, M_INDIVIDUALS]
 AGE_METRICS = ["children", "adults", "seniors"]   # Q7 graduate addendum
+
+# Q1 study window. The brief said 2023-2024; the organizers widened it to
+# 2022-2024 in a later update. 2022 and 2023 MMG come from the 2025 edition,
+# 2024 from the 2026 edition.
+Q1_YEARS = [2022, 2023, 2024]
 
 # Source columns in org_FSStats. The *Reg fields and the *Total fields are
 # byte-for-byte identical in this extract (verified), and only the *Total ones
