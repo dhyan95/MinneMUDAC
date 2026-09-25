@@ -160,8 +160,6 @@ how leading zeros die. All reshaping happens in a script.
 
 ## Source registry — fill in one row per file actually downloaded
 
-## Source registry — fill in one row per file actually downloaded
-
 | file path | publisher | exact series / table id | geo grain | time grain | vintage / last obs | downloaded by | date | why this over the alternative |
 |---|---|---|---|---|---|---|---|---|
 | data/external/bls/CUUR0200SAF11.csv | U.S. Bureau of Labor Statistics | CUUR0200SAF11 (CPI-U, not seasonally adjusted, Midwest region, Food at home) | Midwest Census region | monthly | 2021-01 through 2026-07 (2025-10 missing; retrieved via BLS public API, no vintage/revision date returned) | Dhyan | *(fill in actual run date)* | Chosen over the Minneapolis–St. Paul metro series (CUUSA211SAF11) because it's monthly rather than bimonthly, giving full lag resolution at 1-month steps; the metro series is reserved as a robustness check per the brief |
@@ -169,9 +167,6 @@ how leading zeros die. All reshaping happens in a script.
 | | | | | | | | | |
 | | | | | | | | | |
 | | | | | | | | | |
-
-*(Every one of the four required facts is a column here. If a row cannot be completed,
-the source does not get used.)*
 
 *(Every one of the four required facts is a column here. If a row cannot be completed,
 the source does not get used.)*
