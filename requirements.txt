@@ -7,3 +7,4 @@ matplotlib>=3.8      # charts
 scipy>=1.11          # Spearman correlations
 statsmodels>=0.14    # regressions, distributed lags (Q4, Q5)
 pypdf>=4.0           # reading the challenge brief
+xlrd>=2.0.1          # reading the SAIPE .xls files
