@@ -113,3 +113,10 @@ disproportionately rural" is a strong one. Do the same for every other row in th
 - [ ] The retail-pattern comparison — the answer to "does the network fill the gap"
 - [ ] One map for the deck
 - [ ] A limitations section with **magnitudes**
+
+### Rebuilding the Atlas crosswalk
+
+Run `python questions/q8_lila_access/build_lila.py` for the initial build. The
+Minnesota Atlas extract and 2020 crosswalk are cached as Parquet files in
+`data/processed/`; later runs reuse them unless an available source file is newer.
+Use `--force` to explicitly rebuild the caches. `analysis.py` uses the same cache.

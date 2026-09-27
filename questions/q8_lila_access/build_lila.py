@@ -11,6 +11,7 @@ splits inherit the parent flag and makes merges an explicit majority rule.
 """
 from __future__ import annotations
 
+import argparse
 import sys
 from pathlib import Path
 
@@ -35,11 +36,26 @@ LILA_FLAGS = [
 ]
 
 
-def load_atlas() -> pd.DataFrame:
-    """Read the Atlas once, retain Minnesota, and save its dictionary."""
+def _cache_is_current(output: Path, sources: list[Path]) -> bool:
+    """Treat processed outputs as current when no available source is newer."""
+    if not output.exists():
+        return False
+    output_time = output.stat().st_mtime
+    return all(not source.exists() or output_time >= source.stat().st_mtime
+               for source in sources)
+
+
+def load_atlas(force: bool = False) -> pd.DataFrame:
+    """Load the cached Minnesota extract or rebuild it from the USDA workbook."""
+    if (not force and LOOKUP_OUT.exists()
+            and _cache_is_current(ATLAS_OUT, [ATLAS])):
+        print(f"  using cached Atlas extract: {ATLAS_OUT.name}")
+        return pd.read_parquet(ATLAS_OUT)
+
     if not ATLAS.exists():
         raise FileNotFoundError(f"USDA Atlas not found: {ATLAS}")
 
+    print(f"  reading USDA workbook: {ATLAS.name}")
     atlas = pd.read_excel(
         ATLAS, sheet_name="Food Access Research Atlas", dtype={"CensusTract": str}
     )
@@ -61,11 +77,18 @@ def load_atlas() -> pd.DataFrame:
     return atlas
 
 
-def crosswalk(atlas: pd.DataFrame) -> pd.DataFrame:
-    """Apply the documented area-weighted 2010-parent majority rule."""
+def crosswalk(atlas: pd.DataFrame, force: bool = False) -> pd.DataFrame:
+    """Load the cached crosswalk or apply the area-weighted majority rule."""
+    if (not force and _cache_is_current(
+        CROSSWALK_OUT, [ATLAS, ATLAS_OUT, RELATIONSHIP]
+    )):
+        print(f"  using cached tract crosswalk: {CROSSWALK_OUT.name}")
+        return pd.read_parquet(CROSSWALK_OUT)
+
     if not RELATIONSHIP.exists():
         raise FileNotFoundError(f"Tract relationship file not found: {RELATIONSHIP}")
 
+    print(f"  building tract crosswalk: {RELATIONSHIP.name}")
     rel = pd.read_csv(RELATIONSHIP, sep="|", dtype=str)
     rel = rel.rename(
         columns={
@@ -107,8 +130,15 @@ def crosswalk(atlas: pd.DataFrame) -> pd.DataFrame:
 
 
 def main() -> None:
-    atlas = load_atlas()
-    out = crosswalk(atlas)
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--force", action="store_true",
+        help="rebuild processed outputs even when their Parquet caches are current",
+    )
+    args = parser.parse_args()
+
+    atlas = load_atlas(force=args.force)
+    out = crosswalk(atlas, force=args.force)
     print(f"  -> {ATLAS_OUT.relative_to(C.ROOT)} ({len(atlas)} rows)")
     print(f"  -> {LOOKUP_OUT.relative_to(C.ROOT)} ({len(pd.read_csv(LOOKUP_OUT))} rows)")
     print(f"  -> {CROSSWALK_OUT.relative_to(C.ROOT)} ({len(out)} 2020 tracts)")
