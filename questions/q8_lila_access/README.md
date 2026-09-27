@@ -3,7 +3,7 @@
 **Division: graduate only.** No other division answers this. It is the clearest chance to
 show work the other divisions cannot.
 **Owner:** Uddam
-**Status:** not started
+**Status:** foundation in progress — Atlas extract and tract crosswalk built
 
 ---
 
@@ -108,7 +108,7 @@ disproportionately rural" is a strong one. Do the same for every other row in th
 ## Deliverables
 
 - [ ] `analysis.py` rebuilding every number from `data/processed/` + `data/external/`
-- [ ] The crosswalk rule, written down and defensible
+- [x] The crosswalk rule, written down and defensible
 - [ ] Population-weighted LILA coverage, by distance band and by urban/rural
 - [ ] The retail-pattern comparison — the answer to "does the network fill the gap"
 - [ ] One map for the deck
