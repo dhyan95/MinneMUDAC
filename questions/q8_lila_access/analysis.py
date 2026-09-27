@@ -22,6 +22,7 @@ import pandas as pd
 
 import config as C
 import qkit
+from build_lila import crosswalk, load_atlas
 
 OUT_PREFIX = "q8"
 
@@ -49,11 +50,13 @@ def main() -> None:
              / sm["households_adj"].sum())
     print(f"unplaceable sites account for {share:.1%} of all households served")
 
-    # TODO Step 1. Load the USDA Food Access Research Atlas (tract-level LILA
-    #   flags, 2019 data on 2010 tract boundaries).
-
-    # TODO Step 2. Crosswalk 2010 -> 2020 tracts. THIS IS THE BIGGEST RISK IN
-    #   THE QUESTION. Our geoids are 2020. Write the split/merge rule down.
+    # Build the Atlas extract and 2010 -> 2020 crosswalk before any spatial
+    # joins. The crosswalk uses area-weighted majority inheritance.
+    atlas = load_atlas()
+    lila = crosswalk(atlas)
+    print(f"{len(lila)} 2020 tracts crosswalked from {len(atlas)} 2010 tracts")
+    print("tracts with one vs. multiple 2010 parents:")
+    print(lila["parent_count"].value_counts().sort_index().to_string())
 
     # TODO Step 3. Population-weighted coverage: what share of the people living
     #   in LILA tracts have a site within 1 / 5 / 10 miles? Weight by people,
