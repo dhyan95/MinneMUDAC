@@ -3,7 +3,7 @@
 **Division: graduate only.** No other division answers this. It is the clearest chance to
 show work the other divisions cannot.
 **Owner:** Uddam
-**Status:** not started
+**Status:** foundation in progress — Atlas extract and tract crosswalk built
 
 ---
 
@@ -108,8 +108,24 @@ disproportionately rural" is a strong one. Do the same for every other row in th
 ## Deliverables
 
 - [ ] `analysis.py` rebuilding every number from `data/processed/` + `data/external/`
-- [ ] The crosswalk rule, written down and defensible
+- [x] The crosswalk rule, written down and defensible
 - [ ] Population-weighted LILA coverage, by distance band and by urban/rural
 - [ ] The retail-pattern comparison — the answer to "does the network fill the gap"
-- [ ] One map for the deck
+- [x] One map for the deck
 - [ ] A limitations section with **magnitudes**
+
+### Map
+
+Run `python questions/q8_lila_access/map.py` to create statewide and Twin Cities
+zoom versions:
+`outputs/figures/08_q8_lila_site_presence.png` and
+`outputs/figures/08_q8_lila_site_presence_twin_cities.png`. They shade 2020
+tracts by the USDA half-mile/10-mile LILA flag and food-shelf-type site presence.
+Presence is assigned at tract level, not shown as an exact address or service radius.
+
+### Rebuilding the Atlas crosswalk
+
+Run `python questions/q8_lila_access/build_lila.py` for the initial build. The
+Minnesota Atlas extract and 2020 crosswalk are cached as Parquet files in
+`data/processed/`; later runs reuse them unless an available source file is newer.
+Use `--force` to explicitly rebuild the caches. `analysis.py` uses the same cache.

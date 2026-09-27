@@ -4,6 +4,7 @@ numpy>=1.26
 openpyxl>=3.1        # reading the .xlsx source files
 pyarrow>=15.0        # parquet, the format for data/processed/
 matplotlib>=3.8      # charts
+geopandas>=1.0       # census tract boundary maps
 scipy>=1.11          # Spearman correlations
 statsmodels>=0.14    # regressions, distributed lags (Q4, Q5)
 pypdf>=4.0           # reading the challenge brief
