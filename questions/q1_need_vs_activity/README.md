@@ -21,7 +21,7 @@ out of this question:
    we can defend?
 
 **Years: 2022, 2023 and 2024.** The brief originally said 2023–2024; the organizers
-widened it to 2022–2024 in a later update (Sept 2026). The window is `C.Q1_YEARS` in
+widened it to 2022–2024 in a later update (Sept 2026). The window is `cfg.Q1_YEARS` in
 `src/config.py`. 2022 and 2023 need come from the same MMG edition (2025); 2024 comes
 from the 2026 edition.
 
@@ -31,7 +31,7 @@ from the 2026 edition.
 
 | what | where | note |
 |---|---|---|
-| activity | `data/processed/county_month.parquet` | `qkit.county_year(C.Q1_YEARS)` aggregates to county-year |
+| activity | `data/processed/county_month.parquet` | `qkit.county_year(cfg.Q1_YEARS)` aggregates to county-year |
 | need | `data/processed/mmg_county.parquet` | `fi_rate`, `fi_persons`, `child_fi_rate`, `rucc_2023` (rural class, free) |
 | covariates | `data/processed/county_covariates.parquet` | `qkit.covariates()`, built by `python src/build_covariates.py` |
 
