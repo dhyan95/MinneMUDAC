@@ -116,8 +116,8 @@ disproportionately rural" is a strong one. Do the same for every other row in th
 
 ### Map
 
-Run `python questions/q8_lila_access/map.py` to create statewide and Twin Cities
-zoom versions:
+Run the cells in `notebooks/q8_exploration.ipynb` to explore tract-level site
+presence and create statewide and Twin Cities zoom versions:
 `outputs/figures/08_q8_lila_site_presence.png` and
 `outputs/figures/08_q8_lila_site_presence_twin_cities.png`. They shade 2020
 tracts by the USDA half-mile/10-mile LILA flag and food-shelf-type site presence.
