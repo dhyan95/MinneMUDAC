@@ -121,9 +121,11 @@ presence, crosswalk sensitivity, nearest-site distance, population-weighted
 coverage, and the USDA grocery-access comparison; it also creates statewide and
 Twin Cities zoom versions:
 `outputs/figures/08_q8_lila_site_presence.png` and
-`outputs/figures/08_q8_lila_site_presence_twin_cities.png`. They shade 2020
-tracts by the USDA half-mile/10-mile LILA flag and food-shelf-type site presence.
-Presence is assigned at tract level, not shown as an exact address or service radius.
+`outputs/figures/08_q8_lila_site_presence_twin_cities.png`. The distance
+coverage cell saves `outputs/figures/08_q8_population_weighted_distance.png`.
+The maps shade 2020 tracts by the USDA half-mile/10-mile LILA flag and
+food-shelf-type site presence. Presence is assigned at tract level, not shown as
+an exact address or service radius.
 Notebook results are exploratory. Reproduce any reported findings in `analysis.py`
 before treating them as final results.
 
