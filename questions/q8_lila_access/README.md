@@ -117,11 +117,15 @@ disproportionately rural" is a strong one. Do the same for every other row in th
 ### Map
 
 Run the cells in `notebooks/q8_exploration.ipynb` to explore tract-level site
-presence and create statewide and Twin Cities zoom versions:
+presence, crosswalk sensitivity, nearest-site distance, population-weighted
+coverage, and the USDA grocery-access comparison; it also creates statewide and
+Twin Cities zoom versions:
 `outputs/figures/08_q8_lila_site_presence.png` and
 `outputs/figures/08_q8_lila_site_presence_twin_cities.png`. They shade 2020
 tracts by the USDA half-mile/10-mile LILA flag and food-shelf-type site presence.
 Presence is assigned at tract level, not shown as an exact address or service radius.
+Notebook results are exploratory. Reproduce any reported findings in `analysis.py`
+before treating them as final results.
 
 ### Rebuilding the Atlas crosswalk
 
