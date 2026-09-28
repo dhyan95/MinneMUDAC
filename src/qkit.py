@@ -113,6 +113,36 @@ def covariates(years: list[int] | None = None) -> pd.DataFrame:
     return d
 
 
+def snap(counties_only: bool = True) -> pd.DataFrame:
+    """
+    SNAP caseloads, one row per reporting unit and month. Built by src/build_snap.py.
+
+    A unit is a county, or a group of counties the source does not report one by one
+    (see snap_units()). counties_only=False also returns the three tribal nations,
+    which are reported apart from the counties their members live in.
+    """
+    d = pd.read_parquet(cfg.P_SNAP)
+    leakage_check(d)
+    if counties_only:
+        d = d[d["unit_type"] != "tribal nation"]
+    return d
+
+
+def snap_units() -> pd.DataFrame:
+    """Which of the 87 counties is in which SNAP reporting unit, and why."""
+    return pd.read_csv(cfg.P_SNAP_XWALK, dtype={"fips": str})
+
+
+def activity_by_snap_unit(food_shelf_only: bool = False) -> pd.DataFrame:
+    """
+    Food shelf activity added up to the SNAP reporting units, so the two can be joined
+    on (snap_unit, yearmonth). Wilkin has no activity rows, so its unit is absent here.
+    """
+    cm = county_month(food_shelf_only=food_shelf_only)
+    cm = cm.merge(snap_units()[["fips", "snap_unit"]], on="fips", how="left", validate="m:1")
+    return (cm.groupby(["snap_unit", "yearmonth"], as_index=False)[cfg.THREE_METRICS].sum())
+
+
 # --------------------------------------------------------------- derived frames
 def county_year(years: list[int] | None = None, food_shelf_only: bool = False) -> pd.DataFrame:
     """
