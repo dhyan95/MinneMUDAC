@@ -20,13 +20,13 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "src"))
 
-import config as C
+import config as cfg
 
-ATLAS = C.EXTERNAL / "usda" / "FoodAccessResearchAtlasData2019.xlsx"
-RELATIONSHIP = C.EXTERNAL / "census" / "relationship" / "tab20_tract20_tract10_st27.txt"
-ATLAS_OUT = C.PROCESSED / "lila_tracts_2010.parquet"
-LOOKUP_OUT = C.PROCESSED / "lila_variable_lookup.csv"
-CROSSWALK_OUT = C.PROCESSED / "lila_tracts_2020.parquet"
+ATLAS = cfg.EXTERNAL / "usda" / "FoodAccessResearchAtlasData2019.xlsx"
+RELATIONSHIP = cfg.EXTERNAL / "census" / "relationship" / "tab20_tract20_tract10_st27.txt"
+ATLAS_OUT = cfg.PROCESSED / "lila_tracts_2010.parquet"
+LOOKUP_OUT = cfg.PROCESSED / "lila_variable_lookup.csv"
+CROSSWALK_OUT = cfg.PROCESSED / "lila_tracts_2020.parquet"
 
 LILA_FLAGS = [
     "LILATracts_halfAnd10",
@@ -68,7 +68,7 @@ def load_atlas(force: bool = False) -> pd.DataFrame:
         raise ValueError(f"Expected 1,334 Minnesota Atlas rows, got {len(atlas)}")
     if not atlas["tract_geoid_2010"].is_unique:
         raise ValueError("Atlas 2010 tract GEOIDs are not unique")
-    if not atlas["tract_geoid_2010"].str.startswith(C.STATE_FIPS_MN).all():
+    if not atlas["tract_geoid_2010"].str.startswith(cfg.STATE_FIPS_MN).all():
         raise ValueError("Atlas extract contains a non-Minnesota tract")
 
     lookup = pd.read_excel(ATLAS, sheet_name="Variable Lookup")
@@ -139,9 +139,9 @@ def main() -> None:
 
     atlas = load_atlas(force=args.force)
     out = crosswalk(atlas, force=args.force)
-    print(f"  -> {ATLAS_OUT.relative_to(C.ROOT)} ({len(atlas)} rows)")
-    print(f"  -> {LOOKUP_OUT.relative_to(C.ROOT)} ({len(pd.read_csv(LOOKUP_OUT))} rows)")
-    print(f"  -> {CROSSWALK_OUT.relative_to(C.ROOT)} ({len(out)} 2020 tracts)")
+    print(f"  -> {ATLAS_OUT.relative_to(cfg.ROOT)} ({len(atlas)} rows)")
+    print(f"  -> {LOOKUP_OUT.relative_to(cfg.ROOT)} ({len(pd.read_csv(LOOKUP_OUT))} rows)")
+    print(f"  -> {CROSSWALK_OUT.relative_to(cfg.ROOT)} ({len(out)} 2020 tracts)")
     print("2020 tracts by number of 2010 parents:")
     print(out["parent_count"].value_counts().sort_index().to_string())
 

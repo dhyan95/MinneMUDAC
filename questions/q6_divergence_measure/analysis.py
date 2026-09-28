@@ -20,7 +20,7 @@ sys.path.insert(0, str(ROOT / "src"))
 import numpy as np
 import pandas as pd
 
-import config as C
+import config as cfg
 import qkit
 
 OUT_PREFIX = "q6"

@@ -33,10 +33,10 @@ Follow the pattern in `src/build_covariates.py`.
 ```python
 # src/build_lila.py  (or a function in questions/q8_lila_access/analysis.py)
 import pandas as pd
-import config as C
+import config as cfg
 
-ATLAS = C.EXTERNAL / "usda" / "FoodAccessResearchAtlasData2019.xlsx"
-OUT   = C.PROCESSED / "lila_tracts_2010.parquet"
+ATLAS = cfg.EXTERNAL / "usda" / "FoodAccessResearchAtlasData2019.xlsx"
+OUT   = cfg.PROCESSED / "lila_tracts_2010.parquet"
 
 def build_lila_2010() -> pd.DataFrame:
     d = pd.read_excel(ATLAS, sheet_name="Food Access Research Atlas",

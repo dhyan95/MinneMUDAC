@@ -20,7 +20,7 @@ sys.path.insert(0, str(ROOT / "src"))
 import numpy as np
 import pandas as pd
 
-import config as C
+import config as cfg
 import qkit
 
 OUT_PREFIX = "q4"
@@ -35,13 +35,13 @@ def main() -> None:
     qkit.leakage_check(cm)
 
     # Step 1. Statewide monthly series, all three metrics.
-    state = cm.groupby("yearmonth")[C.THREE_METRICS].sum().reset_index()
+    state = cm.groupby("yearmonth")[cfg.THREE_METRICS].sum().reset_index()
     state["n_sites"] = cm.groupby("yearmonth")["n_sites_reporting"].sum().values
     print(state.tail(6).to_string(index=False))
 
     # TODO Step 2. Load BLS CPI food-at-home, Midwest (CUUR0200SAF11).
     #   Truncate at 2026-07 BEFORE saving into data/external/bls/.
-    #   cpi = pd.read_csv(C.EXTERNAL / "bls" / "cpi_food_at_home_midwest.csv")
+    #   cpi = pd.read_csv(cfg.EXTERNAL / "bls" / "cpi_food_at_home_midwest.csv")
     #   qkit.leakage_check(cpi)
 
     # TODO Step 3. Year-over-year changes, not levels. Both series trend up,

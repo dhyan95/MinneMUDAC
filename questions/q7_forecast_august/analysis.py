@@ -20,7 +20,7 @@ sys.path.insert(0, str(ROOT / "src"))
 import numpy as np
 import pandas as pd
 
-import config as C
+import config as cfg
 import qkit
 
 OUT_PREFIX = "q7"
@@ -38,19 +38,19 @@ def main() -> None:
     qkit.leakage_check(cm)
 
     # Baseline 1: seasonal naive. August 2026 = August 2025, per county.
-    aug25 = cm[cm["yearmonth"] == 202508].set_index("fips")[C.THREE_METRICS]
-    jul26 = cm[cm["yearmonth"] == C.TRAIN_CUTOFF_YM].set_index("fips")[C.THREE_METRICS]
+    aug25 = cm[cm["yearmonth"] == 202508].set_index("fips")[cfg.THREE_METRICS]
+    jul26 = cm[cm["yearmonth"] == cfg.TRAIN_CUTOFF_YM].set_index("fips")[cfg.THREE_METRICS]
 
     # Baseline 2: July 2026 times the county's historical August/July ratio.
     ratios = []
     for year in (2022, 2023, 2024, 2025):
-        jul = cm[cm["yearmonth"] == year * 100 + 7].set_index("fips")[C.THREE_METRICS]
-        aug = cm[cm["yearmonth"] == year * 100 + 8].set_index("fips")[C.THREE_METRICS]
+        jul = cm[cm["yearmonth"] == year * 100 + 7].set_index("fips")[cfg.THREE_METRICS]
+        aug = cm[cm["yearmonth"] == year * 100 + 8].set_index("fips")[cfg.THREE_METRICS]
         ratios.append((aug / jul).replace([np.inf, -np.inf], np.nan))
     ratio = pd.concat(ratios).groupby(level=0).median()
 
     baseline = pd.DataFrame(index=jul26.index)
-    for m in C.THREE_METRICS:
+    for m in cfg.THREE_METRICS:
         baseline[f"{m}_seasonal_naive"] = aug25[m]
         baseline[f"{m}_ratio"] = jul26[m] * ratio[m]
     baseline = baseline.reset_index()
