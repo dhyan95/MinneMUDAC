@@ -39,7 +39,7 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-import config as C
+import config as cfg
 import geography as geo
 
 warnings.filterwarnings("ignore", category=UserWarning, module="openpyxl")
@@ -89,7 +89,7 @@ def log(table: str, issue: str, n_rows: int, action: str, detail: str = "") -> N
 def build_sites() -> pd.DataFrame:
     """Site master: one row per organization, with census geography attached."""
     print("\n== Organization -> sites.parquet")
-    o = pd.read_excel(C.F_ORG, dtype={"block_geoid": "string", "Zip": "string"})
+    o = pd.read_excel(cfg.F_ORG, dtype={"block_geoid": "string", "Zip": "string"})
 
     o = o.rename(columns={"__ID": "site_id"})
     o["site_id"] = to_site_id(o["site_id"])
@@ -148,8 +148,8 @@ def build_sites() -> pd.DataFrame:
         "dropped from the processed output",
         "Recomputed Aug 2026; carrying them forward risks Q7 disqualification.")
 
-    write_parquet(sites, C.P_SITES)
-    print(f"  wrote {C.P_SITES.name}: {sites.shape}")
+    write_parquet(sites, cfg.P_SITES)
+    print(f"  wrote {cfg.P_SITES.name}: {sites.shape}")
     return sites
 
 
@@ -157,7 +157,7 @@ def build_sites() -> pd.DataFrame:
 def build_site_month(sites: pd.DataFrame) -> pd.DataFrame:
     """Cleaned site x month food shelf activity, with one flag column per defect."""
     print("\n== org_FSStats -> site_month.parquet")
-    fs = pd.read_excel(C.F_FSSTATS)
+    fs = pd.read_excel(cfg.F_FSSTATS)
     n0 = len(fs)
 
     fs = fs.rename(columns={"__ID": "record_id", "_id_site": "site_id",
@@ -170,7 +170,7 @@ def build_site_month(sites: pd.DataFrame) -> pd.DataFrame:
     # (checked below: 0 disagreements). Only *Total is marked Deprecated in the
     # data dictionary, so we read *Reg and record the check rather than trust
     # either family blindly.
-    for out_name, src in C.SRC_COLUMNS.items():
+    for out_name, src in cfg.SRC_COLUMNS.items():
         fs[out_name] = pd.to_numeric(fs[src], errors="coerce")
 
     equal_checks = {"households": "HouseholdsTotal", "individuals": "IndividualsTotal",
@@ -178,8 +178,8 @@ def build_site_month(sites: pd.DataFrame) -> pd.DataFrame:
                     "adults": "AdultsTotal", "seniors": "SeniorsTotal"}
     mismatches = 0
     for out_name, tot in equal_checks.items():
-        both = fs[[C.SRC_COLUMNS[out_name], tot]].dropna()
-        mismatches += int((both[C.SRC_COLUMNS[out_name]] != both[tot]).sum())
+        both = fs[[cfg.SRC_COLUMNS[out_name], tot]].dropna()
+        mismatches += int((both[cfg.SRC_COLUMNS[out_name]] != both[tot]).sum())
     log("org_FSStats", "Reg vs Total column families disagree", mismatches,
         "none found - Reg columns used",
         "The two families are duplicates in this extract, so the Deprecated label costs us nothing.")
@@ -220,7 +220,7 @@ def build_site_month(sites: pd.DataFrame) -> pd.DataFrame:
         "91 labels for 87 counties; nothing joins to FIPS until they are merged.")
 
     # --- value sanity ---------------------------------------------------
-    neg = pd.DataFrame({c: fs[c] < 0 for c in C.SRC_COLUMNS}).any(axis=1)
+    neg = pd.DataFrame({c: fs[c] < 0 for c in cfg.SRC_COLUMNS}).any(axis=1)
     log("org_FSStats", "negative counts or pounds", int(neg.sum()),
         "flagged negative_value=True", "A count of people or pounds cannot be below zero.")
     fs["negative_value"] = neg
@@ -235,8 +235,8 @@ def build_site_month(sites: pd.DataFrame) -> pd.DataFrame:
         fs["individuals_per_hh"] = fs["individuals"] / fs["households"].replace(0, np.nan)
         fs["pounds_per_hh"] = fs["pounds"] / fs["households"].replace(0, np.nan)
     iphh_bad = fs["individuals_per_hh"].notna() & (
-        (fs["individuals_per_hh"] < C.IPHH_MIN) | (fs["individuals_per_hh"] > C.IPHH_MAX))
-    log("org_FSStats", f"individuals per household outside [{C.IPHH_MIN}, {C.IPHH_MAX}]",
+        (fs["individuals_per_hh"] < cfg.IPHH_MIN) | (fs["individuals_per_hh"] > cfg.IPHH_MAX))
+    log("org_FSStats", f"individuals per household outside [{cfg.IPHH_MIN}, {cfg.IPHH_MAX}]",
         int(iphh_bad.sum()), "flagged implausible_ratio=True",
         "Catches the Waseca 202307 row: 273,385 households for 646 individuals.")
     fs["implausible_ratio"] = iphh_bad
@@ -254,13 +254,13 @@ def build_site_month(sites: pd.DataFrame) -> pd.DataFrame:
     # that a large site is not penalised for being large.
     fs["spike_flag"] = False
     base = ~fs["bad_period"] & ~fs["is_duplicate_superseded"]
-    for m in C.THREE_METRICS:
+    for m in cfg.THREE_METRICS:
         grp = fs.loc[base].groupby("site_id")[m]
         med = grp.transform("median").reindex(fs.index)
         cnt = grp.transform("count").reindex(fs.index)
-        spike = base & (cnt >= C.MIN_MONTHS_FOR_MEDIAN) & med.gt(0) & (fs[m] > C.SPIKE_RATIO * med)
+        spike = base & (cnt >= cfg.MIN_MONTHS_FOR_MEDIAN) & med.gt(0) & (fs[m] > cfg.SPIKE_RATIO * med)
         fs["spike_flag"] = fs["spike_flag"] | spike.fillna(False)
-    log("org_FSStats", f"value above {C.SPIKE_RATIO}x the site's own median", int(fs["spike_flag"].sum()),
+    log("org_FSStats", f"value above {cfg.SPIKE_RATIO}x the site's own median", int(fs["spike_flag"].sum()),
         "flagged spike_flag=True", "Reviewed, never auto-deleted. Listed in outputs/tables/flagged_rows.csv.")
 
     # --- agency type ----------------------------------------------------
@@ -270,7 +270,7 @@ def build_site_month(sites: pd.DataFrame) -> pd.DataFrame:
         "Brick and Mortar Sites": "Brick and Mortar Site",
         "Meal Programs": "Meal Program",
         "On-Site Meal Programs": "Meal Program"})
-    fs["is_food_shelf_like"] = fs["agency_type_clean"].isin(C.FOOD_SHELF_TYPES)
+    fs["is_food_shelf_like"] = fs["agency_type_clean"].isin(cfg.FOOD_SHELF_TYPES)
     log("org_FSStats", "AgencyType spelled several ways", int(fs["AgencyType"].isin(variants).sum()),
         "collapsed into agency_type_clean",
         "'Food Shelf' and 'Brick and Mortar Site' describe the same kind of site.")
@@ -289,7 +289,7 @@ def build_site_month(sites: pd.DataFrame) -> pd.DataFrame:
     # Adjusted metric: the raw value where the row is clean, the site's own
     # median where it is not. Use these in aggregates so that one keying error
     # cannot move a county total.
-    for m in C.THREE_METRICS + C.AGE_METRICS:
+    for m in cfg.THREE_METRICS + cfg.AGE_METRICS:
         med = fs.loc[fs["is_clean"]].groupby("site_id")[m].transform("median").reindex(fs.index)
         fs[f"{m}_adj"] = fs[m].where(fs["is_clean"], med)
 
@@ -304,18 +304,18 @@ def build_site_month(sites: pd.DataFrame) -> pd.DataFrame:
              "County", "county_split_label", "county_name", "fips", "county_match",
              "FoodBank", "AgencyType", "agency_type_clean", "is_food_shelf_like",
              "block_geoid", "tract_geoid", "has_geoid", "geoid_is_zip_centroid"]
-            + C.THREE_METRICS + C.AGE_METRICS
-            + [f"{m}_adj" for m in C.THREE_METRICS + C.AGE_METRICS]
+            + cfg.THREE_METRICS + cfg.AGE_METRICS
+            + [f"{m}_adj" for m in cfg.THREE_METRICS + cfg.AGE_METRICS]
             + ["individuals_per_hh", "pounds_per_hh",
                "bad_period", "is_duplicate_superseded", "negative_value",
                "age_split_mismatch", "implausible_ratio", "households_equals_pounds",
                "spike_flag", "is_clean"])
     out = fs[[c for c in keep if c in fs.columns]].copy()
-    write_parquet(out, C.P_SITE_MONTH)
-    print(f"  wrote {C.P_SITE_MONTH.name}: {out.shape}")
+    write_parquet(out, cfg.P_SITE_MONTH)
+    print(f"  wrote {cfg.P_SITE_MONTH.name}: {out.shape}")
 
     flagged = out.loc[~out["is_clean"]]
-    flagged.to_csv(C.TAB / "flagged_rows.csv", index=False)
+    flagged.to_csv(cfg.TAB / "flagged_rows.csv", index=False)
     print(f"  wrote outputs/tables/flagged_rows.csv: {len(flagged)} rows for manual review")
     return out
 
@@ -332,7 +332,7 @@ def build_county_month(sm: pd.DataFrame) -> pd.DataFrame:
     print("\n== county x month panel")
     d = sm[sm["fips"].notna() & ~sm["bad_period"] & ~sm["is_duplicate_superseded"]].copy()
 
-    aggs = {m: (f"{m}_adj", "sum") for m in C.THREE_METRICS + C.AGE_METRICS}
+    aggs = {m: (f"{m}_adj", "sum") for m in cfg.THREE_METRICS + cfg.AGE_METRICS}
     g = (d.groupby(["fips", "county_name", "yearmonth", "year", "month", "date"], dropna=False)
            .agg(n_sites_reporting=("site_id", "nunique"),
                 n_rows=("record_id", "size"),
@@ -344,13 +344,13 @@ def build_county_month(sm: pd.DataFrame) -> pd.DataFrame:
     # The same panel restricted to food-shelf-like sites, for need-vs-demand work.
     d2 = d[d["is_food_shelf_like"]]
     g2 = (d2.groupby(["fips", "yearmonth"])
-            .agg(**{f"{m}_fs": (f"{m}_adj", "sum") for m in C.THREE_METRICS})
+            .agg(**{f"{m}_fs": (f"{m}_adj", "sum") for m in cfg.THREE_METRICS})
             .reset_index())
     g = g.merge(g2, on=["fips", "yearmonth"], how="left")
 
     g = g.sort_values(["fips", "yearmonth"]).reset_index(drop=True)
-    write_parquet(g, C.P_COUNTY_MONTH)
-    print(f"  wrote {C.P_COUNTY_MONTH.name}: {g.shape}")
+    write_parquet(g, cfg.P_COUNTY_MONTH)
+    print(f"  wrote {cfg.P_COUNTY_MONTH.name}: {g.shape}")
 
     # A county-month with no row at all is a reporting gap, not a zero.
     n_full = g["fips"].nunique() * g["yearmonth"].nunique()
@@ -372,7 +372,7 @@ def build_mmg() -> pd.DataFrame:
     """Map the Meal Gap, Minnesota only, 2019-2024, on a single FIPS key."""
     print("\n== Map the Meal Gap -> mmg_county.parquet")
     frames = []
-    for path, label in [(C.F_MMG_2025, "MMG 2025 edition"), (C.F_MMG_2026, "MMG 2026 edition")]:
+    for path, label in [(cfg.F_MMG_2025, "MMG 2025 edition"), (cfg.F_MMG_2026, "MMG 2026 edition")]:
         d = pd.read_excel(path, sheet_name="County")
         d = d[d["State"] == "MN"].copy()
         # FIPS arrives as an integer here but as text in other sources.
@@ -412,8 +412,8 @@ def build_mmg() -> pd.DataFrame:
         "cast to a 5-character zero-padded string on load",
         "Leading zeros vanish silently; MN is 27xxx so the bug only shows up once other states are added.")
 
-    write_parquet(m, C.P_MMG)
-    print(f"  wrote {C.P_MMG.name}: {m.shape}")
+    write_parquet(m, cfg.P_MMG)
+    print(f"  wrote {cfg.P_MMG.name}: {m.shape}")
     return m
 
 
@@ -421,7 +421,7 @@ def build_mmg() -> pd.DataFrame:
 def build_calls() -> pd.DataFrame:
     """Call log with a FIPS key and an explicit food-related flag."""
     print("\n== Incoming Call -> calls_clean.parquet")
-    c = pd.read_excel(C.F_CALLS)
+    c = pd.read_excel(cfg.F_CALLS)
     c = c.rename(columns={"__ID": "call_id", "Date": "date",
                           "PrimaryReasonForCall": "reason", "SNAP Status": "snap_status"})
     c["date"] = pd.to_datetime(c["date"], errors="coerce")
@@ -457,15 +457,15 @@ def build_calls() -> pd.DataFrame:
             "ReferralInfoEntry", "HowHear", "is_food_direct", "is_snap_related",
             "is_food_related", "is_snap_rx", "sparse_period"]
     out = c[[k for k in keep if k in c.columns]]
-    write_parquet(out, C.P_CALLS)
-    print(f"  wrote {C.P_CALLS.name}: {out.shape}")
+    write_parquet(out, cfg.P_CALLS)
+    print(f"  wrote {cfg.P_CALLS.name}: {out.shape}")
     return out
 
 
 # ================================================================ marketbucks
 def build_marketbucks(sites: pd.DataFrame) -> pd.DataFrame:
     print("\n== marketbucksUsage -> marketbucks_clean.parquet")
-    mb = pd.read_excel(C.F_MARKETBUCKS)
+    mb = pd.read_excel(cfg.F_MARKETBUCKS)
     mb = mb.rename(columns={"_ID": "mb_id", "_id_site": "site_id", "Dated": "date"})
     mb["site_id"] = to_site_id(mb["site_id"])
     mb["date"] = pd.to_datetime(mb["date"], errors="coerce")
@@ -499,8 +499,8 @@ def build_marketbucks(sites: pd.DataFrame) -> pd.DataFrame:
              "block_geoid", "tract_geoid", "Customers", "Transactions"]
             + money + ["redeemed_over_distributed", "is_late_entry"])
     out = mb[[c for c in keep if c in mb.columns]]
-    write_parquet(out, C.P_MARKETBUCKS)
-    print(f"  wrote {C.P_MARKETBUCKS.name}: {out.shape}")
+    write_parquet(out, cfg.P_MARKETBUCKS)
+    print(f"  wrote {cfg.P_MARKETBUCKS.name}: {out.shape}")
     return out
 
 
@@ -517,13 +517,13 @@ def main() -> None:
     build_calls()
     build_marketbucks(sites)
 
-    xw = geo.build_crosswalk(pd.read_excel(C.F_FSSTATS, usecols=["County"])["County"])
-    xw.to_csv(C.P_COUNTY_XWALK, index=False)
-    print(f"\nwrote {C.P_COUNTY_XWALK.name}: {len(xw)} county labels mapped")
+    xw = geo.build_crosswalk(pd.read_excel(cfg.F_FSSTATS, usecols=["County"])["County"])
+    xw.to_csv(cfg.P_COUNTY_XWALK, index=False)
+    print(f"\nwrote {cfg.P_COUNTY_XWALK.name}: {len(xw)} county labels mapped")
 
     q = pd.DataFrame(QUALITY_LOG)
-    q.to_csv(C.P_QUALITY, index=False)
-    print(f"wrote {C.P_QUALITY.name}: {len(q)} logged issues")
+    q.to_csv(cfg.P_QUALITY, index=False)
+    print(f"wrote {cfg.P_QUALITY.name}: {len(q)} logged issues")
     print("\nDone. Every question script should now read from data/processed/ only.")
 
 

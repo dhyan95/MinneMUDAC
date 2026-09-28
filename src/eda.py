@@ -32,7 +32,7 @@ import numpy as np
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-import config as C
+import config as cfg
 
 MONTH_NAMES = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
@@ -47,25 +47,25 @@ def note(text: str) -> None:
 
 
 def save_table(df: pd.DataFrame, name: str) -> None:
-    df.to_csv(C.TAB / f"{name}.csv", index=False)
+    df.to_csv(cfg.TAB / f"{name}.csv", index=False)
     print(f"    -> outputs/tables/{name}.csv")
 
 
 def save_fig(fig, name: str) -> None:
     fig.tight_layout()
-    fig.savefig(C.FIG / f"{name}.png", dpi=150)
+    fig.savefig(cfg.FIG / f"{name}.png", dpi=150)
     plt.close(fig)
     print(f"    -> outputs/figures/{name}.png")
 
 
 # ===================================================================== load
 def load():
-    sm = pd.read_parquet(C.P_SITE_MONTH)
-    cm = pd.read_parquet(C.P_COUNTY_MONTH)
-    sites = pd.read_parquet(C.P_SITES)
-    mmg = pd.read_parquet(C.P_MMG)
-    calls = pd.read_parquet(C.P_CALLS)
-    mb = pd.read_parquet(C.P_MARKETBUCKS)
+    sm = pd.read_parquet(cfg.P_SITE_MONTH)
+    cm = pd.read_parquet(cfg.P_COUNTY_MONTH)
+    sites = pd.read_parquet(cfg.P_SITES)
+    mmg = pd.read_parquet(cfg.P_MMG)
+    calls = pd.read_parquet(cfg.P_CALLS)
+    mb = pd.read_parquet(cfg.P_MARKETBUCKS)
     return sm, cm, sites, mmg, calls, mb
 
 
@@ -132,7 +132,7 @@ def section_seasonality(cm: pd.DataFrame) -> None:
     # Compare months within a year, so that the upward trend across years does
     # not decide which month looks busiest.
     rows = []
-    for metric in C.THREE_METRICS:
+    for metric in cfg.THREE_METRICS:
         yearly = d.groupby("year")[metric].transform("mean")
         d[f"{metric}_idx"] = d[metric] / yearly
         s = d.groupby("month")[f"{metric}_idx"].mean()
@@ -142,7 +142,7 @@ def section_seasonality(cm: pd.DataFrame) -> None:
     save_table(seas.reset_index().rename(columns={"index": "month"}), "02_seasonal_index")
 
     fig, ax = plt.subplots(figsize=(9, 4.5))
-    for metric in C.THREE_METRICS:
+    for metric in cfg.THREE_METRICS:
         ax.plot(seas.index, seas[metric], marker="o", label=metric)
     ax.axhline(1.0, color="grey", lw=0.8, ls="--")
     ax.set_ylabel("index (1.00 = that year's average month)")
@@ -150,7 +150,7 @@ def section_seasonality(cm: pd.DataFrame) -> None:
     ax.legend()
     save_fig(fig, "02_seasonality")
 
-    for metric in C.THREE_METRICS:
+    for metric in cfg.THREE_METRICS:
         busiest = seas[metric].idxmax()
         quietest = seas[metric].idxmin()
         note(f"{metric}: busiest month is {busiest} ({seas.loc[busiest, metric]:.3f} of an average "
@@ -160,16 +160,16 @@ def section_seasonality(cm: pd.DataFrame) -> None:
     # The ratio we actually have to predict for Q7.
     aug_jul = []
     for year in sorted(d["year"].unique()):
-        jul = d[(d["year"] == year) & (d["month"] == 7)][C.THREE_METRICS].sum()
-        aug = d[(d["year"] == year) & (d["month"] == 8)][C.THREE_METRICS].sum()
+        jul = d[(d["year"] == year) & (d["month"] == 7)][cfg.THREE_METRICS].sum()
+        aug = d[(d["year"] == year) & (d["month"] == 8)][cfg.THREE_METRICS].sum()
         if aug.sum() > 0 and jul.sum() > 0:
-            aug_jul.append(pd.Series((aug / jul).values, index=C.THREE_METRICS, name=year))
+            aug_jul.append(pd.Series((aug / jul).values, index=cfg.THREE_METRICS, name=year))
     if aug_jul:
         ratios = pd.DataFrame(aug_jul)
         ratios.index.name = "year"
         save_table(ratios.reset_index(), "02_august_over_july_ratio")
         note("August over July, statewide, by year: "
-             + "; ".join(f"{y} " + ", ".join(f"{m} {ratios.loc[y, m]:.3f}" for m in C.THREE_METRICS)
+             + "; ".join(f"{y} " + ", ".join(f"{m} {ratios.loc[y, m]:.3f}" for m in cfg.THREE_METRICS)
                          for y in ratios.index)
              + ". This ratio is the baseline any Q7 model has to beat.")
 
@@ -177,13 +177,13 @@ def section_seasonality(cm: pd.DataFrame) -> None:
 # =============================================================== 3. trends
 def section_trends(cm: pd.DataFrame) -> None:
     print("\n=== 3. Trend: is the network growing, and in which metric?")
-    st = cm.groupby("yearmonth")[C.THREE_METRICS].sum().reset_index()
+    st = cm.groupby("yearmonth")[cfg.THREE_METRICS].sum().reset_index()
     st["households_per_site"] = (cm.groupby("yearmonth")["households"].sum()
                                  / cm.groupby("yearmonth")["n_sites_reporting"].sum()).values
     save_table(st, "03_statewide_trend")
 
     fig, axes = plt.subplots(3, 1, figsize=(11, 9), sharex=True)
-    for ax, metric in zip(axes, C.THREE_METRICS):
+    for ax, metric in zip(axes, cfg.THREE_METRICS):
         ax.plot(range(len(st)), st[metric], marker=".")
         ax.set_ylabel(metric)
         ax.grid(alpha=0.3)
@@ -192,11 +192,11 @@ def section_trends(cm: pd.DataFrame) -> None:
     axes[0].set_title("Statewide monthly totals, the three metrics")
     save_fig(fig, "03_statewide_trend")
 
-    yearly = cm.groupby("year")[C.THREE_METRICS].sum()
+    yearly = cm.groupby("year")[cfg.THREE_METRICS].sum()
     full_years = yearly.loc[yearly.index.isin([2022, 2023, 2024, 2025])]
     growth = (full_years.iloc[-1] / full_years.iloc[0] - 1) * 100
     note("Across the four complete years 2022-2025 the three metrics grow at different rates: "
-         + ", ".join(f"{m} {growth[m]:+.0f}%" for m in C.THREE_METRICS)
+         + ", ".join(f"{m} {growth[m]:+.0f}%" for m in cfg.THREE_METRICS)
          + ". They are not interchangeable, which is exactly why the brief asks for all three.")
 
     per_hh = (cm.groupby("year")["pounds"].sum() / cm.groupby("year")["households"].sum())
@@ -210,7 +210,7 @@ def section_counties(cm: pd.DataFrame, mmg: pd.DataFrame, sites: pd.DataFrame) -
     print("\n=== 4. County characteristics and the Q1 mismatch, in preview")
     # Q1 is scored on 2023 and 2024, so build the county frame on those years.
     act = (cm[cm["year"].isin([2023, 2024])]
-           .groupby(["fips", "county_name", "year"])[C.THREE_METRICS].sum().reset_index())
+           .groupby(["fips", "county_name", "year"])[cfg.THREE_METRICS].sum().reset_index())
 
     fi = mmg[mmg["year"].isin([2023, 2024])][
         ["fips", "year", "fi_rate", "fi_persons", "cost_per_meal", "rucc_2023"]]
@@ -220,19 +220,19 @@ def section_counties(cm: pd.DataFrame, mmg: pd.DataFrame, sites: pd.DataFrame) -
     df = df.merge(n_sites, on="fips", how="left")
     df["n_sites"] = df["n_sites"].fillna(0)
     df["is_rural"] = df["rucc_2023"] >= 4     # USDA: 4-9 are non-metro
-    for m in C.THREE_METRICS:
+    for m in cfg.THREE_METRICS:
         df[f"{m}_per_fi"] = df[m] / df["fi_persons"]
     save_table(df, "04_county_year_activity_vs_need")
 
     note(f"{int(df['fi_persons'].isna().sum())} county-years have activity but no Feeding America "
-         f"estimate, and {int(df[C.M_VISITS].isna().sum())} have an estimate but no reported "
+         f"estimate, and {int(df[cfg.M_VISITS].isna().sum())} have an estimate but no reported "
          f"activity at all. The second group is where Question 6 lives.")
 
     # Correlations, the headline number of Q1.
     corr_rows = []
     for year in (2023, 2024):
         sub = df[(df["year"] == year)].dropna(subset=["fi_persons"])
-        for m in C.THREE_METRICS:
+        for m in cfg.THREE_METRICS:
             s = sub.dropna(subset=[m])
             corr_rows.append({
                 "year": year, "metric": m, "n_counties": len(s),
@@ -249,13 +249,13 @@ def section_counties(cm: pd.DataFrame, mmg: pd.DataFrame, sites: pd.DataFrame) -
          "weaker. Q1 has to lead with rates, not counts.")
 
     # The counties that sit furthest from the statewide relationship.
-    sub = df[(df["year"] == 2024)].dropna(subset=["fi_persons", C.M_VISITS])
+    sub = df[(df["year"] == 2024)].dropna(subset=["fi_persons", cfg.M_VISITS])
     sub = sub[sub["fi_persons"] > 0].copy()
     x = np.log(sub["fi_persons"])
-    y = np.log(sub[C.M_VISITS].clip(lower=1))
+    y = np.log(sub[cfg.M_VISITS].clip(lower=1))
     b, a = np.polyfit(x, y, 1)
     sub["residual"] = y - (a + b * x)
-    out = sub[["fips", "county_name", "fi_persons", C.M_VISITS, "n_sites",
+    out = sub[["fips", "county_name", "fi_persons", cfg.M_VISITS, "n_sites",
                "rucc_2023", "residual"]].sort_values("residual")
     save_table(out, "04_residuals_2024")
     note("Counties with the LEAST activity relative to their food-insecure population (2024): "
@@ -265,12 +265,12 @@ def section_counties(cm: pd.DataFrame, mmg: pd.DataFrame, sites: pd.DataFrame) -
          + ", ".join(out.tail(8)["county_name"][::-1]) + ".")
 
     fig, ax = plt.subplots(figsize=(7.5, 6))
-    ax.scatter(sub["fi_persons"], sub[C.M_VISITS], s=18, alpha=0.7)
+    ax.scatter(sub["fi_persons"], sub[cfg.M_VISITS], s=18, alpha=0.7)
     ax.set_xscale("log"); ax.set_yscale("log")
     ax.set_xlabel("food-insecure persons (Map the Meal Gap, 2024)")
-    ax.set_ylabel(f"{C.M_VISITS} served, 2024")
+    ax.set_ylabel(f"{cfg.M_VISITS} served, 2024")
     for _, r in pd.concat([out.head(5), out.tail(5)]).iterrows():
-        ax.annotate(r["county_name"], (r["fi_persons"], r[C.M_VISITS]), fontsize=7)
+        ax.annotate(r["county_name"], (r["fi_persons"], r[cfg.M_VISITS]), fontsize=7)
     ax.set_title("Need estimate vs observed activity, MN counties, 2024")
     save_fig(fig, "04_need_vs_activity")
 
@@ -278,7 +278,7 @@ def section_counties(cm: pd.DataFrame, mmg: pd.DataFrame, sites: pd.DataFrame) -
     rural = (df[df["year"] == 2024].groupby("is_rural")
              .agg(counties=("fips", "nunique"),
                   fi_persons=("fi_persons", "sum"),
-                  households=(C.M_VISITS, "sum"),
+                  households=(cfg.M_VISITS, "sum"),
                   sites=("n_sites", "sum")).reset_index())
     rural["households_per_fi_person"] = (rural["households"] / rural["fi_persons"]).round(3)
     rural["fi_persons_per_site"] = (rural["fi_persons"] / rural["sites"]).round(0)
@@ -300,7 +300,7 @@ def section_distance(sites: pd.DataFrame, cm: pd.DataFrame) -> None:
     docs/DATA_SOURCES.md for the exact file to download for Q8.
     """
     print("\n=== 5. Coverage, as far as block_geoid alone can take us")
-    s = sites[sites["has_geoid"] & sites["state_fips"].eq(C.STATE_FIPS_MN)].copy()
+    s = sites[sites["has_geoid"] & sites["state_fips"].eq(cfg.STATE_FIPS_MN)].copy()
 
     per_county = (s.groupby("fips")
                     .agg(n_sites=("site_id", "nunique"),
@@ -365,7 +365,7 @@ def section_other_programs(calls: pd.DataFrame, mb: pd.DataFrame, cm: pd.DataFra
 # ========================================================= 7. data quality
 def section_quality(sm: pd.DataFrame) -> None:
     print("\n=== 7. What the cleaning step had to deal with")
-    q = pd.read_csv(C.P_QUALITY)
+    q = pd.read_csv(cfg.P_QUALITY)
     print(q[["table", "issue", "n_rows"]].to_string(index=False))
     note(f"{(~sm['is_clean']).sum():,} of {len(sm):,} site-month rows "
          f"({(~sm['is_clean']).mean():.1%}) fail at least one quality check and are replaced by "
@@ -380,7 +380,7 @@ def section_quality(sm: pd.DataFrame) -> None:
 
 # ======================================================================= main
 def write_findings() -> None:
-    out = C.DOCS / "EDA_FINDINGS.md"
+    out = cfg.DOCS / "EDA_FINDINGS.md"
     lines = ["# EDA findings (generated)", "",
              "Regenerated by `python src/eda.py`. Do not hand-edit: write narrative in the",
              "question READMEs instead, and let this file stay a machine-produced record of",

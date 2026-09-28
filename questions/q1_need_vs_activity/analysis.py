@@ -20,7 +20,7 @@ sys.path.insert(0, str(ROOT / "src"))
 import numpy as np
 import pandas as pd
 
-import config as C
+import config as cfg
 import qkit
 
 OUT_PREFIX = "q1"
@@ -32,20 +32,20 @@ def main() -> None:
     print("=" * 70)
 
     # Step 1. County-year frame: activity + Map the Meal Gap, 2022-2024.
-    df = qkit.county_year(years=C.Q1_YEARS)
+    df = qkit.county_year(years=cfg.Q1_YEARS)
     print(f"{len(df)} county-years, {df['fips'].nunique()} counties")
 
     # Step 2. Public covariates (build with: python src/build_covariates.py).
-    cov = qkit.covariates(years=C.Q1_YEARS).drop(columns="county_name")
+    cov = qkit.covariates(years=cfg.Q1_YEARS).drop(columns="county_name")
     df = df.merge(cov, on=["fips", "year"], how="left", validate="1:1")
-    for m in C.THREE_METRICS:
+    for m in cfg.THREE_METRICS:
         df[f"{m}_per_1k"] = 1000 * df[m] / df["population"]
 
     # Step 3. Correlations: each metric against need, counts AND rates, per year.
     rows = []
-    for year in C.Q1_YEARS:
+    for year in cfg.Q1_YEARS:
         sub = df[df["year"] == year].dropna(subset=["fi_persons"])
-        for m in C.THREE_METRICS:
+        for m in cfg.THREE_METRICS:
             s = sub.dropna(subset=[m])
             rows.append({
                 "year": year, "metric": m, "n_counties": len(s),
