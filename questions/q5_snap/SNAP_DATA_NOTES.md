@@ -92,6 +92,37 @@ and Mahnomen, Becker and Clearwater (White Earth). They are not added to any cou
 The last row is the exposure measure from step 4 of the README. It varies fivefold
 across units, which is what the event study needs.
 
+## The timeline of the benefit cut
+
+Checked on 28 September 2026. The dashboard and the public notices agree.
+
+| when | what happened | source |
+|---|---|---|
+| 29 December 2022 | The Consolidated Appropriations Act, 2023 becomes law. It ends emergency allotments after the February 2023 benefit month. | USDA FNS |
+| January and February 2023 | Minnesota counties notify households. | Otter Tail County notice, 17 February 2023 |
+| February 2023 | Last month of eligibility for the extra benefit. | USDA FNS; Cass County notice |
+| **March 2023** | **Last extra payment in Minnesota.** The state paid it the month after eligibility. | Otter Tail County notice |
+| **April 2023** | **First month with the regular benefit only.** | Otter Tail County notice; the dashboard |
+
+The Otter Tail notice says: "Most households will get their last E-SNAP payment in March"
+and "Starting in April, most households will get only one SNAP payment."
+
+**Food shelf activity jumped about 20% in March 2023**, one month before the money fell
+(see `notebooks/q4_advisor_followup.ipynb`, section B). So the jump came before the cut.
+Either households and food shelves acted on the announcement, or the jump has another
+cause. Statewide data cannot say which.
+
+Sources:
+
+- https://ottertailcounty.gov/news/extra-covid-emergency-snap-benefits-end/
+- https://www.casscountymn.gov/m/newsflash/Archive/Item/36?arcId=106
+- https://www.fns.usda.gov/snap/ea-provision-consolidated-appropriations-act-2023
+- https://www.cbpp.org/research/food-assistance/temporary-pandemic-snap-benefits-will-end-in-remaining-35-states-in-march
+
+The Otter Tail notice was read directly. The USDA and CBPP pages refused automated
+requests, so they were checked through search results only. Open them by hand before
+citing them on a slide.
+
 ## Decisions for the Q5 owner
 
 1. **Accept the three combined units, or split them.** Splitting needs another source,
@@ -99,8 +130,19 @@ across units, which is what the event study needs.
 2. **Tribal nations:** leave them out and state it, or allocate them to counties.
 3. **Which series is "SNAP benefits":** federal SNAP only, or federal SNAP plus the MFIP
    food portion.
-4. **The event month is April 2023.** Q4's price effect sits in the same window, so the
-   two questions need one agreed account of 2023.
+4. **Which month is "the event".** There are three candidates, and the choice changes the
+   result:
+
+   | candidate | month | what it measures |
+   |---|---|---|
+   | the announcement | January to February 2023 | households acting on what they were told |
+   | the last extra payment | March 2023 | the month activity jumped |
+   | the first reduced payment | April 2023 | the month the money fell |
+
+   An event study dated to April puts the March jump in the "before" period and misses
+   it. One way to avoid choosing: plot the months from December 2022 to June 2023 one by
+   one and let the chart show when activity moved. Q4's price effect sits in the same
+   window, so the two questions need one agreed account of 2023.
 
 ## Limitations to state
 
