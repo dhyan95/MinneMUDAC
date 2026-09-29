@@ -1,15 +1,35 @@
 # Status — end of week 1, plan for week 2
 
-Written 27 September 2026 for the team meeting on the 28th. Checked against `main` at
-`019ea8a`, `uddam-branch` at `54043ed` and `dhyan_branch` at `634abcc`.
+Updated 28 September 2026, after the meeting with the advisor. Checked against `main` at
+`943c68e`, `uddam-branch` at `54043ed` and `dhyan_branch` at `e123861`.
 
-**Deadline: Saturday 17 October 2026.** 20 days left. Day 6 of 26.
+**Deadline: Saturday 17 October 2026.** 19 days left. Day 7 of 26.
 
 ---
 
-## Meeting agenda
+## What changed on 28 September
 
-### Decisions to make
+The advisor raised four points about Q4. All four are answered in a new notebook,
+`notebooks/q4_advisor_followup.ipynb`, on `dhyan_branch`.
+
+| The advisor asked | Answer |
+|---|---|
+| Run HAC with a 12-month window | Done. It changes the standard errors by less than 10% and none of the conclusions. The window was never the problem. |
+| Is a 4 to 6 month delay too late? | Yes. The data does not support it. |
+| Could something else be interacting? | Yes. Activity jumped 20% in one month, March 2023, and the SNAP benefit cut is recorded one month later. |
+| Redo the county split by metro | Done. Cost and metro are largely the same split, and neither matters once county size is removed. |
+
+**The Q4 headline changes.** "Demand rises 4 to 6 months after prices rise" is withdrawn.
+The details are in the Q4 section below.
+
+**The order of work changes.** Q5 should be done before Q4 is finished. The reason is in
+the Q5 section.
+
+---
+
+## Open decisions
+
+Carried over from the agenda for 28 September. Strike out the ones the meeting settled.
 
 | # | decision | who it affects | note |
 |---|---|---|---|
@@ -17,41 +37,25 @@ Written 27 September 2026 for the team meeting on the 28th. Checked against `mai
 | 2 | **Q7: who starts the baselines, and when** | Dhyan, Uddam | The only scored prediction, and nothing exists yet. The plan calls the backtests the most important deliverable of week 2 |
 | 3 | **Dhyan's load** | all | He owns Q4, Q5 and the Q7 model. One is drafted. Decide whether anything moves |
 | 4 | **SNAP reporting units** | Dhyan | The SNAP series is found. 11 counties are not reported one by one. Accept 79 units, or split them |
-| 5 | **Who claims 2023: Q4 or Q5** | Dhyan | Prices fell and SNAP benefits were cut in the same months. Benefits dropped in April 2023 |
+| 5 | **Who claims 2023: Q4 or Q5** | Dhyan | Proposed answer: Q5 claims what county exposure to the SNAP cut can explain, and Q4 gets the rest. Q5 can remove prices completely with month dummies. Q4 cannot remove SNAP |
 | 6 | **One definition of a food shelf site** | Uddam, Valentino | Q8 counts 723 sites; 278 never reported activity. Valentino can add the shared flag to `sites.parquet` |
 | 7 | **The opening line of the deck** | Uddam | The plan's "strongest single fact" is a correlation with a built-in tilt. Replace it with the log-log slope |
 | 8 | **When notebook numbers move into `analysis.py`** | all | Nothing is in a script yet, and rule 6 says every slide number comes from one |
 | 9 | **Untrack the 85 MB Atlas file** | all | Doing it deletes the file from everyone's working copy on their next pull |
 
-### To report
-
-- **Valentino:** Q1 sub-questions 1–3 answered, sub-question 4 came back null. The config
-  alias is now `cfg`. SNAP data is in, with loaders.
-- **Dhyan:** Q4 draft. Status of the organizer email.
-- **Uddam:** Q8 crosswalk, coverage numbers and maps.
-
-### For the advisor
-
-What to show: one chart per drafted question.
+### One sentence per drafted question
 
 | question | chart | one sentence |
 |---|---|---|
-| Q1 | expected vs actual activity, notebook cell 5 | activity follows county size, not need intensity |
-| Q4 | lag profile, lags 0 to 10 | the price response peaks around 4 to 6 months, on one episode |
+| Q1 | log-log fit, notebook cells 7–8 | activity follows county size, not need intensity |
+| Q4 | the four series over time, follow-up notebook section B | activity grew fastest in 2023, and prices cannot be separated from the SNAP cut in statewide data |
 | Q8 | population-weighted distance curve | 40% of rural LILA residents are within 5 miles of a site, against 99% urban |
-
-What to ask:
-
-1. Q1's covariate model explains 3% of the mismatch and nothing is significant. Is a
-   null result with pre-written hypotheses acceptable as the answer, with a spatial test
-   as the follow-up?
-2. Q4 rests on 42 months and one fall in inflation. How strongly can the lag be stated?
-3. Q5 and Q4 share the 2023 window. Is one joint model better than two separate ones?
 
 ### Housekeeping
 
-- Both branches are 2 commits behind `main` and touch none of the same files, so they
-  merge cleanly in any order.
+- `dhyan_branch` now includes `main`, so it has the SNAP loaders and the `cfg` alias.
+- `uddam-branch` is 6 commits behind `main`. It touches none of the same files, so it
+  merges cleanly.
 - Record the panel v1 sign-off and the Section-2 decisions.
 
 ---
@@ -61,7 +65,7 @@ What to ask:
 | question | owner | state | lives in |
 |---|---|---|---|
 | Q1 need vs activity | Valentino | sub-questions 1–3 answered, 4 fitted and not yet interpreted | `notebooks/q1_exploration.ipynb` |
-| Q4 food prices | Dhyan | full exploratory draft with a headline | `notebooks/q4_exploration.ipynb` on `dhyan_branch` |
+| Q4 food prices | Dhyan | exploratory draft, plus a follow-up that revises its headline | `notebooks/q4_exploration.ipynb` and `q4_advisor_followup.ipynb` on `dhyan_branch` |
 | Q5 SNAP | Dhyan | **data found and loaded**; analysis not started | `src/build_snap.py`, `questions/q5_snap/SNAP_DATA_NOTES.md` |
 | Q6 divergence measure | Valentino | not started (week 2 item) | |
 | Q7 forecast | Dhyan, Uddam | not started | |
@@ -175,34 +179,99 @@ cross-county story would predict.
 
 ## Q4 — Dhyan (`dhyan_branch`, not merged)
 
-A careful, well-documented draft. Every step states its question, what was done, the
-finding and the warning, and one invalid step is marked as such instead of deleted.
+Two notebooks. `q4_exploration.ipynb` is Dhyan's draft. `q4_advisor_followup.ipynb` answers
+the advisor's questions and revises the draft's headline. The follow-up runs on its own
+and does not change the draft.
 
-**Headline in the notebook:** demand rises 4–6 months after prices rise. Seasonality is
-separate: October peak, January or February trough, a swing of about 20%.
+### Supported answers to the four Q4 questions
 
-### To discuss
+| Q4 asks | Answer |
+|---|---|
+| Do more people arrive when prices rise? | Activity grew fastest during and just after the 2022 to 2023 inflation. The largest move is a 20% jump in March 2023, which is a step and points to an event. The SNAP cut and a rise in reporting sites fall in the same months, and statewide data cannot separate the three. |
+| At once, or after a delay? | Not after 4 to 6 months. Where a response shows, it is at about one month. |
+| In all three metrics? | In pounds and individuals. Not clearly in households. |
+| What cycles do prices not explain? | The seasonal pattern stands: an October peak, a January or February low, a swing of about 20%. |
 
-1. **The headline is stronger than the notebook's own body.** The evidence is 42 months
-   and one price episode. Food inflation fell from 12% to 1% during 2023 and has stayed
-   between 0.4% and 2.7% since. Activity growth fell over the same stretch. Two series
-   with one shared step will correlate at whatever lag lines the steps up. The notebook
-   says this itself ("treat as exploratory drift"); the summary at the top does not.
-2. **The size of the effect points to something else moving.** A coefficient of 4.7
-   means one point of food inflation goes with 4.7 points of activity growth. SNAP
-   benefits per case fell 47% in April 2023, inside the same window.
-3. **The standard errors are still too small.** Year-over-year changes overlap for
-   11 months, so the residuals stay correlated far beyond the 3-month HAC window.
-   A window of 12 is the defensible choice.
-4. **Step 2 is wrong as stated.** It finds the base and `_fs` columns identical and
-   concludes either can be used. They are identical only because
-   `county_month(food_shelf_only=True)` overwrites the base columns with the `_fs` ones.
-   Without the flag they differ by about 7% of pounds. No result changes.
-5. **The county cost comparison uses households per food-insecure person**, which is the
-   measure with Q1's caveat 1. Higher-cost counties are also the metro counties, so the
-   gap may be county size.
-6. **February 2022 is unexplained**: 157,600 households against 115,500 in January, with
-   the site count flat. This is a panel question, so it goes to Valentino.
+### Findings, with the numbers
+
+**1. A 12-month HAC window changes nothing.** For households at lag 5 the coefficient is
+4.71 and the standard error is 0.83, 0.90 or 0.88 under the three methods. The reason the
+p-values cannot be trusted is different: lagged food inflation has a correlation of 0.99
+with its own previous month. It is one smooth decline, so the 42 months are one episode
+and nowhere near 42 independent observations.
+
+**2. The 4 to 6 month lag came from the method.** Three pieces of evidence:
+
+- The correlation between prices and activity rises steadily from a 6-month lead to a
+  10-month lag. It never peaks at 4 to 6. It is already 0.34 to 0.50 when prices move one
+  month *after* activity, which cannot be a response.
+- The sites control has a correlation of 0.93 with lagged prices. The model had two
+  explanatory variables that were nearly the same series.
+- With SNAP and a time trend added, the price coefficient is flat across lags 0 to 10.
+
+**3. Activity jumped 20% in March 2023 and stayed there.**
+
+| February to March 2023 | households | pounds | individuals |
+|---|---|---|---|
+| Change in one month | +19.9% | +21.9% | +22.3% |
+
+The number of reporting sites did not change. In 2024, 2025 and 2026 the same month's
+change was between minus 2% and plus 6%. In year-over-year data a one-time jump looks
+like 12 months of high growth, and growth did fall from 30% to 6% in March 2024.
+
+**4. Adding SNAP takes a third or more off the price effect.**
+
+| | households | pounds | individuals |
+|---|---|---|---|
+| R², prices and sites only | 0.49 | 0.63 | 0.67 |
+| R², with SNAP added | 0.75 | 0.72 | 0.81 |
+| Price coefficient, before | 4.71 | 3.52 | 5.32 |
+| Price coefficient, with SNAP and trend | 2.93 | 2.30 | 2.89 |
+
+**5. In month-to-month changes, the one lag that stands out is one month.** A model with
+lags 0 to 6 together gives +7.0 for pounds and +7.7 for individuals at lag 1. Both pass a
+correction for 21 tests. Households does not (p = 0.12). Lag 2 is negative in all three,
+and the total over six months cannot be told apart from zero.
+
+**6. The county cost gap was county size.** 22 of the 27 metro counties are in the
+higher-cost group. The gap in the draft was in the means (3.19 against 2.14) and came
+from three counties: Steele, Washington and Olmsted. On medians it is not significant
+(p = 0.16). With county size removed, neither cost (p = 0.70) nor metro status (p = 0.60)
+makes a difference. This matches the null result in Q1.
+
+**7. "Households per food-insecure person" carries one of Q1's two caveats.** The built-in
+tilt does not apply, because Q4 sets the ratio against cost and not against the
+food-insecurity rate. The county-size caveat does apply: a county with 10 times the
+food-insecure people records 1.34 times the ratio. Use the Q1 residual for any comparison
+across counties.
+
+### What to be careful about
+
+- **The dates are one month apart.** Activity jumped in March 2023. The SNAP dashboard
+  records the fall in benefits in April 2023. This needs a primary source.
+- **Growth was already 41% in January 2023**, before the jump. The jump is part of the
+  story, not all of it.
+- **The one-month response is weak evidence.** 46 months, 19 parameters, and the metric
+  that stands in for visits does not show it.
+- **Every p-value in the year-over-year models is unreliable**, for the reason in
+  finding 1. That includes the one on SNAP.
+
+### Corrections to make in `q4_exploration.ipynb`
+
+| Where | Change |
+|---|---|
+| Top cell | Replace the 4 to 6 month claim |
+| Step 2 | The base and `_fs` columns are identical only because `food_shelf_only=True` overwrites one with the other. Without the flag they differ by about 7% of pounds. No result changes. |
+| Step 10b | Mark as superseded, the way Step 10a is |
+| Step 12 | "CPI adds 19% to 28% to R²" is from the model without SNAP |
+| County cost comparison | Replace the comparison of means |
+
+### Still open
+
+- **February 2022 is unexplained**: 157,600 households against 115,500 in January, with
+  the site count flat. This is a panel question, so it goes to Valentino.
+- The follow-up was run on Python 3.12. Dhyan's machine has Python 3.9. The code avoids
+  anything newer, but it has not been run there.
 
 ---
 
@@ -230,6 +299,24 @@ The county-monthly SNAP series exists. Full notes are in
 3. **Tribal nations are reported apart** from the counties their members live in, about
    2.7% of the state. Beltrami and Mahnomen are the counties most affected.
 4. **This touches Q1.** Steele and Pope are both inside combined units.
+
+### How Q5 relates to Q4
+
+SNAP can be used in Q4 as a control. That does not answer Q5.
+
+| | Q4 | Q5 |
+|---|---|---|
+| Role of SNAP | A control: something else that moved | The subject |
+| Data | One statewide series | 79 county units |
+| Where the evidence comes from | Change over time | Differences between counties in how exposed they were to the cut |
+
+**Q5 should come first.** Every county faces the same price index in a given month, so
+month dummies in a county model remove prices completely. A statewide series has no
+counties to compare, so Q4 cannot remove SNAP. Estimate the SNAP effect in Q5, then return
+to Q4 and see what prices explain in what is left.
+
+**The event date needs checking.** The dashboard puts the benefit cut in April 2023.
+Activity jumped in March 2023. Q5's event study depends on which month is right.
 
 ---
 
@@ -293,12 +380,14 @@ number by the end of the week is what gets descoped, decided as a team.
 | # | task | note |
 |---|---|---|
 | 1 | **Q7 baselines backtested on August 2023, 2024 and 2025** | the plan's most important week 2 deliverable |
-| 2 | Q5: decide the units, tribal nations and benefit series | the four decisions in `SNAP_DATA_NOTES.md` |
-| 3 | Q5: event study around April 2023, with exposure | the data and loaders are ready |
-| 4 | Q4: settle the headline wording and widen the HAC window | |
-| 5 | Q4 and Q5: one agreed account of 2023 | |
-| 6 | Fill in the CPI registry date, merge the branch | |
-| 7 | Move the Q4 numbers into `analysis.py` | |
+| 2 | Q5: confirm the month emergency allotments ended, from a primary source | March or April 2023; the event study depends on it |
+| 3 | Q5: decide the units, tribal nations and benefit series | the four decisions in `SNAP_DATA_NOTES.md` |
+| 4 | Q5: event study with county exposure and month dummies | the data and loaders are ready; do this before finishing Q4 |
+| 5 | Q4: make the five corrections to `q4_exploration.ipynb` | listed in the Q4 section |
+| 6 | Q4: run `q4_advisor_followup.ipynb` on his own machine | it has only been run on Python 3.12 |
+| 7 | Q4: Minneapolis-St. Paul CPI as a robustness check | the README asks for it |
+| 8 | Fill in the CPI registry date, merge the branch | |
+| 9 | Move the Q4 numbers into `analysis.py` | |
 
 ### Uddam
 
