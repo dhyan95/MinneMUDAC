@@ -16,7 +16,7 @@ The advisor raised four points about Q4. All four are answered in a new notebook
 |---|---|
 | Run HAC with a 12-month window | Done. It changes the standard errors by less than 10% and none of the conclusions. The window was never the problem. |
 | Is a 4 to 6 month delay too late? | Yes. The data does not support it. |
-| Could something else be interacting? | Yes. Activity jumped 20% in one month, March 2023, and the SNAP benefit cut is recorded one month later. |
+| Could something else be interacting? | Yes. Activity jumped 20% in one month, March 2023. That was the month of the last extra SNAP payment in Minnesota; benefits fell in April. |
 | Redo the county split by metro | Done. Cost and metro are largely the same split, and neither matters once county size is removed. |
 
 **The Q4 headline changes.** "Demand rises 4 to 6 months after prices rise" is withdrawn.
@@ -247,8 +247,10 @@ across counties.
 
 ### What to be careful about
 
-- **The dates are one month apart.** Activity jumped in March 2023. The SNAP dashboard
-  records the fall in benefits in April 2023. This needs a primary source.
+- **The jump came before the cut.** Activity jumped in March 2023. Minnesota paid the
+  last extra SNAP benefit that month, and benefits fell in April. Both dates are
+  confirmed (see the Q5 section). So households and food shelves either acted on the
+  announcement, or the jump has another cause. Statewide data cannot say which.
 - **Growth was already 41% in January 2023**, before the jump. The jump is part of the
   story, not all of it.
 - **The one-month response is weak evidence.** 46 months, 19 parameters, and the metric
@@ -315,8 +317,22 @@ month dummies in a county model remove prices completely. A statewide series has
 counties to compare, so Q4 cannot remove SNAP. Estimate the SNAP effect in Q5, then return
 to Q4 and see what prices explain in what is left.
 
-**The event date needs checking.** The dashboard puts the benefit cut in April 2023.
-Activity jumped in March 2023. Q5's event study depends on which month is right.
+### The timeline of the cut, confirmed
+
+| when | what happened |
+|---|---|
+| 29 December 2022 | The law ending emergency allotments is signed |
+| January and February 2023 | Minnesota counties notify households |
+| February 2023 | Last month of eligibility |
+| **March 2023** | **Last extra payment in Minnesota. Food shelf activity jumps 20%.** |
+| **April 2023** | **First month with the regular benefit only** |
+
+Minnesota paid the extra benefit the month after eligibility, which is why the dashboard
+shows the fall in April while national sources say March. Sources are listed in
+`questions/q5_snap/SNAP_DATA_NOTES.md`.
+
+**Q5 has to choose which month is the event.** An event study dated to April puts the
+March jump in the "before" period and misses it.
 
 ---
 
@@ -380,7 +396,7 @@ number by the end of the week is what gets descoped, decided as a team.
 | # | task | note |
 |---|---|---|
 | 1 | **Q7 baselines backtested on August 2023, 2024 and 2025** | the plan's most important week 2 deliverable |
-| 2 | Q5: confirm the month emergency allotments ended, from a primary source | March or April 2023; the event study depends on it |
+| 2 | Q5: decide which month is the event, and say why | the announcement, the last extra payment (March 2023) or the first reduced payment (April 2023) |
 | 3 | Q5: decide the units, tribal nations and benefit series | the four decisions in `SNAP_DATA_NOTES.md` |
 | 4 | Q5: event study with county exposure and month dummies | the data and loaders are ready; do this before finishing Q4 |
 | 5 | Q4: make the five corrections to `q4_exploration.ipynb` | listed in the Q4 section |
