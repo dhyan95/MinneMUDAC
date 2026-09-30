@@ -9,6 +9,7 @@ census/saipe/      SAIPE county poverty and median income (est22all.xls ...)
 census/acs/        ACS tables, named acs5_<endyear>_<table>.csv (renamed from the
                    data.census.gov export name; contents untouched)
 census/gazetteer/  Gazetteer tracts, CenPop2020 tract centres of population
+census/adjacency/  County Adjacency File 2023 (which counties border which)
 bls/laus/          LAUS county unemployment, annual averages
 bls/               CPI food-at-home series
 mn_sdc/            MN State Demographic Center population and household estimates
