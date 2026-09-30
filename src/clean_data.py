@@ -320,6 +320,61 @@ def build_site_month(sites: pd.DataFrame) -> pd.DataFrame:
     return out
 
 
+# ===================================================== sites: shared definition
+def attach_site_activity(sites: pd.DataFrame, sm: pd.DataFrame) -> pd.DataFrame:
+    """
+    Add the shared site definition and a reporting summary to sites.parquet.
+
+    is_food_shelf_like   from the master's own AgencyType, cleaned the same way
+                         as in site_month, so every site has it whether or not
+                         it ever reported. This is THE definition Q1, Q6 and Q8
+                         share; the row-level flag in site_month is the type a
+                         site had in that month, which can differ.
+    ever_reported        the site has at least one usable activity row
+    first_yearmonth, last_yearmonth, n_months_reported
+    share_months_food_shelf_like   of its reported months, the share in which
+                         the activity file called it a food-shelf-like site
+    """
+    print("\n== sites.parquet: shared food-shelf definition + reporting summary")
+    at = sites["AgencyType"].astype("string").str.strip().replace({
+        "Brick and Mortar Sites": "Brick and Mortar Site",
+        "Meal Programs": "Meal Program",
+        "On-Site Meal Programs": "Meal Program"})
+    sites = sites.copy()
+    sites["agency_type_clean"] = at
+    sites["is_food_shelf_like"] = at.isin(cfg.FOOD_SHELF_TYPES).fillna(False).astype(bool)
+
+    usable = sm[~sm["bad_period"] & ~sm["is_duplicate_superseded"]]
+    g = (usable.groupby("site_id")
+               .agg(first_yearmonth=("yearmonth", "min"),
+                    last_yearmonth=("yearmonth", "max"),
+                    n_months_reported=("yearmonth", "nunique"),
+                    share_months_food_shelf_like=("is_food_shelf_like", "mean"))
+               .reset_index())
+    sites = sites.merge(g, on="site_id", how="left")
+    sites["ever_reported"] = sites["n_months_reported"].notna()
+    sites["n_months_reported"] = sites["n_months_reported"].fillna(0).astype(int)
+    for c in ("first_yearmonth", "last_yearmonth"):
+        sites[c] = sites[c].astype("Int64")
+
+    never = ~sites["ever_reported"]
+    log("Organization", "site never reported activity", int(never.sum()),
+        "kept, flagged ever_reported=False",
+        f"{int((never & sites['is_food_shelf_like']).sum())} of them are food-shelf-like. "
+        "A site with no activity cannot be a served location in Q8.")
+    changed = sites["ever_reported"] & (sites["share_months_food_shelf_like"].between(0, 1, inclusive="neither"))
+    log("Organization", "site's type changed over time in the activity file", int(changed.sum()),
+        "master type kept as is_food_shelf_like; share_months_food_shelf_like records the history",
+        "The master holds the current type. County _fs totals use the month-by-month type.")
+    orphan = set(usable["site_id"]) - set(sites["site_id"])
+    log("org_FSStats", "site reports activity but is not in the Organization master", len(orphan),
+        "not added to sites.parquet", "No address or type is known for them; they stay in site_month.")
+
+    write_parquet(sites, cfg.P_SITES)
+    print(f"  rewrote {cfg.P_SITES.name}: {sites.shape}")
+    return sites
+
+
 # =============================================================== county-month
 def build_county_month(sm: pd.DataFrame) -> pd.DataFrame:
     """
@@ -512,6 +567,7 @@ def main() -> None:
 
     sites = build_sites()
     sm = build_site_month(sites)
+    sites = attach_site_activity(sites, sm)
     build_county_month(sm)
     build_mmg()
     build_calls()

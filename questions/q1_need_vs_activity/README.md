@@ -2,7 +2,7 @@
 
 **Division:** all three answer this. It is the foundation for Q6 and Q8.
 **Owner:** Valentino
-**Status:** in progress — covariates built, residual analysis next
+**Status:** analysis done; `analysis.py` rebuilds every number and both figures. Slides next.
 
 ---
 
@@ -130,11 +130,49 @@ the household proxy. Re-derive them properly.
 
 ---
 
+## Findings (30 September)
+
+The numbers below come from `analysis.py`. The reasoning, and the predictions written
+before each result, are in `notebooks/q1_exploration.ipynb`.
+
+**Headline.** Recorded food-shelf activity rises faster than need. A county with ten times
+as many food-insecure people records about sixteen times the activity (log-log slope 1.15
+to 1.24 across nine metric-years, every interval above 1, R2 0.84 to 0.88). "Records" is
+deliberate: activity is counted where the food shelf is, not where the household lives.
+
+| sub-question | answer |
+|---|---|
+| 1. Same story? | In counts, yes: Spearman about 0.9 for every metric and year, mostly county size. In rates, no: activity per 1,000 residents against the food-insecurity rate is about zero (Spearman -0.03 to 0.17). Same for all three metrics in all three years. |
+| 2. Most and least correlated? | Pounds highest, individuals next, households lowest, in the same order every year. The gap is 3 percentage points of R2 (0.87 vs 0.84): consistent but small. |
+| 3. Where does it break down? | Wilkin has no reporting food shelf at all. Among counties with activity: Nicollet, Pope and Lac qui Parle record the least relative to need (Nicollet about 30% of predicted); Steele, Washington and Rice the most (Steele about 4 times). All six are on the same side in all nine metric-years, and none moves when non-food-shelf sites are dropped. Cook does: it falls from +0.89 to -0.12. |
+| 4. What explains the mismatch? | The characteristics we tested (distance to nearest site, RUCC group, no-vehicle households, SNAP households) explain 3% of it, and none shows a clear association. Distance is the one to follow up: about 10% less recorded activity per extra 4 km, interval -25% to +4%. |
+
+**Robustness, all in the notebook:** the conclusion is the same with RUCC grouped by metro
+adjacency, with each covariate alone, with residuals from food-shelf-only sites (distance
+-0.13, p = 0.07), and in a one-step model. The site count is the strongest single variable
+(+0.11, p = 0.06) and weakens distance when added, because counties with many sites have
+short distances. Moran's I on the residuals is 0.06 (p = 0.37): no general spatial
+pattern, so the red/blue border pairs are examples, not evidence of spillover.
+
+**Caveats to state:**
+
+- The residual partly measures the network, not need: counties with more sites record
+  more activity per food-insecure person.
+- 86 counties can only detect large effects. "No clear association" is not "no effect",
+  and more years do not help because a county's years are clustered.
+- Rates that divide by food-insecure persons and are plotted against the food-insecurity
+  rate share a term and correlate negatively by construction. Use per 1,000 residents.
+- 2024 need comes from a different MMG edition; year dummies are 0.00 and 0.01, so it did
+  not shift the residuals.
+
+---
+
 ## Deliverables
 
-- [ ] `analysis.py` that rebuilds every number from `data/processed/`
-- [ ] One chart for the deck: need against activity, breakdown counties labelled
+- [x] `analysis.py` that rebuilds every number from `data/processed/`
+- [x] One chart for the deck: need against activity, breakdown counties labelled (`outputs/figures/q1_loglog_fits.png`, `q1_residual_bars.png`)
 - [x] A correlation table covering all three metrics, all three years, counts and rates (`outputs/tables/q1_correlations.csv`)
-- [ ] A ranked list of breakdown counties with the characteristics that explain them
-- [ ] One sentence a judge remembers
-- [ ] Limitations stated by us, before a judge states them
+- [x] A ranked list of breakdown counties with the characteristics that explain them (`q1_residual_ranking.csv`, `q1_covariate_model.csv`)
+- [x] One sentence a judge remembers (the headline above)
+- [x] Limitations stated by us, before a judge states them (the caveats above)
+- [ ] Slides

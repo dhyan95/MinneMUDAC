@@ -38,7 +38,7 @@ Carried over from the agenda for 28 September. Strike out the ones the meeting s
 | 3 | **Dhyan's load** | all | He owns Q4, Q5 and the Q7 model. One is drafted. Decide whether anything moves |
 | 4 | **SNAP reporting units** | Dhyan | The SNAP series is found. 11 counties are not reported one by one. Accept 79 units, or split them |
 | 5 | **Who claims 2023: Q4 or Q5** | Dhyan | Proposed answer: Q5 claims what county exposure to the SNAP cut can explain, and Q4 gets the rest. Q5 can remove prices completely with month dummies. Q4 cannot remove SNAP |
-| 6 | **One definition of a food shelf site** | Uddam, Valentino | Q8 counts 723 sites; 278 never reported activity. Valentino can add the shared flag to `sites.parquet` |
+| 6 | **One definition of a food shelf site** | Uddam, Valentino | **Done 30 September.** `sites.parquet` now carries `is_food_shelf_like` (current type) and `ever_reported`, with first and last month. `qkit.sites(food_shelf_only=True, reporting_only=True)` returns the 462 sites that are both. Rerun `python src/clean_data.py` to get the columns. Q8 should count from that |
 | 7 | **The opening line of the deck** | Uddam | The plan's "strongest single fact" is a correlation with a built-in tilt. Replace it with the log-log slope |
 | 8 | **When notebook numbers move into `analysis.py`** | all | Nothing is in a script yet, and rule 6 says every slide number comes from one |
 | 9 | **Untrack the 85 MB Atlas file** | all | Doing it deletes the file from everyone's working copy on their next pull |
@@ -128,6 +128,50 @@ qkit.activity_by_snap_unit()  # food shelf activity on the same units
 ```
 
 Run `python src/build_snap.py` once after pulling.
+
+### The site master now carries the shared food-shelf definition (30 September)
+
+`sites.parquet` has seven new columns. Nothing already there changed, and every other
+processed table is byte-for-byte the same as before. **Rerun `python src/clean_data.py`
+after pulling** to get them.
+
+| column | what it holds |
+|---|---|
+| `is_food_shelf_like` | true if the site's **current** type in the Organization master is a food shelf (Brick and Mortar, Food Shelf, Mobile, Tribal Program, Agency or Tribal Nation). Every site has it, reported or not |
+| `agency_type_clean` | the master's type with the spelling variants collapsed, as in `site_month` |
+| `ever_reported` | the site has at least one usable activity row |
+| `first_yearmonth`, `last_yearmonth` | first and last month with activity, e.g. `202207`. A last month before `202607` means the site stopped reporting |
+| `n_months_reported` | number of distinct months with activity |
+| `share_months_food_shelf_like` | of its reported months, the share in which the activity file typed it as a food shelf |
+
+Loader:
+
+```python
+qkit.sites(food_shelf_only=True, reporting_only=True)   # the 462 sites that are the network
+qkit.sites(food_shelf_only=True)                        # 771, incl. 309 that never reported
+```
+
+The counts, out of 1,202 rows in the master:
+
+| | never reported | reported |
+|---|---|---|
+| not food-shelf-like | 262 | 169 |
+| food-shelf-like | 309 | **462** |
+
+Three things to know:
+
+- **This is the definition Q1, Q6 and Q8 share.** Q8's 723 sites and its 278 that never
+  reported were counted from the master before the flag existed. Count from the 462.
+- **56 sites changed type over time in the activity file.** For 52 of them the current
+  type is "not a food shelf" although some earlier months were counted as one. The flag
+  holds the current type; `share_months_food_shelf_like` keeps the history. County `_fs`
+  totals in `county_month.parquet` still use the month-by-month type, which is why they
+  did not change.
+- **34 sites report activity but are not in the master.** They stay in `site_month` and
+  cannot be placed on a map. Unchanged from before; the new step just logs them.
+
+The full logic is `attach_site_activity()` in `src/clean_data.py`, and the three checks
+it makes are in `data/processed/data_quality_log.csv`.
 
 ---
 
@@ -388,7 +432,7 @@ number by the end of the week is what gets descoped, decided as a team.
 | 4 | Port Q1 into `analysis.py` | it stops at Step 3 today |
 | 5 | Update the Q1 README | status line and deliverables |
 | 6 | **Q6: design the need index** | write the falsifiable definition before any result exists |
-| 7 | Panel: add `is_food_shelf_like` and last active month to `sites.parquet` | gives Q8 the shared site definition |
+| 7 | ~~Panel: add `is_food_shelf_like` and last active month to `sites.parquet`~~ | done 30 September, see open decision 6 |
 | 8 | Panel: look into February 2022 | for Q4 |
 
 ### Dhyan
