@@ -56,18 +56,27 @@ def county_month(food_shelf_only: bool = False) -> pd.DataFrame:
     return d
 
 
-def sites(geocoded_only: bool = False, distance_safe: bool = False) -> pd.DataFrame:
+def sites(geocoded_only: bool = False, distance_safe: bool = False,
+          food_shelf_only: bool = False, reporting_only: bool = False) -> pd.DataFrame:
     """
     Site master.
 
-    distance_safe  also drops the 12 sites whose geoid is a ZIP centroid, which
-                   locates the middle of the ZIP rather than the site.
+    distance_safe    also drops the 12 sites whose geoid is a ZIP centroid, which
+                     locates the middle of the ZIP rather than the site.
+    food_shelf_only  keep only sites whose current type is food-shelf-like
+                     (is_food_shelf_like). The shared definition for Q1, Q6, Q8.
+    reporting_only   keep only sites with at least one usable activity row
+                     (ever_reported). first_yearmonth / last_yearmonth say when.
     """
     d = pd.read_parquet(cfg.P_SITES)
     if geocoded_only or distance_safe:
         d = d[d["has_geoid"]]
     if distance_safe:
         d = d[~d["geoid_is_zip_centroid"]]
+    if food_shelf_only:
+        d = d[d["is_food_shelf_like"]]
+    if reporting_only:
+        d = d[d["ever_reported"]]
     return d
 
 
