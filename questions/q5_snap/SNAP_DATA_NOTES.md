@@ -37,8 +37,9 @@ both = snap.merge(activity, on=["snap_unit", "yearmonth"], how="left")
   not in the repo. It would serve as the state-level cross-check the README asks for, and
   it must be cut at 2026-07 in the same way before it is saved.
 - The page defines a case as "any group of people individually enrolled in food
-  assistance, live together, and purchase and prepare food together". It does not define
-  MFAP; the meaning given below is ours and should be confirmed.
+  assistance, live together, and purchase and prepare food together". The organizers'
+  glossary (`docs/GLOSSARY.md`) defines MFAP as the state-funded benefit for people who
+  do not qualify for federal SNAP, and MFIP as family cash assistance with a food portion.
 
 ### Columns
 
@@ -100,7 +101,7 @@ Checked on 28 September 2026. The dashboard and the public notices agree.
 |---|---|---|
 | 29 December 2022 | The Consolidated Appropriations Act, 2023 becomes law. It ends emergency allotments after the February 2023 benefit month. | USDA FNS |
 | January and February 2023 | Minnesota counties notify households. | Otter Tail County notice, 17 February 2023 |
-| February 2023 | Last month of eligibility for the extra benefit. | USDA FNS; Cass County notice |
+| February 2023 | Last month of eligibility for the extra benefit. | USDA FNS; Cass County notice; the organizers' glossary ("ended nationally after the February 2023 issuance") |
 | **March 2023** | **Last extra payment in Minnesota.** The state paid it the month after eligibility. | Otter Tail County notice |
 | **April 2023** | **First month with the regular benefit only.** | Otter Tail County notice; the dashboard |
 

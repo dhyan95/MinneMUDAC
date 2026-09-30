@@ -40,6 +40,23 @@ python src/eda.py            # -> outputs/ + docs/EDA_FINDINGS.md
 
 ---
 
+## Glossary
+
+The organizers gave every team a glossary. It is in [`docs/GLOSSARY.md`](docs/GLOSSARY.md)
+in full, with a table mapping each term to our columns. These are the words the judges
+use, so they are the words we use. Six of them change how we write:
+
+| term | what it means for us |
+|---|---|
+| **Need** vs **demand** | need is the Map the Meal Gap estimate; demand is what the food shelves recorded. Our Q1 charts say "observed demand", which is the glossary's own phrase |
+| **Latent demand** vs **unmet demand** | need that never becomes a request, against a request the system cannot fill. Q6 targets the first; the second is mostly invisible in our data |
+| **Visit** | one trip by one household. The brief labels visits as `HouseholdsReg`, which counts a household once per month, so our number is a floor |
+| **Pounds distributed** | "a supply measure as much as a demand measure". Say this whenever pounds behaves differently from the people counts |
+| **Food security** | "a household can be food secure and still use a food shelf". Activity above need does not mean need is overstated |
+| **Food desert** | do not use it on a slide; say low-income, low-access (LILA) |
+
+---
+
 ## The six questions (graduate division)
 
 | Q | question | addendum | owner | folder |

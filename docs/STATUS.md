@@ -129,6 +129,19 @@ qkit.activity_by_snap_unit()  # food shelf activity on the same units
 
 Run `python src/build_snap.py` once after pulling.
 
+### The organizers' glossary is in the repo (30 September)
+
+`docs/GLOSSARY.md`, in full, with a table mapping each term to our columns. The root README
+lists the six terms that change our wording. Three that touch open work:
+
+- **Pounds is "a supply measure as much as a demand measure."** That is the organizers'
+  own framing for Q4's "pounds grew less than the people counts" and Q1's site-count
+  result. Quote it.
+- **Latent demand vs unmet demand.** Q6 targets the first. Our data cannot see the second.
+- **Visit = one trip.** `HouseholdsReg` counts a household once a month, so it is a floor.
+  The brief's own label for the metric is "Visits [HouseholdsReg]", so the mapping is
+  theirs; the floor caveat is ours.
+
 ### The site master now carries the shared food-shelf definition (30 September)
 
 `sites.parquet` has seven new columns. Nothing already there changed, and every other

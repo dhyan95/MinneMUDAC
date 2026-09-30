@@ -44,7 +44,9 @@ The brief names three metrics, and the first is **visits**. `org_FSStats` has
 There is no other field that counts trips.
 
 **Decision:** use **households served** (`HouseholdsReg`) as the stand-in for visits,
-and say so on every slide that uses it. A household served in a month is not a trip: a
+and say so on every slide that uses it. The brief's Q1 text itself labels the metric
+"Visits [HouseholdsReg]", so this is the organizers' mapping too; the caveat below still
+applies because their glossary defines a visit as one trip. A household served in a month is not a trip: a
 household that visits four times in a month is counted once, so our "visits" number is
 a floor, and any county where households visit more often is understated relative to
 its true trip count.
