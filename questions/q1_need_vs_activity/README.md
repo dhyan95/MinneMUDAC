@@ -53,7 +53,9 @@ Full source facts are in the [registry](../../docs/DATA_SOURCES.md#source-regist
 
 ACS 5-year tables are assigned to their **end year** (2019–2023 → 2023).
 
-`households` is our stand-in for **visits** — there is no visits field. See
+`households` (`HouseholdsReg`) is what the brief labels **visits**. The organizers'
+[glossary](../../docs/GLOSSARY.md) defines a visit as one trip by one household; our field
+counts a household once per month, so it is a floor on trips. See
 [DATA_ERRORS.md §1.2](../../docs/DATA_ERRORS.md).
 
 ---
@@ -164,6 +166,13 @@ pattern, so the red/blue border pairs are examples, not evidence of spillover.
   rate share a term and correlate negatively by construction. Use per 1,000 residents.
 - 2024 need comes from a different MMG edition; year dummies are 0.00 and 0.01, so it did
   not shift the residuals.
+- A residual is a gap between two imperfect measures, not a count of hungry people. The
+  glossary's own caution: a visit does not mean a need was met, and a household can be
+  food secure and still use a food shelf. So activity above need (Steele) does not mean
+  need is overstated there, and activity below need (Nicollet) may be latent demand or
+  households served in the next county. Q6 is where the two are told apart.
+- Pounds is "a supply measure as much as a demand measure" (glossary). It is the metric
+  with the highest R2 against need, and also the one most tied to what a site holds.
 
 ---
 
