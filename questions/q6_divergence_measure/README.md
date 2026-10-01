@@ -12,6 +12,12 @@
 Food shelf activity shows where people **arrive**. It does not show where people **need
 help and do not get it**.
 
+The organizers' [glossary](../../docs/GLOSSARY.md) splits that gap in two. **Latent
+demand** is need that never becomes a request (awareness, stigma, eligibility doubts,
+distance). **Unmet demand** is a request the system cannot fill (stockouts, location,
+hours). Our data has no stockout, waitlist or hours fields, so the measure built here
+targets latent demand, and the write-up should say that unmet demand is out of reach.
+
 1. Create a **new metric or measure** that highlights areas where need is likely larger
    than the activity data shows.
 2. **Compare and contrast** it against the three food shelf metrics.
