@@ -48,7 +48,11 @@ question runs on that field.
    merge, take the population-weighted majority — and **write the rule down**.
 2. **Place the sites.** `tract_geoid` is already on `sites.parquet`. Exclude the 12 ZIP
    centroid geoids from any distance work. The 150 sites without a geoid cannot enter
-   this analysis at all.
+   this analysis at all. **Use the shared definition:** `qkit.sites(food_shelf_only=True,
+   reporting_only=True)` gives the 462 sites that are food-shelf-like by current type and
+   have reported at least one month. `first_yearmonth` and `last_yearmonth` say when; a
+   site whose last month is before 2026-07 has stopped reporting. Counting all 1,202
+   master rows, or the 571 that never reported, overstates the network.
 3. **The simple coverage number, first.** What share of Minnesota's LILA tracts contain a
    site? What share have a site within 1, 5, 10 miles? Weight by **population**, not by
    tract count — a tract is not a person.

@@ -23,11 +23,11 @@ import numpy as np
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-import config as C
+import config as cfg
 
-YEARS = C.Q1_YEARS
-EXT = C.EXTERNAL
-OUT = C.P_COVARIATES
+YEARS = cfg.Q1_YEARS
+EXT = cfg.EXTERNAL
+OUT = cfg.P_COVARIATES
 
 
 def _warn(msg: str) -> None:
@@ -36,7 +36,7 @@ def _warn(msg: str) -> None:
 
 def _counties() -> pd.DataFrame:
     """The 87 MN counties, fips + name, taken from Map the Meal Gap."""
-    m = pd.read_parquet(C.P_MMG)
+    m = pd.read_parquet(cfg.P_MMG)
     return m[["fips", "county_name"]].drop_duplicates().reset_index(drop=True)
 
 
@@ -49,7 +49,7 @@ def saipe() -> pd.DataFrame:
             _warn(f"SAIPE {y} missing: {f.name}")
             continue
         d = pd.read_excel(f, header=3, dtype=str)
-        d = d[(d["State FIPS Code"] == C.STATE_FIPS_MN) & (d["County FIPS Code"] != "000")]
+        d = d[(d["State FIPS Code"] == cfg.STATE_FIPS_MN) & (d["County FIPS Code"] != "000")]
         rows.append(pd.DataFrame({
             "fips": d["State FIPS Code"] + d["County FIPS Code"],
             "year": y,
@@ -86,7 +86,7 @@ def laus() -> pd.DataFrame:
             _warn(f"LAUS {y} missing: {f.name}")
             continue
         d = pd.read_excel(f, header=1, dtype=str)
-        d = d[d["State FIPS Code"] == C.STATE_FIPS_MN]
+        d = d[d["State FIPS Code"] == cfg.STATE_FIPS_MN]
         rows.append(pd.DataFrame({
             "fips": d["State FIPS Code"] + d["County FIPS Code"],
             "year": y,
@@ -175,7 +175,7 @@ def site_access(pop: pd.DataFrame) -> pd.DataFrame:
     Sites are counted wherever they are, not only inside the county: a resident
     of Wilkin is measured to the nearest site in Clay if that is closer.
     """
-    sm = pd.read_parquet(C.P_SITE_MONTH)
+    sm = pd.read_parquet(cfg.P_SITE_MONTH)
     sm = sm[~sm["bad_period"] & ~sm["is_duplicate_superseded"] & sm["is_food_shelf_like"]
             & sm["year"].isin(YEARS) & (sm["households"].fillna(0) > 0)]
     active = sm[["site_id", "year", "fips", "tract_geoid", "has_geoid",
@@ -197,7 +197,7 @@ def site_access(pop: pd.DataFrame) -> pd.DataFrame:
 
     gaz = pd.read_csv(gaz_f, sep="|", dtype={"GEOID": str})
     gaz.columns = gaz.columns.str.strip()
-    gaz = gaz[gaz["GEOID"].str.startswith(C.STATE_FIPS_MN)]
+    gaz = gaz[gaz["GEOID"].str.startswith(cfg.STATE_FIPS_MN)]
     cen = pd.read_csv(cen_f, dtype=str, encoding="utf-8-sig")
     cen["tract_geoid"] = cen["STATEFP"] + cen["COUNTYFP"] + cen["TRACTCE"]
     cen["fips"] = cen["STATEFP"] + cen["COUNTYFP"]
@@ -242,7 +242,7 @@ def main() -> None:
     assert not df.duplicated(["fips", "year"]).any()
 
     df.to_parquet(OUT, index=False)
-    print(f"  -> {OUT.relative_to(C.ROOT)}  ({len(df)} rows)")
+    print(f"  -> {OUT.relative_to(cfg.ROOT)}  ({len(df)} rows)")
     print("\nNon-missing per column:")
     print(df.notna().sum().to_string())
 

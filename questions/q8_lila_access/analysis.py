@@ -20,7 +20,7 @@ sys.path.insert(0, str(ROOT / "src"))
 import numpy as np
 import pandas as pd
 
-import config as C
+import config as cfg
 import qkit
 from build_lila import crosswalk, load_atlas
 
@@ -35,7 +35,7 @@ def main() -> None:
     # Only sites we can actually place. ZIP-centroid geoids locate the middle
     # of a ZIP, not the site, so they are excluded from anything spatial.
     sites = qkit.sites(distance_safe=True)
-    mn = sites[sites["state_fips"] == C.STATE_FIPS_MN]
+    mn = sites[sites["state_fips"] == cfg.STATE_FIPS_MN]
     print(f"{len(mn)} placeable MN sites in {mn['tract_geoid'].nunique()} tracts")
 
     clustering = mn.groupby("tract_geoid").size().value_counts().sort_index()
