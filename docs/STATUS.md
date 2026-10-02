@@ -129,6 +129,23 @@ qkit.activity_by_snap_unit()  # food shelf activity on the same units
 
 Run `python src/build_snap.py` once after pulling.
 
+### Five Q6 inputs added to the covariates panel (1 October)
+
+`county_covariates.parquet` has five new columns; nothing already there changed. To get
+them: `python questions/q8_lila_access/build_lila.py` once (it makes the Atlas extract the
+LILA share is built from), then `python src/build_covariates.py`.
+
+| column | source | why it is in Q6 |
+|---|---|---|
+| `pct_hh_housing_burden` | ACS B25070 + B25091 | rent is paid first; food is what is left |
+| `pct_no_hs_diploma` | ACS B15003 | fewer ways out when trouble comes |
+| `lila_share_1and10`, `lila_share_vehicle` | USDA Atlas via Q8 | no store within reach |
+| `pct_debt_collections` | Urban Institute, Aug 2025 | financial strain that is not income |
+
+All four sources are in the registry. None is an input to the Map the Meal Gap model.
+Q6's definition of need, its inputs and the rejection and revision criteria are written
+in `notebooks/q6_exploration.ipynb`, step 0, before any index exists.
+
 ### The organizers' glossary is in the repo (30 September)
 
 `docs/GLOSSARY.md`, in full, with a table mapping each term to our columns. The root README
