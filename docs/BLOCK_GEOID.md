@@ -56,37 +56,34 @@ sites[["site_id", "block_geoid", "fips", "tract_geoid"]].head()
   county estimates, USDA rural codes. Every question except Q8 lives at this grain.
 - **Tract (11 digits)** — the grain the **USDA Food Access Research Atlas** uses. LILA
   (low-income, low-access) status is a *tract* flag. This is the whole of Question 8:
-  join our sites' `tract_geoid` to the Atlas's tract flag and ask how many LILA tracts
-  have a site.
+  crosswalk the Atlas's 2010 tract flags to our 2020 `tract_geoid`s, then ask how many
+  LILA tracts have a food-shelf site.
 - **Block group (12 digits)** — the finest grain at which the ACS publishes income,
   vehicle access and population. Useful for Q6's need index if we want sub-county detail.
-- **Block (15 digits)** — too fine for any published statistic, but it is the level that
-  has a **published latitude and longitude centroid**, which is how we get distance.
+- **Block (15 digits)** — too fine for any published statistic. The block GEOID
+  identifies the block, but this project does not have a block-level coordinate file.
 
 ---
 
 ## 3. Getting distance out of it
 
-We have no coordinates. We can get them, and this is the single most valuable external
-file to download.
+The Census 2020 Gazetteer directory does **not** contain the previously documented
+`2020_Gaz_blocks_27.txt` file. The project has tract internal-point coordinates, not
+site coordinates. Q8 therefore places sites at the Census internal point of their
+assigned tract and computes the maximum distance from that point to the tract boundary
+as a conservative within-tract displacement bound. This is not the observed site error;
+the actual block point is unavailable in the downloaded sources.
 
-1. Download the **2020 Census Block Assignment / Gazetteer** file for Minnesota:
-   `https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2020_Gazetteer/` →
-   `2020_Gaz_blocks_27.txt` (tab-separated, includes `INTPTLAT` and `INTPTLONG`, the
-   internal point of every block in Minnesota).
-2. Save it to `data/external/census/` and record it in [DATA_SOURCES.md](DATA_SOURCES.md).
-3. Join on the 15-digit `GEOID` to get a lat/long per site.
-4. Do the same for every **tract** centroid (`2020_Gaz_tracts_27.txt`), then compute
-   great-circle distance from each tract centroid to the nearest site.
-
-That gives you "distance to nearest food shelf" per tract, which Question 1 asks for
-explicitly as a county characteristic, and which Question 8 needs as its access measure.
+The official tract Gazetteer entry is in `data/external/census/gazetteer/`. Minnesota
+tract polygons in `data/external/census/tract/tl_2020_27_tract/` are used to calculate
+the bound. The block GEOID still identifies the assigned tract, but does not itself
+supply a latitude or longitude.
 
 **Three warnings, all of which belong on the limitations slide:**
 
-- A block centroid is a **point inside a polygon**, not a door. In rural Minnesota a
-  block can be several square miles, so the error is meaningful exactly where the
-  distances are largest.
+- A tract internal point is **not the site address**. The upper-bound displacement
+  reported by `questions/q8_lila_access/analysis.py` may be large in rural Minnesota,
+  and does not reveal where inside the tract the site actually lies.
 - Great-circle distance is **not drive time**. Rural Minnesota has lakes. A site 8 miles
   away across Mille Lacs is not 8 miles away.
 - Distance says nothing about **hours, capacity or eligibility**. A site open four hours
@@ -119,13 +116,10 @@ anything non-numeric, and zero-pads to 15. Use it rather than writing your own.
 Blank means either no address was on file or the address could not be matched. Those
 sites carry `has_geoid = False` and **cannot appear in any tract-level result**.
 
-For Q8 this is a real limitation, and the honest way to state it is not "12.5% missing"
-but: *how much activity do the missing sites represent, and are they systematically
-rural?* We already know the first half — `questions/q8_lila_access/analysis.py` computes
-it, and the unplaceable sites account for only **0.9% of all households served**. That is
-a much better answer than a percentage of rows, and it makes the limitation small rather
-than vague. Still check whether they are disproportionately rural, because that would
-bias the coverage estimate in a specific direction.
+For Q8 the useful limitation is the share of recent household activity at sites excluded
+from the distance analysis, not the percentage of all master rows. The
+`q8_site_definition_audit.csv` output from `questions/q8_lila_access/analysis.py`
+reports this directly for the selected 12-month window.
 
 ### 4.3 12 geoids are ZIP centroids, not addresses
 
@@ -147,9 +141,12 @@ You cannot join a 2020 tract GEOID to a 2010 tract flag and expect a correct ans
 need the Census **2010→2020 tract relationship file**
 (`https://www.census.gov/geographies/reference-files/time-series/geo/relationship-files.html`),
 which gives the overlap between old and new tracts. Where one 2010 tract splits into two
-2020 tracts, both children inherit the parent's flag; where several merge, you have to
-decide (population-weighted majority is the defensible choice) and write the decision
-down.
+2020 tracts, each inherits the parent's value. For a 2020 tract with multiple 2010
+parents, this project computes an **area-weighted average** using the Census land-area
+overlap and classifies a flag as true at a weighted share of at least 0.5. It is not
+population-weighted; the relationship file supplies land overlap, not population by
+overlap. See `questions/q8_lila_access/README.md` for the 5% significant-parent count
+used to describe boundary changes.
 
 This is the single biggest methodological risk in Question 8. Budget time for it.
 
