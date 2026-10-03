@@ -158,8 +158,55 @@ def acs(counties: pd.DataFrame) -> pd.DataFrame:
                 pct_hh_snap=100 * snap[recv[0]] / snap["Total:"]
             )[["fips", "pct_hh_snap"]], on="fips", how="left")
 
+        # Q6 inputs. Housing-cost burden: households paying 30% or more of income on
+        # rent (B25070) or owner costs (B25091), over households with a computed ratio.
+        rent = _read_acs("B25070", y, counties)
+        own = _read_acs("B25091", y, counties)
+        if rent is not None and own is not None:
+            burden = ["30.0 to 34.9 percent", "35.0 to 39.9 percent",
+                      "40.0 to 49.9 percent", "50.0 percent or more"]
+            own_burden = [c for c in own.columns if c.split("|")[-1] in burden]
+            own_nc = [c for c in own.columns if c.endswith("Not computed")]
+            h = rent[["fips"]].copy()
+            h["num"] = rent[burden].sum(axis=1).to_numpy()
+            h["den"] = (rent["Total:"] - rent["Not computed"]).to_numpy()
+            o = own[["fips"]].assign(num=own[own_burden].sum(axis=1).to_numpy(),
+                                     den=(own["Total:"] - own[own_nc].sum(axis=1)).to_numpy())
+            h = h.merge(o, on="fips", suffixes=("_r", "_o"))
+            h["pct_hh_housing_burden"] = 100 * (h["num_r"] + h["num_o"]) / (h["den_r"] + h["den_o"])
+            out = out.merge(h[["fips", "pct_hh_housing_burden"]], on="fips", how="left")
+
+        # Adults 25+ without a high-school diploma or equivalent (B15003).
+        edu = _read_acs("B15003", y, counties)
+        if edu is not None:
+            cols = list(edu.columns)
+            no_hs = cols[cols.index("No schooling completed"):cols.index("12th grade, no diploma") + 1]
+            out = out.merge(edu.assign(
+                pct_no_hs_diploma=100 * edu[no_hs].sum(axis=1) / edu["Total:"]
+            )[["fips", "pct_no_hs_diploma"]], on="fips", how="left")
+
         frames.append(out)
     return pd.concat(frames)
+
+
+# ------------------------------------------------------------------ debt (Q6)
+def debt(counties: pd.DataFrame) -> pd.DataFrame | None:
+    """
+    Share of adults with a credit record who have any debt in collections, from
+    the Urban Institute's Debt in America county file. Static: one value, attached
+    to every year. Covers only people with a credit file; the poorest households
+    often have none, which is a known gap in the measure.
+    """
+    f = EXT / "urban" / "Debt in America County-Level Overall Debt.xlsx"
+    if not f.exists():
+        _warn(f"Urban Institute debt file missing: {f.name}")
+        return None
+    d = pd.read_excel(f, dtype={"County FIPS": str})
+    d = d[d["State Name"] == "Minnesota"].rename(columns={"County FIPS": "fips"})
+    d["pct_debt_collections"] = 100 * pd.to_numeric(d["Share with any debt in collections, All"])
+    d = counties[["fips"]].merge(d[["fips", "pct_debt_collections"]], on="fips", how="left")
+    assert d["pct_debt_collections"].notna().all(), "Urban debt file: not all 87 counties matched"
+    return d.merge(pd.DataFrame({"year": YEARS}), how="cross")
 
 
 # ------------------------------------------------------------------ site access
@@ -228,6 +275,31 @@ def site_access(pop: pd.DataFrame) -> pd.DataFrame:
     return out.drop(columns="population")
 
 
+# ------------------------------------------------------------------ LILA (Q6)
+def lila(counties: pd.DataFrame) -> pd.DataFrame | None:
+    """
+    Share of a county's population living in a low-income, low-access tract, from
+    the USDA Food Access Research Atlas (2019 vintage, 2010 tracts, 2010 weights).
+    Static: the same value is attached to every year. Built by
+    questions/q8_lila_access/build_lila.py; skipped with a warning if absent.
+      lila_share_1and10    LILA at 1 mile urban / 10 miles rural (USDA's headline)
+      lila_share_vehicle   LILA counting households without a vehicle beyond half a mile
+    """
+    f = cfg.PROCESSED / "lila_tracts_2010.parquet"
+    if not f.exists():
+        _warn("LILA tract extract missing: run questions/q8_lila_access/build_lila.py")
+        return None
+    t = pd.read_parquet(f, columns=["County", "Pop2010", "LILATracts_1And10", "LILATracts_Vehicle"])
+    t["county_name"] = t["County"].str.replace(r" County$", "", regex=True)
+    g = t.groupby("county_name").apply(
+        lambda d: pd.Series({"lila_share_1and10": (d["Pop2010"] * d["LILATracts_1And10"]).sum() / d["Pop2010"].sum(),
+                             "lila_share_vehicle": (d["Pop2010"] * d["LILATracts_Vehicle"]).sum() / d["Pop2010"].sum()}),
+        include_groups=False).reset_index()
+    g = g.merge(counties, on="county_name", how="right")
+    assert g["lila_share_1and10"].notna().all(), "Atlas county names failed to match MMG"
+    return g.drop(columns="county_name").merge(pd.DataFrame({"year": YEARS}), how="cross")
+
+
 # ------------------------------------------------------------------ main
 def main() -> None:
     print(f"Building county covariates for {YEARS}")
@@ -235,8 +307,9 @@ def main() -> None:
     pop = population(counties)
 
     df = counties.merge(pd.DataFrame({"year": YEARS}), how="cross")
-    for part in (pop, saipe(), laus(), acs(counties), site_access(pop)):
-        df = df.merge(part, on=["fips", "year"], how="left")
+    for part in (pop, saipe(), laus(), acs(counties), site_access(pop), lila(counties), debt(counties)):
+        if part is not None:
+            df = df.merge(part, on=["fips", "year"], how="left")
 
     assert len(df) == 87 * len(YEARS), f"expected {87 * len(YEARS)} rows, got {len(df)}"
     assert not df.duplicated(["fips", "year"]).any()
