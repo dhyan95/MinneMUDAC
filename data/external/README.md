@@ -10,6 +10,7 @@ census/acs/        ACS tables, named acs5_<endyear>_<table>.csv (renamed from th
                    data.census.gov export name; contents untouched)
 census/gazetteer/  Gazetteer tracts, CenPop2020 tract centres of population
 census/adjacency/  County Adjacency File 2023 (which counties border which)
+urban/             Urban Institute, Debt in America 2025, county overall-debt file
 bls/laus/          LAUS county unemployment, annual averages
 bls/               CPI food-at-home series
 mn_sdc/            MN State Demographic Center population and household estimates

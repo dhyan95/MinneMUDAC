@@ -22,7 +22,20 @@ feeding_america/
 reference/
   TFG_MinneMUDAC_Challenge_Brief.pdf        the brief
   Data_Dictionary.xlsx                      field-level dictionary for all four TFG tables
+
+mde/                       Minnesota Department of Education, sent by the organizers 1 Oct 2026
+  SNP Claim Data Sites PY24.xlsx   school meals claimed per site per month, Sep 2023 - Jun 2024
+  SNP Claim Data Sites PY25.xlsx   same, Sep 2024 - Jun 2025
+  SNP Claim Data Sites PY26.xlsx   same, Sep 2025 - Jun 2026
 ```
+
+The `mde/` files are pivot tables: one sheet each for lunch (state-funded), breakfast
+(federal) and after-school snacks, rows are school sites, columns are claim months. They
+count meals served, not eligibility, and Minnesota has served free meals to all students
+since 2023-24, so they are a child **demand** series, not a need signal. No county column:
+mapping site IDs to counties needs MDE's school directory. Nothing reads them yet. A fourth
+file, `SnpClaimSummary PY27.xlsx`, held July 2026 only for 60 sites, with a September 2026
+run date; it was deleted on 1 October as not worth the date-rule risk.
 
 The four `tfg/` tables are the same data as the bundle, split out. The bundle is kept
 because it carries the dictionary and context tabs.

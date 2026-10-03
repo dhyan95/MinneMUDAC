@@ -50,6 +50,10 @@ Full source facts are in the [registry](../../docs/DATA_SOURCES.md#source-regist
 | `n_sites_reporting`, `sites_per_10k` | food-shelf-like sites with activity that year | derived, `site_month` | no | ✅ 2022–24 |
 | `mean_km_to_site` | pop-weighted km from tract to nearest reporting site | derived, Gazetteer + CenPop2020 | no | ✅ 2022–24 |
 | `rucc_2023` | rural-urban continuum code, 1–9 | USDA ERS, via MMG file | no | ✅ |
+| `pct_hh_housing_burden` | % households paying 30%+ of income on rent or owner costs | ACS 5-yr B25070 + B25091 | no | ✅ 2022–24 (Q6 input) |
+| `pct_no_hs_diploma` | % adults 25+ without a high-school diploma or GED | ACS 5-yr B15003 | no | ✅ 2022–24 (Q6 input) |
+| `lila_share_1and10`, `lila_share_vehicle` | share of population in low-income, low-access tracts | USDA Atlas 2019, via Q8's extract | no | ✅ static (Q6 input) |
+| `pct_debt_collections` | % adults with a credit record who have debt in collections | Urban Institute, Aug 2025 | no | ✅ static (Q6 input) |
 
 ACS 5-year tables are assigned to their **end year** (2019–2023 → 2023).
 
