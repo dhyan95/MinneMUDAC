@@ -3,7 +3,8 @@
 **Division: graduate only.** No other division answers this. It is the clearest chance to
 show work the other divisions cannot.
 **Owner:** Uddam
-**Status:** foundation in progress — Atlas extract and tract crosswalk built
+**Status:** coverage analysis runs reproducibly from `analysis.py`; validate its
+generated outputs before quoting them in the deck.
 
 ---
 
@@ -29,30 +30,32 @@ sit where stores are not, the network is doing something the market does not.
 
 | what | where | grain | vintage |
 |---|---|---|---|
-| site locations | `data/processed/sites.parquet` → `tract_geoid` | **2020** census tract | current |
-| LILA flags | USDA ERS **Food Access Research Atlas** | census tract | **2019 data on 2010 tracts** |
+| site locations | `data/processed/sites.parquet` → `tract_geoid` | **2020** census tract | current; represented by tract internal points |
+| LILA and grocery-access flags | USDA ERS **Food Access Research Atlas** | census tract | **2019 data on 2010 tracts** |
 | tract↔tract crosswalk | Census **2010→2020 tract relationship file** | tract | **required** |
-| tract centroids | Census **2020 Gazetteer** `2020_Gaz_tracts_27.txt` | tract | current |
-| tract population / poverty | ACS 5-year | tract | rolling 5-year |
+| site tract internal points | Census `2026_Gaz_tracts_national.txt` | 2020-definition tract | 2026 release |
+| tract population weights | Census `CenPop2020_Mean_TR27.txt` | tract | 2020 Decennial Census |
 
-Read [BLOCK_GEOID.md](../../docs/BLOCK_GEOID.md) before writing a line of code. The whole
-question runs on that field.
+Read [BLOCK_GEOID.md](../../docs/BLOCK_GEOID.md) for the location precision limitation.
 
 ---
 
 ## Approach
 
-1. **Get the crosswalk right first.** Our geoids are 2020, the Atlas is 2010. This is the
-   single biggest methodological risk in the question and it must be solved before
-   anything else. Where a 2010 tract splits, both children inherit the flag; where tracts
-   merge, take the population-weighted majority — and **write the rule down**.
-2. **Place the sites.** `tract_geoid` is already on `sites.parquet`. Exclude the 12 ZIP
-   centroid geoids from any distance work. The 150 sites without a geoid cannot enter
-   this analysis at all. **Use the shared definition:** `qkit.sites(food_shelf_only=True,
-   reporting_only=True)` gives the 462 sites that are food-shelf-like by current type and
-   have reported at least one month. `first_yearmonth` and `last_yearmonth` say when; a
-   site whose last month is before 2026-07 has stopped reporting. Counting all 1,202
-   master rows, or the 571 that never reported, overstates the network.
+1. **Get the crosswalk right first.** Atlas flags are on 2010 tracts and site geoids are
+   2020. Each 2020 tract receives an area-weighted average of its 2010 parents using
+   Census land-area overlap; a flag is true when at least half of the known overlap
+   area is flagged. This is an **area-weighted**, not population-weighted, transfer
+   because the relationship file supplies land overlap, not population by overlap.
+   `parent_count` counts parents contributing at least 5% of the new tract's land area;
+   all-parent counts are retained separately for audit.
+2. **Place the sites.** Start from the shared food-shelf-like and ever-reported
+   definition, but exclude the current type `Agency or Tribal Nation`: it is too broad
+   for a food-shelf location measure. Keep sites with a usable activity record in the
+   latest 12 complete months (August 2025–July 2026), a Minnesota tract geoid, and no
+   ZIP-centroid geocode. This is narrower than the shared Q1/Q6 type filter.
+   `analysis.py` writes the inclusion audit and counts recent-period household activity
+   omitted from the spatial analysis.
 3. **The simple coverage number, first.** What share of Minnesota's LILA tracts contain a
    site? What share have a site within 1, 5, 10 miles? Weight by **population**, not by
    tract count — a tract is not a person.
@@ -65,27 +68,46 @@ question runs on that field.
    behave nothing like rural LILA tracts (ten miles). Split them and report separately —
    USDA's own flags come in both distance definitions (`LILATracts_halfAnd10`,
    `LILATracts_1And10`, `LILATracts_Vehicle`), and which one you pick changes the answer.
-6. **Limitations, written as analysis, not as an apology.** See below.
+6. **Limitations, written as analysis, not as an apology.** The 2020 Census Gazetteer
+   does not publish a block-centroid file at the URL previously listed in
+   `BLOCK_GEOID.md`. Until block coordinates are available, sites use the internal point
+   of their assigned tract. `analysis.py` measures the maximum distance from that point
+   to any boundary vertex for each site tract; this is a conservative upper bound on
+   within-tract displacement, not the observed site-location error.
 
 ---
 
-## What the preview already shows
+## Reproducible outputs
 
-From `python src/eda.py`:
+Run `python questions/q8_lila_access/analysis.py` after the shared cleaning pipeline
+and crosswalk build. It selects sites using `state_fips == "27"`, the shared
+food-shelf-like and ever-reported flags, a latest report during August 2025–July 2026,
+and a tract geocode that is not a ZIP centroid. It additionally excludes the broad
+current `Agency or Tribal Nation` category. The generated
+`q8_site_definition_audit.csv` records the counts and recent household activity left
+out by this rule.
 
-- **1,051 geocoded Minnesota sites sit in only 512 distinct census tracts**, out of
-  roughly 1,500 tracts in the state. Most of Minnesota's tracts contain no site at all.
-- Sites **cluster**: 325 of those 512 tracts hold more than one site, and one tract holds
-  **eight**. A county with many sites is not necessarily a county with spread-out sites,
-  and that distinction is the heart of this question.
-- **12.5% of organizations have no `block_geoid`** and cannot be placed — but they
-  account for only **0.9% of all households served**, so the limitation is small. Check
-  whether they are disproportionately rural.
-- Counties carrying the most households per site over the last 12 months: **Washington,
-  Steele, Anoka, Isanti, Olmsted, Renville**.
+The same run creates population-weighted distance bands by LILA and urban/rural status,
+alternative LILA definitions, the urban/rural grocery-access comparison, and the
+within-tract location-displacement bound. These outputs—not the earlier notebook
+preview or the all-master-row EDA—are the source for final numbers.
 
-The clustering number is a good opening slide for this question: *512 tracts out of
-~1,500, and two thirds of those hold more than one site.*
+In the current run, **402 sites** meet the Q8 definition: 415 shared-type reporters
+had a report in the latest 12 months, then 13 broad `Agency or Tribal Nation` entries
+were excluded. None of the remaining sites lack a tract geoid or use a ZIP centroid;
+sites excluded from coverage account for **0.004%** of recent-period households in the
+food-shelf-like activity panel. Within five straight-line miles are **37.0% of rural
+LILA population**, **98.1% of urban LILA population**, **55.3% of rural non-LILA
+population**, and **95.2% of urban non-LILA population**. These are proximity
+estimates, not evidence of capacity, client usage, or service eligibility.
+
+The corrected crosswalk has **1,479 2020 tracts with one significant 2010 parent,
+23 with multiple significant parents, and three with no parent covering 5% of tract
+land area**. Four zero-population tracts are omitted from population-weighted results
+and maps. Among the 358 distinct site tracts, the maximum within-tract displacement
+bound has a median of **3.1 miles**, a 90th percentile of **14.4 miles**, and a maximum
+of **56.4 miles**. This is a conservative projected-distance bound, not an estimate of
+actual site-coordinate error.
 
 ---
 
@@ -96,27 +118,26 @@ acknowledgement.
 
 | limitation | how to quantify it |
 |---|---|
-| Atlas is 2019 data on 2010 tracts; our geoids are 2020 | how many MN tracts changed between 2010 and 2020? |
-| Straight-line distance, not drive time | pick a few rural cases and compare against a routing estimate |
+| Atlas is 2019 data on 2010 tracts; our geoids are 2020 | 23 tracts have multiple significant 2010 parents; 1,479 have one and 3 have no parent contributing at least 5% of land area |
+| Straight-line distance, not drive time | the current analysis reports straight-line distance only |
 | No site hours, capacity or eligibility data | state it; presence is not access |
-| 12.5% of sites unplaceable | **0.9% of households served** (already computed in `analysis.py`) — now check whether they are disproportionately rural |
-| 12 ZIP-centroid geoids | excluded from distance; say how many and where |
-| Tract is where the **site** is, not where clients live | same limitation as everywhere else in this project |
+| Sites excluded from the spatial definition | 13 broad type entries are excluded; the remaining excluded sites account for 0.004% of recent-period households |
+| ZIP-centroid locations | 0 among the latest-12-month Q8 site set; verified in `q8_site_definition_audit.csv` |
+| Tract point represents the **site** | report the maximum within-tract displacement bound from `analysis.py`; it is not the actual site error |
 
-The pattern to follow is in that fourth row. "12.5% of rows are missing" is a weak
-answer; "the unplaceable sites are 0.9% of households served, and they are/are not
-disproportionately rural" is a strong one. Do the same for every other row in the table.
+Use activity share and the displacement bound from the generated tables to give these
+limitations magnitudes; the all-master-row missing-geoid percentage is not a substitute.
 
 ---
 
 ## Deliverables
 
-- [ ] `analysis.py` rebuilding every number from `data/processed/` + `data/external/`
+- [x] `analysis.py` rebuilding coverage, sensitivity, and limitation numbers from `data/processed/` + `data/external/`
 - [x] The crosswalk rule, written down and defensible
-- [ ] Population-weighted LILA coverage, by distance band and by urban/rural
-- [ ] The retail-pattern comparison — the answer to "does the network fill the gap"
+- [x] Population-weighted LILA coverage, by distance band and by urban/rural
+- [x] The retail-pattern comparison — grocery-access coverage by urban/rural group
 - [x] One map for the deck
-- [ ] A limitations section with **magnitudes**
+- [x] A limitations section with **magnitudes**
 
 ### Map
 
@@ -128,8 +149,9 @@ Twin Cities zoom versions:
 `outputs/figures/08_q8_lila_site_presence_twin_cities.png`. The distance
 coverage cell saves `outputs/figures/08_q8_population_weighted_distance.png`.
 The maps shade 2020 tracts by the USDA half-mile/10-mile LILA flag and
-food-shelf-type site presence. Presence is assigned at tract level, not shown as
-an exact address or service radius.
+recent reporting food-shelf site presence. Presence is assigned at tract level, not
+shown as an exact address or service radius. The notebook excludes zero-population
+tracts and uses the same latest-12-month site definition as `analysis.py`.
 Notebook results are exploratory. Reproduce any reported findings in `analysis.py`
 before treating them as final results.
 
@@ -139,3 +161,6 @@ Run `python questions/q8_lila_access/build_lila.py` for the initial build. The
 Minnesota Atlas extract and 2020 crosswalk are cached as Parquet files in
 `data/processed/`; later runs reuse them unless an available source file is newer.
 Use `--force` to explicitly rebuild the caches. `analysis.py` uses the same cache.
+The analysis script writes reproducible tables to `outputs/tables/` and the
+population-weighted distance figure to
+`outputs/figures/08_q8_population_weighted_distance.png`.
