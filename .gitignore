@@ -15,5 +15,7 @@ venv/
 .DS_Store
 Thumbs.db
 
-# Massive USDA files (85MB)
+# Large third-party source files; keep raw downloads out of Git
 data/external/usda/FoodAccessResearchAtlasData2019.xlsx
+data/external/usda/snap_retailers/
+data/external/osm/minnesota-261003-free/
