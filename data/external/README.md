@@ -15,6 +15,7 @@ bls/laus/          LAUS county unemployment, annual averages
 bls/               CPI food-at-home series
 mn_sdc/            MN State Demographic Center population and household estimates
 usda/      Food Access Research Atlas, Rural-Urban Continuum Codes, FNS SNAP tables
+osm/       OpenStreetMap geographic extracts, kept locally and filtered by analysis scripts
 mn_dhs/    Minnesota SNAP county caseloads
 ```
 
