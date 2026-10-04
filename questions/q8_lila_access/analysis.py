@@ -421,6 +421,49 @@ def main() -> None:
     fig.savefig(output, dpi=220, bbox_inches="tight")
     plt.close(fig)
     print(f"  -> {output.relative_to(ROOT)}")
+
+    grocery_eligible = distance_data[
+        distance_data["population"].gt(0)
+        & distance_data["nearest_site_miles"].notna()
+        & distance_data["LAhalfand10"].notna()
+        & distance_data["Urban"].notna()
+    ]
+    fig, axes = plt.subplots(1, 2, figsize=(11, 5), sharey=True)
+    distance_grid = np.linspace(0, 20, 201)
+    access_styles = {
+        True: ("Low grocery access", "#d95f02"),
+        False: ("Not low grocery access", "#1b9e77"),
+    }
+    for ax, (urban, geography) in zip(axes, ((False, "Rural"), (True, "Urban"))):
+        geographic_group = grocery_eligible[grocery_eligible["Urban"].eq(urban)]
+        for low_access, (label, color) in access_styles.items():
+            group = geographic_group[geographic_group["LAhalfand10"].eq(low_access)]
+            if group.empty:
+                continue
+            weights = group["population"].to_numpy(dtype=float)
+            miles = group["nearest_site_miles"].to_numpy(dtype=float)
+            cumulative = [
+                100 * weights[miles <= cutoff].sum() / weights.sum()
+                for cutoff in distance_grid
+            ]
+            ax.plot(distance_grid, cumulative, label=label, color=color)
+        ax.set_title(geography)
+        ax.set_xlim(0, 20)
+        ax.set_ylim(0, 100)
+        ax.set_xticks([0, 1, 5, 10, 15, 20])
+        ax.grid(alpha=0.25)
+        ax.legend()
+    axes[0].set_ylabel("Cumulative share of tract population (%)")
+    fig.supxlabel("Straight-line miles to nearest food-shelf site")
+    fig.suptitle(
+        "Population-weighted distance by USDA grocery-access status\n"
+        "(LAhalfand10 definition)"
+    )
+    fig.tight_layout()
+    grocery_output = cfg.FIG / "08_q8_grocery_access_distance.png"
+    fig.savefig(grocery_output, dpi=220, bbox_inches="tight")
+    plt.close(fig)
+    print(f"  -> {grocery_output.relative_to(ROOT)}")
     print("\nPopulation-weighted coverage:")
     print(coverage.to_string(index=False))
     print("\nTract-point location bound (maximum displacement within assigned tract):")
