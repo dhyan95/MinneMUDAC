@@ -59,11 +59,13 @@ Read [BLOCK_GEOID.md](../../docs/BLOCK_GEOID.md) for the location precision limi
 3. **The simple coverage number, first.** What share of Minnesota's LILA tracts contain a
    site? What share have a site within 1, 5, 10 miles? Weight by **population**, not by
    tract count — a tract is not a person.
-4. **The retail-pattern comparison — this is the real question.** Compare the
-   distribution of food shelves against the distribution of grocery stores. If both are
-   concentrated in the same tracts, the network repeats the retail pattern. Quantify it:
-   correlation of site density with store density, or a like-for-like coverage rate for
-   LILA and non-LILA tracts.
+4. **The retail-pattern comparison — this is the real question.** Compare nearest
+   food-shelf and grocery-store distances at the same tract population centers. USDA
+   SNAP retailer locations provide a supermarket/large-grocery set and a broader
+   grocery-type sensitivity set; OpenStreetMap supermarket features provide an
+   independently mapped sensitivity check. These store-point comparisons directly test
+   whether the two networks have similar proximity patterns, but do not establish that
+   food shelves substitute for grocery stores.
 5. **Differences across locations.** Urban LILA tracts (low access means half a mile)
    behave nothing like rural LILA tracts (ten miles). Split them and report separately —
    USDA's own flags come in both distance definitions (`LILATracts_halfAnd10`,
@@ -91,6 +93,42 @@ The same run creates population-weighted distance bands by LILA and urban/rural 
 alternative LILA definitions, the urban/rural grocery-access comparison, and the
 within-tract location-displacement bound. These outputs—not the earlier notebook
 preview or the all-master-row EDA—are the source for final numbers.
+
+### Direct grocery-store comparison
+
+The historical USDA SNAP retailer CSV and Geofabrik Minnesota OSM shapefiles are local
+source files, not Git inputs. Prepare them with:
+
+```bash
+python questions/q8_lila_access/prepare_grocery_stores.py \
+  --snap-csv "/path/to/Historical SNAP Retailer Locator Data 2005-2025.csv" \
+  --osm-dir "/path/to/minnesota-261003-free"
+python questions/q8_lila_access/compare_retailer_distances.py
+```
+
+The SNAP extract is filtered to retailers active on 2025-12-31. The primary
+`large_grocery` scope includes Supermarket, Super Store, and Large Grocery Store
+retailer types; `broad_grocery` additionally includes Medium Grocery Store, Small
+Grocery Store, and Combination Grocery/Other. The latter is a sensitivity set, not a
+claim that every record is exclusively a grocery store. The 2026-10-03 OSM extract uses
+`supermarket` features from both point and polygon POI layers; polygon stores are
+represented by an interior point and same-name features within 100 meters are
+deduplicated. The prepared point data and tract-level distances are written to ignored
+`data/processed/` files. `outputs/tables/q8_retail_pattern_comparison.csv` compares
+population-weighted nearest-store and nearest-food-shelf distances, five-mile coverage,
+and the tract-level weighted correlation between those distances by LILA and
+urban/rural group.
+
+Neither source is a complete inventory of all grocery stores: SNAP omits non-SNAP
+retailers, while OSM completeness depends on mapping. Their dates also differ from the
+food-shelf activity window. Treat the comparison as evidence about the mapped retailer
+sets and report the source-specific results separately.
+
+In the current comparison, the **rural LILA** population-weighted share within five
+miles is **37.0% for food shelves**, versus **20.5% for SNAP large-grocery retailers**
+and **28.1% for OSM supermarkets**. The broader SNAP grocery-type set reverses the
+comparison: **47.0%** is within five miles of one of those retailers. This sensitivity
+shows why the retailer definition matters; it does not establish service substitution.
 
 In the current run, **402 sites** meet the Q8 definition: 415 shared-type reporters
 had a report in the latest 12 months, then 13 broad `Agency or Tribal Nation` entries
