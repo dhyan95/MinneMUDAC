@@ -148,6 +148,13 @@ Twin Cities zoom versions:
 `outputs/figures/08_q8_lila_site_presence.png` and
 `outputs/figures/08_q8_lila_site_presence_twin_cities.png`. The distance
 coverage cell saves `outputs/figures/08_q8_population_weighted_distance.png`.
+The notebook also creates `outputs/figures/08_q8_lila_site_presence_interactive.html`,
+a zoomable map that shows recent site counts by county at statewide scale and
+switches to tract categories as the user zooms in. The color key updates with
+the map scale, and the layer control toggles tract categories; hover/click gives
+feature-level details. Open the HTML file in a browser with internet access to
+zoom in and capture local screenshots; internet is used for Leaflet assets and
+basemap tiles. County boundaries are dissolved from the same TIGER tract polygons.
 The maps shade 2020 tracts by the USDA half-mile/10-mile LILA flag and
 recent reporting food-shelf site presence. Presence is assigned at tract level, not
 shown as an exact address or service radius. The notebook excludes zero-population
