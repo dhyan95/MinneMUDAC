@@ -147,10 +147,7 @@ coverage, and the USDA grocery-access comparison; it also creates statewide and
 Twin Cities zoom versions:
 `outputs/figures/08_q8_lila_site_presence.png` and
 `outputs/figures/08_q8_lila_site_presence_twin_cities.png`. The distance
-coverage cell saves `outputs/figures/08_q8_population_weighted_distance.png`;
-`outputs/figures/08_q8_grocery_access_distance.png` compares the cumulative
-population distance curves for USDA low- and non-low-grocery-access tracts,
-separately for urban and rural Minnesota.
+coverage cell saves `outputs/figures/08_q8_population_weighted_distance.png`.
 The notebook also creates `outputs/figures/08_q8_lila_site_presence_interactive.html`,
 a zoomable map that shows recent site counts by county at statewide scale and
 switches to tract categories as the user zooms in. The color key updates with
