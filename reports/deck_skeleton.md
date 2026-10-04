@@ -1,4 +1,4 @@
-# Slide 1 — Why do food-insecurity rates differ across Minnesota counties?
+# Slide 1 — Across counties, a 1% larger food-insecure population is associated with about 1.2% more food-shelf activity
 
 # Slide 2 — How do food prices relate to food shelf demand?
 
