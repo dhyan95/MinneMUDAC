@@ -7,7 +7,8 @@ Run from the repository root:
 The Atlas contains 2019-era measures on 2010 tract boundaries. The site panel
 uses 2020 tract GEOIDs, so each 2020 tract receives an area-weighted average of
 its 2010 parents. A flag is true when that average is at least 0.5. This makes
-splits inherit the parent flag and makes merges an explicit majority rule.
+splits inherit the parent flag and gives merges an area-weighted majority rule.
+Parent counts include only 2010 tracts covering at least 5% of a 2020 tract.
 """
 from __future__ import annotations
 
@@ -34,6 +35,8 @@ LILA_FLAGS = [
     "LILATracts_1And20",
     "LILATracts_Vehicle",
 ]
+ACCESS_FLAGS = ["Urban", "LAhalfand10", "LA1and10"]
+CROSSWALK_FLAGS = [*LILA_FLAGS, *ACCESS_FLAGS]
 
 
 def _cache_is_current(output: Path, sources: list[Path]) -> bool:
@@ -97,27 +100,34 @@ def crosswalk(atlas: pd.DataFrame, force: bool = False) -> pd.DataFrame:
         }
     )
     rel["area_weight"] = pd.to_numeric(rel["AREALAND_PART"], errors="coerce")
-    rel = rel[["tract_geoid", "tract_geoid_2010", "area_weight"]]
+    rel["tract_area"] = pd.to_numeric(rel["AREALAND_TRACT_20"], errors="coerce")
+    rel = rel[["tract_geoid", "tract_geoid_2010", "area_weight", "tract_area"]]
     rel = rel.merge(
-        atlas[["tract_geoid_2010", *LILA_FLAGS]],
+        atlas[["tract_geoid_2010", *CROSSWALK_FLAGS]],
         on="tract_geoid_2010",
         how="left",
         validate="many_to_one",
     )
-    if rel[LILA_FLAGS].isna().all(axis=None):
+    if rel[CROSSWALK_FLAGS].isna().all(axis=None):
         raise ValueError("No relationship rows matched the Minnesota Atlas")
 
     rel["area_weight"] = rel["area_weight"].fillna(0)
-    grouped = rel.groupby("tract_geoid", sort=False)
-    out = grouped["area_weight"].agg(
-        parent_area_weight="sum", parent_count="nunique"
-    ).reset_index()
-    for flag in LILA_FLAGS:
+    rel["area_share"] = rel["area_weight"] / rel["tract_area"].where(rel["tract_area"].gt(0))
+    rel["significant_parent"] = rel["area_share"].ge(0.05)
+    out = (rel.groupby("tract_geoid", sort=False)
+           .agg(parent_area_weight=("area_weight", "sum"),
+                parent_count_all=("tract_geoid_2010", "nunique"))
+           .reset_index())
+    significant_counts = (rel[rel["significant_parent"]]
+                          .groupby("tract_geoid")["tract_geoid_2010"].nunique())
+    out["parent_count"] = (out["tract_geoid"].map(significant_counts)
+                           .fillna(0).astype(int))
+    for flag in CROSSWALK_FLAGS:
         values = pd.to_numeric(rel[flag], errors="coerce")
-        weighted = (rel.assign(_value=values * rel["area_weight"])
-                    .groupby("tract_geoid")["_value"].sum())
-        parent_weight = out.set_index("tract_geoid")["parent_area_weight"]
-        share = weighted.reindex(parent_weight.index) / parent_weight
+        valid_weight = rel["area_weight"].where(values.notna(), 0)
+        weighted = (values * valid_weight).groupby(rel["tract_geoid"]).sum()
+        parent_weight = valid_weight.groupby(rel["tract_geoid"]).sum()
+        share = weighted.reindex(parent_weight.index) / parent_weight.where(parent_weight.gt(0))
         out[f"{flag}_share"] = share.to_numpy()
         out[flag] = pd.array(
             share.ge(0.5).where(parent_weight.gt(0)), dtype="boolean"
@@ -142,7 +152,7 @@ def main() -> None:
     print(f"  -> {ATLAS_OUT.relative_to(cfg.ROOT)} ({len(atlas)} rows)")
     print(f"  -> {LOOKUP_OUT.relative_to(cfg.ROOT)} ({len(pd.read_csv(LOOKUP_OUT))} rows)")
     print(f"  -> {CROSSWALK_OUT.relative_to(cfg.ROOT)} ({len(out)} 2020 tracts)")
-    print("2020 tracts by number of 2010 parents:")
+    print("2020 tracts by number of significant 2010 parents (>=5% area):")
     print(out["parent_count"].value_counts().sort_index().to_string())
 
 

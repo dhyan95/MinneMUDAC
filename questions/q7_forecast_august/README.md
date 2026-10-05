@@ -2,8 +2,9 @@
 
 **Division:** undergraduate and graduate. **Graduate addendum required** — see
 [addendum.md](addendum.md).
-**Owner:** Uddam
-**Status:** not started
+**Ownership:** Dhyan — county forecasts; Uddam — graduate age-group addendum
+**Status:** age-group seasonal exploration complete; county forecast and age-group
+backtests remain outstanding.
 
 ---
 
@@ -30,10 +31,15 @@ on the whole repository, not just on this folder.
 
 ## The ask, in our words
 
-Predict **August 2026** for **each Minnesota county**, for each of the three metrics:
-visits, pounds distributed, individuals served.
+Predict **August 2026** for each Minnesota county: visits (`HouseholdsReg`), pounds
+distributed (`PoundsReg`), and individuals served (`IndividualsReg`).
 
-The graduate addendum adds separate predictions for **children, seniors and adults**.
+The graduate addendum requires separate predictions for **children** (`ChildrenReg`),
+**seniors** (`SeniorsReg`), and **adults** (`AdultsReg`). The brief says a separate
+Individuals prediction is no longer required for the age-group addendum because it is
+the sum of those three predictions. This does not remove Individuals from the main Q7
+ask; derive or reconcile it from the age predictions rather than treating it as an
+additional independent age-group forecast.
 
 ---
 
@@ -42,9 +48,11 @@ The graduate addendum adds separate predictions for **children, seniors and adul
 Everything you need is in `data/processed/county_month.parquet`: 86 counties × 55 months,
 2022-01 to 2026-07, with `n_sites_reporting` alongside every metric.
 
-Age splits (`children`, `adults`, `seniors`) are in the same table, and they sum exactly
-to `individuals` in every row — we checked, there are **zero** mismatches. That makes the
-addendum a share problem rather than three separate forecasts.
+Age splits (`children`, `adults`, `seniors`) are in the same table and sum to
+`individuals` in complete rows. The addendum now asks for forecasts of the three age
+groups themselves; the prior suggestion to forecast Individuals first and allocate it
+by age shares is not required. Age-share and seasonal analysis can still inform the
+forecasts, but evaluate the age predictions directly.
 
 ---
 
@@ -116,7 +124,8 @@ method needs an adjustment for it.
 
 ## Deliverables
 
-- [ ] `analysis.py` producing a county × metric prediction table for August 2026
+- [ ] `analysis.py` producing August 2026 predictions for the three main metrics and
+      the three graduate age groups; derive Individuals from age groups where applicable
 - [ ] Backtest results for 2023, 2024 and 2025 against every baseline
 - [ ] A stated uncertainty range, not just a point estimate
 - [ ] [addendum.md](addendum.md) completed — children, seniors, adults, separately
