@@ -3,7 +3,7 @@
 **Division:** undergraduate and graduate. **Graduate addendum required** — see
 [addendum.md](addendum.md).
 **Owner:** Valentino
-**Status:** not started
+**Status:** index built, divergence and stability done, addendum written; `analysis.py` and slides next
 
 ---
 
@@ -103,11 +103,56 @@ From `python src/eda.py`:
 
 ---
 
+## Findings (2 October)
+
+The numbers come from `analysis.py`. The definition, the inputs argued one by one, and
+the predictions written before each result are in `notebooks/q6_exploration.ipynb`; the
+falsifiability material is in [addendum.md](addendum.md).
+
+**The measure.** A household is in need if, at any point in the past year, it worried
+about running out of food, regardless of whether it sought help. The county index is an
+equal-weight mean of within-year z-scores of seven public inputs, none of which is
+food-shelf demand or an input to Map the Meal Gap: SNAP households, no-vehicle
+households, senior poverty, housing-cost burden, adults without a diploma, low-income
+low-access share (USDA, 1-and-10), debt in collections.
+
+| question | answer |
+|---|---|
+| Compare and contrast against the three metrics | Like MMG, the index does not predict recorded activity per resident: Spearman 0.07 (pounds) to 0.14 (individuals) against activity per 1,000, the same for all three metrics. It agrees with MMG's rate broadly (Spearman 0.77) and differs on five of the top ten counties. |
+| Where they diverge | Need outranks recorded activity most in Nobles, Grant, Wilkin (no recorded activity; need rank 26 of 87, predicted before the index was built), Benton, Wadena, Chippewa, Todd. The reverse in Washington, Dodge, Cook, Houston. Mahnomen is first on need and records more than MMG predicts: a high-need county that is reached. |
+| What explains the divergence | Two barriers: households without internet (+0.41 per SD, p = 0.005, clears a three-test Bonferroni bar) and distance to the nearest site (+0.23, p = 0.025, the hypothesis written first). More of either widens the gap between need and recorded activity. Rural loses its effect once no-internet is in (they overlap, 0.65). Limited English and non-citizens (0.93 correlated) come to nothing together; seniors and site density show nothing. The barriers explain 17% of the divergence (adjusted 14%), against 5% of Q1's residual with the same variables. |
+| Stability | The top seven (Mahnomen, Clearwater, Beltrami, Wadena, Ramsey, Pine, Nobles) hold under every variant and in at least 71% of 500 random weightings; places 8 to 10 rotate among six counties. Wilkin is weight-sensitive (2nd to 77th), an argument for keeping equal weights. |
+
+**No-internet is both a driver of need and a barrier** (step 5c): with activity held
+fixed, counties with more households without internet score higher on the index (+0.27 per
+SD, p < 0.001); with the index held fixed, they record less activity (−0.26, p = 0.049). The
+second half is what makes it a barrier, and it holds narrowly.
+
+**Against MMG, head to head** (step 6): county size explains 85.3% of recorded activity;
+MMG's rate adds 0.6 points, the index 0.4, both together 0.7, neither significant with the
+other in. The two residual rankings correlate 0.99. Recorded activity follows how many
+people live in a county and almost nothing else, whichever way need is measured. The same
+three barriers that explain 10.5% of the index's gap on their own explain 1.0% of MMG's
+(Q1 appendix): the index is higher where internet is scarce, MMG's rate less so.
+
+**Checks written in advance, none fired:** index on poverty rate R² = 0.60 (bar 0.9);
+4 of the top ten shared with the poverty top ten; first principal component 41% of input
+variance with loadings 0.20 to 0.49. SNAP and debt are the inputs closest to the index
+(0.79 each) and to poverty; said on the slide.
+
+**Caveats to state:** the index ranks counties, it does not estimate the share of
+households in need; the inputs are 5-year ACS averages and two static sources (Atlas
+2019, debt 2025); debt covers only people with a credit file; 87 counties see only large
+effects; recorded activity is where people arrive, not whether need was met.
+
+---
+
 ## Deliverables
 
-- [ ] `analysis.py` that rebuilds the index from `data/processed/` + `data/external/`
-- [ ] The index itself, documented input by input, with weights and the reason for each
-- [ ] A county-level divergence table against all three metrics
-- [ ] One map for the deck
-- [ ] Stability analysis under alternative weights
-- [ ] [addendum.md](addendum.md) completed — it is graded separately
+- [x] `analysis.py` that rebuilds the index from `data/processed/` + `data/external/`
+- [x] The index itself, documented input by input, with weights and the reason for each (notebook step 0, addendum §2)
+- [x] A county-level divergence table against all three metrics (`outputs/tables/q6_divergence.csv`)
+- [x] One map for the deck (`outputs/figures/q6_maps.png`)
+- [x] Stability analysis under alternative weights (`q6_stability.csv`, `q6_stability_random.csv`)
+- [x] [addendum.md](addendum.md) completed — it is graded separately
+- [ ] Slides

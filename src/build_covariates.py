@@ -185,6 +185,26 @@ def acs(counties: pd.DataFrame) -> pd.DataFrame:
                 pct_no_hs_diploma=100 * edu[no_hs].sum(axis=1) / edu["Total:"]
             )[["fips", "pct_no_hs_diploma"]], on="fips", how="left")
 
+        # Q6 barriers in neither need model: limited English, no internet, non-citizens.
+        lang = _read_acs("B16002", y, counties)
+        if lang is not None:
+            lim = [c for c in lang.columns if c.endswith("|Limited English speaking household")]
+            out = out.merge(lang.assign(
+                pct_hh_limited_english=100 * lang[lim].sum(axis=1) / lang["Total:"]
+            )[["fips", "pct_hh_limited_english"]], on="fips", how="left")
+
+        net = _read_acs("B28002", y, counties)
+        if net is not None:
+            out = out.merge(net.assign(
+                pct_hh_no_internet=100 * net["No Internet access"] / net["Total:"]
+            )[["fips", "pct_hh_no_internet"]], on="fips", how="left")
+
+        cit = _read_acs("B05001", y, counties)
+        if cit is not None:
+            out = out.merge(cit.assign(
+                pct_noncitizen=100 * cit["Not a U.S. citizen"] / cit["Total:"]
+            )[["fips", "pct_noncitizen"]], on="fips", how="left")
+
         frames.append(out)
     return pd.concat(frames)
 

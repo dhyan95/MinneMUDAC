@@ -158,7 +158,12 @@ adjacency, with each covariate alone, with residuals from food-shelf-only sites 
 -0.13, p = 0.07), and in a one-step model. The site count is the strongest single variable
 (+0.11, p = 0.06) and weakens distance when added, because counties with many sites have
 short distances. Moran's I on the residuals is 0.06 (p = 0.37): no general spatial
-pattern, so the red/blue border pairs are examples, not evidence of spillover.
+pattern. Two direct tests agree: counties recording less than need predicts border
+counties recording more no oftener than chance (join counts, p = 0.88), and pooling
+counties with their neighbours tightens the residuals only weakly more than random groups
+(p = 0.07). The red/blue border pairs are examples, not evidence of spillover. Three
+barriers from Q6 (limited English, no internet, non-citizens) add 1.6 points of R² here
+and none is significant; against the Q6 need index the same three explain 10.5%.
 
 **Caveats to state:**
 

@@ -251,6 +251,45 @@ cross-county story would predict.
 
 ---
 
+## Q6 — Valentino (2 October)
+
+Done except slides: `questions/q6_divergence_measure/analysis.py` rebuilds every number,
+`addendum.md` is filled in, the README carries the findings. The reasoning, with the
+predictions written before each result, is `notebooks/q6_exploration.ipynb`.
+
+**The definition:** a household is in need if, at any point in the past year, it worried
+about running out of food, regardless of whether it sought help (the first item of the
+USDA food-security survey). **The rejection criterion:** survey our highest-need
+counties; if the worry is no more common there than elsewhere, we were wrong. Everyone
+should be able to say both without notes.
+
+**The index:** equal-weight mean of within-year z-scores of seven public inputs, none of
+them demand or an MMG input (SNAP households, no vehicle, senior poverty, housing-cost
+burden, no diploma, LILA share, debt in collections).
+
+| finding | number |
+|---|---|
+| Wilkin, predicted before the index existed at about the 70th percentile of need | rank 26 of 87, the 71st percentile |
+| the index against activity per 1,000 residents | Spearman 0.07 to 0.14, all three metrics: recorded demand does not rise with need |
+| the index against MMG's rate | Spearman 0.77; five of the top ten differ |
+| need outranks recorded activity most in | Nobles, Grant, Wilkin, Benton, Wadena, Chippewa, Todd |
+| the reverse | Washington, Dodge, Cook, Houston |
+| Mahnomen | first on need and above the Q1 line: a high-need county that is reached |
+| stable top seven under every variant and in at least 71% of 500 random weightings | Mahnomen, Clearwater, Beltrami, Wadena, Ramsey, Pine, Nobles; places 8-10 rotate |
+| what explains the divergence | households without internet (+0.41 per SD, p = 0.005) and distance to a site (+0.23, p = 0.025); rural absorbed by no-internet; 17% of the divergence explained, against 5% of Q1's residual with the same variables |
+| no-internet is both | a driver of need (index higher where internet is scarce, p < 0.001) and a barrier (less activity for a given need, p = 0.049) |
+| against MMG head to head | county size explains 85% of recorded activity; MMG adds 0.6 points, the index 0.4; the two residual rankings correlate 0.99. Activity follows population, whichever way need is measured |
+
+Checks written in advance, none fired: index on poverty rate R² 0.60 (bar 0.9); first
+principal component 41%. Three new ACS sources on 2 October (limited English, no
+internet, non-citizens), registered; `build_covariates.py` loads them. Caveats: ranks counties, does not estimate a share; debt covers
+only people with a credit file; 87 counties see only large effects.
+
+**Q1 addition (2 October):** two direct tests of the border story next to Moran's I.
+Join counts: red counties border blue ones no more than chance (10 vs 13.5 expected,
+p = 0.88). Pooling counties with their neighbours tightens the residuals more than random
+groups do, weakly (p = 0.07). The border pairs on the chart are examples, not evidence.
+
 ## Q4 — Dhyan (`dhyan_branch`, not merged)
 
 Two notebooks. `q4_exploration.ipynb` is Dhyan's draft. `q4_advisor_followup.ipynb` answers
@@ -456,12 +495,13 @@ number by the end of the week is what gets descoped, decided as a team.
 
 | # | task | note |
 |---|---|---|
-| 1 | Interpret the sub-question 4 output | which signs match the hypotheses; what R² = 0.03 means; whether the three metrics agree |
-| 2 | Report the log-log fit as the Q1 headline | chart and table are in the notebook (cells 7–8); read them and write the sentence |
-| 3 | Moran's I on the residuals | needs the Census county adjacency file and a registry row; write the predicted sign first |
-| 4 | Port Q1 into `analysis.py` | it stops at Step 3 today |
-| 5 | Update the Q1 README | status line and deliverables |
-| 6 | **Q6: design the need index** | write the falsifiable definition before any result exists |
+| 1 | ~~Interpret the sub-question 4 output~~ | done 29 September |
+| 2 | ~~Report the log-log fit as the Q1 headline~~ | done 29 September |
+| 3 | ~~Moran's I on the residuals~~ | done 29 September; join counts and pooling added 2 October |
+| 4 | ~~Port Q1 into `analysis.py`~~ | done 30 September |
+| 5 | ~~Update the Q1 README~~ | done 30 September |
+| 6 | ~~**Q6: design the need index**~~ | done 1-2 October: notebook, `analysis.py`, addendum, README |
+| 9 | Q1 and Q6 slides | the numbers and figures are in `outputs/`; pick the two charts and the one table per question |
 | 7 | ~~Panel: add `is_food_shelf_like` and last active month to `sites.parquet`~~ | done 30 September, see open decision 6 |
 | 8 | Panel: look into February 2022 | for Q4 |
 
