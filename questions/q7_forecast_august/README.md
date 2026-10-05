@@ -94,7 +94,8 @@ python questions/q7_forecast_august/analysis.py
 
 For an interactive walkthrough of the data checks, backtests, forecasts and diagnostics,
 open and run [the Q7 notebook](../../notebooks/q7_forecast_august.ipynb) from top to
-bottom. The notebook calls the same analysis script; it does not implement a separate
+bottom. It includes a rubric-aligned county RMSE chart for the five prediction-scored
+outcomes. The notebook calls the same analysis script; it does not implement a separate
 forecasting pipeline.
 
 It writes:
