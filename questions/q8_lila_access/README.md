@@ -119,6 +119,13 @@ population-weighted nearest-store and nearest-food-shelf distances, five-mile co
 and the tract-level weighted correlation between those distances by LILA and
 urban/rural group.
 
+The notebook visualizes this comparison in
+`outputs/figures/08_q8_retail_pattern_comparison.png`: one panel compares
+population-weighted five-mile coverage across the food-shelf and grocery sets; the
+other shows the tract-level weighted distance correlations. Positive correlation means
+tracts farther from grocery retailers also tend to be farther from food shelves. This
+describes spatial pattern similarity, not substitution or causation.
+
 Neither source is a complete inventory of all grocery stores: SNAP omits non-SNAP
 retailers, while OSM completeness depends on mapping. Their dates also differ from the
 food-shelf activity window. Treat the comparison as evidence about the mapped retailer
