@@ -1,109 +1,173 @@
-# Status — end of week 1, plan for week 2
+# Status — end of week 2, plan for week 3
 
-Updated 28 September 2026, after the meeting with the advisor. Checked against `main` at
-`943c68e`, `uddam-branch` at `54043ed` and `dhyan_branch` at `e123861`.
+Updated 4 October 2026, for the advisor meeting on 5 October. Checked against `main` at
+`b1affc2`, `uddam-branch` at `0ad5462` (Q7, not merged) and `dhyan_branch` at `547a141`
+(Q4 and Q5, not merged).
 
-**Deadline: Saturday 17 October 2026.** 19 days left. Day 7 of 26.
-
----
-
-## What changed on 28 September
-
-The advisor raised four points about Q4. All four are answered in a new notebook,
-`notebooks/q4_advisor_followup.ipynb`, on `dhyan_branch`.
-
-| The advisor asked | Answer |
-|---|---|
-| Run HAC with a 12-month window | Done. It changes the standard errors by less than 10% and none of the conclusions. The window was never the problem. |
-| Is a 4 to 6 month delay too late? | Yes. The data does not support it. |
-| Could something else be interacting? | Yes. Activity jumped 20% in one month, March 2023. That was the month of the last extra SNAP payment in Minnesota; benefits fell in April. |
-| Redo the county split by metro | Done. Cost and metro are largely the same split, and neither matters once county size is removed. |
-
-**The Q4 headline changes.** "Demand rises 4 to 6 months after prices rise" is withdrawn.
-The details are in the Q4 section below.
-
-**The order of work changes.** Q5 should be done before Q4 is finished. The reason is in
-the Q5 section.
+**Deadline: Friday 17 October 2026.** 13 days left. Week 3 of 4 starts Monday.
 
 ---
 
-## Open decisions
+## Where we are, in one table
 
-Carried over from the agenda for 28 September. Strike out the ones the meeting settled.
+| question | owner | analysis | `analysis.py` rebuilds the numbers | README has the answers | addendum | on `main` |
+|---|---|---|---|---|---|---|
+| Q1 need vs activity | Valentino | done | yes | yes | n/a | yes |
+| Q4 food prices | Dhyan | done in the notebook | **no: 61-line skeleton, 5 TODOs** | **no: "not started"** | n/a | no |
+| Q5 SNAP | Dhyan | done in the notebook | **no: 63-line skeleton, 5 TODOs** | **no: "not started"** | n/a | no |
+| Q6 need measure | Valentino | done | yes | yes | written | yes |
+| Q7 August forecast | Uddam (was Dhyan) | done: 5 baselines, 3 backtest years, forecasts, intervals | yes | yes | written | no |
+| Q8 LILA access | Uddam | done | yes | yes | n/a | yes |
 
-| # | decision | who it affects | note |
-|---|---|---|---|
-| 1 | **Date of the findings freeze** | all | The plan's weekday labels are one day off; it calls the 17th a Friday. Pick Friday 9 or Monday 12 October, then correct week 4 |
-| 2 | **Q7: who starts the baselines, and when** | Dhyan, Uddam | The only scored prediction, and nothing exists yet. The plan calls the backtests the most important deliverable of week 2 |
-| 3 | **Dhyan's load** | all | He owns Q4, Q5 and the Q7 model. One is drafted. Decide whether anything moves |
-| 4 | **SNAP reporting units** | Dhyan | The SNAP series is found. 11 counties are not reported one by one. Accept 79 units, or split them |
-| 5 | **Who claims 2023: Q4 or Q5** | Dhyan | Proposed answer: Q5 claims what county exposure to the SNAP cut can explain, and Q4 gets the rest. Q5 can remove prices completely with month dummies. Q4 cannot remove SNAP |
-| 6 | **One definition of a food shelf site** | Uddam, Valentino | **Done 30 September.** `sites.parquet` now carries `is_food_shelf_like` (current type) and `ever_reported`, with first and last month. `qkit.sites(food_shelf_only=True, reporting_only=True)` returns the 462 sites that are both. Rerun `python src/clean_data.py` to get the columns. Q8 should count from that |
-| 7 | **The opening line of the deck** | Uddam | The plan's "strongest single fact" is a correlation with a built-in tilt. Replace it with the log-log slope |
-| 8 | **When notebook numbers move into `analysis.py`** | all | Nothing is in a script yet, and rule 6 says every slide number comes from one |
-| 9 | **Untrack the 85 MB Atlas file** | all | Doing it deletes the file from everyone's working copy on their next pull |
+Every question has an answer. What is missing is uneven: Q4 and Q5 exist only as
+notebooks, and rule 6 (every slide number comes from a script we can explain) is not met
+for them. Q7 needs the leakage audit by someone other than its author. No deck exists
+beyond six slide titles.
 
-### One sentence per drafted question
+**How cooked are we:** not cooked. Analysis is ahead of the plan: the week-3 goal was
+"six answers become one story", and the six answers exist. The risk has moved from
+analysis to delivery, and delivery is concentrated on one person (Dhyan: two scripts, two
+READMEs) plus the deck, which nobody owns yet.
 
-| question | chart | one sentence |
+---
+
+## The findings, one paragraph each, for the advisor
+
+**Q1.** Recorded food-shelf activity rises faster than need: a county with ten times the
+food-insecure people records about sixteen times the activity (log-log slope 1.15 to 1.24,
+every interval above 1, R² 0.84 to 0.88). Per 1,000 residents the relationship with the
+food-insecurity rate is about zero. Pounds correlates most with the Feeding America
+estimate, households least, by a small and consistent margin. Where it breaks down:
+Wilkin (no reporting food shelf at all), Nicollet, Pope and Lac qui Parle record the least
+relative to need; Steele, Washington and Rice the most. Four county characteristics
+(distance to a site, rural class, no-vehicle households, SNAP households) explain 3% of
+the mismatch and none shows a clear association; distance is the one to follow up. Three
+spatial tests find no general border pattern. The residual partly measures the network:
+counties with more sites record more per food-insecure person.
+
+**Q4.** Prices explain little. Activity grew most during the 2022-23 food inflation, but
+the largest single move was a 20% jump in March 2023 (all three metrics, one month), which
+prices cannot cause. With SNAP and a trend in the model the price effect drops by a third.
+Where a response shows, it is at about one month, in pounds and individuals, not
+households. The firm finding is seasonality: October peak, January or February trough,
+about a 20% swing, the same in all three metrics. *(Dhyan's draft now says this; the
+follow-up notebook has the numbers.)*
+
+**Q5.** An event study on 79 SNAP reporting units (unit and month fixed effects, clustered
+errors, two exposure measures, metro and non-metro separately) finds **no evidence** that
+counties more exposed to the March 2023 benefit cut saw a larger rise in food-shelf demand
+(coefficients 0.013 and -0.009, p 0.42 and 0.33). Demand rose through 2023 everywhere. The
+timeline is confirmed: last extra payment March 2023, regular benefit only from April.
+
+**Q6.** Definition of need, written before any data: *a household is in need if, at any
+point in the past year, it worried about running out of food, regardless of whether it
+sought help* (the first item of the USDA food-security survey). The county measure is an
+equal-weight index of seven public inputs that are neither demand nor Map the Meal Gap
+inputs (SNAP households, no vehicle, senior poverty, housing-cost burden, no diploma, LILA
+share, debt in collections). Wilkin was predicted at the 70th percentile of need before the
+index existed and landed at the 71st. The index does not predict recorded activity per
+resident (Spearman 0.07 to 0.14, all three metrics), agrees with MMG broadly (0.77) and
+differs on five of the top ten. Need outranks activity most in Nobles, Grant, Wilkin,
+Benton, Wadena; the reverse in Washington, Dodge, Cook, Houston. The top seven on need hold
+under every alternative weighting. Two barriers explain the divergence: households without
+internet (+0.41 per SD, p = 0.005) and distance to a site (+0.23, p = 0.025); 17% of the
+divergence explained. Head to head, county size explains 85% of recorded activity and
+neither MMG nor the index adds more than a point: activity follows population, whichever
+way need is measured. MMG finds need where incomes are low; the index finds it where costs
+and barriers are high.
+
+**Q7.** Five transparent baselines backtested on August 2023, 2024 and 2025, every fold
+using only earlier months. The pooled August/July ratio (county ratio shrunk toward the
+statewide median) wins for every outcome: county-level sMAPE 16% (households) to 21%
+(children). Individuals is the sum of the three age-group forecasts, as the 1 October brief
+asks. August 2026 statewide households forecast 243,813 (August 2025 actual 237,148).
+Intervals are the 10th and 90th percentiles of backtest residuals, roughly plus or minus
+25%. Wilkin is left blank, not zero.
+
+**Q8.** Within five straight-line miles of a food shelf: 98% of urban LILA population, 95%
+of urban non-LILA, 55% of rural non-LILA, **37% of rural LILA**. In cities the network
+reaches low-access areas as well as anywhere; in rural Minnesota it reaches them worse than
+the rest. The network repeats the retail gap where the gap is biggest. 402 sites in the Q8
+definition; limitations carry magnitudes (crosswalk: 23 of 1,505 tracts with multiple 2010
+parents; within-tract displacement bound median 3.1 miles).
+
+---
+
+## Cross-question issues to settle this week
+
+1. **Hennepin's reported households fell from about 87k (July 2025) to 63k (June 2026)
+   and 69k (July 2026) with no matching fall in sites or SNAP.** Dhyan found it in Q5 and
+   flagged it as a reporting problem. It matters most for Q7: the August 2026 Hennepin
+   forecast (73k) is built on July 2026, so if the dip is late reporting the forecast of
+   the largest county is biased low. Needs one decision: adjust, flag, or ask the
+   organizers whether July is final.
+2. **Q4 and Q5 describe March 2023 differently.** Q4's follow-up: a 20% one-month jump in
+   statewide totals. Q5: month fixed effects "rose smoothly, no step at March". Both are
+   true of different objects (state totals vs. unit-level averages), but the deck can say
+   only one thing about 2023. Proposed: Q5 claims what county exposure can explain
+   (nothing); Q4 reports the jump as unexplained by prices or by exposure.
+3. **One site definition, said once.** Q1 and Q6 count 462 food-shelf-like sites that ever
+   reported; Q8 counts 402 (last 12 months, no "Agency or Tribal Nation"). Both are audited.
+   Also: mobile outreach programs deliver 62% of Cook County's pounds and are not
+   food-shelf-like by current type. Decide whether `AgencySubType = Mobile` joins the
+   definition, before the deck, with Uddam.
+4. **The through-line.** The plan's draft was *"visits measure demand; here is where need
+   hides, and why."* The results support something sharper: *recorded activity follows
+   population and little else; need, measured either way, does not move it; the counties
+   where it is missing are far from a site and offline.* Settle the sentence Monday.
+5. **Q7 organizer questions are still open**: scoring metric, Hennepin/Ramsey whole or
+   split, Wilkin treatment, whether July 2026 is final, submission format and date. The
+   forecasts are built on working assumptions for all five.
+
+---
+
+## Missing this week (6-12 October), by person
+
+### Dhyan
+| # | task | why it is first |
 |---|---|---|
-| Q1 | log-log fit, notebook cells 7–8 | activity follows county size, not need intensity |
-| Q4 | the four series over time, follow-up notebook section B | activity grew fastest in 2023, and prices cannot be separated from the SNAP cut in statewide data |
-| Q8 | population-weighted distance curve | 40% of rural LILA residents are within 5 miles of a site, against 99% urban |
+| 1 | `questions/q4_food_prices/analysis.py` and `q5_snap/analysis.py`: port the notebooks so every number on a Q4 or Q5 slide comes from a script | rule 6; both are skeletons today |
+| 2 | Q4 and Q5 READMEs: status, the answers, caveats | both say "not started" |
+| 3 | Merge `dhyan_branch` into `main` (4 behind, 7 ahead; the Q4 draft header is now fixed) | nothing of Q4 or Q5 is on main |
+| 4 | Issue 2 above, with Uddam: one account of 2023 | the deck has one slide for it |
 
-### Housekeeping
+### Uddam
+| # | task | why |
+|---|---|---|
+| 1 | Merge `uddam-branch` into `main` after deleting the stray `notebooks/q8_exploration-jvsc-...ipynb` | Q7 is not on main; 92 commits waiting |
+| 2 | Q7: a decision on Hennepin (issue 1), and send the five organizer questions if not sent | the largest county's forecast depends on it |
+| 3 | Deck at draft quality, end to end, from the six titles | the week-3 test is "a deck exists and can be read start to finish" |
+| 4 | Decide the mobile-outreach question with Valentino (issue 3) | affects the 402 and the 462 |
 
-- `dhyan_branch` now includes `main`, so it has the SNAP loaders and the `cfg` alias.
-- `uddam-branch` is 6 commits behind `main`. It touches none of the same files, so it
-  merges cleanly.
-- Record the panel v1 sign-off and the Section-2 decisions.
+### Valentino
+| # | task | why |
+|---|---|---|
+| 1 | **Leakage audit of Q7**, as the person who did not build it: every input series ends at 2026-07, every backtest fold uses only earlier months, the `z12MoAverage_*` columns never enter | the one named penalty in the brief; the README requires a second person |
+| 2 | Q1 and Q6 slides: two charts and one table each, plus the addendum slide | the material is in `outputs/`; this is choosing and writing |
+| 3 | Check how many outreach sites statewide are mobile and how much activity they carry; bring the number to issue 3 | thirty minutes |
+| 4 | Explain Q6 to a teammate without the notebook | everyone must be able to state the definition and the rejection criterion |
+
+### All
+- Monday: the through-line sentence (issue 4).
+- **Findings freeze Friday 10 October.** After that, tightening only.
+- Every slide number traces to a script. Q4 and Q5 are the only questions where that is
+  not yet true.
 
 ---
 
-## Where we are
+## For the advisor on 5 October
 
-| question | owner | state | lives in |
-|---|---|---|---|
-| Q1 need vs activity | Valentino | sub-questions 1–3 answered, 4 fitted and not yet interpreted | `notebooks/q1_exploration.ipynb` |
-| Q4 food prices | Dhyan | exploratory draft, plus a follow-up that revises its headline | `notebooks/q4_exploration.ipynb` and `q4_advisor_followup.ipynb` on `dhyan_branch` |
-| Q5 SNAP | Dhyan | **data found and loaded**; analysis not started | `src/build_snap.py`, `questions/q5_snap/SNAP_DATA_NOTES.md` |
-| Q6 divergence measure | Valentino | not started (week 2 item) | |
-| Q7 forecast | Dhyan, Uddam | not started | |
-| Q8 LILA access | Uddam | crosswalk built, coverage and retail comparison drafted | `notebooks/q8_exploration.ipynb` on `uddam-branch` |
+What we would like a view on:
 
-### Progress against the README checklists
-
-| question | deliverables | drafted | final |
-|---|---|---|---|
-| Q1 | 6 | 4 | 1 |
-| Q4 | 5 | 3 | 0 |
-| Q8 | 6 | 4 | 2 |
-| Q5 | 6 | 1 | 0 |
-| Q6 | 6 | 0 | 0 |
-| Q7 | 6 | 0 | 0 |
-| **Total** | **35** | **12** | **3** |
-
-"Drafted" means it exists in a notebook. 23% of the time is used and about a third of the
-deliverables are drafted. Against the plan the team is on pace: week 1 asked only for
-foundations, and three questions already have draft answers.
-
-### Week 1 scorecard
-
-| who | goal | status |
-|---|---|---|
-| Valentino | Q1 county frame built | done |
-| Valentino | Public covariates downloaded and registered | done, 8 sources |
-| Valentino | Panel v1 signed off | built; sign-off not recorded |
-| Uddam | Atlas downloaded | done |
-| Uddam | 2010→2020 tract crosswalk working | done, one counting bug |
-| Uddam | Source registry started | done; relationship file row missing |
-| Dhyan | BLS CPI downloaded, truncated at 2026-07 | done on his branch; registry date still blank |
-| Dhyan | Find the MN county-monthly SNAP series | **found**, in the repo, cut at 2026-07 |
-| all | Re-run pipeline, confirm same numbers | Uddam's re-run matches to 14 decimal places |
-| all | Organizer email sent | not visible in the repo |
-| all | Section-2 decisions agreed and recorded | not visible in the repo |
-
-**End-of-week-1 test** (every source on disk, truncated, registered): passes.
+1. **Q7 method.** Five baselines, the pooled August/July ratio wins with sMAPE 16 to 21%.
+   We have not fitted anything more complex. Is "ship the baseline and say so" the right
+   call with 55 months of data, or is there one model worth the week?
+2. **Hennepin's reporting dip** (issue 1): adjust the July base, flag it, or forecast from
+   June? What would you do with a county that is a third of the state?
+3. **Q6's definition and rejection criterion** (above). Is the survey-based rejection
+   criterion the kind of falsifiability the graduate addendum is after?
+4. **The 2023 story** (issue 2): one slide, two notebooks that describe it differently.
+5. **The through-line** (issue 4).
 
 ---
 
@@ -205,6 +269,8 @@ it makes are in `data/processed/data_quality_log.csv`.
 
 ---
 
+---
+
 ## Q1 — Valentino
 
 ### Findings
@@ -251,6 +317,8 @@ cross-county story would predict.
 
 ---
 
+---
+
 ## Q6 — Valentino (2 October)
 
 Done except slides: `questions/q6_divergence_measure/analysis.py` rebuilds every number,
@@ -290,20 +358,12 @@ Join counts: red counties border blue ones no more than chance (10 vs 13.5 expec
 p = 0.88). Pooling counties with their neighbours tightens the residuals more than random
 groups do, weakly (p = 0.07). The border pairs on the chart are examples, not evidence.
 
+---
+
 ## Q4 — Dhyan (`dhyan_branch`, not merged)
 
-Two notebooks. `q4_exploration.ipynb` is Dhyan's draft. `q4_advisor_followup.ipynb` answers
-the advisor's questions and revises the draft's headline. The follow-up runs on its own
-and does not change the draft.
-
-### Supported answers to the four Q4 questions
-
-| Q4 asks | Answer |
-|---|---|
-| Do more people arrive when prices rise? | Activity grew fastest during and just after the 2022 to 2023 inflation. The largest move is a 20% jump in March 2023, which is a step and points to an event. The SNAP cut and a rise in reporting sites fall in the same months, and statewide data cannot separate the three. |
-| At once, or after a delay? | Not after 4 to 6 months. Where a response shows, it is at about one month. |
-| In all three metrics? | In pounds and individuals. Not clearly in households. |
-| What cycles do prices not explain? | The seasonal pattern stands: an October peak, a January or February low, a swing of about 20%. |
+Done in the notebook, header corrected to the one-month response. Not yet in `analysis.py`
+or the README. The numbers below are from the follow-up notebook (28 September).
 
 ### Findings, with the numbers
 
@@ -371,64 +431,33 @@ across counties.
 - **Every p-value in the year-over-year models is unreliable**, for the reason in
   finding 1. That includes the one on SNAP.
 
-### Corrections to make in `q4_exploration.ipynb`
-
-| Where | Change |
-|---|---|
-| Top cell | Replace the 4 to 6 month claim |
-| Step 2 | The base and `_fs` columns are identical only because `food_shelf_only=True` overwrites one with the other. Without the flag they differ by about 7% of pounds. No result changes. |
-| Step 10b | Mark as superseded, the way Step 10a is |
-| Step 12 | "CPI adds 19% to 28% to R²" is from the model without SNAP |
-| County cost comparison | Replace the comparison of means |
-
-### Still open
-
-- **February 2022 is unexplained**: 157,600 households against 115,500 in January, with
-  the site count flat. This is a panel question, so it goes to Valentino.
-- The follow-up was run on Python 3.12. Dhyan's machine has Python 3.9. The code avoids
-  anything newer, but it has not been run there.
-
 ---
 
-## Q5 — Dhyan
+## Q8 — Uddam (on `main`; later commits on `uddam-branch`)
 
-The county-monthly SNAP series exists. Full notes are in
-`questions/q5_snap/SNAP_DATA_NOTES.md`.
+Done. `analysis.py` writes nine tables and two figures; the README carries the numbers,
+the crosswalk rule and a limitations table with magnitudes. Headline: within five miles of
+a site, 98% of urban LILA population, 37% of rural LILA population; rural LILA is reached
+worse than rural non-LILA (55%). The network repeats the retail gap where it is biggest.
+An interactive Leaflet map (`outputs/figures/08_q8_lila_site_presence_interactive.html`,
+2.7 MB, needs internet) is for exploring and screenshots, not the deck.
 
-| | |
-|---|---|
-| Span | 2016-01 to 2026-07, 127 months, none missing |
-| Grain | 79 county units and 3 tribal nations |
-| Publication lag | about one month |
-| Emergency allotments end | federal dollars per case: $453 in March 2023, $267 in April 2023 |
-| Size of the cut | 47% at the median unit, from 37% to 54% |
-| Exposure before the cut | 7.7% of residents on SNAP at the median unit, from 2.8% to 14.7% |
+## Q7 — Uddam (`uddam-branch`, not merged)
 
-### What to know
+Done apart from the leakage audit and the organizer questions. Five baselines (seasonal
+naive, August/July ratio, naive with drift, pooled ratio, per-site ratio) backtested on
+August 2023 to 2025; the pooled August/July ratio is selected for every outcome
+(`q7_method_selection.csv`). Forecasts, 80% empirical intervals and age-share sanity
+flags are in `q7_forecasts.csv`. Open: Hennepin's July base (issue 1), whether Hennepin
+and Ramsey are scored whole, Wilkin, the scoring metric, July completeness. The audit
+is Valentino's this week.
 
-1. **The download held August 2026.** Those 87 rows were removed before the file entered
-   the repo. The original is kept outside the repo folder.
-2. **11 counties are not reported one by one**, so they are grouped: Dodge, Steele and
-   Waseca; Pope and Grant; and six southwest counties whose rows trade cases from month
-   to month while their total stays flat.
-3. **Tribal nations are reported apart** from the counties their members live in, about
-   2.7% of the state. Beltrami and Mahnomen are the counties most affected.
-4. **This touches Q1.** Steele and Pope are both inside combined units.
+## Q5 — Dhyan (`dhyan_branch`, not merged)
 
-### How Q5 relates to Q4
+Done in the notebook: event study, 79 units, two exposure measures, metro split, no
+exposure effect. Not yet in `analysis.py` or the README. Dhyan's Hennepin finding is
+issue 1 above.
 
-SNAP can be used in Q4 as a control. That does not answer Q5.
-
-| | Q4 | Q5 |
-|---|---|---|
-| Role of SNAP | A control: something else that moved | The subject |
-| Data | One statewide series | 79 county units |
-| Where the evidence comes from | Change over time | Differences between counties in how exposed they were to the cut |
-
-**Q5 should come first.** Every county faces the same price index in a given month, so
-month dummies in a county model remove prices completely. A statewide series has no
-counties to compare, so Q4 cannot remove SNAP. Estimate the SNAP effect in Q5, then return
-to Q4 and see what prices explain in what is left.
 
 ### The timeline of the cut, confirmed
 
@@ -448,92 +477,3 @@ shows the fall in April while national sources say March. Sources are listed in
 March jump in the "before" period and misses it.
 
 ---
-
-## Q8 — Uddam (`uddam-branch`, not merged)
-
-The map code moved from `map.py` into a notebook, and the notebook now drafts README
-steps 3 to 5: population-weighted coverage by distance band, urban and rural split, all
-four LILA definitions, and a comparison with USDA grocery access.
-
-**Draft headline:** about 40% of the rural LILA population is within 5 miles of a site,
-against 99% of the urban LILA population and 58% of the rural non-LILA population.
-
-### To fix, most important first
-
-1. **The site list includes sites that are not operating, and it now drives the distance
-   numbers too.** The notebook counts 723 sites. 278 never appear in the activity data,
-   and 415 were active in the last 12 months. `FOOD_SHELF_TYPES` was written for the
-   activity table; applied to the site master it lets in 285 "Agency or Tribal Nation"
-   entries, a type with 16 reporting sites and about 0% of pounds. Coverage is overstated
-   until this is fixed.
-2. **Sites are placed at the centre of their tract, not at their block.** In a large
-   rural tract that can be off by miles, and the rural 5-mile figure is the one most
-   exposed. The 15-digit `block_geoid` is available. Either use block locations or state
-   the size of the error.
-3. **`parent_count` is still inflated about 35×.** The notebook table shows 693 tracts
-   with one parent; counting only parents that cover at least 5% of the tract gives
-   1,479. The new retail crosswalk in the notebook uses the correct denominator;
-   `build_lila.py` does not yet. Run `build_lila.py --force` after fixing.
-4. **The grocery comparison needs the urban and rural split before it is read.**
-   Low-grocery-access tracts are less likely to contain a site (23% against 35%), but
-   their residents are more often within 5 miles of one (91% against 70%). The half-mile
-   definition is mostly urban tracts, so the two groups differ in more than grocery
-   access.
-5. The map footnote is hidden behind the legend, and three all-water tracts in Lake
-   Superior show as "LILA status unavailable".
-6. The relationship file has no row in the registry of downloaded files.
-7. Registry typo: "Minneosta".
-
----
-
-## Week 2 (29 September – 5 October)
-
-**Goal from the plan: one rough chart and one sentence per question.** Anything with no
-number by the end of the week is what gets descoped, decided as a team.
-
-### Valentino
-
-| # | task | note |
-|---|---|---|
-| 1 | ~~Interpret the sub-question 4 output~~ | done 29 September |
-| 2 | ~~Report the log-log fit as the Q1 headline~~ | done 29 September |
-| 3 | ~~Moran's I on the residuals~~ | done 29 September; join counts and pooling added 2 October |
-| 4 | ~~Port Q1 into `analysis.py`~~ | done 30 September |
-| 5 | ~~Update the Q1 README~~ | done 30 September |
-| 6 | ~~**Q6: design the need index**~~ | done 1-2 October: notebook, `analysis.py`, addendum, README |
-| 9 | Q1 and Q6 slides | the numbers and figures are in `outputs/`; pick the two charts and the one table per question |
-| 7 | ~~Panel: add `is_food_shelf_like` and last active month to `sites.parquet`~~ | done 30 September, see open decision 6 |
-| 8 | Panel: look into February 2022 | for Q4 |
-
-### Dhyan
-
-| # | task | note |
-|---|---|---|
-| 1 | **Q7 baselines backtested on August 2023, 2024 and 2025** | the plan's most important week 2 deliverable |
-| 2 | Q5: decide which month is the event, and say why | the announcement, the last extra payment (March 2023) or the first reduced payment (April 2023) |
-| 3 | Q5: decide the units, tribal nations and benefit series | the four decisions in `SNAP_DATA_NOTES.md` |
-| 4 | Q5: event study with county exposure and month dummies | the data and loaders are ready; do this before finishing Q4 |
-| 5 | Q4: make the five corrections to `q4_exploration.ipynb` | listed in the Q4 section |
-| 6 | Q4: run `q4_advisor_followup.ipynb` on his own machine | it has only been run on Python 3.12 |
-| 7 | Q4: Minneapolis-St. Paul CPI as a robustness check | the README asks for it |
-| 8 | Fill in the CPI registry date, merge the branch | |
-| 9 | Move the Q4 numbers into `analysis.py` | |
-
-### Uddam
-
-| # | task | note |
-|---|---|---|
-| 1 | Q8: fix the site definition and re-run coverage | depends on Valentino's task 7, or filter on `site_month` directly |
-| 2 | Q8: fix `parent_count` in `build_lila.py` | |
-| 3 | Q8: block-level site locations, or the size of the error | |
-| 4 | Q8: move the coverage numbers into `analysis.py` | |
-| 5 | Q7 age-share analysis | children, adults, seniors |
-| 6 | Deck skeleton | one slide per question, titles only |
-| 7 | Registry: relationship file row, typo | |
-| 8 | Merge the branch | |
-
-### All
-
-- Correct the weekday labels in `TEAM_PLAN.md`.
-- Send the organizer email if it has not gone out.
-- Record the Section-2 decisions in our own words.
