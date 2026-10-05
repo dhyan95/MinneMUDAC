@@ -100,7 +100,11 @@ parents; within-tract displacement bound median 3.1 miles).
    flagged it as a reporting problem. It matters most for Q7: the August 2026 Hennepin
    forecast (73k) is built on July 2026, so if the dip is late reporting the forecast of
    the largest county is biased low. Needs one decision: adjust, flag, or ask the
-   organizers whether July is final.
+   organizers whether July is final. **Anoka has the same pattern** (August 2025 20,888
+   households; July 2026 15,832, a quarter lower; forecast 17,636) and nobody has flagged
+   it. Hennepin and Anoka are about 40% of the state's households. The audit this week
+   lists every county whose last three months fell more than the state did against the
+   same months a year earlier: dips clustered in the final months mean late reporting.
 2. **Q4 and Q5 describe March 2023 differently.** Q4's follow-up: a 20% one-month jump in
    statewide totals. Q5: month fixed effects "rose smoothly, no step at March". Both are
    true of different objects (state totals vs. unit-level averages), but the deck can say
@@ -135,7 +139,8 @@ parents; within-tract displacement bound median 3.1 miles).
 | # | task | why |
 |---|---|---|
 | 1 | Merge `uddam-branch` into `main` after deleting the stray `notebooks/q8_exploration-jvsc-...ipynb` | Q7 is not on main; 92 commits waiting |
-| 2 | Q7: a decision on Hennepin (issue 1), and send the five organizer questions if not sent | the largest county's forecast depends on it |
+| 2 | Q7: a decision on Hennepin and Anoka (issue 1), and send the five organizer questions if not sent | the largest counties' forecasts depend on it |
+| 2b | Q7 intervals by county-size band: today every county gets the same ±39%, from one pooled error distribution, although small counties miss by more in the backtests | cheap, and the first thing a judge will ask about Lac qui Parle's interval |
 | 3 | Deck at draft quality, end to end, from the six titles | the week-3 test is "a deck exists and can be read start to finish" |
 | 4 | Decide the mobile-outreach question with Valentino (issue 3) | affects the 402 and the 462 |
 
