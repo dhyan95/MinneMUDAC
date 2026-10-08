@@ -58,7 +58,7 @@ forecasts, but evaluate the age predictions directly.
 
 ## Approach
 
-`analysis.py` backtests five transparent candidates on August 2023, 2024 and 2025.
+`analysis.py` backtests six transparent candidates on August 2023, 2024 and 2025.
 Every fold uses only rows strictly before its August target:
 
 1. **Seasonal naive:** repeat the previous August.
@@ -69,16 +69,19 @@ Every fold uses only rows strictly before its August target:
 4. **Pooled August/July ratio:** shrink the county ratio toward the statewide median
    ratio using two prior-year observations as the statewide prior. This stabilizes
    counties with short or noisy histories.
-5. **Per-site ratio:** forecast activity per reporting site and multiply by the
+5. **Pooled trailing-quarter ratio:** average the county's May, June and July activity,
+   then scale that recent level by a historical August/(May–July average) ratio. The
+   county ratio is shrunk toward the statewide ratio using the same two-year prior.
+   This tests whether a three-month recent level is more stable than July alone.
+6. **Per-site ratio:** forecast activity per reporting site and multiply by the
    historical August/July reporting-site ratio.
 
 The same candidates are evaluated separately for households, pounds, individuals,
-children, adults and seniors. The selected method is the one with the lowest average
-county-level sMAPE across the three folds; WAPE and MAE are also reported. This is a
-working proxy because the official scoring metric has not been confirmed. Individuals
-is reported as the sum of the three selected age-group forecasts, as required by the
-graduate addendum; its independently forecast candidates remain in the backtest for
-comparison.
+children, adults and seniors. Method selection now minimizes average fold-level
+county RMSE, matching the prediction metric in the draft graduate rubric. sMAPE, WAPE
+and MAE remain reported as complementary diagnostics. Individuals is reported as the
+sum of the three selected age-group forecasts, as required by the graduate addendum;
+its independently forecast candidates remain in the backtest for comparison.
 
 The forecast interval uses the 10th and 90th percentiles of the selected method's
 backtest residuals, pooled across counties and folds. It is a rough empirical
@@ -92,17 +95,24 @@ Run from the repository root:
 python questions/q7_forecast_august/analysis.py
 ```
 
+Before using the saved Q7 output tables or notebook results, regenerate them from a
+processed panel verified to contain no observations after July 2026. Existing saved
+forecasts predate the pooled-quarter candidate and RMSE-based method selection, so they
+do not reflect the current approach.
+
 For an interactive walkthrough of the data checks, backtests, forecasts and diagnostics,
 open and run [the Q7 notebook](../../notebooks/q7_forecast_august.ipynb) from top to
-bottom. It includes a rubric-aligned county RMSE chart for the five prediction-scored
-outcomes. The notebook calls the same analysis script; it does not implement a separate
-forecasting pipeline.
+bottom. It includes rubric-aligned county RMSE charts and statewide plots comparing each
+candidate with historical actuals and the final August 2026 forecasts. Statewide
+aggregation is for visualization only; it can hide county-level errors. The notebook
+calls the same analysis script; it does not implement a separate forecasting pipeline.
 
 It writes:
 
 - `outputs/tables/q7_backtest_predictions.csv` — county-level actuals and candidate
   predictions for the three backtest Augusts.
-- `outputs/tables/q7_backtest_scores.csv` — fold and combined sMAPE, WAPE and MAE.
+- `outputs/tables/q7_backtest_scores.csv` — fold and combined RMSE, MSE, sMAPE, WAPE
+  and MAE.
 - `outputs/tables/q7_method_selection.csv` — average and worst-fold scores used to
   choose each outcome's forecast method, with `selected_for_forecast` marking the
   final choice (including the required age-sum Individuals forecast).

@@ -80,23 +80,23 @@ directly relevant.
 
 ## Forecast and backtest update
 
-The pooled August/July ratio had the lowest average county-level sMAPE for each age
-group across the three backtest folds: 20.9% for children, 18.4% for adults, and 18.8%
-for seniors. The ratio is shrunk toward the statewide historical ratio, which performed
-better than the unpooled county ratio in these backtests. These are selection scores
-from only three folds, not an independent estimate of future accuracy.
+The candidate set now includes a pooled trailing-quarter ratio: a county's average
+activity in May–July is scaled by its historical August-to-May–July-average ratio, with
+that ratio shrunk toward the statewide value. This directly tests whether a three-month
+recent level is more stable than July alone. Method selection minimizes mean fold-level
+county RMSE to align with the draft graduate prediction rubric; sMAPE, WAPE and MAE
+remain supporting diagnostics.
 
-Seven of the 86 reporting-county age-group point forecasts fall just outside that
-county/group's historical monthly share range (three children, two adults, two
-seniors). The output flags these for review rather than forcing the forecasts into
-historical bounds. No age group is forecast as zero in a county where it has previously
-been positive. Wilkin is retained in the output but has no forecast because it has no
-reporting history.
+The updated candidate set must be evaluated by rerunning
+`questions/q7_forecast_august/analysis.py`. Until that run completes against the
+processed panel, do not use the earlier forecast totals or method-selection output as
+the final results: they predate the pooled-quarter candidate and RMSE-based selection.
+The regenerated outputs will also flag age-group shares outside each county's
+historical monthly range rather than clipping them.
 
-**Operational takeaway:** Across counties with reporting history, the point forecasts
-sum to about 404,000 adults, 266,000 children, and 88,000 seniors; children account for
-about 35% of projected individuals, so family-facing service capacity remains a
-substantial part of the August planning picture.
+**Operational takeaway:** Use the regenerated county age forecasts to describe the
+projected age mix and service-planning implications; do not quote the previous totals
+until the updated backtest and forecast tables have been produced.
 
 ---
 

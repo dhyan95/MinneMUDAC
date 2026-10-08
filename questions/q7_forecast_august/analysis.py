@@ -27,8 +27,10 @@ METHODS = (
     "august_july_ratio",
     "seasonal_naive_drift",
     "pooled_august_july_ratio",
+    "pooled_quarter_ratio",
     "per_site_ratio",
 )
+QUARTER_MONTHS = (5, 6, 7)
 POOL_PRIOR_YEARS = 2
 METRICS = [*cfg.THREE_METRICS, *cfg.AGE_METRICS]
 
@@ -78,6 +80,42 @@ def _historical_ratios(
     return result.replace([np.inf, -np.inf], np.nan)
 
 
+def _historical_quarter_ratios(history: pd.DataFrame, metric: str) -> pd.DataFrame:
+    """Return county August / May-July-mean ratios from completed prior years."""
+    rows = []
+    for year in sorted(history["year"].unique()):
+        quarter = history.loc[
+            history["year"].eq(year) & history["month"].isin(QUARTER_MONTHS)
+        ]
+        quarter = quarter.groupby("fips").filter(
+            lambda county: county["month"].nunique() == len(QUARTER_MONTHS)
+        )
+        august = history.loc[
+            history["yearmonth"].eq(year * 100 + 8),
+            ["fips", metric],
+        ].rename(columns={metric: "august"})
+        if quarter.empty:
+            continue
+        quarter_mean = (
+            quarter.groupby("fips", as_index=False)[metric]
+            .mean()
+            .rename(columns={metric: "quarter_mean"})
+        )
+        paired = quarter_mean.merge(
+            august, on="fips", how="inner", validate="1:1"
+        )
+        paired["ratio"] = paired["august"] / paired["quarter_mean"].where(
+            paired["quarter_mean"].gt(0)
+        )
+        paired["year"] = year
+        rows.append(paired[["fips", "year", "ratio"]])
+    if not rows:
+        return pd.DataFrame(columns=["fips", "year", "ratio"])
+    return pd.concat(rows, ignore_index=True).replace(
+        [np.inf, -np.inf], np.nan
+    )
+
+
 def _forecast_target(
     panel: pd.DataFrame, target_year: int, counties: pd.DataFrame
 ) -> pd.DataFrame:
@@ -88,6 +126,22 @@ def _forecast_target(
         history["yearmonth"].eq(target_year * 100 + 7),
         ["fips", "n_sites_reporting", *METRICS],
     ]
+    recent_quarter = (
+        history.loc[
+            history["year"].eq(target_year)
+            & history["month"].isin(QUARTER_MONTHS),
+            ["fips", "month", *METRICS],
+        ]
+        .groupby("fips")
+        .filter(
+            lambda county: county["month"].nunique() == len(QUARTER_MONTHS)
+        )
+        .groupby("fips", as_index=False)[METRICS]
+        .mean()
+    )
+    recent_quarter = counties[["fips"]].merge(
+        recent_quarter, on="fips", how="left", validate="1:1"
+    )
     prior_august = history.loc[
         history["yearmonth"].eq((target_year - 1) * 100 + 8),
         ["fips", *METRICS],
@@ -124,6 +178,30 @@ def _forecast_target(
             local_ratio * ratio_count + state_ratio * POOL_PRIOR_YEARS
         ) / (ratio_count + POOL_PRIOR_YEARS)
 
+        quarter_ratios = _historical_quarter_ratios(
+            history.loc[history["year"].lt(target_year)], metric
+        )
+        valid_quarter_ratios = quarter_ratios.loc[
+            quarter_ratios["ratio"].notna()
+        ]
+        state_quarter_ratio = valid_quarter_ratios["ratio"].median()
+        if pd.isna(state_quarter_ratio):
+            raise ValueError(
+                f"No valid historical August/May-July ratios for {metric}"
+            )
+        local_quarter = valid_quarter_ratios.groupby("fips")["ratio"].agg(
+            ["median", "count"]
+        )
+        quarter_ratio = recent_quarter["fips"].map(local_quarter["median"])
+        quarter_count = (
+            recent_quarter["fips"].map(local_quarter["count"]).fillna(0)
+        )
+        quarter_ratio = quarter_ratio.fillna(state_quarter_ratio)
+        pooled_quarter_ratio = (
+            quarter_ratio * quarter_count
+            + state_quarter_ratio * POOL_PRIOR_YEARS
+        ) / (quarter_count + POOL_PRIOR_YEARS)
+
         site_ratios = _historical_ratios(
             history.loc[history["year"].lt(target_year)], metric, per_site=True
         )
@@ -150,6 +228,9 @@ def _forecast_target(
             "seasonal_naive": base[f"{metric}_prior_august"],
             "august_july_ratio": base[metric] * local_ratio,
             "pooled_august_july_ratio": base[metric] * pooled_ratio,
+            "pooled_quarter_ratio": (
+                recent_quarter[metric] * pooled_quarter_ratio
+            ),
             "per_site_ratio": base[metric] * metric_site_ratio * site_ratio,
         }
         previous = base[f"{metric}_prior_august"]
@@ -207,6 +288,10 @@ def _score_row(
         "method": method,
         "n_counties": group["fips"].nunique(),
         "macro_smape_pct": group["smape_pct"].mean(),
+        "mse": (group["actual"] - group["prediction"]).pow(2).mean(),
+        "rmse": np.sqrt(
+            (group["actual"] - group["prediction"]).pow(2).mean()
+        ),
         "wape_pct": (
             100 * group["absolute_error"].sum() / actual_sum
             if actual_sum
@@ -221,6 +306,8 @@ def _select_methods(scores: pd.DataFrame) -> tuple[dict[str, str], pd.DataFrame]
     summary = (
         folds.groupby(["metric", "method"], as_index=False)
         .agg(
+            mean_fold_rmse=("rmse", "mean"),
+            worst_fold_rmse=("rmse", "max"),
             mean_fold_smape_pct=("macro_smape_pct", "mean"),
             worst_fold_smape_pct=("macro_smape_pct", "max"),
             mean_fold_wape_pct=("wape_pct", "mean"),
@@ -231,7 +318,8 @@ def _select_methods(scores: pd.DataFrame) -> tuple[dict[str, str], pd.DataFrame]
     order = {method: index for index, method in enumerate(METHODS)}
     summary["_order"] = summary["method"].map(order).fillna(len(order))
     summary = summary.sort_values(
-        ["metric", "mean_fold_smape_pct", "mean_fold_wape_pct", "_order"]
+        ["metric", "mean_fold_rmse", "mean_fold_smape_pct",
+         "mean_fold_wape_pct", "_order"]
     ).drop(columns="_order")
     selected = (
         summary.drop_duplicates("metric").set_index("metric")["method"].to_dict()
@@ -543,10 +631,11 @@ def main() -> None:
         .sort_values("metric")
         .to_string(index=False)
     )
-    print("\nLowest mean-fold sMAPE candidate per metric; final Individuals uses age sum:")
+    print("\nLowest mean-fold RMSE candidate per metric; final Individuals uses age sum:")
     print(
         selection_summary.groupby("metric", as_index=False).first()[
-            ["metric", "method", "mean_fold_smape_pct", "mean_fold_wape_pct"]
+            ["metric", "method", "mean_fold_rmse", "mean_fold_smape_pct",
+             "mean_fold_wape_pct"]
         ].to_string(index=False)
     )
     unavailable = forecast_output.loc[
