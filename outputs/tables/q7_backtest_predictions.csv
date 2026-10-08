@@ -260,6 +260,93 @@ fips,county_name,target_year,metric,method,prediction,forecast_status,actual
 27169,Winona,2023,households,pooled_august_july_ratio,1245.2545413139499,forecasted,1084.0
 27171,Wright,2023,households,pooled_august_july_ratio,2113.8151602988432,forecasted,2105.0
 27173,Yellow Medicine,2023,households,pooled_august_july_ratio,161.78037928557188,forecasted,172.0
+27001,Aitkin,2023,households,pooled_quarter_ratio,419.99531528028893,forecasted,389.0
+27003,Anoka,2023,households,pooled_quarter_ratio,17007.920419971822,forecasted,18371.0
+27005,Becker,2023,households,pooled_quarter_ratio,527.0729780072534,forecasted,507.0
+27007,Beltrami,2023,households,pooled_quarter_ratio,1198.7647424414763,forecasted,1076.0
+27009,Benton,2023,households,pooled_quarter_ratio,577.796839400397,forecasted,620.0
+27011,Big Stone,2023,households,pooled_quarter_ratio,68.02859169722694,forecasted,73.0
+27013,Blue Earth,2023,households,pooled_quarter_ratio,4186.598610401433,forecasted,4612.0
+27015,Brown,2023,households,pooled_quarter_ratio,266.1832852449712,forecasted,260.0
+27017,Carlton,2023,households,pooled_quarter_ratio,840.3477331006607,forecasted,677.0
+27019,Carver,2023,households,pooled_quarter_ratio,1579.1181693335207,forecasted,1633.0
+27021,Cass,2023,households,pooled_quarter_ratio,1414.525639117516,forecasted,1566.0
+27023,Chippewa,2023,households,pooled_quarter_ratio,171.84939130974183,forecasted,168.0
+27025,Chisago,2023,households,pooled_quarter_ratio,1124.0456689721852,forecasted,1134.0
+27027,Clay,2023,households,pooled_quarter_ratio,1342.9400297332338,forecasted,2091.0
+27029,Clearwater,2023,households,pooled_quarter_ratio,194.74673281928864,forecasted,206.0
+27031,Cook,2023,households,pooled_quarter_ratio,269.2960713718945,forecasted,227.0
+27033,Cottonwood,2023,households,pooled_quarter_ratio,221.68473278145362,forecasted,298.0
+27035,Crow Wing,2023,households,pooled_quarter_ratio,2023.9079841703103,forecasted,2018.0
+27037,Dakota,2023,households,pooled_quarter_ratio,8994.89620013745,forecasted,14814.0
+27039,Dodge,2023,households,pooled_quarter_ratio,689.863816917776,forecasted,764.0
+27041,Douglas,2023,households,pooled_quarter_ratio,270.95747344325616,forecasted,422.0
+27043,Faribault,2023,households,pooled_quarter_ratio,421.0228233224847,forecasted,301.0
+27045,Fillmore,2023,households,pooled_quarter_ratio,363.8778444428548,forecasted,419.0
+27047,Freeborn,2023,households,pooled_quarter_ratio,905.2794252528786,forecasted,1109.0
+27049,Goodhue,2023,households,pooled_quarter_ratio,1058.2573700547757,forecasted,993.0
+27051,Grant,2023,households,pooled_quarter_ratio,62.42294108200506,forecasted,84.0
+27053,Hennepin,2023,households,pooled_quarter_ratio,72643.40848837356,forecasted,75134.0
+27055,Houston,2023,households,pooled_quarter_ratio,556.8934285698311,forecasted,635.0
+27057,Hubbard,2023,households,pooled_quarter_ratio,910.9868131437564,forecasted,529.0
+27059,Isanti,2023,households,pooled_quarter_ratio,971.4516234906997,forecasted,970.0
+27061,Itasca,2023,households,pooled_quarter_ratio,3224.950642639986,forecasted,1858.0
+27063,Jackson,2023,households,pooled_quarter_ratio,266.62232592369577,forecasted,283.0
+27065,Kanabec,2023,households,pooled_quarter_ratio,401.382506837459,forecasted,412.0
+27067,Kandiyohi,2023,households,pooled_quarter_ratio,765.6706562288759,forecasted,736.0
+27069,Kittson,2023,households,pooled_quarter_ratio,189.32769919662908,forecasted,163.0
+27071,Koochiching,2023,households,pooled_quarter_ratio,833.9525915605162,forecasted,765.0
+27073,Lac qui Parle,2023,households,pooled_quarter_ratio,46.181522563444005,forecasted,53.0
+27075,Lake,2023,households,pooled_quarter_ratio,342.9214175721616,forecasted,334.0
+27077,Lake of the Woods,2023,households,pooled_quarter_ratio,64.54172114227823,forecasted,70.0
+27079,Le Sueur,2023,households,pooled_quarter_ratio,889.7236370777476,forecasted,692.0
+27081,Lincoln,2023,households,pooled_quarter_ratio,61.83071509875029,forecasted,58.0
+27083,Lyon,2023,households,pooled_quarter_ratio,440.86786555612497,forecasted,414.0
+27085,McLeod,2023,households,pooled_quarter_ratio,1376.2943625434932,forecasted,1361.0
+27087,Mahnomen,2023,households,pooled_quarter_ratio,533.2911992418285,forecasted,535.0
+27089,Marshall,2023,households,pooled_quarter_ratio,118.16055028772507,forecasted,131.0
+27091,Martin,2023,households,pooled_quarter_ratio,468.2956230069996,forecasted,482.0
+27093,Meeker,2023,households,pooled_quarter_ratio,452.95114104155914,forecasted,414.0
+27095,Mille Lacs,2023,households,pooled_quarter_ratio,1910.0531766786296,forecasted,1823.0
+27097,Morrison,2023,households,pooled_quarter_ratio,501.11400264673273,forecasted,514.0
+27099,Mower,2023,households,pooled_quarter_ratio,1278.9335836837095,forecasted,1294.0
+27101,Murray,2023,households,pooled_quarter_ratio,99.92990869033838,forecasted,105.0
+27103,Nicollet,2023,households,pooled_quarter_ratio,210.54075186365506,forecasted,222.0
+27105,Nobles,2023,households,pooled_quarter_ratio,127.35255410610796,forecasted,135.0
+27107,Norman,2023,households,pooled_quarter_ratio,43.99064428260194,forecasted,30.0
+27109,Olmsted,2023,households,pooled_quarter_ratio,8246.22678622524,forecasted,8407.0
+27111,Otter Tail,2023,households,pooled_quarter_ratio,789.2521190534677,forecasted,939.0
+27113,Pennington,2023,households,pooled_quarter_ratio,249.2459006962387,forecasted,243.0
+27115,Pine,2023,households,pooled_quarter_ratio,775.7708768430792,forecasted,779.0
+27117,Pipestone,2023,households,pooled_quarter_ratio,336.5431819827535,forecasted,381.0
+27119,Polk,2023,households,pooled_quarter_ratio,569.349141253828,forecasted,646.0
+27121,Pope,2023,households,pooled_quarter_ratio,72.66820200079616,forecasted,54.0
+27123,Ramsey,2023,households,pooled_quarter_ratio,19664.24850615646,forecasted,20098.0
+27125,Red Lake,2023,households,pooled_quarter_ratio,98.74237528853658,forecasted,85.0
+27127,Redwood,2023,households,pooled_quarter_ratio,358.13708906053427,forecasted,264.0
+27129,Renville,2023,households,pooled_quarter_ratio,1252.909338817148,forecasted,1188.0
+27131,Rice,2023,households,pooled_quarter_ratio,4821.750476116437,forecasted,4477.0
+27133,Rock,2023,households,pooled_quarter_ratio,136.90743181613027,forecasted,165.0
+27135,Roseau,2023,households,pooled_quarter_ratio,151.5681320839242,forecasted,128.0
+27137,St. Louis,2023,households,pooled_quarter_ratio,6241.576999009329,forecasted,6006.0
+27139,Scott,2023,households,pooled_quarter_ratio,1651.100954979603,forecasted,1614.0
+27141,Sherburne,2023,households,pooled_quarter_ratio,2825.4430439978396,forecasted,3156.0
+27143,Sibley,2023,households,pooled_quarter_ratio,312.9348874795656,forecasted,305.0
+27145,Stearns,2023,households,pooled_quarter_ratio,3023.1352777596653,forecasted,2961.0
+27147,Steele,2023,households,pooled_quarter_ratio,3762.269204361957,forecasted,3941.0
+27149,Stevens,2023,households,pooled_quarter_ratio,217.9490266401572,forecasted,496.0
+27151,Swift,2023,households,pooled_quarter_ratio,126.49129071547613,forecasted,139.0
+27153,Todd,2023,households,pooled_quarter_ratio,356.8707172672464,forecasted,325.0
+27155,Traverse,2023,households,pooled_quarter_ratio,66.9092998759192,forecasted,40.0
+27157,Wabasha,2023,households,pooled_quarter_ratio,785.5934013609169,forecasted,816.0
+27159,Wadena,2023,households,pooled_quarter_ratio,233.25349848231951,forecasted,220.0
+27161,Waseca,2023,households,pooled_quarter_ratio,338.9681845318654,forecasted,471.0
+27163,Washington,2023,households,pooled_quarter_ratio,24138.703263600888,forecasted,25789.0
+27165,Watonwan,2023,households,pooled_quarter_ratio,333.4959880625626,forecasted,363.0
+27167,Wilkin,2023,households,pooled_quarter_ratio,,no_reporting_history,
+27169,Winona,2023,households,pooled_quarter_ratio,1147.5891399155541,forecasted,1084.0
+27171,Wright,2023,households,pooled_quarter_ratio,2135.448440407012,forecasted,2105.0
+27173,Yellow Medicine,2023,households,pooled_quarter_ratio,168.6157332420432,forecasted,172.0
 27001,Aitkin,2023,households,per_site_ratio,396.05797101449275,forecasted,389.0
 27003,Anoka,2023,households,per_site_ratio,17128.802631578943,forecasted,18371.0
 27005,Becker,2023,households,per_site_ratio,500.3555555555555,forecasted,507.0
@@ -695,6 +782,93 @@ fips,county_name,target_year,metric,method,prediction,forecast_status,actual
 27169,Winona,2023,pounds,pooled_august_july_ratio,51799.935698514644,forecasted,57377.0
 27171,Wright,2023,pounds,pooled_august_july_ratio,192324.644327875,forecasted,206393.0
 27173,Yellow Medicine,2023,pounds,pooled_august_july_ratio,13284.380583588787,forecasted,14218.0
+27001,Aitkin,2023,pounds,pooled_quarter_ratio,19405.28837543985,forecasted,18844.0
+27003,Anoka,2023,pounds,pooled_quarter_ratio,816798.9296000052,forecasted,800411.0
+27005,Becker,2023,pounds,pooled_quarter_ratio,44253.12308141854,forecasted,40841.0
+27007,Beltrami,2023,pounds,pooled_quarter_ratio,64169.928255054656,forecasted,71539.6
+27009,Benton,2023,pounds,pooled_quarter_ratio,31478.92294598082,forecasted,29173.0
+27011,Big Stone,2023,pounds,pooled_quarter_ratio,5407.254644988276,forecasted,5746.0
+27013,Blue Earth,2023,pounds,pooled_quarter_ratio,277332.02880995837,forecasted,281513.0
+27015,Brown,2023,pounds,pooled_quarter_ratio,34693.05866570356,forecasted,31105.0
+27017,Carlton,2023,pounds,pooled_quarter_ratio,45881.06804418317,forecasted,34656.0
+27019,Carver,2023,pounds,pooled_quarter_ratio,126740.49546867798,forecasted,140781.0
+27021,Cass,2023,pounds,pooled_quarter_ratio,94892.84691744973,forecasted,86571.0
+27023,Chippewa,2023,pounds,pooled_quarter_ratio,11279.11658397017,forecasted,7394.0
+27025,Chisago,2023,pounds,pooled_quarter_ratio,65625.97919066409,forecasted,65116.0
+27027,Clay,2023,pounds,pooled_quarter_ratio,53549.49224499172,forecasted,74748.0
+27029,Clearwater,2023,pounds,pooled_quarter_ratio,10022.043824901477,forecasted,10650.0
+27031,Cook,2023,pounds,pooled_quarter_ratio,15812.576065783607,forecasted,13682.0
+27033,Cottonwood,2023,pounds,pooled_quarter_ratio,17666.41269507018,forecasted,19338.0
+27035,Crow Wing,2023,pounds,pooled_quarter_ratio,109511.11344767148,forecasted,117399.0
+27037,Dakota,2023,pounds,pooled_quarter_ratio,662180.6667135349,forecasted,715541.0
+27039,Dodge,2023,pounds,pooled_quarter_ratio,29067.889115138907,forecasted,35016.0
+27041,Douglas,2023,pounds,pooled_quarter_ratio,38629.021317747975,forecasted,58317.0
+27043,Faribault,2023,pounds,pooled_quarter_ratio,22681.82313703021,forecasted,18200.0
+27045,Fillmore,2023,pounds,pooled_quarter_ratio,21905.30560385301,forecasted,22042.0
+27047,Freeborn,2023,pounds,pooled_quarter_ratio,36624.86351379988,forecasted,50217.0
+27049,Goodhue,2023,pounds,pooled_quarter_ratio,52769.928737605966,forecasted,53385.4
+27051,Grant,2023,pounds,pooled_quarter_ratio,6104.908614313835,forecasted,8142.4
+27053,Hennepin,2023,pounds,pooled_quarter_ratio,4081762.957741355,forecasted,4295972.0
+27055,Houston,2023,pounds,pooled_quarter_ratio,23564.188232614757,forecasted,23863.9
+27057,Hubbard,2023,pounds,pooled_quarter_ratio,54083.575093412706,forecasted,41889.0
+27059,Isanti,2023,pounds,pooled_quarter_ratio,50781.109503087595,forecasted,54322.0
+27061,Itasca,2023,pounds,pooled_quarter_ratio,114466.94719905469,forecasted,114674.0
+27063,Jackson,2023,pounds,pooled_quarter_ratio,21731.092297808325,forecasted,26566.0
+27065,Kanabec,2023,pounds,pooled_quarter_ratio,24505.830425071665,forecasted,33106.0
+27067,Kandiyohi,2023,pounds,pooled_quarter_ratio,52223.3133767103,forecasted,45490.0
+27069,Kittson,2023,pounds,pooled_quarter_ratio,16335.898026947221,forecasted,13856.27
+27071,Koochiching,2023,pounds,pooled_quarter_ratio,38057.06037746685,forecasted,42820.0
+27073,Lac qui Parle,2023,pounds,pooled_quarter_ratio,3413.0477598802568,forecasted,3809.0
+27075,Lake,2023,pounds,pooled_quarter_ratio,19194.23461055173,forecasted,19073.0
+27077,Lake of the Woods,2023,pounds,pooled_quarter_ratio,2669.619128808055,forecasted,4000.29
+27079,Le Sueur,2023,pounds,pooled_quarter_ratio,50577.59892550266,forecasted,40113.0
+27081,Lincoln,2023,pounds,pooled_quarter_ratio,3437.0709673225756,forecasted,3327.0
+27083,Lyon,2023,pounds,pooled_quarter_ratio,30757.427569160212,forecasted,28927.0
+27085,McLeod,2023,pounds,pooled_quarter_ratio,62434.230298947165,forecasted,65177.0
+27087,Mahnomen,2023,pounds,pooled_quarter_ratio,39794.65885993402,forecasted,38228.0
+27089,Marshall,2023,pounds,pooled_quarter_ratio,7759.163783522131,forecasted,9415.0
+27091,Martin,2023,pounds,pooled_quarter_ratio,36557.271235160086,forecasted,36286.0
+27093,Meeker,2023,pounds,pooled_quarter_ratio,24327.436292294326,forecasted,24741.0
+27095,Mille Lacs,2023,pounds,pooled_quarter_ratio,106843.28274421816,forecasted,85324.0
+27097,Morrison,2023,pounds,pooled_quarter_ratio,43429.69156576738,forecasted,39356.0
+27099,Mower,2023,pounds,pooled_quarter_ratio,51094.88299953393,forecasted,53143.7
+27101,Murray,2023,pounds,pooled_quarter_ratio,7467.406201744157,forecasted,8255.0
+27103,Nicollet,2023,pounds,pooled_quarter_ratio,15052.430587821487,forecasted,16416.0
+27105,Nobles,2023,pounds,pooled_quarter_ratio,8697.870505077133,forecasted,9434.0
+27107,Norman,2023,pounds,pooled_quarter_ratio,2825.8155197538354,forecasted,3366.2
+27109,Olmsted,2023,pounds,pooled_quarter_ratio,503725.4596005714,forecasted,440507.0
+27111,Otter Tail,2023,pounds,pooled_quarter_ratio,60335.667816117464,forecasted,69871.6
+27113,Pennington,2023,pounds,pooled_quarter_ratio,16611.730362260634,forecasted,38117.0
+27115,Pine,2023,pounds,pooled_quarter_ratio,44848.1131178715,forecasted,44033.0
+27117,Pipestone,2023,pounds,pooled_quarter_ratio,35001.555033283956,forecasted,38625.0
+27119,Polk,2023,pounds,pooled_quarter_ratio,44139.25508104748,forecasted,52298.9
+27121,Pope,2023,pounds,pooled_quarter_ratio,10824.130890353204,forecasted,7460.0
+27123,Ramsey,2023,pounds,pooled_quarter_ratio,1227770.5480067057,forecasted,1225856.0
+27125,Red Lake,2023,pounds,pooled_quarter_ratio,8518.198925466982,forecasted,9713.42
+27127,Redwood,2023,pounds,pooled_quarter_ratio,25755.46941820388,forecasted,27298.0
+27129,Renville,2023,pounds,pooled_quarter_ratio,50249.761505516224,forecasted,48013.0
+27131,Rice,2023,pounds,pooled_quarter_ratio,198734.189085915,forecasted,211856.0
+27133,Rock,2023,pounds,pooled_quarter_ratio,6854.292551072092,forecasted,8704.0
+27135,Roseau,2023,pounds,pooled_quarter_ratio,8581.091624909664,forecasted,8856.0
+27137,St. Louis,2023,pounds,pooled_quarter_ratio,459621.5449019116,forecasted,468364.0
+27139,Scott,2023,pounds,pooled_quarter_ratio,225328.7989649895,forecasted,228932.0
+27141,Sherburne,2023,pounds,pooled_quarter_ratio,156272.35167124792,forecasted,171244.0
+27143,Sibley,2023,pounds,pooled_quarter_ratio,22754.25603611802,forecasted,21011.0
+27145,Stearns,2023,pounds,pooled_quarter_ratio,312719.7110996432,forecasted,291725.0
+27147,Steele,2023,pounds,pooled_quarter_ratio,141326.48097156914,forecasted,168608.0
+27149,Stevens,2023,pounds,pooled_quarter_ratio,18903.242824624525,forecasted,34395.0
+27151,Swift,2023,pounds,pooled_quarter_ratio,6868.945950924569,forecasted,7926.0
+27153,Todd,2023,pounds,pooled_quarter_ratio,29045.261185704847,forecasted,29290.0
+27155,Traverse,2023,pounds,pooled_quarter_ratio,3225.0173184936825,forecasted,1905.0
+27157,Wabasha,2023,pounds,pooled_quarter_ratio,50984.00965010415,forecasted,54185.15
+27159,Wadena,2023,pounds,pooled_quarter_ratio,14591.751813700268,forecasted,10159.95
+27161,Waseca,2023,pounds,pooled_quarter_ratio,20675.88603198811,forecasted,21834.0
+27163,Washington,2023,pounds,pooled_quarter_ratio,867636.1123002111,forecasted,935385.0
+27165,Watonwan,2023,pounds,pooled_quarter_ratio,22733.586034790053,forecasted,25056.0
+27167,Wilkin,2023,pounds,pooled_quarter_ratio,,no_reporting_history,
+27169,Winona,2023,pounds,pooled_quarter_ratio,57698.80992512767,forecasted,57377.0
+27171,Wright,2023,pounds,pooled_quarter_ratio,193453.72357094532,forecasted,206393.0
+27173,Yellow Medicine,2023,pounds,pooled_quarter_ratio,15151.583623455232,forecasted,14218.0
 27001,Aitkin,2023,pounds,per_site_ratio,22713.71060962741,forecasted,18844.0
 27003,Anoka,2023,pounds,per_site_ratio,848716.0192495278,forecasted,800411.0
 27005,Becker,2023,pounds,per_site_ratio,42984.18827233141,forecasted,40841.0
@@ -1130,6 +1304,93 @@ fips,county_name,target_year,metric,method,prediction,forecast_status,actual
 27169,Winona,2023,individuals,pooled_august_july_ratio,2544.9402465627973,forecasted,2430.0
 27171,Wright,2023,individuals,pooled_august_july_ratio,6711.812307823769,forecasted,7176.0
 27173,Yellow Medicine,2023,individuals,pooled_august_july_ratio,393.00156770624994,forecasted,454.0
+27001,Aitkin,2023,individuals,pooled_quarter_ratio,959.7600318952334,forecasted,891.0
+27003,Anoka,2023,individuals,pooled_quarter_ratio,60869.69699400531,forecasted,68732.0
+27005,Becker,2023,individuals,pooled_quarter_ratio,1610.8699299381578,forecasted,1588.0
+27007,Beltrami,2023,individuals,pooled_quarter_ratio,3576.0469650396485,forecasted,3384.0
+27009,Benton,2023,individuals,pooled_quarter_ratio,1437.5645400113765,forecasted,1550.0
+27011,Big Stone,2023,individuals,pooled_quarter_ratio,178.24102761612525,forecasted,216.0
+27013,Blue Earth,2023,individuals,pooled_quarter_ratio,12658.647788622166,forecasted,14471.0
+27015,Brown,2023,individuals,pooled_quarter_ratio,640.9693682047352,forecasted,613.0
+27017,Carlton,2023,individuals,pooled_quarter_ratio,1882.2595689459379,forecasted,1680.0
+27019,Carver,2023,individuals,pooled_quarter_ratio,5054.185074618,forecasted,5400.0
+27021,Cass,2023,individuals,pooled_quarter_ratio,3339.221590910619,forecasted,4309.0
+27023,Chippewa,2023,individuals,pooled_quarter_ratio,455.43922253196234,forecasted,502.0
+27025,Chisago,2023,individuals,pooled_quarter_ratio,2432.476619664454,forecasted,2512.0
+27027,Clay,2023,individuals,pooled_quarter_ratio,3006.6923259809114,forecasted,3733.0
+27029,Clearwater,2023,individuals,pooled_quarter_ratio,500.0056163768657,forecasted,467.0
+27031,Cook,2023,individuals,pooled_quarter_ratio,618.4137525237925,forecasted,465.0
+27033,Cottonwood,2023,individuals,pooled_quarter_ratio,838.0426640679774,forecasted,1056.0
+27035,Crow Wing,2023,individuals,pooled_quarter_ratio,4263.37752839001,forecasted,3770.0
+27037,Dakota,2023,individuals,pooled_quarter_ratio,27302.44862078886,forecasted,38167.0
+27039,Dodge,2023,individuals,pooled_quarter_ratio,1800.2104310359748,forecasted,1877.0
+27041,Douglas,2023,individuals,pooled_quarter_ratio,1159.4339546670167,forecasted,1234.0
+27043,Faribault,2023,individuals,pooled_quarter_ratio,1001.5451889541815,forecasted,704.0
+27045,Fillmore,2023,individuals,pooled_quarter_ratio,858.5762317920503,forecasted,980.0
+27047,Freeborn,2023,individuals,pooled_quarter_ratio,2142.372161199043,forecasted,2983.0
+27049,Goodhue,2023,individuals,pooled_quarter_ratio,2992.655227097627,forecasted,2968.0
+27051,Grant,2023,individuals,pooled_quarter_ratio,152.2686148203012,forecasted,203.0
+27053,Hennepin,2023,individuals,pooled_quarter_ratio,210820.51369094994,forecasted,229168.0
+27055,Houston,2023,individuals,pooled_quarter_ratio,1387.316393422982,forecasted,1046.0
+27057,Hubbard,2023,individuals,pooled_quarter_ratio,1691.722630067745,forecasted,1456.0
+27059,Isanti,2023,individuals,pooled_quarter_ratio,3041.3267487707403,forecasted,3141.0
+27061,Itasca,2023,individuals,pooled_quarter_ratio,6942.695804245211,forecasted,4422.0
+27063,Jackson,2023,individuals,pooled_quarter_ratio,841.1112783925563,forecasted,933.0
+27065,Kanabec,2023,individuals,pooled_quarter_ratio,810.0126612055127,forecasted,945.0
+27067,Kandiyohi,2023,individuals,pooled_quarter_ratio,2389.7817763116277,forecasted,2316.0
+27069,Kittson,2023,individuals,pooled_quarter_ratio,350.3348548389941,forecasted,402.0
+27071,Koochiching,2023,individuals,pooled_quarter_ratio,1505.5003936543417,forecasted,1545.0
+27073,Lac qui Parle,2023,individuals,pooled_quarter_ratio,92.93876686266508,forecasted,121.0
+27075,Lake,2023,individuals,pooled_quarter_ratio,738.9768248375347,forecasted,723.0
+27077,Lake of the Woods,2023,individuals,pooled_quarter_ratio,126.65192374863385,forecasted,150.0
+27079,Le Sueur,2023,individuals,pooled_quarter_ratio,2165.547201127506,forecasted,1819.0
+27081,Lincoln,2023,individuals,pooled_quarter_ratio,131.1444146319508,forecasted,156.0
+27083,Lyon,2023,individuals,pooled_quarter_ratio,1061.087693620168,forecasted,1070.0
+27085,McLeod,2023,individuals,pooled_quarter_ratio,3219.4355020818093,forecasted,3179.0
+27087,Mahnomen,2023,individuals,pooled_quarter_ratio,1298.5017296491246,forecasted,1423.0
+27089,Marshall,2023,individuals,pooled_quarter_ratio,280.8984559678595,forecasted,330.0
+27091,Martin,2023,individuals,pooled_quarter_ratio,1251.0185219982118,forecasted,1223.0
+27093,Meeker,2023,individuals,pooled_quarter_ratio,990.0894872622243,forecasted,1001.0
+27095,Mille Lacs,2023,individuals,pooled_quarter_ratio,4817.421682305805,forecasted,4671.0
+27097,Morrison,2023,individuals,pooled_quarter_ratio,1381.5479771917333,forecasted,1345.0
+27099,Mower,2023,individuals,pooled_quarter_ratio,3954.5600718795185,forecasted,4104.0
+27101,Murray,2023,individuals,pooled_quarter_ratio,339.55956775569365,forecasted,317.0
+27103,Nicollet,2023,individuals,pooled_quarter_ratio,667.8627495546841,forecasted,742.0
+27105,Nobles,2023,individuals,pooled_quarter_ratio,514.3364669138534,forecasted,550.0
+27107,Norman,2023,individuals,pooled_quarter_ratio,140.21976341556731,forecasted,130.0
+27109,Olmsted,2023,individuals,pooled_quarter_ratio,22345.81519670003,forecasted,23030.0
+27111,Otter Tail,2023,individuals,pooled_quarter_ratio,2040.5825543933072,forecasted,2407.0
+27113,Pennington,2023,individuals,pooled_quarter_ratio,737.0788350740581,forecasted,1027.0
+27115,Pine,2023,individuals,pooled_quarter_ratio,1855.8872107379545,forecasted,1814.0
+27117,Pipestone,2023,individuals,pooled_quarter_ratio,1318.668965653921,forecasted,1474.0
+27119,Polk,2023,individuals,pooled_quarter_ratio,1466.4370511794164,forecasted,1720.0
+27121,Pope,2023,individuals,pooled_quarter_ratio,178.21280081340123,forecasted,142.0
+27123,Ramsey,2023,individuals,pooled_quarter_ratio,60390.68799492394,forecasted,63820.0
+27125,Red Lake,2023,individuals,pooled_quarter_ratio,240.2701526417921,forecasted,187.0
+27127,Redwood,2023,individuals,pooled_quarter_ratio,867.6434731728411,forecasted,974.0
+27129,Renville,2023,individuals,pooled_quarter_ratio,3419.040083463178,forecasted,3498.0
+27131,Rice,2023,individuals,pooled_quarter_ratio,14541.039129663686,forecasted,14181.0
+27133,Rock,2023,individuals,pooled_quarter_ratio,429.54573456024144,forecasted,595.0
+27135,Roseau,2023,individuals,pooled_quarter_ratio,323.5865539519083,forecasted,439.0
+27137,St. Louis,2023,individuals,pooled_quarter_ratio,16797.190654671016,forecasted,17000.0
+27139,Scott,2023,individuals,pooled_quarter_ratio,4684.608357852954,forecasted,5018.0
+27141,Sherburne,2023,individuals,pooled_quarter_ratio,8474.907370728288,forecasted,10334.0
+27143,Sibley,2023,individuals,pooled_quarter_ratio,828.0583064662004,forecasted,806.0
+27145,Stearns,2023,individuals,pooled_quarter_ratio,10423.117204592494,forecasted,10045.0
+27147,Steele,2023,individuals,pooled_quarter_ratio,10394.47988575131,forecasted,11152.0
+27149,Stevens,2023,individuals,pooled_quarter_ratio,598.2413355898906,forecasted,1309.0
+27151,Swift,2023,individuals,pooled_quarter_ratio,341.95025586739683,forecasted,393.0
+27153,Todd,2023,individuals,pooled_quarter_ratio,942.5828897137197,forecasted,943.0
+27155,Traverse,2023,individuals,pooled_quarter_ratio,144.4415290563021,forecasted,89.0
+27157,Wabasha,2023,individuals,pooled_quarter_ratio,2537.2283113478584,forecasted,2466.0
+27159,Wadena,2023,individuals,pooled_quarter_ratio,577.290032871088,forecasted,692.0
+27161,Waseca,2023,individuals,pooled_quarter_ratio,653.3353366658479,forecasted,915.0
+27163,Washington,2023,individuals,pooled_quarter_ratio,85809.6724464119,forecasted,93887.0
+27165,Watonwan,2023,individuals,pooled_quarter_ratio,1323.7682682952636,forecasted,1521.0
+27167,Wilkin,2023,individuals,pooled_quarter_ratio,,no_reporting_history,
+27169,Winona,2023,individuals,pooled_quarter_ratio,2421.93184865879,forecasted,2430.0
+27171,Wright,2023,individuals,pooled_quarter_ratio,6884.912842287417,forecasted,7176.0
+27173,Yellow Medicine,2023,individuals,pooled_quarter_ratio,418.1080380637838,forecasted,454.0
 27001,Aitkin,2023,individuals,per_site_ratio,934.9187592319055,forecasted,891.0
 27003,Anoka,2023,individuals,per_site_ratio,63195.73150586852,forecasted,68732.0
 27005,Becker,2023,individuals,per_site_ratio,1498.1984334203657,forecasted,1588.0
@@ -1565,6 +1826,93 @@ fips,county_name,target_year,metric,method,prediction,forecast_status,actual
 27169,Winona,2023,children,pooled_august_july_ratio,665.9011164274322,forecasted,683.0
 27171,Wright,2023,children,pooled_august_july_ratio,2588.0062015503877,forecasted,3001.0
 27173,Yellow Medicine,2023,children,pooled_august_july_ratio,97.18518518518519,forecasted,127.0
+27001,Aitkin,2023,children,pooled_quarter_ratio,214.14154888329153,forecasted,210.0
+27003,Anoka,2023,children,pooled_quarter_ratio,21735.465129595646,forecasted,25397.0
+27005,Becker,2023,children,pooled_quarter_ratio,493.56556058823776,forecasted,503.0
+27007,Beltrami,2023,children,pooled_quarter_ratio,1198.9534478743376,forecasted,1195.0
+27009,Benton,2023,children,pooled_quarter_ratio,418.5865113823504,forecasted,473.0
+27011,Big Stone,2023,children,pooled_quarter_ratio,58.83428324659379,forecasted,83.0
+27013,Blue Earth,2023,children,pooled_quarter_ratio,5335.393362232062,forecasted,6675.0
+27015,Brown,2023,children,pooled_quarter_ratio,171.39514159391445,forecasted,165.0
+27017,Carlton,2023,children,pooled_quarter_ratio,443.5369939872801,forecasted,475.0
+27019,Carver,2023,children,pooled_quarter_ratio,1696.4527497763365,forecasted,1886.0
+27021,Cass,2023,children,pooled_quarter_ratio,979.0797666599274,forecasted,1388.0
+27023,Chippewa,2023,children,pooled_quarter_ratio,117.91857384418839,forecasted,209.0
+27025,Chisago,2023,children,pooled_quarter_ratio,539.4608974190805,forecasted,568.0
+27027,Clay,2023,children,pooled_quarter_ratio,897.8208468346234,forecasted,1427.0
+27029,Clearwater,2023,children,pooled_quarter_ratio,165.48651855817516,forecasted,151.0
+27031,Cook,2023,children,pooled_quarter_ratio,184.37261787530815,forecasted,114.0
+27033,Cottonwood,2023,children,pooled_quarter_ratio,315.5499588043944,forecasted,429.0
+27035,Crow Wing,2023,children,pooled_quarter_ratio,1172.2486147551726,forecasted,1261.0
+27037,Dakota,2023,children,pooled_quarter_ratio,9591.900521271837,forecasted,18293.0
+27039,Dodge,2023,children,pooled_quarter_ratio,607.2345239629802,forecasted,618.0
+27041,Douglas,2023,children,pooled_quarter_ratio,366.87974125116546,forecasted,397.0
+27043,Faribault,2023,children,pooled_quarter_ratio,197.14474326913992,forecasted,104.0
+27045,Fillmore,2023,children,pooled_quarter_ratio,236.29888214817203,forecasted,292.0
+27047,Freeborn,2023,children,pooled_quarter_ratio,729.3380156911563,forecasted,933.0
+27049,Goodhue,2023,children,pooled_quarter_ratio,947.38743230598,forecasted,987.0
+27051,Grant,2023,children,pooled_quarter_ratio,35.71861807095513,forecasted,50.0
+27053,Hennepin,2023,children,pooled_quarter_ratio,77816.3034337396,forecasted,87023.0
+27055,Houston,2023,children,pooled_quarter_ratio,429.7511124865401,forecasted,289.0
+27057,Hubbard,2023,children,pooled_quarter_ratio,485.6018478763154,forecasted,409.0
+27059,Isanti,2023,children,pooled_quarter_ratio,827.8831163964702,forecasted,795.0
+27061,Itasca,2023,children,pooled_quarter_ratio,1969.9967619230242,forecasted,1288.0
+27063,Jackson,2023,children,pooled_quarter_ratio,321.9792747917357,forecasted,367.0
+27065,Kanabec,2023,children,pooled_quarter_ratio,191.4588273015469,forecasted,222.0
+27067,Kandiyohi,2023,children,pooled_quarter_ratio,816.3937650895609,forecasted,822.0
+27069,Kittson,2023,children,pooled_quarter_ratio,74.9321136474861,forecasted,117.0
+27071,Koochiching,2023,children,pooled_quarter_ratio,335.59322193937703,forecasted,336.0
+27073,Lac qui Parle,2023,children,pooled_quarter_ratio,23.25472957251206,forecasted,39.0
+27075,Lake,2023,children,pooled_quarter_ratio,151.1337280007965,forecasted,170.0
+27077,Lake of the Woods,2023,children,pooled_quarter_ratio,30.535222791686834,forecasted,43.0
+27079,Le Sueur,2023,children,pooled_quarter_ratio,648.394766440962,forecasted,627.0
+27081,Lincoln,2023,children,pooled_quarter_ratio,18.85081357400317,forecasted,30.0
+27083,Lyon,2023,children,pooled_quarter_ratio,357.8634823841864,forecasted,365.0
+27085,McLeod,2023,children,pooled_quarter_ratio,830.7645995054289,forecasted,868.0
+27087,Mahnomen,2023,children,pooled_quarter_ratio,477.0970939142795,forecasted,577.0
+27089,Marshall,2023,children,pooled_quarter_ratio,87.55050385406793,forecasted,115.0
+27091,Martin,2023,children,pooled_quarter_ratio,344.04277210117453,forecasted,370.0
+27093,Meeker,2023,children,pooled_quarter_ratio,265.24519783034077,forecasted,271.0
+27095,Mille Lacs,2023,children,pooled_quarter_ratio,1257.7132775405819,forecasted,1161.0
+27097,Morrison,2023,children,pooled_quarter_ratio,409.57480124825474,forecasted,422.0
+27099,Mower,2023,children,pooled_quarter_ratio,1532.5451615942786,forecasted,1599.0
+27101,Murray,2023,children,pooled_quarter_ratio,108.7082494106074,forecasted,95.0
+27103,Nicollet,2023,children,pooled_quarter_ratio,207.11907521224504,forecasted,253.0
+27105,Nobles,2023,children,pooled_quarter_ratio,216.3616225210048,forecasted,216.0
+27107,Norman,2023,children,pooled_quarter_ratio,45.374406930406025,forecasted,52.0
+27109,Olmsted,2023,children,pooled_quarter_ratio,6443.314663795413,forecasted,6800.0
+27111,Otter Tail,2023,children,pooled_quarter_ratio,513.5010788809594,forecasted,668.0
+27113,Pennington,2023,children,pooled_quarter_ratio,212.69103747196795,forecasted,327.0
+27115,Pine,2023,children,pooled_quarter_ratio,510.41618735166486,forecasted,457.0
+27117,Pipestone,2023,children,pooled_quarter_ratio,509.51812558411854,forecasted,578.0
+27119,Polk,2023,children,pooled_quarter_ratio,481.0283525139283,forecasted,547.0
+27121,Pope,2023,children,pooled_quarter_ratio,46.639086843251604,forecasted,40.0
+27123,Ramsey,2023,children,pooled_quarter_ratio,21530.614790967804,forecasted,25353.0
+27125,Red Lake,2023,children,pooled_quarter_ratio,74.22301107327911,forecasted,48.0
+27127,Redwood,2023,children,pooled_quarter_ratio,321.9571132503321,forecasted,402.0
+27129,Renville,2023,children,pooled_quarter_ratio,1117.1660056757485,forecasted,1217.0
+27131,Rice,2023,children,pooled_quarter_ratio,5271.995197552453,forecasted,5391.0
+27133,Rock,2023,children,pooled_quarter_ratio,123.9908281794485,forecasted,221.0
+27135,Roseau,2023,children,pooled_quarter_ratio,134.37268386930876,forecasted,181.0
+27137,St. Louis,2023,children,pooled_quarter_ratio,3812.6797340526355,forecasted,4088.0
+27139,Scott,2023,children,pooled_quarter_ratio,1537.1828047731838,forecasted,1748.0
+27141,Sherburne,2023,children,pooled_quarter_ratio,3122.091330492567,forecasted,3778.0
+27143,Sibley,2023,children,pooled_quarter_ratio,248.63722581309673,forecasted,226.0
+27145,Stearns,2023,children,pooled_quarter_ratio,3169.975365766994,forecasted,3366.0
+27147,Steele,2023,children,pooled_quarter_ratio,3557.451826746635,forecasted,3866.0
+27149,Stevens,2023,children,pooled_quarter_ratio,191.12749937462468,forecasted,414.0
+27151,Swift,2023,children,pooled_quarter_ratio,116.58210784896573,forecasted,123.0
+27153,Todd,2023,children,pooled_quarter_ratio,283.7476848907338,forecasted,294.0
+27155,Traverse,2023,children,pooled_quarter_ratio,43.306666654135626,forecasted,24.0
+27157,Wabasha,2023,children,pooled_quarter_ratio,884.6513587294263,forecasted,832.0
+27159,Wadena,2023,children,pooled_quarter_ratio,166.5398798115666,forecasted,175.0
+27161,Waseca,2023,children,pooled_quarter_ratio,142.27065990624448,forecasted,188.0
+27163,Washington,2023,children,pooled_quarter_ratio,30134.63167661799,forecasted,34298.0
+27165,Watonwan,2023,children,pooled_quarter_ratio,474.42242874161184,forecasted,575.0
+27167,Wilkin,2023,children,pooled_quarter_ratio,,no_reporting_history,
+27169,Winona,2023,children,pooled_quarter_ratio,622.9374337215635,forecasted,683.0
+27171,Wright,2023,children,pooled_quarter_ratio,2579.414310276849,forecasted,3001.0
+27173,Yellow Medicine,2023,children,pooled_quarter_ratio,115.56543502508532,forecasted,127.0
 27001,Aitkin,2023,children,per_site_ratio,171.43333333333334,forecasted,210.0
 27003,Anoka,2023,children,per_site_ratio,23273.471802688102,forecasted,25397.0
 27005,Becker,2023,children,per_site_ratio,445.1715039577836,forecasted,503.0
@@ -2000,6 +2348,93 @@ fips,county_name,target_year,metric,method,prediction,forecast_status,actual
 27169,Winona,2023,adults,pooled_august_july_ratio,1499.7707594403666,forecasted,1429.0
 27171,Wright,2023,adults,pooled_august_july_ratio,3236.4633061315585,forecasted,3348.0
 27173,Yellow Medicine,2023,adults,pooled_august_july_ratio,239.93373479911537,forecasted,284.0
+27001,Aitkin,2023,adults,pooled_quarter_ratio,442.8724965752531,forecasted,379.0
+27003,Anoka,2023,adults,pooled_quarter_ratio,30554.149733519425,forecasted,34288.0
+27005,Becker,2023,adults,pooled_quarter_ratio,893.5076344293786,forecasted,857.0
+27007,Beltrami,2023,adults,pooled_quarter_ratio,1856.1514219413527,forecasted,1751.0
+27009,Benton,2023,adults,pooled_quarter_ratio,725.9831931144148,forecasted,738.0
+27011,Big Stone,2023,adults,pooled_quarter_ratio,100.29784846138058,forecasted,118.0
+27013,Blue Earth,2023,adults,pooled_quarter_ratio,6659.516942498177,forecasted,7211.0
+27015,Brown,2023,adults,pooled_quarter_ratio,367.61823243554255,forecasted,352.0
+27017,Carlton,2023,adults,pooled_quarter_ratio,1085.7295334588607,forecasted,935.0
+27019,Carver,2023,adults,pooled_quarter_ratio,2909.944411678301,forecasted,3066.0
+27021,Cass,2023,adults,pooled_quarter_ratio,1667.3449989972282,forecasted,2224.0
+27023,Chippewa,2023,adults,pooled_quarter_ratio,269.7120382306024,forecasted,235.0
+27025,Chisago,2023,adults,pooled_quarter_ratio,1167.4087075320624,forecasted,1073.0
+27027,Clay,2023,adults,pooled_quarter_ratio,1638.6247313754245,forecasted,1797.0
+27029,Clearwater,2023,adults,pooled_quarter_ratio,239.25314443599825,forecasted,224.0
+27031,Cook,2023,adults,pooled_quarter_ratio,319.0856197670495,forecasted,236.0
+27033,Cottonwood,2023,adults,pooled_quarter_ratio,450.7682940626436,forecasted,554.0
+27035,Crow Wing,2023,adults,pooled_quarter_ratio,2071.088859558038,forecasted,1689.0
+27037,Dakota,2023,adults,pooled_quarter_ratio,15111.989838173908,forecasted,16714.0
+27039,Dodge,2023,adults,pooled_quarter_ratio,956.2895656787463,forecasted,959.0
+27041,Douglas,2023,adults,pooled_quarter_ratio,676.6530581829734,forecasted,734.0
+27043,Faribault,2023,adults,pooled_quarter_ratio,677.1053733647137,forecasted,505.0
+27045,Fillmore,2023,adults,pooled_quarter_ratio,457.86990026811577,forecasted,518.0
+27047,Freeborn,2023,adults,pooled_quarter_ratio,1159.3156061867662,forecasted,1698.0
+27049,Goodhue,2023,adults,pooled_quarter_ratio,1723.617828461187,forecasted,1712.0
+27051,Grant,2023,adults,pooled_quarter_ratio,79.96857882528272,forecasted,109.0
+27053,Hennepin,2023,adults,pooled_quarter_ratio,108742.90689872573,forecasted,120100.0
+27055,Houston,2023,adults,pooled_quarter_ratio,683.2643324103403,forecasted,535.0
+27057,Hubbard,2023,adults,pooled_quarter_ratio,905.3495607988948,forecasted,776.0
+27059,Isanti,2023,adults,pooled_quarter_ratio,1660.4978347635838,forecasted,1726.0
+27061,Itasca,2023,adults,pooled_quarter_ratio,3304.3099944289725,forecasted,2367.0
+27063,Jackson,2023,adults,pooled_quarter_ratio,447.39075965149385,forecasted,502.0
+27065,Kanabec,2023,adults,pooled_quarter_ratio,439.8115258702537,forecasted,551.0
+27067,Kandiyohi,2023,adults,pooled_quarter_ratio,1352.2401164290306,forecasted,1307.0
+27069,Kittson,2023,adults,pooled_quarter_ratio,209.99762537033476,forecasted,222.0
+27071,Koochiching,2023,adults,pooled_quarter_ratio,805.3072764071239,forecasted,868.0
+27073,Lac qui Parle,2023,adults,pooled_quarter_ratio,54.53379029874481,forecasted,66.0
+27075,Lake,2023,adults,pooled_quarter_ratio,449.28163345708134,forecasted,423.0
+27077,Lake of the Woods,2023,adults,pooled_quarter_ratio,64.80140189463215,forecasted,65.0
+27079,Le Sueur,2023,adults,pooled_quarter_ratio,1013.7994577908172,forecasted,836.0
+27081,Lincoln,2023,adults,pooled_quarter_ratio,31.66072831442702,forecasted,42.0
+27083,Lyon,2023,adults,pooled_quarter_ratio,586.7049996809301,forecasted,606.0
+27085,McLeod,2023,adults,pooled_quarter_ratio,1814.1970557350078,forecasted,1747.0
+27087,Mahnomen,2023,adults,pooled_quarter_ratio,513.3389375671405,forecasted,551.0
+27089,Marshall,2023,adults,pooled_quarter_ratio,139.52005988552406,forecasted,158.0
+27091,Martin,2023,adults,pooled_quarter_ratio,676.2634099979775,forecasted,628.0
+27093,Meeker,2023,adults,pooled_quarter_ratio,548.4693535717945,forecasted,571.0
+27095,Mille Lacs,2023,adults,pooled_quarter_ratio,2133.2496184211764,forecasted,2104.0
+27097,Morrison,2023,adults,pooled_quarter_ratio,773.4280843028171,forecasted,745.0
+27099,Mower,2023,adults,pooled_quarter_ratio,2018.004516211882,forecasted,2101.0
+27101,Murray,2023,adults,pooled_quarter_ratio,182.54439075177493,forecasted,170.0
+27103,Nicollet,2023,adults,pooled_quarter_ratio,414.7885966824699,forecasted,449.0
+27105,Nobles,2023,adults,pooled_quarter_ratio,261.9982390005281,forecasted,297.0
+27107,Norman,2023,adults,pooled_quarter_ratio,78.81953537244293,forecasted,65.0
+27109,Olmsted,2023,adults,pooled_quarter_ratio,12937.329482172143,forecasted,13321.0
+27111,Otter Tail,2023,adults,pooled_quarter_ratio,1165.9933394976613,forecasted,1322.0
+27113,Pennington,2023,adults,pooled_quarter_ratio,397.6623693377475,forecasted,567.0
+27115,Pine,2023,adults,pooled_quarter_ratio,1007.8002864169409,forecasted,953.0
+27117,Pipestone,2023,adults,pooled_quarter_ratio,750.4342582482824,forecasted,843.0
+27119,Polk,2023,adults,pooled_quarter_ratio,797.5650763145345,forecasted,940.0
+27121,Pope,2023,adults,pooled_quarter_ratio,97.78105094198837,forecasted,71.0
+27123,Ramsey,2023,adults,pooled_quarter_ratio,32254.58845108141,forecasted,31786.0
+27125,Red Lake,2023,adults,pooled_quarter_ratio,120.48459406935308,forecasted,104.0
+27127,Redwood,2023,adults,pooled_quarter_ratio,464.542755224102,forecasted,494.0
+27129,Renville,2023,adults,pooled_quarter_ratio,1740.4298147060294,forecasted,1765.0
+27131,Rice,2023,adults,pooled_quarter_ratio,7751.34936077916,forecasted,7491.0
+27133,Rock,2023,adults,pooled_quarter_ratio,215.57861640006934,forecasted,306.0
+27135,Roseau,2023,adults,pooled_quarter_ratio,156.47287846500888,forecasted,221.0
+27137,St. Louis,2023,adults,pooled_quarter_ratio,10998.846209771533,forecasted,11052.0
+27139,Scott,2023,adults,pooled_quarter_ratio,2651.078851250218,forecasted,2794.0
+27141,Sherburne,2023,adults,pooled_quarter_ratio,4395.113274871476,forecasted,5542.0
+27143,Sibley,2023,adults,pooled_quarter_ratio,418.7059701412763,forecasted,424.0
+27145,Stearns,2023,adults,pooled_quarter_ratio,6347.9213441474985,forecasted,5794.0
+27147,Steele,2023,adults,pooled_quarter_ratio,5757.258609286459,forecasted,6228.0
+27149,Stevens,2023,adults,pooled_quarter_ratio,328.8681503136619,forecasted,642.0
+27151,Swift,2023,adults,pooled_quarter_ratio,168.40291714463535,forecasted,211.0
+27153,Todd,2023,adults,pooled_quarter_ratio,546.1574691253047,forecasted,577.0
+27155,Traverse,2023,adults,pooled_quarter_ratio,65.78587211854051,forecasted,43.0
+27157,Wabasha,2023,adults,pooled_quarter_ratio,1317.1129157213138,forecasted,1280.0
+27159,Wadena,2023,adults,pooled_quarter_ratio,334.07244319754705,forecasted,442.0
+27161,Waseca,2023,adults,pooled_quarter_ratio,382.93732110520773,forecasted,510.0
+27163,Washington,2023,adults,pooled_quarter_ratio,44360.27985268182,forecasted,47954.0
+27165,Watonwan,2023,adults,pooled_quarter_ratio,752.4776917644973,forecasted,846.0
+27167,Wilkin,2023,adults,pooled_quarter_ratio,,no_reporting_history,
+27169,Winona,2023,adults,pooled_quarter_ratio,1449.3440928560956,forecasted,1429.0
+27171,Wright,2023,adults,pooled_quarter_ratio,3304.1968185862097,forecasted,3348.0
+27173,Yellow Medicine,2023,adults,pooled_quarter_ratio,244.40215750714017,forecasted,284.0
 27001,Aitkin,2023,adults,per_site_ratio,465.2295719844358,forecasted,379.0
 27003,Anoka,2023,adults,per_site_ratio,31688.51004058962,forecasted,34288.0
 27005,Becker,2023,adults,per_site_ratio,827.923076923077,forecasted,857.0
@@ -2435,6 +2870,93 @@ fips,county_name,target_year,metric,method,prediction,forecast_status,actual
 27169,Winona,2023,seniors,pooled_august_july_ratio,375.6019057000667,forecasted,318.0
 27171,Wright,2023,seniors,pooled_august_july_ratio,861.0998102372035,forecasted,827.0
 27173,Yellow Medicine,2023,seniors,pooled_august_july_ratio,56.49387123238809,forecasted,43.0
+27001,Aitkin,2023,seniors,pooled_quarter_ratio,306.59759633504575,forecasted,302.0
+27003,Anoka,2023,seniors,pooled_quarter_ratio,8209.428176766562,forecasted,9047.0
+27005,Becker,2023,seniors,pooled_quarter_ratio,216.80046648398675,forecasted,228.0
+27007,Beltrami,2023,seniors,pooled_quarter_ratio,500.07018960589255,forecasted,438.0
+27009,Benton,2023,seniors,pooled_quarter_ratio,285.2427306175323,forecasted,339.0
+27011,Big Stone,2023,seniors,pooled_quarter_ratio,18.018995930068694,forecasted,15.0
+27013,Blue Earth,2023,seniors,pooled_quarter_ratio,557.2513046466569,forecasted,585.0
+27015,Brown,2023,seniors,pooled_quarter_ratio,100.58628300444605,forecasted,96.0
+27017,Carlton,2023,seniors,pooled_quarter_ratio,355.00482478303877,forecasted,270.0
+27019,Carver,2023,seniors,pooled_quarter_ratio,424.5884340480831,forecasted,448.0
+27021,Cass,2023,seniors,pooled_quarter_ratio,689.9285870531029,forecasted,697.0
+27023,Chippewa,2023,seniors,pooled_quarter_ratio,69.59849077147322,forecasted,58.0
+27025,Chisago,2023,seniors,pooled_quarter_ratio,737.0558402092952,forecasted,871.0
+27027,Clay,2023,seniors,pooled_quarter_ratio,458.54378130126435,forecasted,509.0
+27029,Clearwater,2023,seniors,pooled_quarter_ratio,91.50132522145492,forecasted,92.0
+27031,Cook,2023,seniors,pooled_quarter_ratio,113.47566242904885,forecasted,115.0
+27033,Cottonwood,2023,seniors,pooled_quarter_ratio,63.89476256820796,forecasted,73.0
+27035,Crow Wing,2023,seniors,pooled_quarter_ratio,1017.6544751311819,forecasted,820.0
+27037,Dakota,2023,seniors,pooled_quarter_ratio,2788.0843534004384,forecasted,3160.0
+27039,Dodge,2023,seniors,pooled_quarter_ratio,225.7152936947873,forecasted,300.0
+27041,Douglas,2023,seniors,pooled_quarter_ratio,110.25035881176231,forecasted,103.0
+27043,Faribault,2023,seniors,pooled_quarter_ratio,131.63840529661024,forecasted,95.0
+27045,Fillmore,2023,seniors,pooled_quarter_ratio,162.86715191645936,forecasted,170.0
+27047,Freeborn,2023,seniors,pooled_quarter_ratio,245.20456561901173,forecasted,352.0
+27049,Goodhue,2023,seniors,pooled_quarter_ratio,303.44257862629263,forecasted,269.0
+27051,Grant,2023,seniors,pooled_quarter_ratio,36.422131242731126,forecasted,44.0
+27053,Hennepin,2023,seniors,pooled_quarter_ratio,22787.653417509166,forecasted,22045.0
+27055,Houston,2023,seniors,pooled_quarter_ratio,273.0201244294959,forecasted,222.0
+27057,Hubbard,2023,seniors,pooled_quarter_ratio,295.6883257873658,forecasted,271.0
+27059,Isanti,2023,seniors,pooled_quarter_ratio,555.1512150108641,forecasted,620.0
+27061,Itasca,2023,seniors,pooled_quarter_ratio,1536.3719557322465,forecasted,767.0
+27063,Jackson,2023,seniors,pooled_quarter_ratio,62.062350671473475,forecasted,64.0
+27065,Kanabec,2023,seniors,pooled_quarter_ratio,178.74853517920866,forecasted,172.0
+27067,Kandiyohi,2023,seniors,pooled_quarter_ratio,205.23534868282647,forecasted,187.0
+27069,Kittson,2023,seniors,pooled_quarter_ratio,61.48484411184641,forecasted,63.0
+27071,Koochiching,2023,seniors,pooled_quarter_ratio,374.74149946040046,forecasted,341.0
+27073,Lac qui Parle,2023,seniors,pooled_quarter_ratio,14.870773852303145,forecasted,16.0
+27075,Lake,2023,seniors,pooled_quarter_ratio,139.65048142241122,forecasted,130.0
+27077,Lake of the Woods,2023,seniors,pooled_quarter_ratio,31.130605811899404,forecasted,42.0
+27079,Le Sueur,2023,seniors,pooled_quarter_ratio,511.2688564002598,forecasted,356.0
+27081,Lincoln,2023,seniors,pooled_quarter_ratio,80.32748466332426,forecasted,84.0
+27083,Lyon,2023,seniors,pooled_quarter_ratio,108.67779126644375,forecasted,99.0
+27085,McLeod,2023,seniors,pooled_quarter_ratio,568.3373409602447,forecasted,564.0
+27087,Mahnomen,2023,seniors,pooled_quarter_ratio,306.4070865902274,forecasted,295.0
+27089,Marshall,2023,seniors,pooled_quarter_ratio,53.085827274643066,forecasted,57.0
+27091,Martin,2023,seniors,pooled_quarter_ratio,226.9633001422475,forecasted,225.0
+27093,Meeker,2023,seniors,pooled_quarter_ratio,175.04319163968285,forecasted,159.0
+27095,Mille Lacs,2023,seniors,pooled_quarter_ratio,1425.5700297368558,forecasted,1406.0
+27097,Morrison,2023,seniors,pooled_quarter_ratio,193.46071749580523,forecasted,178.0
+27099,Mower,2023,seniors,pooled_quarter_ratio,370.86171883546774,forecasted,404.0
+27101,Murray,2023,seniors,pooled_quarter_ratio,46.631417527131035,forecasted,52.0
+27103,Nicollet,2023,seniors,pooled_quarter_ratio,43.02133361431606,forecasted,40.0
+27105,Nobles,2023,seniors,pooled_quarter_ratio,30.947731007380128,forecasted,37.0
+27107,Norman,2023,seniors,pooled_quarter_ratio,14.955232425407862,forecasted,13.0
+27109,Olmsted,2023,seniors,pooled_quarter_ratio,2876.4235323042344,forecasted,2909.0
+27111,Otter Tail,2023,seniors,pooled_quarter_ratio,358.459675798221,forecasted,417.0
+27113,Pennington,2023,seniors,pooled_quarter_ratio,124.40246267051498,forecasted,133.0
+27115,Pine,2023,seniors,pooled_quarter_ratio,347.578558801354,forecasted,404.0
+27117,Pipestone,2023,seniors,pooled_quarter_ratio,43.45883427286935,forecasted,53.0
+27119,Polk,2023,seniors,pooled_quarter_ratio,178.96033450813962,forecasted,233.0
+27121,Pope,2023,seniors,pooled_quarter_ratio,33.145157754821255,forecasted,31.0
+27123,Ramsey,2023,seniors,pooled_quarter_ratio,6333.806307895217,forecasted,6681.0
+27125,Red Lake,2023,seniors,pooled_quarter_ratio,45.85840943081991,forecasted,35.0
+27127,Redwood,2023,seniors,pooled_quarter_ratio,74.22652329816948,forecasted,78.0
+27129,Renville,2023,seniors,pooled_quarter_ratio,547.1658064320926,forecasted,516.0
+27131,Rice,2023,seniors,pooled_quarter_ratio,1417.3884680038252,forecasted,1299.0
+27133,Rock,2023,seniors,pooled_quarter_ratio,97.09435147309068,forecasted,68.0
+27135,Roseau,2023,seniors,pooled_quarter_ratio,29.838934359839424,forecasted,37.0
+27137,St. Louis,2023,seniors,pooled_quarter_ratio,1971.454482552728,forecasted,1860.0
+27139,Scott,2023,seniors,pooled_quarter_ratio,475.7366496320883,forecasted,476.0
+27141,Sherburne,2023,seniors,pooled_quarter_ratio,910.7837968912535,forecasted,1014.0
+27143,Sibley,2023,seniors,pooled_quarter_ratio,157.66346619977787,forecasted,156.0
+27145,Stearns,2023,seniors,pooled_quarter_ratio,912.7687257523394,forecasted,885.0
+27147,Steele,2023,seniors,pooled_quarter_ratio,1009.1434316983868,forecasted,1058.0
+27149,Stevens,2023,seniors,pooled_quarter_ratio,78.08494762154774,forecasted,253.0
+27151,Swift,2023,seniors,pooled_quarter_ratio,55.52960679978223,forecasted,59.0
+27153,Todd,2023,seniors,pooled_quarter_ratio,111.1289872737667,forecasted,72.0
+27155,Traverse,2023,seniors,pooled_quarter_ratio,34.43799325641431,forecasted,22.0
+27157,Wabasha,2023,seniors,pooled_quarter_ratio,323.63305837165484,forecasted,354.0
+27159,Wadena,2023,seniors,pooled_quarter_ratio,74.18014326073182,forecasted,75.0
+27161,Waseca,2023,seniors,pooled_quarter_ratio,141.6257757098673,forecasted,217.0
+27163,Washington,2023,seniors,pooled_quarter_ratio,10731.19272575259,forecasted,11635.0
+27165,Watonwan,2023,seniors,pooled_quarter_ratio,87.15380987557171,forecasted,100.0
+27167,Wilkin,2023,seniors,pooled_quarter_ratio,,no_reporting_history,
+27169,Winona,2023,seniors,pooled_quarter_ratio,343.5171475089807,forecasted,318.0
+27171,Wright,2023,seniors,pooled_quarter_ratio,956.1525626991514,forecasted,827.0
+27173,Yellow Medicine,2023,seniors,pooled_quarter_ratio,56.85776262092051,forecasted,43.0
 27001,Aitkin,2023,seniors,per_site_ratio,312.05000000000007,forecasted,302.0
 27003,Anoka,2023,seniors,per_site_ratio,8295.826525466466,forecasted,9047.0
 27005,Becker,2023,seniors,per_site_ratio,226.7054794520548,forecasted,228.0
@@ -2870,6 +3392,93 @@ fips,county_name,target_year,metric,method,prediction,forecast_status,actual
 27169,Winona,2024,households,pooled_august_july_ratio,1360.2210937135703,forecasted,1314.0
 27171,Wright,2024,households,pooled_august_july_ratio,2532.3046941578436,forecasted,2471.0
 27173,Yellow Medicine,2024,households,pooled_august_july_ratio,232.93679503660854,forecasted,182.0
+27001,Aitkin,2024,households,pooled_quarter_ratio,353.25354895622127,forecasted,356.0
+27003,Anoka,2024,households,pooled_quarter_ratio,20162.74678522518,forecasted,20456.0
+27005,Becker,2024,households,pooled_quarter_ratio,602.203770235151,forecasted,537.0
+27007,Beltrami,2024,households,pooled_quarter_ratio,1370.2226669834242,forecasted,1164.0
+27009,Benton,2024,households,pooled_quarter_ratio,720.5387649870815,forecasted,684.0
+27011,Big Stone,2024,households,pooled_quarter_ratio,104.76904280510429,forecasted,73.0
+27013,Blue Earth,2024,households,pooled_quarter_ratio,4518.5518711296745,forecasted,4741.0
+27015,Brown,2024,households,pooled_quarter_ratio,300.96359898526725,forecasted,294.0
+27017,Carlton,2024,households,pooled_quarter_ratio,688.2884620040023,forecasted,662.0
+27019,Carver,2024,households,pooled_quarter_ratio,2257.342141970666,forecasted,2146.0
+27021,Cass,2024,households,pooled_quarter_ratio,1428.362015894443,forecasted,1316.0
+27023,Chippewa,2024,households,pooled_quarter_ratio,242.35424199638436,forecasted,249.0
+27025,Chisago,2024,households,pooled_quarter_ratio,1264.8324419192988,forecasted,1116.0
+27027,Clay,2024,households,pooled_quarter_ratio,2470.318845728386,forecasted,2753.0
+27029,Clearwater,2024,households,pooled_quarter_ratio,228.53177855872704,forecasted,208.0
+27031,Cook,2024,households,pooled_quarter_ratio,249.32863920124473,forecasted,263.0
+27033,Cottonwood,2024,households,pooled_quarter_ratio,407.4514206947157,forecasted,308.0
+27035,Crow Wing,2024,households,pooled_quarter_ratio,2182.903895989111,forecasted,1936.0
+27037,Dakota,2024,households,pooled_quarter_ratio,12399.932781741267,forecasted,13576.0
+27039,Dodge,2024,households,pooled_quarter_ratio,936.2690535201293,forecasted,744.0
+27041,Douglas,2024,households,pooled_quarter_ratio,565.7286889866837,forecasted,489.0
+27043,Faribault,2024,households,pooled_quarter_ratio,324.4984496336327,forecasted,318.0
+27045,Fillmore,2024,households,pooled_quarter_ratio,440.52473696776616,forecasted,419.0
+27047,Freeborn,2024,households,pooled_quarter_ratio,1362.5322392279368,forecasted,1046.0
+27049,Goodhue,2024,households,pooled_quarter_ratio,1284.7951502177123,forecasted,1740.0
+27051,Grant,2024,households,pooled_quarter_ratio,69.12347511114704,forecasted,79.0
+27053,Hennepin,2024,households,pooled_quarter_ratio,79830.29292386565,forecasted,76264.0
+27055,Houston,2024,households,pooled_quarter_ratio,859.748745927428,forecasted,826.0
+27057,Hubbard,2024,households,pooled_quarter_ratio,533.7554654653095,forecasted,570.0
+27059,Isanti,2024,households,pooled_quarter_ratio,1196.2398863629896,forecasted,1190.0
+27061,Itasca,2024,households,pooled_quarter_ratio,2723.790875595572,forecasted,1635.0
+27063,Jackson,2024,households,pooled_quarter_ratio,296.0617955380313,forecasted,300.0
+27065,Kanabec,2024,households,pooled_quarter_ratio,305.6083282333972,forecasted,353.0
+27067,Kandiyohi,2024,households,pooled_quarter_ratio,855.5207588772802,forecasted,854.0
+27069,Kittson,2024,households,pooled_quarter_ratio,152.4690584898742,forecasted,153.0
+27071,Koochiching,2024,households,pooled_quarter_ratio,573.6231346220623,forecasted,539.0
+27073,Lac qui Parle,2024,households,pooled_quarter_ratio,55.3045643654378,forecasted,60.0
+27075,Lake,2024,households,pooled_quarter_ratio,376.20563616655807,forecasted,277.0
+27077,Lake of the Woods,2024,households,pooled_quarter_ratio,71.58313215518388,forecasted,65.0
+27079,Le Sueur,2024,households,pooled_quarter_ratio,915.4038273127925,forecasted,583.0
+27081,Lincoln,2024,households,pooled_quarter_ratio,118.33328589321583,forecasted,104.0
+27083,Lyon,2024,households,pooled_quarter_ratio,500.91503985752604,forecasted,522.0
+27085,McLeod,2024,households,pooled_quarter_ratio,1231.8290567668212,forecasted,1404.0
+27087,Mahnomen,2024,households,pooled_quarter_ratio,452.68291497954885,forecasted,67.0
+27089,Marshall,2024,households,pooled_quarter_ratio,132.8883854698395,forecasted,143.0
+27091,Martin,2024,households,pooled_quarter_ratio,460.39635822973474,forecasted,526.0
+27093,Meeker,2024,households,pooled_quarter_ratio,521.17717351142,forecasted,456.0
+27095,Mille Lacs,2024,households,pooled_quarter_ratio,748.1159941881499,forecasted,734.0
+27097,Morrison,2024,households,pooled_quarter_ratio,586.0669409391834,forecasted,588.0
+27099,Mower,2024,households,pooled_quarter_ratio,1617.0771527988857,forecasted,1489.0
+27101,Murray,2024,households,pooled_quarter_ratio,123.90055519146405,forecasted,136.0
+27103,Nicollet,2024,households,pooled_quarter_ratio,221.14784648327847,forecasted,209.0
+27105,Nobles,2024,households,pooled_quarter_ratio,414.2323974251277,forecasted,375.0
+27107,Norman,2024,households,pooled_quarter_ratio,40.34018069750057,forecasted,44.0
+27109,Olmsted,2024,households,pooled_quarter_ratio,11490.929538819348,forecasted,11169.0
+27111,Otter Tail,2024,households,pooled_quarter_ratio,972.4216398507559,forecasted,1044.0
+27113,Pennington,2024,households,pooled_quarter_ratio,254.16840276113822,forecasted,251.0
+27115,Pine,2024,households,pooled_quarter_ratio,771.4148529213616,forecasted,749.0
+27117,Pipestone,2024,households,pooled_quarter_ratio,474.4842989281367,forecasted,445.0
+27119,Polk,2024,households,pooled_quarter_ratio,731.2320498104433,forecasted,442.0
+27121,Pope,2024,households,pooled_quarter_ratio,67.17557049314362,forecasted,61.0
+27123,Ramsey,2024,households,pooled_quarter_ratio,21032.12874470317,forecasted,21074.0
+27125,Red Lake,2024,households,pooled_quarter_ratio,122.88553505846212,forecasted,96.0
+27127,Redwood,2024,households,pooled_quarter_ratio,355.34753584387545,forecasted,257.0
+27129,Renville,2024,households,pooled_quarter_ratio,1052.2551878545962,forecasted,955.0
+27131,Rice,2024,households,pooled_quarter_ratio,10148.473808357105,forecasted,4471.0
+27133,Rock,2024,households,pooled_quarter_ratio,158.45657362079547,forecasted,188.0
+27135,Roseau,2024,households,pooled_quarter_ratio,158.196422346097,forecasted,190.0
+27137,St. Louis,2024,households,pooled_quarter_ratio,5824.381851901276,forecasted,5011.0
+27139,Scott,2024,households,pooled_quarter_ratio,653.3702362127046,forecasted,566.0
+27141,Sherburne,2024,households,pooled_quarter_ratio,2896.260970855736,forecasted,2746.0
+27143,Sibley,2024,households,pooled_quarter_ratio,322.25328728105114,forecasted,290.0
+27145,Stearns,2024,households,pooled_quarter_ratio,3781.541588946436,forecasted,3799.0
+27147,Steele,2024,households,pooled_quarter_ratio,5336.0387088484185,forecasted,5342.0
+27149,Stevens,2024,households,pooled_quarter_ratio,107.80316638506848,forecasted,143.0
+27151,Swift,2024,households,pooled_quarter_ratio,161.2197734190693,forecasted,173.0
+27153,Todd,2024,households,pooled_quarter_ratio,432.03864479611775,forecasted,358.0
+27155,Traverse,2024,households,pooled_quarter_ratio,63.81510239865786,forecasted,63.0
+27157,Wabasha,2024,households,pooled_quarter_ratio,883.1905922663578,forecasted,868.0
+27159,Wadena,2024,households,pooled_quarter_ratio,237.58102235712505,forecasted,283.0
+27161,Waseca,2024,households,pooled_quarter_ratio,696.779331757853,forecasted,697.0
+27163,Washington,2024,households,pooled_quarter_ratio,26018.401476014806,forecasted,26138.0
+27165,Watonwan,2024,households,pooled_quarter_ratio,447.4518629786071,forecasted,415.0
+27167,Wilkin,2024,households,pooled_quarter_ratio,,no_reporting_history,
+27169,Winona,2024,households,pooled_quarter_ratio,1280.94242255458,forecasted,1314.0
+27171,Wright,2024,households,pooled_quarter_ratio,2389.662373699974,forecasted,2471.0
+27173,Yellow Medicine,2024,households,pooled_quarter_ratio,213.4924275136827,forecasted,182.0
 27001,Aitkin,2024,households,per_site_ratio,302.42687947595294,forecasted,356.0
 27003,Anoka,2024,households,per_site_ratio,20616.76083995349,forecasted,20456.0
 27005,Becker,2024,households,per_site_ratio,665.3664870413138,forecasted,537.0
@@ -3305,6 +3914,93 @@ fips,county_name,target_year,metric,method,prediction,forecast_status,actual
 27169,Winona,2024,pounds,pooled_august_july_ratio,70453.92271867633,forecasted,63915.0
 27171,Wright,2024,pounds,pooled_august_july_ratio,228705.8000826066,forecasted,214728.0
 27173,Yellow Medicine,2024,pounds,pooled_august_july_ratio,18325.80732928116,forecasted,14312.0
+27001,Aitkin,2024,pounds,pooled_quarter_ratio,21653.98256053365,forecasted,20652.0
+27003,Anoka,2024,pounds,pooled_quarter_ratio,782239.5747241614,forecasted,792095.0
+27005,Becker,2024,pounds,pooled_quarter_ratio,51370.29108215142,forecasted,56775.0
+27007,Beltrami,2024,pounds,pooled_quarter_ratio,92349.42137287142,forecasted,86166.4
+27009,Benton,2024,pounds,pooled_quarter_ratio,39944.76269172191,forecasted,36695.0
+27011,Big Stone,2024,pounds,pooled_quarter_ratio,6717.629997126699,forecasted,6726.0
+27013,Blue Earth,2024,pounds,pooled_quarter_ratio,283550.95105142536,forecasted,282463.0
+27015,Brown,2024,pounds,pooled_quarter_ratio,31603.75717912071,forecasted,27727.0
+27017,Carlton,2024,pounds,pooled_quarter_ratio,41027.544512139706,forecasted,38271.0
+27019,Carver,2024,pounds,pooled_quarter_ratio,189731.4536867607,forecasted,179676.0
+27021,Cass,2024,pounds,pooled_quarter_ratio,82721.89992781662,forecasted,92594.0
+27023,Chippewa,2024,pounds,pooled_quarter_ratio,15168.86448060212,forecasted,8894.0
+27025,Chisago,2024,pounds,pooled_quarter_ratio,72386.06856212045,forecasted,71965.0
+27027,Clay,2024,pounds,pooled_quarter_ratio,90884.68592734859,forecasted,80210.0
+27029,Clearwater,2024,pounds,pooled_quarter_ratio,14696.604240419485,forecasted,12965.0
+27031,Cook,2024,pounds,pooled_quarter_ratio,13012.558671623994,forecasted,11760.0
+27033,Cottonwood,2024,pounds,pooled_quarter_ratio,21175.563809660347,forecasted,19711.0
+27035,Crow Wing,2024,pounds,pooled_quarter_ratio,106337.79244414621,forecasted,124287.8
+27037,Dakota,2024,pounds,pooled_quarter_ratio,856587.0784305297,forecasted,834304.0
+27039,Dodge,2024,pounds,pooled_quarter_ratio,40624.05215075056,forecasted,31087.0
+27041,Douglas,2024,pounds,pooled_quarter_ratio,72717.4605651609,forecasted,61356.0
+27043,Faribault,2024,pounds,pooled_quarter_ratio,14782.791516930714,forecasted,14937.0
+27045,Fillmore,2024,pounds,pooled_quarter_ratio,22166.031878154696,forecasted,19250.8
+27047,Freeborn,2024,pounds,pooled_quarter_ratio,61291.248121595556,forecasted,49250.0
+27049,Goodhue,2024,pounds,pooled_quarter_ratio,70022.27462226363,forecasted,56982.4
+27051,Grant,2024,pounds,pooled_quarter_ratio,5943.601428127239,forecasted,7461.49
+27053,Hennepin,2024,pounds,pooled_quarter_ratio,4601326.1867128825,forecasted,4183271.0
+27055,Houston,2024,pounds,pooled_quarter_ratio,29243.97331026286,forecasted,28915.4
+27057,Hubbard,2024,pounds,pooled_quarter_ratio,60685.611764823705,forecasted,49125.0
+27059,Isanti,2024,pounds,pooled_quarter_ratio,61219.73341075441,forecasted,66511.0
+27061,Itasca,2024,pounds,pooled_quarter_ratio,138591.95774627486,forecasted,113736.0
+27063,Jackson,2024,pounds,pooled_quarter_ratio,25168.811303360897,forecasted,27190.0
+27065,Kanabec,2024,pounds,pooled_quarter_ratio,25598.11384219675,forecasted,17716.0
+27067,Kandiyohi,2024,pounds,pooled_quarter_ratio,61971.68185034617,forecasted,50112.0
+27069,Kittson,2024,pounds,pooled_quarter_ratio,7856.662370138779,forecasted,8172.4
+27071,Koochiching,2024,pounds,pooled_quarter_ratio,32172.036361728482,forecasted,34148.21
+27073,Lac qui Parle,2024,pounds,pooled_quarter_ratio,4686.010137110205,forecasted,4519.0
+27075,Lake,2024,pounds,pooled_quarter_ratio,22398.28917805819,forecasted,16217.0
+27077,Lake of the Woods,2024,pounds,pooled_quarter_ratio,3684.0495552681327,forecasted,3271.1
+27079,Le Sueur,2024,pounds,pooled_quarter_ratio,60052.60521713065,forecasted,41389.0
+27081,Lincoln,2024,pounds,pooled_quarter_ratio,4242.355241363552,forecasted,3217.0
+27083,Lyon,2024,pounds,pooled_quarter_ratio,33705.983902398264,forecasted,33450.0
+27085,McLeod,2024,pounds,pooled_quarter_ratio,55778.874439046725,forecasted,57549.0
+27087,Mahnomen,2024,pounds,pooled_quarter_ratio,16343.895735823375,forecasted,3394.0
+27089,Marshall,2024,pounds,pooled_quarter_ratio,8426.424988959514,forecasted,8675.0
+27091,Martin,2024,pounds,pooled_quarter_ratio,37993.24631170853,forecasted,36507.0
+27093,Meeker,2024,pounds,pooled_quarter_ratio,29653.43038965027,forecasted,26769.0
+27095,Mille Lacs,2024,pounds,pooled_quarter_ratio,42998.4797743543,forecasted,42447.0
+27097,Morrison,2024,pounds,pooled_quarter_ratio,46135.83996145051,forecasted,49924.0
+27099,Mower,2024,pounds,pooled_quarter_ratio,55005.556769555515,forecasted,53491.9
+27101,Murray,2024,pounds,pooled_quarter_ratio,10769.56173915905,forecasted,10709.0
+27103,Nicollet,2024,pounds,pooled_quarter_ratio,14660.560731279304,forecasted,15147.0
+27105,Nobles,2024,pounds,pooled_quarter_ratio,28943.370389571646,forecasted,19958.0
+27107,Norman,2024,pounds,pooled_quarter_ratio,3042.100208187988,forecasted,2734.0
+27109,Olmsted,2024,pounds,pooled_quarter_ratio,680931.4113186456,forecasted,747552.94
+27111,Otter Tail,2024,pounds,pooled_quarter_ratio,70843.2505175727,forecasted,75429.3
+27113,Pennington,2024,pounds,pooled_quarter_ratio,43641.89747422,forecasted,36425.0
+27115,Pine,2024,pounds,pooled_quarter_ratio,38375.44298063012,forecasted,38058.0
+27117,Pipestone,2024,pounds,pooled_quarter_ratio,43733.020858396216,forecasted,39913.0
+27119,Polk,2024,pounds,pooled_quarter_ratio,63833.29107174927,forecasted,21439.5
+27121,Pope,2024,pounds,pooled_quarter_ratio,9942.245612677854,forecasted,9145.0
+27123,Ramsey,2024,pounds,pooled_quarter_ratio,1238903.6427235573,forecasted,1169441.0
+27125,Red Lake,2024,pounds,pooled_quarter_ratio,11657.236678483876,forecasted,4417.389999999999
+27127,Redwood,2024,pounds,pooled_quarter_ratio,30830.712098124197,forecasted,28450.0
+27129,Renville,2024,pounds,pooled_quarter_ratio,42570.430610655516,forecasted,38989.0
+27131,Rice,2024,pounds,pooled_quarter_ratio,515510.30534907617,forecasted,274202.0
+27133,Rock,2024,pounds,pooled_quarter_ratio,9198.538597785488,forecasted,10463.0
+27135,Roseau,2024,pounds,pooled_quarter_ratio,12406.102407198538,forecasted,10743.0
+27137,St. Louis,2024,pounds,pooled_quarter_ratio,504690.85062608327,forecasted,386452.0
+27139,Scott,2024,pounds,pooled_quarter_ratio,49049.603138925675,forecasted,41887.0
+27141,Sherburne,2024,pounds,pooled_quarter_ratio,178393.08252283055,forecasted,192726.0
+27143,Sibley,2024,pounds,pooled_quarter_ratio,26404.51940728628,forecasted,27267.0
+27145,Stearns,2024,pounds,pooled_quarter_ratio,350712.27653056604,forecasted,346803.0
+27147,Steele,2024,pounds,pooled_quarter_ratio,222537.87368306358,forecasted,240908.1
+27149,Stevens,2024,pounds,pooled_quarter_ratio,6025.395135326771,forecasted,6888.0
+27151,Swift,2024,pounds,pooled_quarter_ratio,6926.630310428071,forecasted,7092.0
+27153,Todd,2024,pounds,pooled_quarter_ratio,27974.150701386596,forecasted,26405.0
+27155,Traverse,2024,pounds,pooled_quarter_ratio,3294.759064861204,forecasted,3322.0
+27157,Wabasha,2024,pounds,pooled_quarter_ratio,68295.23773492024,forecasted,68890.0
+27159,Wadena,2024,pounds,pooled_quarter_ratio,14889.537814981608,forecasted,17935.25
+27161,Waseca,2024,pounds,pooled_quarter_ratio,25817.35259468943,forecasted,26109.0
+27163,Washington,2024,pounds,pooled_quarter_ratio,902973.7998751184,forecasted,935187.0
+27165,Watonwan,2024,pounds,pooled_quarter_ratio,29825.078310761193,forecasted,28848.0
+27167,Wilkin,2024,pounds,pooled_quarter_ratio,,no_reporting_history,
+27169,Winona,2024,pounds,pooled_quarter_ratio,56532.13247107213,forecasted,63915.0
+27171,Wright,2024,pounds,pooled_quarter_ratio,215314.5574515953,forecasted,214728.0
+27173,Yellow Medicine,2024,pounds,pooled_quarter_ratio,17303.437245759647,forecasted,14312.0
 27001,Aitkin,2024,pounds,per_site_ratio,18014.390403409507,forecasted,20652.0
 27003,Anoka,2024,pounds,per_site_ratio,913092.4482109514,forecasted,792095.0
 27005,Becker,2024,pounds,per_site_ratio,56615.961395280254,forecasted,56775.0
@@ -3740,6 +4436,93 @@ fips,county_name,target_year,metric,method,prediction,forecast_status,actual
 27169,Winona,2024,individuals,pooled_august_july_ratio,3034.904764400766,forecasted,3116.0
 27171,Wright,2024,individuals,pooled_august_july_ratio,8570.11827889242,forecasted,8128.0
 27173,Yellow Medicine,2024,individuals,pooled_august_july_ratio,602.7248227078596,forecasted,460.0
+27001,Aitkin,2024,individuals,pooled_quarter_ratio,726.3608577650323,forecasted,723.0
+27003,Anoka,2024,individuals,pooled_quarter_ratio,75972.04368537739,forecasted,75300.0
+27005,Becker,2024,individuals,pooled_quarter_ratio,1874.8895056517715,forecasted,1723.0
+27007,Beltrami,2024,individuals,pooled_quarter_ratio,4013.340877296057,forecasted,3444.0
+27009,Benton,2024,individuals,pooled_quarter_ratio,1878.1306374011801,forecasted,1779.0
+27011,Big Stone,2024,individuals,pooled_quarter_ratio,346.75235273215327,forecasted,243.0
+27013,Blue Earth,2024,individuals,pooled_quarter_ratio,14590.846968192613,forecasted,14830.0
+27015,Brown,2024,individuals,pooled_quarter_ratio,791.9878813062388,forecasted,772.0
+27017,Carlton,2024,individuals,pooled_quarter_ratio,1605.6921698340598,forecasted,1438.0
+27019,Carver,2024,individuals,pooled_quarter_ratio,8216.61819009933,forecasted,7578.0
+27021,Cass,2024,individuals,pooled_quarter_ratio,3978.279118370527,forecasted,3766.0
+27023,Chippewa,2024,individuals,pooled_quarter_ratio,623.2015321860657,forecasted,696.0
+27025,Chisago,2024,individuals,pooled_quarter_ratio,2793.905200240753,forecasted,2526.0
+27027,Clay,2024,individuals,pooled_quarter_ratio,6165.199576677511,forecasted,6080.0
+27029,Clearwater,2024,individuals,pooled_quarter_ratio,529.1226202242502,forecasted,488.0
+27031,Cook,2024,individuals,pooled_quarter_ratio,535.1264074994842,forecasted,548.0
+27033,Cottonwood,2024,individuals,pooled_quarter_ratio,1140.3865792517572,forecasted,1131.0
+27035,Crow Wing,2024,individuals,pooled_quarter_ratio,4402.589664721755,forecasted,4576.0
+27037,Dakota,2024,individuals,pooled_quarter_ratio,34343.601538767056,forecasted,39690.0
+27039,Dodge,2024,individuals,pooled_quarter_ratio,2613.5689654685134,forecasted,2034.0
+27041,Douglas,2024,individuals,pooled_quarter_ratio,1424.0931008326777,forecasted,1404.0
+27043,Faribault,2024,individuals,pooled_quarter_ratio,790.2255582024982,forecasted,812.0
+27045,Fillmore,2024,individuals,pooled_quarter_ratio,1034.7145532916343,forecasted,986.0
+27047,Freeborn,2024,individuals,pooled_quarter_ratio,3692.946137490721,forecasted,2817.0
+27049,Goodhue,2024,individuals,pooled_quarter_ratio,3726.4471874317087,forecasted,1959.0
+27051,Grant,2024,individuals,pooled_quarter_ratio,163.219897636788,forecasted,188.0
+27053,Hennepin,2024,individuals,pooled_quarter_ratio,253881.61457879745,forecasted,233218.0
+27055,Houston,2024,individuals,pooled_quarter_ratio,1723.161227545391,forecasted,1839.0
+27057,Hubbard,2024,individuals,pooled_quarter_ratio,1601.914704656208,forecasted,1588.0
+27059,Isanti,2024,individuals,pooled_quarter_ratio,3692.4478180276187,forecasted,3893.0
+27061,Itasca,2024,individuals,pooled_quarter_ratio,6607.005856145214,forecasted,4334.0
+27063,Jackson,2024,individuals,pooled_quarter_ratio,1048.520427136852,forecasted,1158.0
+27065,Kanabec,2024,individuals,pooled_quarter_ratio,748.6184922800196,forecasted,958.0
+27067,Kandiyohi,2024,individuals,pooled_quarter_ratio,2757.379827874212,forecasted,2752.0
+27069,Kittson,2024,individuals,pooled_quarter_ratio,365.18484549954604,forecasted,336.0
+27071,Koochiching,2024,individuals,pooled_quarter_ratio,1035.0311637838056,forecasted,1272.0
+27073,Lac qui Parle,2024,individuals,pooled_quarter_ratio,98.08183442846878,forecasted,120.0
+27075,Lake,2024,individuals,pooled_quarter_ratio,833.8618019973169,forecasted,611.0
+27077,Lake of the Woods,2024,individuals,pooled_quarter_ratio,159.77994491917394,forecasted,126.0
+27079,Le Sueur,2024,individuals,pooled_quarter_ratio,2550.8562649054493,forecasted,1883.0
+27081,Lincoln,2024,individuals,pooled_quarter_ratio,182.83893046543395,forecasted,148.0
+27083,Lyon,2024,individuals,pooled_quarter_ratio,1372.085356595752,forecasted,1410.0
+27085,McLeod,2024,individuals,pooled_quarter_ratio,2906.128602264438,forecasted,3065.0
+27087,Mahnomen,2024,individuals,pooled_quarter_ratio,1057.9041406585848,forecasted,209.0
+27089,Marshall,2024,individuals,pooled_quarter_ratio,311.8133524107418,forecasted,293.0
+27091,Martin,2024,individuals,pooled_quarter_ratio,1367.3953048039418,forecasted,1314.0
+27093,Meeker,2024,individuals,pooled_quarter_ratio,1247.6339178797264,forecasted,1173.0
+27095,Mille Lacs,2024,individuals,pooled_quarter_ratio,1613.7614022626296,forecasted,1810.0
+27097,Morrison,2024,individuals,pooled_quarter_ratio,1638.7635828493737,forecasted,1538.0
+27099,Mower,2024,individuals,pooled_quarter_ratio,4581.503729911579,forecasted,4269.0
+27101,Murray,2024,individuals,pooled_quarter_ratio,433.5607803818843,forecasted,476.0
+27103,Nicollet,2024,individuals,pooled_quarter_ratio,702.9970418872821,forecasted,639.0
+27105,Nobles,2024,individuals,pooled_quarter_ratio,1679.852685166906,forecasted,1401.0
+27107,Norman,2024,individuals,pooled_quarter_ratio,145.66111649103422,forecasted,154.0
+27109,Olmsted,2024,individuals,pooled_quarter_ratio,31846.053770809438,forecasted,31366.0
+27111,Otter Tail,2024,individuals,pooled_quarter_ratio,2507.504470470417,forecasted,2717.0
+27113,Pennington,2024,individuals,pooled_quarter_ratio,1039.9073832712272,forecasted,974.0
+27115,Pine,2024,individuals,pooled_quarter_ratio,1930.0834154783167,forecasted,1729.0
+27117,Pipestone,2024,individuals,pooled_quarter_ratio,1317.6620269357,forecasted,1313.0
+27119,Polk,2024,individuals,pooled_quarter_ratio,2014.694060442116,forecasted,1132.0
+27121,Pope,2024,individuals,pooled_quarter_ratio,172.649464244346,forecasted,143.0
+27123,Ramsey,2024,individuals,pooled_quarter_ratio,67826.88744726933,forecasted,66342.0
+27125,Red Lake,2024,individuals,pooled_quarter_ratio,287.5371611998988,forecasted,207.0
+27127,Redwood,2024,individuals,pooled_quarter_ratio,1035.209530659187,forecasted,893.0
+27129,Renville,2024,individuals,pooled_quarter_ratio,2888.875706791207,forecasted,2532.0
+27131,Rice,2024,individuals,pooled_quarter_ratio,32812.97798682287,forecasted,14358.0
+27133,Rock,2024,individuals,pooled_quarter_ratio,612.386684673693,forecasted,657.0
+27135,Roseau,2024,individuals,pooled_quarter_ratio,564.5260712342827,forecasted,593.0
+27137,St. Louis,2024,individuals,pooled_quarter_ratio,14411.311475833149,forecasted,12856.0
+27139,Scott,2024,individuals,pooled_quarter_ratio,2085.409594108003,forecasted,1812.0
+27141,Sherburne,2024,individuals,pooled_quarter_ratio,9058.448836192583,forecasted,8580.0
+27143,Sibley,2024,individuals,pooled_quarter_ratio,912.5828379389285,forecasted,845.0
+27145,Stearns,2024,individuals,pooled_quarter_ratio,13596.271079922359,forecasted,12502.0
+27147,Steele,2024,individuals,pooled_quarter_ratio,16103.213949467436,forecasted,16291.0
+27149,Stevens,2024,individuals,pooled_quarter_ratio,300.51496568111276,forecasted,408.0
+27151,Swift,2024,individuals,pooled_quarter_ratio,456.8882402196176,forecasted,491.0
+27153,Todd,2024,individuals,pooled_quarter_ratio,1301.994972407855,forecasted,1011.0
+27155,Traverse,2024,individuals,pooled_quarter_ratio,143.16531504007997,forecasted,156.0
+27157,Wabasha,2024,individuals,pooled_quarter_ratio,2867.7238773089634,forecasted,2563.0
+27159,Wadena,2024,individuals,pooled_quarter_ratio,705.7018884700094,forecasted,786.0
+27161,Waseca,2024,individuals,pooled_quarter_ratio,1495.0016815804875,forecasted,1505.0
+27163,Washington,2024,individuals,pooled_quarter_ratio,96638.6129143347,forecasted,96091.0
+27165,Watonwan,2024,individuals,pooled_quarter_ratio,1859.9245736174323,forecasted,1755.0
+27167,Wilkin,2024,individuals,pooled_quarter_ratio,,no_reporting_history,
+27169,Winona,2024,individuals,pooled_quarter_ratio,2819.734359314653,forecasted,3116.0
+27171,Wright,2024,individuals,pooled_quarter_ratio,7860.581872554541,forecasted,8128.0
+27173,Yellow Medicine,2024,individuals,pooled_quarter_ratio,546.0634991125778,forecasted,460.0
 27001,Aitkin,2024,individuals,per_site_ratio,646.4796385944862,forecasted,723.0
 27003,Anoka,2024,individuals,per_site_ratio,72339.38691136618,forecasted,75300.0
 27005,Becker,2024,individuals,per_site_ratio,2085.1197301065913,forecasted,1723.0
@@ -4175,6 +4958,93 @@ fips,county_name,target_year,metric,method,prediction,forecast_status,actual
 27169,Winona,2024,children,pooled_august_july_ratio,842.49383319659,forecasted,844.0
 27171,Wright,2024,children,pooled_august_july_ratio,3367.814785244325,forecasted,3172.0
 27173,Yellow Medicine,2024,children,pooled_august_july_ratio,181.4187650879868,forecasted,144.0
+27001,Aitkin,2024,children,pooled_quarter_ratio,127.07355690671444,forecasted,124.0
+27003,Anoka,2024,children,pooled_quarter_ratio,28635.664584336642,forecasted,27327.0
+27005,Becker,2024,children,pooled_quarter_ratio,569.4301235040004,forecasted,534.0
+27007,Beltrami,2024,children,pooled_quarter_ratio,1393.298223299101,forecasted,1153.0
+27009,Benton,2024,children,pooled_quarter_ratio,626.7659503700793,forecasted,580.0
+27011,Big Stone,2024,children,pooled_quarter_ratio,132.1647653869903,forecasted,99.0
+27013,Blue Earth,2024,children,pooled_quarter_ratio,6582.161924496841,forecasted,7067.0
+27015,Brown,2024,children,pooled_quarter_ratio,239.32775751894968,forecasted,224.0
+27017,Carlton,2024,children,pooled_quarter_ratio,428.7974796378509,forecasted,311.0
+27019,Carver,2024,children,pooled_quarter_ratio,2768.731723460472,forecasted,2517.0
+27021,Cass,2024,children,pooled_quarter_ratio,1265.3671356212776,forecasted,1182.0
+27023,Chippewa,2024,children,pooled_quarter_ratio,212.26454998297447,forecasted,231.0
+27025,Chisago,2024,children,pooled_quarter_ratio,669.7197391095211,forecasted,625.0
+27027,Clay,2024,children,pooled_quarter_ratio,2259.5912727363548,forecasted,1921.0
+27029,Clearwater,2024,children,pooled_quarter_ratio,151.42123233548512,forecasted,137.0
+27031,Cook,2024,children,pooled_quarter_ratio,162.98684531464176,forecasted,153.0
+27033,Cottonwood,2024,children,pooled_quarter_ratio,473.06231396151975,forecasted,463.0
+27035,Crow Wing,2024,children,pooled_quarter_ratio,1258.1866592792767,forecasted,1170.0
+27037,Dakota,2024,children,pooled_quarter_ratio,13562.060562055856,forecasted,19798.0
+27039,Dodge,2024,children,pooled_quarter_ratio,816.4762649317422,forecasted,673.0
+27041,Douglas,2024,children,pooled_quarter_ratio,451.185250410032,forecasted,466.0
+27043,Faribault,2024,children,pooled_quarter_ratio,213.1100801285755,forecasted,239.0
+27045,Fillmore,2024,children,pooled_quarter_ratio,285.526581384687,forecasted,268.0
+27047,Freeborn,2024,children,pooled_quarter_ratio,1057.380127774082,forecasted,815.0
+27049,Goodhue,2024,children,pooled_quarter_ratio,1167.903290201637,forecasted,635.0
+27051,Grant,2024,children,pooled_quarter_ratio,37.75898468017131,forecasted,52.0
+27053,Hennepin,2024,children,pooled_quarter_ratio,94530.98476165891,forecasted,87522.0
+27055,Houston,2024,children,pooled_quarter_ratio,555.4863259402185,forecasted,543.0
+27057,Hubbard,2024,children,pooled_quarter_ratio,472.1367688990399,forecasted,445.0
+27059,Isanti,2024,children,pooled_quarter_ratio,1060.4308264307524,forecasted,1128.0
+27061,Itasca,2024,children,pooled_quarter_ratio,1724.6530581678448,forecasted,1175.0
+27063,Jackson,2024,children,pooled_quarter_ratio,405.38587360992904,forecasted,472.0
+27065,Kanabec,2024,children,pooled_quarter_ratio,163.66022866971392,forecasted,210.0
+27067,Kandiyohi,2024,children,pooled_quarter_ratio,976.5812623587938,forecasted,972.0
+27069,Kittson,2024,children,pooled_quarter_ratio,95.54315204393899,forecasted,101.0
+27071,Koochiching,2024,children,pooled_quarter_ratio,229.10904194631345,forecasted,258.0
+27073,Lac qui Parle,2024,children,pooled_quarter_ratio,34.722146073693175,forecasted,30.0
+27075,Lake,2024,children,pooled_quarter_ratio,191.10691548307338,forecasted,125.0
+27077,Lake of the Woods,2024,children,pooled_quarter_ratio,47.07359838799415,forecasted,26.0
+27079,Le Sueur,2024,children,pooled_quarter_ratio,887.8216603723845,forecasted,702.0
+27081,Lincoln,2024,children,pooled_quarter_ratio,40.15959245795222,forecasted,21.0
+27083,Lyon,2024,children,pooled_quarter_ratio,513.0649403118557,forecasted,528.0
+27085,McLeod,2024,children,pooled_quarter_ratio,790.7867468223935,forecasted,792.0
+27087,Mahnomen,2024,children,pooled_quarter_ratio,417.32086103687834,forecasted,87.0
+27089,Marshall,2024,children,pooled_quarter_ratio,87.99351427067927,forecasted,73.0
+27091,Martin,2024,children,pooled_quarter_ratio,447.9318624500341,forecasted,423.0
+27093,Meeker,2024,children,pooled_quarter_ratio,340.2962145304863,forecasted,341.0
+27095,Mille Lacs,2024,children,pooled_quarter_ratio,461.59939407560154,forecasted,481.0
+27097,Morrison,2024,children,pooled_quarter_ratio,512.0698133344351,forecasted,484.0
+27099,Mower,2024,children,pooled_quarter_ratio,1660.878279909793,forecasted,1339.0
+27101,Murray,2024,children,pooled_quarter_ratio,152.8597956788278,forecasted,183.0
+27103,Nicollet,2024,children,pooled_quarter_ratio,242.72840884127814,forecasted,220.0
+27105,Nobles,2024,children,pooled_quarter_ratio,712.3673953267997,forecasted,590.0
+27107,Norman,2024,children,pooled_quarter_ratio,45.367846489318424,forecasted,63.0
+27109,Olmsted,2024,children,pooled_quarter_ratio,9232.348339084716,forecasted,9315.0
+27111,Otter Tail,2024,children,pooled_quarter_ratio,701.8452051266224,forecasted,738.0
+27113,Pennington,2024,children,pooled_quarter_ratio,311.6080238361541,forecasted,301.0
+27115,Pine,2024,children,pooled_quarter_ratio,505.1870054903448,forecasted,437.0
+27117,Pipestone,2024,children,pooled_quarter_ratio,454.3907716161135,forecasted,481.0
+27119,Polk,2024,children,pooled_quarter_ratio,706.0051828705737,forecasted,383.0
+27121,Pope,2024,children,pooled_quarter_ratio,38.02710736488913,forecasted,33.0
+27123,Ramsey,2024,children,pooled_quarter_ratio,25451.20185360901,forecasted,24852.0
+27125,Red Lake,2024,children,pooled_quarter_ratio,87.36468058676208,forecasted,55.0
+27127,Redwood,2024,children,pooled_quarter_ratio,418.04222677663495,forecasted,346.0
+27129,Renville,2024,children,pooled_quarter_ratio,855.7448407566648,forecasted,745.0
+27131,Rice,2024,children,pooled_quarter_ratio,12667.143861121216,forecasted,5400.0
+27133,Rock,2024,children,pooled_quarter_ratio,224.1523302310843,forecasted,224.0
+27135,Roseau,2024,children,pooled_quarter_ratio,207.8944309151002,forecasted,214.0
+27137,St. Louis,2024,children,pooled_quarter_ratio,3578.8252471921915,forecasted,3339.0
+27139,Scott,2024,children,pooled_quarter_ratio,766.8933127187671,forecasted,646.0
+27141,Sherburne,2024,children,pooled_quarter_ratio,3283.0889105590286,forecasted,3279.0
+27143,Sibley,2024,children,pooled_quarter_ratio,284.7904816624298,forecasted,257.0
+27145,Stearns,2024,children,pooled_quarter_ratio,4502.428418578438,forecasted,4436.0
+27147,Steele,2024,children,pooled_quarter_ratio,5686.761844218547,forecasted,5811.0
+27149,Stevens,2024,children,pooled_quarter_ratio,99.90127502360906,forecasted,142.0
+27151,Swift,2024,children,pooled_quarter_ratio,151.60054745162225,forecasted,182.0
+27153,Todd,2024,children,pooled_quarter_ratio,437.1281160640585,forecasted,333.0
+27155,Traverse,2024,children,pooled_quarter_ratio,34.36201934607965,forecasted,33.0
+27157,Wabasha,2024,children,pooled_quarter_ratio,946.674848210021,forecasted,759.0
+27159,Wadena,2024,children,pooled_quarter_ratio,208.77307830615607,forecasted,249.0
+27161,Waseca,2024,children,pooled_quarter_ratio,341.35966646712444,forecasted,385.0
+27163,Washington,2024,children,pooled_quarter_ratio,34708.81226088932,forecasted,36129.0
+27165,Watonwan,2024,children,pooled_quarter_ratio,783.9311220745706,forecasted,696.0
+27167,Wilkin,2024,children,pooled_quarter_ratio,,no_reporting_history,
+27169,Winona,2024,children,pooled_quarter_ratio,720.3253456671324,forecasted,844.0
+27171,Wright,2024,children,pooled_quarter_ratio,2975.2797961381157,forecasted,3172.0
+27173,Yellow Medicine,2024,children,pooled_quarter_ratio,162.02421665695675,forecasted,144.0
 27001,Aitkin,2024,children,per_site_ratio,110.71822072072072,forecasted,124.0
 27003,Anoka,2024,children,per_site_ratio,26727.698379502126,forecasted,27327.0
 27005,Becker,2024,children,per_site_ratio,650.8282472341805,forecasted,534.0
@@ -4610,6 +5480,93 @@ fips,county_name,target_year,metric,method,prediction,forecast_status,actual
 27169,Winona,2024,adults,pooled_august_july_ratio,1810.4063416253232,forecasted,1893.0
 27171,Wright,2024,adults,pooled_august_july_ratio,4114.095404462023,forecasted,3876.0
 27173,Yellow Medicine,2024,adults,pooled_august_july_ratio,367.2061697391577,forecasted,250.0
+27001,Aitkin,2024,adults,pooled_quarter_ratio,343.3395505987456,forecasted,332.0
+27003,Anoka,2024,adults,pooled_quarter_ratio,37908.59341095287,forecasted,38494.0
+27005,Becker,2024,adults,pooled_quarter_ratio,1046.0172724347042,forecasted,963.0
+27007,Beltrami,2024,adults,pooled_quarter_ratio,2088.649856650546,forecasted,1795.0
+27009,Benton,2024,adults,pooled_quarter_ratio,918.3491979350504,forecasted,884.0
+27011,Big Stone,2024,adults,pooled_quarter_ratio,200.4447954023574,forecasted,131.0
+27013,Blue Earth,2024,adults,pooled_quarter_ratio,7347.69446268059,forecasted,7101.0
+27015,Brown,2024,adults,pooled_quarter_ratio,444.94519852204525,forecasted,440.0
+27017,Carlton,2024,adults,pooled_quarter_ratio,884.229415405293,forecasted,880.0
+27019,Carver,2024,adults,pooled_quarter_ratio,4790.470807269961,forecasted,4496.0
+27021,Cass,2024,adults,pooled_quarter_ratio,1956.682749944436,forecasted,1831.0
+27023,Chippewa,2024,adults,pooled_quarter_ratio,350.41079677658445,forecasted,423.0
+27025,Chisago,2024,adults,pooled_quarter_ratio,1286.8070128647948,forecasted,1180.0
+27027,Clay,2024,adults,pooled_quarter_ratio,3229.401037502579,forecasted,3479.0
+27029,Clearwater,2024,adults,pooled_quarter_ratio,274.2437198739135,forecasted,254.0
+27031,Cook,2024,adults,pooled_quarter_ratio,236.98153750242878,forecasted,276.0
+27033,Cottonwood,2024,adults,pooled_quarter_ratio,575.0943932406265,forecasted,580.0
+27035,Crow Wing,2024,adults,pooled_quarter_ratio,2177.794150256188,forecasted,2392.0
+27037,Dakota,2024,adults,pooled_quarter_ratio,17360.470222017804,forecasted,16685.0
+27039,Dodge,2024,adults,pooled_quarter_ratio,1353.024693243747,forecasted,1078.0
+27041,Douglas,2024,adults,pooled_quarter_ratio,838.4579677607123,forecasted,811.0
+27043,Faribault,2024,adults,pooled_quarter_ratio,415.4208625408326,forecasted,386.0
+27045,Fillmore,2024,adults,pooled_quarter_ratio,541.5851617644287,forecasted,500.0
+27047,Freeborn,2024,adults,pooled_quarter_ratio,2094.9542261789356,forecasted,1595.0
+27049,Goodhue,2024,adults,pooled_quarter_ratio,2147.2336072026083,forecasted,1136.0
+27051,Grant,2024,adults,pooled_quarter_ratio,89.7467136434227,forecasted,89.0
+27053,Hennepin,2024,adults,pooled_quarter_ratio,133934.6729919705,forecasted,125003.0
+27055,Houston,2024,adults,pooled_quarter_ratio,867.6109295334882,forecasted,930.0
+27057,Hubbard,2024,adults,pooled_quarter_ratio,833.2263941783816,forecasted,820.0
+27059,Isanti,2024,adults,pooled_quarter_ratio,1896.6024249465872,forecasted,2284.0
+27061,Itasca,2024,adults,pooled_quarter_ratio,3424.2825340019826,forecasted,2449.0
+27063,Jackson,2024,adults,pooled_quarter_ratio,562.6541650857636,forecasted,621.0
+27065,Kanabec,2024,adults,pooled_quarter_ratio,446.2560531262417,forecasted,581.0
+27067,Kandiyohi,2024,adults,pooled_quarter_ratio,1541.5981922325348,forecasted,1553.0
+27069,Kittson,2024,adults,pooled_quarter_ratio,223.45983126696854,forecasted,189.0
+27071,Koochiching,2024,adults,pooled_quarter_ratio,532.641925494934,forecasted,708.0
+27073,Lac qui Parle,2024,adults,pooled_quarter_ratio,43.84092242929622,forecasted,66.0
+27075,Lake,2024,adults,pooled_quarter_ratio,495.36093510023403,forecasted,344.0
+27077,Lake of the Woods,2024,adults,pooled_quarter_ratio,65.75210460274607,forecasted,61.0
+27079,Le Sueur,2024,adults,pooled_quarter_ratio,1170.536498743806,forecasted,856.0
+27081,Lincoln,2024,adults,pooled_quarter_ratio,48.08266129175984,forecasted,38.0
+27083,Lyon,2024,adults,pooled_quarter_ratio,756.1728802225036,forecasted,779.0
+27085,McLeod,2024,adults,pooled_quarter_ratio,1624.1563836085304,forecasted,1729.0
+27087,Mahnomen,2024,adults,pooled_quarter_ratio,422.15157665002533,forecasted,100.0
+27089,Marshall,2024,adults,pooled_quarter_ratio,140.3462509298044,forecasted,139.0
+27091,Martin,2024,adults,pooled_quarter_ratio,693.8559625750948,forecasted,682.0
+27093,Meeker,2024,adults,pooled_quarter_ratio,722.9126243198493,forecasted,665.0
+27095,Mille Lacs,2024,adults,pooled_quarter_ratio,795.7484938231631,forecasted,884.0
+27097,Morrison,2024,adults,pooled_quarter_ratio,902.7118578852709,forecasted,848.0
+27099,Mower,2024,adults,pooled_quarter_ratio,2352.8208009354694,forecasted,2306.0
+27101,Murray,2024,adults,pooled_quarter_ratio,217.81969375665838,forecasted,236.0
+27103,Nicollet,2024,adults,pooled_quarter_ratio,410.8986956755161,forecasted,375.0
+27105,Nobles,2024,adults,pooled_quarter_ratio,880.8265381955478,forecasted,736.0
+27107,Norman,2024,adults,pooled_quarter_ratio,81.90709344553294,forecasted,70.0
+27109,Olmsted,2024,adults,pooled_quarter_ratio,19006.70556144668,forecasted,18686.0
+27111,Otter Tail,2024,adults,pooled_quarter_ratio,1389.2808550675866,forecasted,1468.0
+27113,Pennington,2024,adults,pooled_quarter_ratio,597.2059635807341,forecasted,550.0
+27115,Pine,2024,adults,pooled_quarter_ratio,996.235711237203,forecasted,891.0
+27117,Pipestone,2024,adults,pooled_quarter_ratio,693.2630597270303,forecasted,686.0
+27119,Polk,2024,adults,pooled_quarter_ratio,1080.0847200878209,forecasted,597.0
+27121,Pope,2024,adults,pooled_quarter_ratio,87.00699373024331,forecasted,77.0
+27123,Ramsey,2024,adults,pooled_quarter_ratio,35307.41230556674,forecasted,34862.0
+27125,Red Lake,2024,adults,pooled_quarter_ratio,155.79891032839882,forecasted,108.0
+27127,Redwood,2024,adults,pooled_quarter_ratio,526.4133403642612,forecasted,469.0
+27129,Renville,2024,adults,pooled_quarter_ratio,1493.3997709348191,forecasted,1303.0
+27131,Rice,2024,adults,pooled_quarter_ratio,17326.787053959062,forecasted,7729.0
+27133,Rock,2024,adults,pooled_quarter_ratio,306.64498683351417,forecasted,358.0
+27135,Roseau,2024,adults,pooled_quarter_ratio,318.8043121655387,forecasted,341.0
+27137,St. Louis,2024,adults,pooled_quarter_ratio,8545.975103198542,forecasted,7624.0
+27139,Scott,2024,adults,pooled_quarter_ratio,1141.4477104485368,forecasted,994.0
+27141,Sherburne,2024,adults,pooled_quarter_ratio,4707.419934927934,forecasted,4429.0
+27143,Sibley,2024,adults,pooled_quarter_ratio,467.23192886036,forecasted,452.0
+27145,Stearns,2024,adults,pooled_quarter_ratio,7941.797897020172,forecasted,6983.0
+27147,Steele,2024,adults,pooled_quarter_ratio,8934.493176665752,forecasted,9006.0
+27149,Stevens,2024,adults,pooled_quarter_ratio,183.86284645738664,forecasted,248.0
+27151,Swift,2024,adults,pooled_quarter_ratio,261.59389571992557,forecasted,271.0
+27153,Todd,2024,adults,pooled_quarter_ratio,728.1317399656268,forecasted,533.0
+27155,Traverse,2024,adults,pooled_quarter_ratio,74.78344516769363,forecasted,85.0
+27157,Wabasha,2024,adults,pooled_quarter_ratio,1566.1106969901562,forecasted,1481.0
+27159,Wadena,2024,adults,pooled_quarter_ratio,420.7018783742434,forecasted,444.0
+27161,Waseca,2024,adults,pooled_quarter_ratio,859.6231115091618,forecasted,831.0
+27163,Washington,2024,adults,pooled_quarter_ratio,49932.17397054543,forecasted,48851.0
+27165,Watonwan,2024,adults,pooled_quarter_ratio,940.4742658849507,forecasted,962.0
+27167,Wilkin,2024,adults,pooled_quarter_ratio,,no_reporting_history,
+27169,Winona,2024,adults,pooled_quarter_ratio,1726.7434407581027,forecasted,1893.0
+27171,Wright,2024,adults,pooled_quarter_ratio,3774.6857792440023,forecasted,3876.0
+27173,Yellow Medicine,2024,adults,pooled_quarter_ratio,314.73573179591955,forecasted,250.0
 27001,Aitkin,2024,adults,per_site_ratio,312.23963649639086,forecasted,332.0
 27003,Anoka,2024,adults,per_site_ratio,37059.166774292986,forecasted,38494.0
 27005,Becker,2024,adults,per_site_ratio,1156.1440261865794,forecasted,963.0
@@ -5045,6 +6002,93 @@ fips,county_name,target_year,metric,method,prediction,forecast_status,actual
 27169,Winona,2024,seniors,pooled_august_july_ratio,388.7047506690563,forecasted,379.0
 27171,Wright,2024,seniors,pooled_august_july_ratio,1098.6518851488781,forecasted,1080.0
 27173,Yellow Medicine,2024,seniors,pooled_august_july_ratio,59.67293804424571,forecasted,66.0
+27001,Aitkin,2024,seniors,pooled_quarter_ratio,258.43773482637306,forecasted,267.0
+27003,Anoka,2024,seniors,pooled_quarter_ratio,9053.374515943446,forecasted,9479.0
+27005,Becker,2024,seniors,pooled_quarter_ratio,252.25245382220032,forecasted,226.0
+27007,Beltrami,2024,seniors,pooled_quarter_ratio,510.1525978753706,forecasted,496.0
+27009,Benton,2024,seniors,pooled_quarter_ratio,329.1502733725818,forecasted,315.0
+27011,Big Stone,2024,seniors,pooled_quarter_ratio,14.195294981404402,forecasted,13.0
+27013,Blue Earth,2024,seniors,pooled_quarter_ratio,600.538588167256,forecasted,662.0
+27015,Brown,2024,seniors,pooled_quarter_ratio,104.03492361985718,forecasted,108.0
+27017,Carlton,2024,seniors,pooled_quarter_ratio,290.53067124623146,forecasted,247.0
+27019,Carver,2024,seniors,pooled_quarter_ratio,625.461006867014,forecasted,565.0
+27021,Cass,2024,seniors,pooled_quarter_ratio,744.5285440682629,forecasted,753.0
+27023,Chippewa,2024,seniors,pooled_quarter_ratio,60.00255793794874,forecasted,42.0
+27025,Chisago,2024,seniors,pooled_quarter_ratio,836.4124167099361,forecasted,721.0
+27027,Clay,2024,seniors,pooled_quarter_ratio,670.7818299141006,forecasted,680.0
+27029,Clearwater,2024,seniors,pooled_quarter_ratio,101.63280645294812,forecasted,97.0
+27031,Cook,2024,seniors,pooled_quarter_ratio,134.92902890584156,forecasted,119.0
+27033,Cottonwood,2024,seniors,pooled_quarter_ratio,84.88631245858733,forecasted,88.0
+27035,Crow Wing,2024,seniors,pooled_quarter_ratio,945.9404800293697,forecasted,1014.0
+27037,Dakota,2024,seniors,pooled_quarter_ratio,3570.24279152226,forecasted,3207.0
+27039,Dodge,2024,seniors,pooled_quarter_ratio,441.0706002896996,forecasted,283.0
+27041,Douglas,2024,seniors,pooled_quarter_ratio,128.7611160827429,forecasted,127.0
+27043,Faribault,2024,seniors,pooled_quarter_ratio,147.306861274608,forecasted,187.0
+27045,Fillmore,2024,seniors,pooled_quarter_ratio,204.02628773727008,forecasted,218.0
+27047,Freeborn,2024,seniors,pooled_quarter_ratio,535.5246959015208,forecasted,407.0
+27049,Goodhue,2024,seniors,pooled_quarter_ratio,393.44281490025907,forecasted,188.0
+27051,Grant,2024,seniors,pooled_quarter_ratio,35.21223176973283,forecasted,47.0
+27053,Hennepin,2024,seniors,pooled_quarter_ratio,24012.25052515533,forecasted,20693.0
+27055,Houston,2024,seniors,pooled_quarter_ratio,295.2643902298393,forecasted,366.0
+27057,Hubbard,2024,seniors,pooled_quarter_ratio,289.43519973298754,forecasted,323.0
+27059,Isanti,2024,seniors,pooled_quarter_ratio,735.1680738336374,forecasted,481.0
+27061,Itasca,2024,seniors,pooled_quarter_ratio,1355.3133047095591,forecasted,710.0
+27063,Jackson,2024,seniors,pooled_quarter_ratio,72.74311243699255,forecasted,65.0
+27065,Kanabec,2024,seniors,pooled_quarter_ratio,135.95561302526184,forecasted,167.0
+27067,Kandiyohi,2024,seniors,pooled_quarter_ratio,224.4245178513028,forecasted,227.0
+27069,Kittson,2024,seniors,pooled_quarter_ratio,41.278811467628636,forecasted,46.0
+27071,Koochiching,2024,seniors,pooled_quarter_ratio,276.2416567629953,forecasted,306.0
+27073,Lac qui Parle,2024,seniors,pooled_quarter_ratio,18.959545192386916,forecasted,24.0
+27075,Lake,2024,seniors,pooled_quarter_ratio,144.40317303210315,forecasted,142.0
+27077,Lake of the Woods,2024,seniors,pooled_quarter_ratio,47.71802640905925,forecasted,39.0
+27079,Le Sueur,2024,seniors,pooled_quarter_ratio,483.26157014508277,forecasted,325.0
+27081,Lincoln,2024,seniors,pooled_quarter_ratio,93.08187093475317,forecasted,89.0
+27083,Lyon,2024,seniors,pooled_quarter_ratio,92.85595738640204,forecasted,103.0
+27085,McLeod,2024,seniors,pooled_quarter_ratio,479.19589057917983,forecasted,544.0
+27087,Mahnomen,2024,seniors,pooled_quarter_ratio,215.8507448824742,forecasted,22.0
+27089,Marshall,2024,seniors,pooled_quarter_ratio,82.01970647034321,forecasted,81.0
+27091,Martin,2024,seniors,pooled_quarter_ratio,215.4754481555792,forecasted,209.0
+27093,Meeker,2024,seniors,pooled_quarter_ratio,181.70376119007105,forecasted,167.0
+27095,Mille Lacs,2024,seniors,pooled_quarter_ratio,348.3814375434003,forecasted,445.0
+27097,Morrison,2024,seniors,pooled_quarter_ratio,216.71401881525944,forecasted,206.0
+27099,Mower,2024,seniors,pooled_quarter_ratio,551.1928256124093,forecasted,624.0
+27101,Murray,2024,seniors,pooled_quarter_ratio,60.29499570228621,forecasted,57.0
+27103,Nicollet,2024,seniors,pooled_quarter_ratio,46.14839221913457,forecasted,44.0
+27105,Nobles,2024,seniors,pooled_quarter_ratio,75.53965959681749,forecasted,75.0
+27107,Norman,2024,seniors,pooled_quarter_ratio,17.441537647214503,forecasted,21.0
+27109,Olmsted,2024,seniors,pooled_quarter_ratio,3457.966053048112,forecasted,3365.0
+27111,Otter Tail,2024,seniors,pooled_quarter_ratio,407.3889318355446,forecasted,511.0
+27113,Pennington,2024,seniors,pooled_quarter_ratio,128.47716618615428,forecasted,123.0
+27115,Pine,2024,seniors,pooled_quarter_ratio,429.5863795913447,forecasted,401.0
+27117,Pipestone,2024,seniors,pooled_quarter_ratio,171.1833115196588,forecasted,146.0
+27119,Polk,2024,seniors,pooled_quarter_ratio,214.11177844136947,forecasted,152.0
+27121,Pope,2024,seniors,pooled_quarter_ratio,50.36023328552023,forecasted,33.0
+27123,Ramsey,2024,seniors,pooled_quarter_ratio,6838.300140889047,forecasted,6628.0
+27125,Red Lake,2024,seniors,pooled_quarter_ratio,44.24262599899124,forecasted,44.0
+27127,Redwood,2024,seniors,pooled_quarter_ratio,85.14067019863778,forecasted,78.0
+27129,Renville,2024,seniors,pooled_quarter_ratio,532.8012077345553,forecasted,484.0
+27131,Rice,2024,seniors,pooled_quarter_ratio,2636.217409047562,forecasted,1229.0
+27133,Rock,2024,seniors,pooled_quarter_ratio,81.4084410020508,forecasted,75.0
+27135,Roseau,2024,seniors,pooled_quarter_ratio,36.787114891665354,forecasted,38.0
+27137,St. Louis,2024,seniors,pooled_quarter_ratio,2246.044805797468,forecasted,1893.0
+27139,Scott,2024,seniors,pooled_quarter_ratio,170.37643944729734,forecasted,172.0
+27141,Sherburne,2024,seniors,pooled_quarter_ratio,1036.1062738163625,forecasted,872.0
+27143,Sibley,2024,seniors,pooled_quarter_ratio,155.5882330831039,forecasted,136.0
+27145,Stearns,2024,seniors,pooled_quarter_ratio,1134.1394145178638,forecasted,1083.0
+27147,Steele,2024,seniors,pooled_quarter_ratio,1391.9064002244015,forecasted,1474.0
+27149,Stevens,2024,seniors,pooled_quarter_ratio,11.81010382365198,forecasted,18.0
+27151,Swift,2024,seniors,pooled_quarter_ratio,41.440719416005464,forecasted,38.0
+27153,Todd,2024,seniors,pooled_quarter_ratio,130.46598693806106,forecasted,145.0
+27155,Traverse,2024,seniors,pooled_quarter_ratio,35.40272212172211,forecasted,38.0
+27157,Wabasha,2024,seniors,pooled_quarter_ratio,345.09636727767924,forecasted,323.0
+27159,Wadena,2024,seniors,pooled_quarter_ratio,72.4495186062754,forecasted,93.0
+27161,Waseca,2024,seniors,pooled_quarter_ratio,306.0785122707741,forecasted,289.0
+27163,Washington,2024,seniors,pooled_quarter_ratio,11486.829588391776,forecasted,11111.0
+27165,Watonwan,2024,seniors,pooled_quarter_ratio,123.24618746020795,forecasted,97.0
+27167,Wilkin,2024,seniors,pooled_quarter_ratio,,no_reporting_history,
+27169,Winona,2024,seniors,pooled_quarter_ratio,362.3625572336887,forecasted,379.0
+27171,Wright,2024,seniors,pooled_quarter_ratio,1069.4045752813968,forecasted,1080.0
+27173,Yellow Medicine,2024,seniors,pooled_quarter_ratio,66.72322197453202,forecasted,66.0
 27001,Aitkin,2024,seniors,per_site_ratio,232.53312500000007,forecasted,267.0
 27003,Anoka,2024,seniors,per_site_ratio,8653.376001656305,forecasted,9479.0
 27005,Becker,2024,seniors,per_site_ratio,275.98434180646103,forecasted,226.0
@@ -5480,6 +6524,93 @@ fips,county_name,target_year,metric,method,prediction,forecast_status,actual
 27169,Winona,2025,households,pooled_august_july_ratio,1629.6030966412654,forecasted,1543.0
 27171,Wright,2025,households,pooled_august_july_ratio,2667.426065655083,forecasted,2485.0
 27173,Yellow Medicine,2025,households,pooled_august_july_ratio,225.10183964024813,forecasted,218.0
+27001,Aitkin,2025,households,pooled_quarter_ratio,385.0799434369068,forecasted,424.0
+27003,Anoka,2025,households,pooled_quarter_ratio,23708.141443632314,forecasted,20888.0
+27005,Becker,2025,households,pooled_quarter_ratio,607.4537243296663,forecasted,555.0
+27007,Beltrami,2025,households,pooled_quarter_ratio,1142.6220106938115,forecasted,1291.0
+27009,Benton,2025,households,pooled_quarter_ratio,819.7370479395329,forecasted,706.0
+27011,Big Stone,2025,households,pooled_quarter_ratio,66.50963275723991,forecasted,84.0
+27013,Blue Earth,2025,households,pooled_quarter_ratio,5273.1242870208525,forecasted,5134.0
+27015,Brown,2025,households,pooled_quarter_ratio,340.0985190169264,forecasted,310.0
+27017,Carlton,2025,households,pooled_quarter_ratio,551.7458170872328,forecasted,491.0
+27019,Carver,2025,households,pooled_quarter_ratio,2441.035260598516,forecasted,2194.0
+27021,Cass,2025,households,pooled_quarter_ratio,1305.0776073600118,forecasted,1436.0
+27023,Chippewa,2025,households,pooled_quarter_ratio,228.18821540772944,forecasted,242.0
+27025,Chisago,2025,households,pooled_quarter_ratio,1469.4212857132202,forecasted,1337.0
+27027,Clay,2025,households,pooled_quarter_ratio,3335.0203765371793,forecasted,2995.0
+27029,Clearwater,2025,households,pooled_quarter_ratio,239.32298718955946,forecasted,212.0
+27031,Cook,2025,households,pooled_quarter_ratio,278.7624770813402,forecasted,253.0
+27033,Cottonwood,2025,households,pooled_quarter_ratio,265.61447763617826,forecasted,295.0
+27035,Crow Wing,2025,households,pooled_quarter_ratio,2088.5409061001656,forecasted,1946.0
+27037,Dakota,2025,households,pooled_quarter_ratio,15245.280243449199,forecasted,12360.0
+27039,Dodge,2025,households,pooled_quarter_ratio,789.2473690707095,forecasted,735.0
+27041,Douglas,2025,households,pooled_quarter_ratio,589.7755188688581,forecasted,548.0
+27043,Faribault,2025,households,pooled_quarter_ratio,348.6373871154263,forecasted,258.0
+27045,Fillmore,2025,households,pooled_quarter_ratio,393.4068481202564,forecasted,405.0
+27047,Freeborn,2025,households,pooled_quarter_ratio,1120.7815155632295,forecasted,827.0
+27049,Goodhue,2025,households,pooled_quarter_ratio,1378.1438464553469,forecasted,1192.0
+27051,Grant,2025,households,pooled_quarter_ratio,103.5019573392116,forecasted,117.0
+27053,Hennepin,2025,households,pooled_quarter_ratio,91750.635044138,forecasted,79648.0
+27055,Houston,2025,households,pooled_quarter_ratio,912.561605464446,forecasted,687.0
+27057,Hubbard,2025,households,pooled_quarter_ratio,598.9689222313167,forecasted,632.0
+27059,Isanti,2025,households,pooled_quarter_ratio,1364.7044642857143,forecasted,1258.0
+27061,Itasca,2025,households,pooled_quarter_ratio,1617.8402139791979,forecasted,514.0
+27063,Jackson,2025,households,pooled_quarter_ratio,286.2914263601946,forecasted,288.0
+27065,Kanabec,2025,households,pooled_quarter_ratio,337.690340840556,forecasted,343.0
+27067,Kandiyohi,2025,households,pooled_quarter_ratio,871.8352976147924,forecasted,857.0
+27069,Kittson,2025,households,pooled_quarter_ratio,125.31514391809817,forecasted,93.0
+27071,Koochiching,2025,households,pooled_quarter_ratio,489.6839497660797,forecasted,620.0
+27073,Lac qui Parle,2025,households,pooled_quarter_ratio,47.03745299533195,forecasted,39.0
+27075,Lake,2025,households,pooled_quarter_ratio,303.90085377919803,forecasted,266.0
+27077,Lake of the Woods,2025,households,pooled_quarter_ratio,83.61384600066685,forecasted,72.0
+27079,Le Sueur,2025,households,pooled_quarter_ratio,809.1446694005551,forecasted,739.0
+27081,Lincoln,2025,households,pooled_quarter_ratio,120.09969410128254,forecasted,114.0
+27083,Lyon,2025,households,pooled_quarter_ratio,534.3960979556432,forecasted,562.0
+27085,McLeod,2025,households,pooled_quarter_ratio,1447.3439790157151,forecasted,1385.0
+27087,Mahnomen,2025,households,pooled_quarter_ratio,408.6331070736729,forecasted,486.0
+27089,Marshall,2025,households,pooled_quarter_ratio,135.92498483922597,forecasted,115.0
+27091,Martin,2025,households,pooled_quarter_ratio,501.451306740875,forecasted,513.0
+27093,Meeker,2025,households,pooled_quarter_ratio,502.963615357122,forecasted,463.0
+27095,Mille Lacs,2025,households,pooled_quarter_ratio,506.7914450273903,forecasted,512.0
+27097,Morrison,2025,households,pooled_quarter_ratio,583.6499625390042,forecasted,558.0
+27099,Mower,2025,households,pooled_quarter_ratio,1663.0707064917242,forecasted,1710.0
+27101,Murray,2025,households,pooled_quarter_ratio,182.4064191821849,forecasted,176.0
+27103,Nicollet,2025,households,pooled_quarter_ratio,267.2913840201437,forecasted,274.0
+27105,Nobles,2025,households,pooled_quarter_ratio,437.73765616707277,forecasted,417.0
+27107,Norman,2025,households,pooled_quarter_ratio,59.54665012690464,forecasted,62.0
+27109,Olmsted,2025,households,pooled_quarter_ratio,11280.72189697471,forecasted,10373.0
+27111,Otter Tail,2025,households,pooled_quarter_ratio,1063.591053711803,forecasted,999.0
+27113,Pennington,2025,households,pooled_quarter_ratio,591.4435778276328,forecasted,450.0
+27115,Pine,2025,households,pooled_quarter_ratio,720.3804145477287,forecasted,636.0
+27117,Pipestone,2025,households,pooled_quarter_ratio,525.8425505705394,forecasted,450.0
+27119,Polk,2025,households,pooled_quarter_ratio,731.8509464810585,forecasted,751.0
+27121,Pope,2025,households,pooled_quarter_ratio,69.3538478993776,forecasted,70.0
+27123,Ramsey,2025,households,pooled_quarter_ratio,20740.21065576642,forecasted,20280.0
+27125,Red Lake,2025,households,pooled_quarter_ratio,131.40812298294145,forecasted,129.0
+27127,Redwood,2025,households,pooled_quarter_ratio,278.24950392359443,forecasted,253.0
+27129,Renville,2025,households,pooled_quarter_ratio,1151.0089493209298,forecasted,1191.0
+27131,Rice,2025,households,pooled_quarter_ratio,4380.867458480108,forecasted,4210.0
+27133,Rock,2025,households,pooled_quarter_ratio,226.02135460047097,forecasted,183.0
+27135,Roseau,2025,households,pooled_quarter_ratio,222.63213439589794,forecasted,228.0
+27137,St. Louis,2025,households,pooled_quarter_ratio,7647.549519285413,forecasted,5963.0
+27139,Scott,2025,households,pooled_quarter_ratio,734.9626236797553,forecasted,697.0
+27141,Sherburne,2025,households,pooled_quarter_ratio,3188.790486669048,forecasted,3145.0
+27143,Sibley,2025,households,pooled_quarter_ratio,303.3012591077422,forecasted,323.0
+27145,Stearns,2025,households,pooled_quarter_ratio,4042.24676827,forecasted,3430.0
+27147,Steele,2025,households,pooled_quarter_ratio,6100.989424452737,forecasted,5638.0
+27149,Stevens,2025,households,pooled_quarter_ratio,265.97701078097214,forecasted,199.0
+27151,Swift,2025,households,pooled_quarter_ratio,149.15030796161827,forecasted,143.0
+27153,Todd,2025,households,pooled_quarter_ratio,380.45962461099583,forecasted,383.0
+27155,Traverse,2025,households,pooled_quarter_ratio,86.05716348003949,forecasted,82.0
+27157,Wabasha,2025,households,pooled_quarter_ratio,1128.7520086274226,forecasted,1071.0
+27159,Wadena,2025,households,pooled_quarter_ratio,226.25510351071676,forecasted,245.0
+27161,Waseca,2025,households,pooled_quarter_ratio,770.8199520463597,forecasted,716.0
+27163,Washington,2025,households,pooled_quarter_ratio,20559.856316160425,forecasted,19591.0
+27165,Watonwan,2025,households,pooled_quarter_ratio,594.0461484455498,forecasted,435.0
+27167,Wilkin,2025,households,pooled_quarter_ratio,,no_reporting_history,
+27169,Winona,2025,households,pooled_quarter_ratio,1601.2613405009945,forecasted,1543.0
+27171,Wright,2025,households,pooled_quarter_ratio,2535.1216673637778,forecasted,2485.0
+27173,Yellow Medicine,2025,households,pooled_quarter_ratio,211.9644355622583,forecasted,218.0
 27001,Aitkin,2025,households,per_site_ratio,330.2028985507246,forecasted,424.0
 27003,Anoka,2025,households,per_site_ratio,24995.583183531464,forecasted,20888.0
 27005,Becker,2025,households,per_site_ratio,754.5777777777777,forecasted,555.0
@@ -5915,6 +7046,93 @@ fips,county_name,target_year,metric,method,prediction,forecast_status,actual
 27169,Winona,2025,pounds,pooled_august_july_ratio,71778.18081168,forecasted,55592.0
 27171,Wright,2025,pounds,pooled_august_july_ratio,235745.74315792992,forecasted,211714.0
 27173,Yellow Medicine,2025,pounds,pooled_august_july_ratio,18036.409317424164,forecasted,16358.0
+27001,Aitkin,2025,pounds,pooled_quarter_ratio,20131.027480402798,forecasted,20002.0
+27003,Anoka,2025,pounds,pooled_quarter_ratio,959082.2728656272,forecasted,819551.0
+27005,Becker,2025,pounds,pooled_quarter_ratio,53560.979883749234,forecasted,51318.0
+27007,Beltrami,2025,pounds,pooled_quarter_ratio,84874.9952031227,forecasted,85188.0
+27009,Benton,2025,pounds,pooled_quarter_ratio,30929.221908885196,forecasted,31775.0
+27011,Big Stone,2025,pounds,pooled_quarter_ratio,6061.747557297456,forecasted,7163.0
+27013,Blue Earth,2025,pounds,pooled_quarter_ratio,206167.79099976635,forecasted,273079.0
+27015,Brown,2025,pounds,pooled_quarter_ratio,31100.99237238887,forecasted,27697.0
+27017,Carlton,2025,pounds,pooled_quarter_ratio,37380.83539536435,forecasted,31582.0
+27019,Carver,2025,pounds,pooled_quarter_ratio,194973.58205917454,forecasted,189229.0
+27021,Cass,2025,pounds,pooled_quarter_ratio,50136.4677986104,forecasted,73188.0
+27023,Chippewa,2025,pounds,pooled_quarter_ratio,8380.222977264077,forecasted,8428.0
+27025,Chisago,2025,pounds,pooled_quarter_ratio,84033.52529761665,forecasted,76814.0
+27027,Clay,2025,pounds,pooled_quarter_ratio,111809.94196332742,forecasted,143048.0
+27029,Clearwater,2025,pounds,pooled_quarter_ratio,13354.070625999242,forecasted,11537.0
+27031,Cook,2025,pounds,pooled_quarter_ratio,13360.930920667757,forecasted,11348.0
+27033,Cottonwood,2025,pounds,pooled_quarter_ratio,20186.032332130577,forecasted,18196.0
+27035,Crow Wing,2025,pounds,pooled_quarter_ratio,110882.57105911954,forecasted,99543.0
+27037,Dakota,2025,pounds,pooled_quarter_ratio,941936.1744638917,forecasted,882977.0
+27039,Dodge,2025,pounds,pooled_quarter_ratio,26200.602467368197,forecasted,27426.0
+27041,Douglas,2025,pounds,pooled_quarter_ratio,45199.58837843141,forecasted,65593.0
+27043,Faribault,2025,pounds,pooled_quarter_ratio,13607.73872757821,forecasted,10819.0
+27045,Fillmore,2025,pounds,pooled_quarter_ratio,20284.90907645601,forecasted,19993.0
+27047,Freeborn,2025,pounds,pooled_quarter_ratio,33297.365146141485,forecasted,30184.0
+27049,Goodhue,2025,pounds,pooled_quarter_ratio,56778.831083428384,forecasted,55582.4
+27051,Grant,2025,pounds,pooled_quarter_ratio,8355.996971584156,forecasted,7817.530000000001
+27053,Hennepin,2025,pounds,pooled_quarter_ratio,4427470.8434765795,forecasted,4054570.0
+27055,Houston,2025,pounds,pooled_quarter_ratio,30343.808286268588,forecasted,25295.0
+27057,Hubbard,2025,pounds,pooled_quarter_ratio,45489.416178914405,forecasted,46660.0
+27059,Isanti,2025,pounds,pooled_quarter_ratio,73412.74391916997,forecasted,66435.0
+27061,Itasca,2025,pounds,pooled_quarter_ratio,108150.52805620842,forecasted,16002.0
+27063,Jackson,2025,pounds,pooled_quarter_ratio,28124.32663492816,forecasted,28196.0
+27065,Kanabec,2025,pounds,pooled_quarter_ratio,16528.974827653547,forecasted,18361.0
+27067,Kandiyohi,2025,pounds,pooled_quarter_ratio,56576.341336011086,forecasted,64049.0
+27069,Kittson,2025,pounds,pooled_quarter_ratio,6902.418398188086,forecasted,4655.4
+27071,Koochiching,2025,pounds,pooled_quarter_ratio,29780.721585208616,forecasted,24915.0
+27073,Lac qui Parle,2025,pounds,pooled_quarter_ratio,3757.8933700534317,forecasted,2971.0
+27075,Lake,2025,pounds,pooled_quarter_ratio,13907.887847724034,forecasted,9382.0
+27077,Lake of the Woods,2025,pounds,pooled_quarter_ratio,5205.905328442511,forecasted,4060.5
+27079,Le Sueur,2025,pounds,pooled_quarter_ratio,52947.05032121575,forecasted,48681.0
+27081,Lincoln,2025,pounds,pooled_quarter_ratio,3651.7250302820075,forecasted,2780.0
+27083,Lyon,2025,pounds,pooled_quarter_ratio,36710.01649410817,forecasted,38328.0
+27085,McLeod,2025,pounds,pooled_quarter_ratio,69167.50495549105,forecasted,65259.0
+27087,Mahnomen,2025,pounds,pooled_quarter_ratio,16836.050800137153,forecasted,31588.0
+27089,Marshall,2025,pounds,pooled_quarter_ratio,7779.820616811099,forecasted,6874.0
+27091,Martin,2025,pounds,pooled_quarter_ratio,38415.27645754322,forecasted,40820.0
+27093,Meeker,2025,pounds,pooled_quarter_ratio,31417.309144402163,forecasted,28048.0
+27095,Mille Lacs,2025,pounds,pooled_quarter_ratio,33034.8210686806,forecasted,25260.0
+27097,Morrison,2025,pounds,pooled_quarter_ratio,46183.98561692688,forecasted,40031.0
+27099,Mower,2025,pounds,pooled_quarter_ratio,47191.56922894281,forecasted,53547.4
+27101,Murray,2025,pounds,pooled_quarter_ratio,11192.172913727933,forecasted,10012.0
+27103,Nicollet,2025,pounds,pooled_quarter_ratio,18036.624045168523,forecasted,18392.0
+27105,Nobles,2025,pounds,pooled_quarter_ratio,29375.74503171652,forecasted,21898.0
+27107,Norman,2025,pounds,pooled_quarter_ratio,2781.514816934017,forecasted,3154.9
+27109,Olmsted,2025,pounds,pooled_quarter_ratio,571107.1717145327,forecasted,437322.5
+27111,Otter Tail,2025,pounds,pooled_quarter_ratio,75088.7216346143,forecasted,72895.9
+27113,Pennington,2025,pounds,pooled_quarter_ratio,37260.22311026514,forecasted,28931.0
+27115,Pine,2025,pounds,pooled_quarter_ratio,43204.54738037768,forecasted,36032.0
+27117,Pipestone,2025,pounds,pooled_quarter_ratio,37741.72434180213,forecasted,34913.0
+27119,Polk,2025,pounds,pooled_quarter_ratio,63242.20066269957,forecasted,29738.8
+27121,Pope,2025,pounds,pooled_quarter_ratio,10482.798190155476,forecasted,10730.0
+27123,Ramsey,2025,pounds,pooled_quarter_ratio,1091564.5989822822,forecasted,1599211.0
+27125,Red Lake,2025,pounds,pooled_quarter_ratio,9279.443943745653,forecasted,6438.34
+27127,Redwood,2025,pounds,pooled_quarter_ratio,23066.05098279572,forecasted,22175.0
+27129,Renville,2025,pounds,pooled_quarter_ratio,47986.806133974234,forecasted,54136.0
+27131,Rice,2025,pounds,pooled_quarter_ratio,209971.8871087686,forecasted,208760.0
+27133,Rock,2025,pounds,pooled_quarter_ratio,12024.692625787697,forecasted,10519.0
+27135,Roseau,2025,pounds,pooled_quarter_ratio,13645.930058554914,forecasted,9842.0
+27137,St. Louis,2025,pounds,pooled_quarter_ratio,434365.2102461576,forecasted,317508.0
+27139,Scott,2025,pounds,pooled_quarter_ratio,50197.74398358123,forecasted,50274.0
+27141,Sherburne,2025,pounds,pooled_quarter_ratio,174151.25509540594,forecasted,183974.0
+27143,Sibley,2025,pounds,pooled_quarter_ratio,23745.058961544073,forecasted,22934.0
+27145,Stearns,2025,pounds,pooled_quarter_ratio,352389.1744183395,forecasted,345869.0
+27147,Steele,2025,pounds,pooled_quarter_ratio,252080.03615160653,forecasted,219880.45
+27149,Stevens,2025,pounds,pooled_quarter_ratio,11730.150437492319,forecasted,8690.0
+27151,Swift,2025,pounds,pooled_quarter_ratio,5530.531831737986,forecasted,6024.0
+27153,Todd,2025,pounds,pooled_quarter_ratio,30672.015827957333,forecasted,25632.0
+27155,Traverse,2025,pounds,pooled_quarter_ratio,4487.444609332974,forecasted,4402.0
+27157,Wabasha,2025,pounds,pooled_quarter_ratio,79839.92227004004,forecasted,71346.9
+27159,Wadena,2025,pounds,pooled_quarter_ratio,12843.075482526068,forecasted,15949.6
+27161,Waseca,2025,pounds,pooled_quarter_ratio,26989.213065801778,forecasted,26870.0
+27163,Washington,2025,pounds,pooled_quarter_ratio,704217.4395754277,forecasted,682075.0
+27165,Watonwan,2025,pounds,pooled_quarter_ratio,37245.50625060788,forecasted,28731.0
+27167,Wilkin,2025,pounds,pooled_quarter_ratio,,no_reporting_history,
+27169,Winona,2025,pounds,pooled_quarter_ratio,69663.77203983853,forecasted,55592.0
+27171,Wright,2025,pounds,pooled_quarter_ratio,223536.77601934242,forecasted,211714.0
+27173,Yellow Medicine,2025,pounds,pooled_quarter_ratio,17029.226465348227,forecasted,16358.0
 27001,Aitkin,2025,pounds,per_site_ratio,19319.84024677328,forecasted,20002.0
 27003,Anoka,2025,pounds,per_site_ratio,1069107.4822224195,forecasted,819551.0
 27005,Becker,2025,pounds,per_site_ratio,64079.10596445363,forecasted,51318.0
@@ -6350,6 +7568,93 @@ fips,county_name,target_year,metric,method,prediction,forecast_status,actual
 27169,Winona,2025,individuals,pooled_august_july_ratio,3903.628310459211,forecasted,3466.0
 27171,Wright,2025,individuals,pooled_august_july_ratio,9144.180327868853,forecasted,8370.0
 27173,Yellow Medicine,2025,individuals,pooled_august_july_ratio,618.5455608452351,forecasted,613.0
+27001,Aitkin,2025,individuals,pooled_quarter_ratio,811.6352228181693,forecasted,835.0
+27003,Anoka,2025,individuals,pooled_quarter_ratio,76485.56165487293,forecasted,72272.0
+27005,Becker,2025,individuals,pooled_quarter_ratio,1948.149807017294,forecasted,1879.0
+27007,Beltrami,2025,individuals,pooled_quarter_ratio,3515.35478209616,forecasted,3918.0
+27009,Benton,2025,individuals,pooled_quarter_ratio,2104.6378844403766,forecasted,1880.0
+27011,Big Stone,2025,individuals,pooled_quarter_ratio,202.91529492424257,forecasted,256.0
+27013,Blue Earth,2025,individuals,pooled_quarter_ratio,15132.412537752565,forecasted,15455.0
+27015,Brown,2025,individuals,pooled_quarter_ratio,897.9659186994512,forecasted,849.0
+27017,Carlton,2025,individuals,pooled_quarter_ratio,1160.9782715688432,forecasted,1192.0
+27019,Carver,2025,individuals,pooled_quarter_ratio,8600.795538988285,forecasted,7506.0
+27021,Cass,2025,individuals,pooled_quarter_ratio,3843.141195706894,forecasted,4222.0
+27023,Chippewa,2025,individuals,pooled_quarter_ratio,705.1686698343262,forecasted,512.0
+27025,Chisago,2025,individuals,pooled_quarter_ratio,3444.9789734246256,forecasted,3162.0
+27027,Clay,2025,individuals,pooled_quarter_ratio,9751.92233058009,forecasted,10464.0
+27029,Clearwater,2025,individuals,pooled_quarter_ratio,504.63454421421415,forecasted,496.0
+27031,Cook,2025,individuals,pooled_quarter_ratio,628.3713570972071,forecasted,507.0
+27033,Cottonwood,2025,individuals,pooled_quarter_ratio,1150.138738240071,forecasted,1113.0
+27035,Crow Wing,2025,individuals,pooled_quarter_ratio,4906.100123852204,forecasted,4939.0
+27037,Dakota,2025,individuals,pooled_quarter_ratio,46428.52555894843,forecasted,40014.0
+27039,Dodge,2025,individuals,pooled_quarter_ratio,2093.9615673787794,forecasted,1994.0
+27041,Douglas,2025,individuals,pooled_quarter_ratio,1595.0503267691226,forecasted,1490.0
+27043,Faribault,2025,individuals,pooled_quarter_ratio,929.8379804721227,forecasted,762.0
+27045,Fillmore,2025,individuals,pooled_quarter_ratio,975.2606566156845,forecasted,983.0
+27047,Freeborn,2025,individuals,pooled_quarter_ratio,3117.457182361353,forecasted,2212.0
+27049,Goodhue,2025,individuals,pooled_quarter_ratio,3840.1129202425145,forecasted,3689.0
+27051,Grant,2025,individuals,pooled_quarter_ratio,224.9284863718496,forecasted,250.0
+27053,Hennepin,2025,individuals,pooled_quarter_ratio,259049.68327033875,forecasted,228742.0
+27055,Houston,2025,individuals,pooled_quarter_ratio,2044.5171302971246,forecasted,1675.0
+27057,Hubbard,2025,individuals,pooled_quarter_ratio,1717.9782494037897,forecasted,1869.0
+27059,Isanti,2025,individuals,pooled_quarter_ratio,4199.549823771797,forecasted,3870.0
+27061,Itasca,2025,individuals,pooled_quarter_ratio,4398.9151346062135,forecasted,1191.0
+27063,Jackson,2025,individuals,pooled_quarter_ratio,1117.619076786501,forecasted,1091.0
+27065,Kanabec,2025,individuals,pooled_quarter_ratio,855.2581803348245,forecasted,892.0
+27067,Kandiyohi,2025,individuals,pooled_quarter_ratio,2719.8915820867355,forecasted,2805.0
+27069,Kittson,2025,individuals,pooled_quarter_ratio,241.37146017289413,forecasted,214.0
+27071,Koochiching,2025,individuals,pooled_quarter_ratio,1051.134594978553,forecasted,1315.0
+27073,Lac qui Parle,2025,individuals,pooled_quarter_ratio,114.14712712201401,forecasted,71.0
+27075,Lake,2025,individuals,pooled_quarter_ratio,609.5185272675794,forecasted,570.0
+27077,Lake of the Woods,2025,individuals,pooled_quarter_ratio,156.98111649043992,forecasted,132.0
+27079,Le Sueur,2025,individuals,pooled_quarter_ratio,2253.651915183619,forecasted,2079.0
+27081,Lincoln,2025,individuals,pooled_quarter_ratio,169.20895624870917,forecasted,149.0
+27083,Lyon,2025,individuals,pooled_quarter_ratio,1397.6182293817164,forecasted,1501.0
+27085,McLeod,2025,individuals,pooled_quarter_ratio,3487.4301311766776,forecasted,3306.0
+27087,Mahnomen,2025,individuals,pooled_quarter_ratio,990.2174014231782,forecasted,1177.0
+27089,Marshall,2025,individuals,pooled_quarter_ratio,274.8786070444535,forecasted,285.0
+27091,Martin,2025,individuals,pooled_quarter_ratio,1282.0752048293486,forecasted,1320.0
+27093,Meeker,2025,individuals,pooled_quarter_ratio,1302.5873122736887,forecasted,1185.0
+27095,Mille Lacs,2025,individuals,pooled_quarter_ratio,1211.90346707591,forecasted,1351.0
+27097,Morrison,2025,individuals,pooled_quarter_ratio,1490.4495872712553,forecasted,1436.0
+27099,Mower,2025,individuals,pooled_quarter_ratio,4648.187115978083,forecasted,4995.0
+27101,Murray,2025,individuals,pooled_quarter_ratio,426.67443001214605,forecasted,425.0
+27103,Nicollet,2025,individuals,pooled_quarter_ratio,796.181459401818,forecasted,877.0
+27105,Nobles,2025,individuals,pooled_quarter_ratio,1767.8250777846629,forecasted,1683.0
+27107,Norman,2025,individuals,pooled_quarter_ratio,183.6018513031654,forecasted,176.0
+27109,Olmsted,2025,individuals,pooled_quarter_ratio,30632.544754426854,forecasted,28318.0
+27111,Otter Tail,2025,individuals,pooled_quarter_ratio,2834.8131166396342,forecasted,2713.0
+27113,Pennington,2025,individuals,pooled_quarter_ratio,1644.463975673329,forecasted,1269.0
+27115,Pine,2025,individuals,pooled_quarter_ratio,1683.1651120323777,forecasted,1423.0
+27117,Pipestone,2025,individuals,pooled_quarter_ratio,1360.7483895510723,forecasted,1173.0
+27119,Polk,2025,individuals,pooled_quarter_ratio,1810.181321092775,forecasted,2061.0
+27121,Pope,2025,individuals,pooled_quarter_ratio,159.7031773593313,forecasted,181.0
+27123,Ramsey,2025,individuals,pooled_quarter_ratio,68508.70760553557,forecasted,65366.0
+27125,Red Lake,2025,individuals,pooled_quarter_ratio,245.76888112109512,forecasted,256.0
+27127,Redwood,2025,individuals,pooled_quarter_ratio,936.2336383644678,forecasted,830.0
+27129,Renville,2025,individuals,pooled_quarter_ratio,3136.6047747644566,forecasted,3132.0
+27131,Rice,2025,individuals,pooled_quarter_ratio,13631.025446861213,forecasted,13345.0
+27133,Rock,2025,individuals,pooled_quarter_ratio,829.9404098577077,forecasted,646.0
+27135,Roseau,2025,individuals,pooled_quarter_ratio,869.1442948597418,forecasted,773.0
+27137,St. Louis,2025,individuals,pooled_quarter_ratio,17406.009982070394,forecasted,14607.0
+27139,Scott,2025,individuals,pooled_quarter_ratio,2513.358204978434,forecasted,2198.0
+27141,Sherburne,2025,individuals,pooled_quarter_ratio,9673.859445568825,forecasted,9549.0
+27143,Sibley,2025,individuals,pooled_quarter_ratio,876.3464081551454,forecasted,820.0
+27145,Stearns,2025,individuals,pooled_quarter_ratio,10969.959216370713,forecasted,10646.0
+27147,Steele,2025,individuals,pooled_quarter_ratio,19901.70639731407,forecasted,18329.0
+27149,Stevens,2025,individuals,pooled_quarter_ratio,770.9442185257957,forecasted,693.0
+27151,Swift,2025,individuals,pooled_quarter_ratio,515.0033632934516,forecasted,398.0
+27153,Todd,2025,individuals,pooled_quarter_ratio,1237.2962102853478,forecasted,1152.0
+27155,Traverse,2025,individuals,pooled_quarter_ratio,216.60457721403304,forecasted,218.0
+27157,Wabasha,2025,individuals,pooled_quarter_ratio,3091.0454138025093,forecasted,2951.0
+27159,Wadena,2025,individuals,pooled_quarter_ratio,703.4810155665449,forecasted,693.0
+27161,Waseca,2025,individuals,pooled_quarter_ratio,1804.7973385954667,forecasted,1697.0
+27163,Washington,2025,individuals,pooled_quarter_ratio,71534.33041400387,forecasted,69678.0
+27165,Watonwan,2025,individuals,pooled_quarter_ratio,2527.2862468475328,forecasted,1890.0
+27167,Wilkin,2025,individuals,pooled_quarter_ratio,,no_reporting_history,
+27169,Winona,2025,individuals,pooled_quarter_ratio,3669.18596379798,forecasted,3466.0
+27171,Wright,2025,individuals,pooled_quarter_ratio,8443.710127889955,forecasted,8370.0
+27173,Yellow Medicine,2025,individuals,pooled_quarter_ratio,603.7903844393118,forecasted,613.0
 27001,Aitkin,2025,individuals,per_site_ratio,748.714918759232,forecasted,835.0
 27003,Anoka,2025,individuals,per_site_ratio,87305.44528339214,forecasted,72272.0
 27005,Becker,2025,individuals,per_site_ratio,2363.8241949521325,forecasted,1879.0
@@ -6785,6 +8090,93 @@ fips,county_name,target_year,metric,method,prediction,forecast_status,actual
 27169,Winona,2025,children,pooled_august_july_ratio,1054.6669411265602,forecasted,783.0
 27171,Wright,2025,children,pooled_august_july_ratio,3517.507741030735,forecasted,3374.0
 27173,Yellow Medicine,2025,children,pooled_august_july_ratio,206.18436627582355,forecasted,206.0
+27001,Aitkin,2025,children,pooled_quarter_ratio,123.9094203371462,forecasted,178.0
+27003,Anoka,2025,children,pooled_quarter_ratio,27044.09197603296,forecasted,26586.0
+27005,Becker,2025,children,pooled_quarter_ratio,571.8966333950959,forecasted,609.0
+27007,Beltrami,2025,children,pooled_quarter_ratio,1144.8954454125765,forecasted,1316.0
+27009,Benton,2025,children,pooled_quarter_ratio,597.6720939069553,forecasted,545.0
+27011,Big Stone,2025,children,pooled_quarter_ratio,79.87165325141801,forecasted,100.0
+27013,Blue Earth,2025,children,pooled_quarter_ratio,6578.666617010922,forecasted,7206.0
+27015,Brown,2025,children,pooled_quarter_ratio,252.99052762637064,forecasted,246.0
+27017,Carlton,2025,children,pooled_quarter_ratio,309.83613053623503,forecasted,323.0
+27019,Carver,2025,children,pooled_quarter_ratio,2805.0704875146616,forecasted,2446.0
+27021,Cass,2025,children,pooled_quarter_ratio,1195.9960582767608,forecasted,1423.0
+27023,Chippewa,2025,children,pooled_quarter_ratio,256.0001619450773,forecasted,104.0
+27025,Chisago,2025,children,pooled_quarter_ratio,857.4215090202184,forecasted,778.0
+27027,Clay,2025,children,pooled_quarter_ratio,3309.1655313926476,forecasted,4071.0
+27029,Clearwater,2025,children,pooled_quarter_ratio,138.60805831072062,forecasted,156.0
+27031,Cook,2025,children,pooled_quarter_ratio,179.63449830328602,forecasted,141.0
+27033,Cottonwood,2025,children,pooled_quarter_ratio,455.4247624927107,forecasted,481.0
+27035,Crow Wing,2025,children,pooled_quarter_ratio,1469.272168310595,forecasted,1505.0
+27037,Dakota,2025,children,pooled_quarter_ratio,17916.42580780474,forecasted,14105.0
+27039,Dodge,2025,children,pooled_quarter_ratio,586.5210782533237,forecasted,612.0
+27041,Douglas,2025,children,pooled_quarter_ratio,502.0920403063686,forecasted,452.0
+27043,Faribault,2025,children,pooled_quarter_ratio,254.3755919657493,forecasted,211.0
+27045,Fillmore,2025,children,pooled_quarter_ratio,259.3958069337891,forecasted,270.0
+27047,Freeborn,2025,children,pooled_quarter_ratio,904.8244868559306,forecasted,739.0
+27049,Goodhue,2025,children,pooled_quarter_ratio,1273.9588470947347,forecasted,1294.0
+27051,Grant,2025,children,pooled_quarter_ratio,50.74727778608733,forecasted,43.0
+27053,Hennepin,2025,children,pooled_quarter_ratio,95704.666166634,forecasted,84734.0
+27055,Houston,2025,children,pooled_quarter_ratio,600.8044643306364,forecasted,520.0
+27057,Hubbard,2025,children,pooled_quarter_ratio,519.994153197451,forecasted,600.0
+27059,Isanti,2025,children,pooled_quarter_ratio,1380.9773689853614,forecasted,1309.0
+27061,Itasca,2025,children,pooled_quarter_ratio,1159.361803353307,forecasted,281.0
+27063,Jackson,2025,children,pooled_quarter_ratio,435.18534899850266,forecasted,452.0
+27065,Kanabec,2025,children,pooled_quarter_ratio,156.81971696405952,forecasted,204.0
+27067,Kandiyohi,2025,children,pooled_quarter_ratio,946.9581330740992,forecasted,1036.0
+27069,Kittson,2025,children,pooled_quarter_ratio,61.18743274342233,forecasted,46.0
+27071,Koochiching,2025,children,pooled_quarter_ratio,235.51996434797096,forecasted,323.0
+27073,Lac qui Parle,2025,children,pooled_quarter_ratio,25.53230869925572,forecasted,12.0
+27075,Lake,2025,children,pooled_quarter_ratio,108.03879334373134,forecasted,124.0
+27077,Lake of the Woods,2025,children,pooled_quarter_ratio,28.333928162612448,forecasted,18.0
+27079,Le Sueur,2025,children,pooled_quarter_ratio,761.4881568442115,forecasted,694.0
+27081,Lincoln,2025,children,pooled_quarter_ratio,21.652326283671727,forecasted,8.0
+27083,Lyon,2025,children,pooled_quarter_ratio,475.67057493601686,forecasted,547.0
+27085,McLeod,2025,children,pooled_quarter_ratio,878.6684063578963,forecasted,938.0
+27087,Mahnomen,2025,children,pooled_quarter_ratio,297.05459332954274,forecasted,384.0
+27089,Marshall,2025,children,pooled_quarter_ratio,68.79108150596907,forecasted,77.0
+27091,Martin,2025,children,pooled_quarter_ratio,389.87151137765164,forecasted,425.0
+27093,Meeker,2025,children,pooled_quarter_ratio,349.75685973636683,forecasted,327.0
+27095,Mille Lacs,2025,children,pooled_quarter_ratio,312.1121421974692,forecasted,391.0
+27097,Morrison,2025,children,pooled_quarter_ratio,437.6911574928113,forecasted,413.0
+27099,Mower,2025,children,pooled_quarter_ratio,1604.177914968752,forecasted,1930.0
+27101,Murray,2025,children,pooled_quarter_ratio,153.07301282014063,forecasted,165.0
+27103,Nicollet,2025,children,pooled_quarter_ratio,257.0527248055056,forecasted,301.0
+27105,Nobles,2025,children,pooled_quarter_ratio,686.7125787027143,forecasted,738.0
+27107,Norman,2025,children,pooled_quarter_ratio,60.055899545296796,forecasted,60.0
+27109,Olmsted,2025,children,pooled_quarter_ratio,8407.744919669265,forecasted,7972.0
+27111,Otter Tail,2025,children,pooled_quarter_ratio,743.594388055883,forecasted,734.0
+27113,Pennington,2025,children,pooled_quarter_ratio,490.3933217620173,forecasted,380.0
+27115,Pine,2025,children,pooled_quarter_ratio,418.1714175576851,forecasted,340.0
+27117,Pipestone,2025,children,pooled_quarter_ratio,459.43994641411683,forecasted,430.0
+27119,Polk,2025,children,pooled_quarter_ratio,554.5785111547789,forecasted,691.0
+27121,Pope,2025,children,pooled_quarter_ratio,37.48737875603902,forecasted,50.0
+27123,Ramsey,2025,children,pooled_quarter_ratio,25126.411265425206,forecasted,24323.0
+27125,Red Lake,2025,children,pooled_quarter_ratio,44.29595691516954,forecasted,52.0
+27127,Redwood,2025,children,pooled_quarter_ratio,334.98845571970156,forecasted,296.0
+27129,Renville,2025,children,pooled_quarter_ratio,874.0680975901104,forecasted,940.0
+27131,Rice,2025,children,pooled_quarter_ratio,5106.343572218873,forecasted,5051.0
+27133,Rock,2025,children,pooled_quarter_ratio,280.04553200018074,forecasted,226.0
+27135,Roseau,2025,children,pooled_quarter_ratio,318.8901151156918,forecasted,300.0
+27137,St. Louis,2025,children,pooled_quarter_ratio,4540.361452972297,forecasted,3957.0
+27139,Scott,2025,children,pooled_quarter_ratio,920.6273477685567,forecasted,779.0
+27141,Sherburne,2025,children,pooled_quarter_ratio,3614.6225157186955,forecasted,3700.0
+27143,Sibley,2025,children,pooled_quarter_ratio,253.60451343390434,forecasted,229.0
+27145,Stearns,2025,children,pooled_quarter_ratio,3816.801337252706,forecasted,3634.0
+27147,Steele,2025,children,pooled_quarter_ratio,7136.4633194555945,forecasted,7047.0
+27149,Stevens,2025,children,pooled_quarter_ratio,288.72928076624044,forecasted,292.0
+27151,Swift,2025,children,pooled_quarter_ratio,191.8708713602713,forecasted,118.0
+27153,Todd,2025,children,pooled_quarter_ratio,359.1251877320072,forecasted,358.0
+27155,Traverse,2025,children,pooled_quarter_ratio,40.671333837383145,forecasted,63.0
+27157,Wabasha,2025,children,pooled_quarter_ratio,937.5222956940171,forecasted,894.0
+27159,Wadena,2025,children,pooled_quarter_ratio,193.16135080681542,forecasted,195.0
+27161,Waseca,2025,children,pooled_quarter_ratio,479.45074670174756,forecasted,467.0
+27163,Washington,2025,children,pooled_quarter_ratio,25230.6062464324,forecasted,24830.0
+27165,Watonwan,2025,children,pooled_quarter_ratio,949.6291971376144,forecasted,739.0
+27167,Wilkin,2025,children,pooled_quarter_ratio,,no_reporting_history,
+27169,Winona,2025,children,pooled_quarter_ratio,1002.4930071555167,forecasted,783.0
+27171,Wright,2025,children,pooled_quarter_ratio,3216.18833309656,forecasted,3374.0
+27173,Yellow Medicine,2025,children,pooled_quarter_ratio,212.8591009917976,forecasted,206.0
 27001,Aitkin,2025,children,per_site_ratio,100.90090090090091,forecasted,178.0
 27003,Anoka,2025,children,per_site_ratio,31680.488855341446,forecasted,26586.0
 27005,Becker,2025,children,per_site_ratio,671.6622691292876,forecasted,609.0
@@ -7220,6 +8612,93 @@ fips,county_name,target_year,metric,method,prediction,forecast_status,actual
 27169,Winona,2025,adults,pooled_august_july_ratio,2367.2136626854867,forecasted,2063.0
 27171,Wright,2025,adults,pooled_august_july_ratio,4555.424007071588,forecasted,3932.0
 27173,Yellow Medicine,2025,adults,pooled_august_july_ratio,345.04477401129947,forecasted,331.0
+27001,Aitkin,2025,adults,pooled_quarter_ratio,381.2483426164864,forecasted,392.0
+27003,Anoka,2025,adults,pooled_quarter_ratio,39477.68512249831,forecasted,36799.0
+27005,Becker,2025,adults,pooled_quarter_ratio,1100.4963396855123,forecasted,1040.0
+27007,Beltrami,2025,adults,pooled_quarter_ratio,1878.9874216389646,forecasted,2086.0
+27009,Benton,2025,adults,pooled_quarter_ratio,1094.738978957955,forecasted,984.0
+27011,Big Stone,2025,adults,pooled_quarter_ratio,109.27899053311928,forecasted,132.0
+27013,Blue Earth,2025,adults,pooled_quarter_ratio,7800.508248369917,forecasted,7510.0
+27015,Brown,2025,adults,pooled_quarter_ratio,525.7802697722389,forecasted,496.0
+27017,Carlton,2025,adults,pooled_quarter_ratio,666.4610785573838,forecasted,621.0
+27019,Carver,2025,adults,pooled_quarter_ratio,4987.074047392189,forecasted,4379.0
+27021,Cass,2025,adults,pooled_quarter_ratio,1853.962956948816,forecasted,2016.0
+27023,Chippewa,2025,adults,pooled_quarter_ratio,380.9990642779458,forecasted,355.0
+27025,Chisago,2025,adults,pooled_quarter_ratio,1611.2888793388247,forecasted,1565.0
+27027,Clay,2025,adults,pooled_quarter_ratio,4635.614015461216,forecasted,4617.0
+27029,Clearwater,2025,adults,pooled_quarter_ratio,268.6708487933948,forecasted,257.0
+27031,Cook,2025,adults,pooled_quarter_ratio,318.44438651314204,forecasted,265.0
+27033,Cottonwood,2025,adults,pooled_quarter_ratio,593.2354094821843,forecasted,535.0
+27035,Crow Wing,2025,adults,pooled_quarter_ratio,2415.68970211214,forecasted,2456.0
+27037,Dakota,2025,adults,pooled_quarter_ratio,23767.688072937195,forecasted,21335.0
+27039,Dodge,2025,adults,pooled_quarter_ratio,1146.5210159623346,forecasted,1107.0
+27041,Douglas,2025,adults,pooled_quarter_ratio,939.4115972090696,forecasted,881.0
+27043,Faribault,2025,adults,pooled_quarter_ratio,482.3331268035866,forecasted,412.0
+27045,Fillmore,2025,adults,pooled_quarter_ratio,506.08555550772536,forecasted,514.0
+27047,Freeborn,2025,adults,pooled_quarter_ratio,1717.1794220715667,forecasted,1170.0
+27049,Goodhue,2025,adults,pooled_quarter_ratio,2150.320219178989,forecasted,2048.0
+27051,Grant,2025,adults,pooled_quarter_ratio,120.17404970202814,forecasted,158.0
+27053,Hennepin,2025,adults,pooled_quarter_ratio,134469.5137989508,forecasted,118068.0
+27055,Houston,2025,adults,pooled_quarter_ratio,1032.1282263172218,forecasted,849.0
+27057,Hubbard,2025,adults,pooled_quarter_ratio,856.4513059109164,forecasted,981.0
+27059,Isanti,2025,adults,pooled_quarter_ratio,2282.7721639606966,forecasted,2106.0
+27061,Itasca,2025,adults,pooled_quarter_ratio,2481.222926628169,forecasted,618.0
+27063,Jackson,2025,adults,pooled_quarter_ratio,621.5007289342584,forecasted,582.0
+27065,Kanabec,2025,adults,pooled_quarter_ratio,509.54924401539256,forecasted,483.0
+27067,Kandiyohi,2025,adults,pooled_quarter_ratio,1553.6017588474467,forecasted,1553.0
+27069,Kittson,2025,adults,pooled_quarter_ratio,141.76185428570736,forecasted,126.0
+27071,Koochiching,2025,adults,pooled_quarter_ratio,517.236990206414,forecasted,637.0
+27073,Lac qui Parle,2025,adults,pooled_quarter_ratio,62.114615650787535,forecasted,40.0
+27075,Lake,2025,adults,pooled_quarter_ratio,345.3560968683812,forecasted,323.0
+27077,Lake of the Woods,2025,adults,pooled_quarter_ratio,76.97518141854948,forecasted,68.0
+27079,Le Sueur,2025,adults,pooled_quarter_ratio,1070.2171955263684,forecasted,1019.0
+27081,Lincoln,2025,adults,pooled_quarter_ratio,44.58135884240587,forecasted,43.0
+27083,Lyon,2025,adults,pooled_quarter_ratio,795.9807728630369,forecasted,830.0
+27085,McLeod,2025,adults,pooled_quarter_ratio,1930.0291119121614,forecasted,1834.0
+27087,Mahnomen,2025,adults,pooled_quarter_ratio,466.91876435328265,forecasted,535.0
+27089,Marshall,2025,adults,pooled_quarter_ratio,137.29373198421854,forecasted,141.0
+27091,Martin,2025,adults,pooled_quarter_ratio,682.14795944075,forecasted,671.0
+27093,Meeker,2025,adults,pooled_quarter_ratio,780.6910163561943,forecasted,688.0
+27095,Mille Lacs,2025,adults,pooled_quarter_ratio,594.4373503538683,forecasted,630.0
+27097,Morrison,2025,adults,pooled_quarter_ratio,816.5133128887991,forecasted,818.0
+27099,Mower,2025,adults,pooled_quarter_ratio,2432.730106213115,forecasted,2461.0
+27101,Murray,2025,adults,pooled_quarter_ratio,208.14407840085838,forecasted,205.0
+27103,Nicollet,2025,adults,pooled_quarter_ratio,482.9771660364113,forecasted,526.0
+27105,Nobles,2025,adults,pooled_quarter_ratio,974.7940691323283,forecasted,854.0
+27107,Norman,2025,adults,pooled_quarter_ratio,97.31510557879655,forecasted,91.0
+27109,Olmsted,2025,adults,pooled_quarter_ratio,18465.255310530316,forecasted,16918.0
+27111,Otter Tail,2025,adults,pooled_quarter_ratio,1548.1327639777805,forecasted,1516.0
+27113,Pennington,2025,adults,pooled_quarter_ratio,919.1633588726573,forecasted,688.0
+27115,Pine,2025,adults,pooled_quarter_ratio,880.4150958487553,forecasted,771.0
+27117,Pipestone,2025,adults,pooled_quarter_ratio,734.3427754911417,forecasted,591.0
+27119,Polk,2025,adults,pooled_quarter_ratio,979.8508815640669,forecasted,1093.0
+27121,Pope,2025,adults,pooled_quarter_ratio,83.8403270367824,forecasted,90.0
+27123,Ramsey,2025,adults,pooled_quarter_ratio,36835.08188135821,forecasted,34873.0
+27125,Red Lake,2025,adults,pooled_quarter_ratio,115.18794323586081,forecasted,112.0
+27127,Redwood,2025,adults,pooled_quarter_ratio,497.1447889234541,forecasted,439.0
+27129,Renville,2025,adults,pooled_quarter_ratio,1631.7765326131712,forecasted,1607.0
+27131,Rice,2025,adults,pooled_quarter_ratio,7288.9855197708775,forecasted,7095.0
+27133,Rock,2025,adults,pooled_quarter_ratio,455.60889404769335,forecasted,340.0
+27135,Roseau,2025,adults,pooled_quarter_ratio,499.34122387706975,forecasted,416.0
+27137,St. Louis,2025,adults,pooled_quarter_ratio,10073.556963105546,forecasted,8575.0
+27139,Scott,2025,adults,pooled_quarter_ratio,1378.54133641778,forecasted,1179.0
+27141,Sherburne,2025,adults,pooled_quarter_ratio,4980.17433103567,forecasted,4810.0
+27143,Sibley,2025,adults,pooled_quarter_ratio,453.0273584773208,forecasted,404.0
+27145,Stearns,2025,adults,pooled_quarter_ratio,5965.688981636706,forecasted,5978.0
+27147,Steele,2025,adults,pooled_quarter_ratio,10928.844925597428,forecasted,9654.0
+27149,Stevens,2025,adults,pooled_quarter_ratio,453.7994231644889,forecasted,389.0
+27151,Swift,2025,adults,pooled_quarter_ratio,194.4653484774039,forecasted,237.0
+27153,Todd,2025,adults,pooled_quarter_ratio,761.9685628858119,forecasted,666.0
+27155,Traverse,2025,adults,pooled_quarter_ratio,116.62250160993074,forecasted,103.0
+27157,Wabasha,2025,adults,pooled_quarter_ratio,1730.0377936104542,forecasted,1692.0
+27159,Wadena,2025,adults,pooled_quarter_ratio,408.2116726728174,forecasted,410.0
+27161,Waseca,2025,adults,pooled_quarter_ratio,970.1093690874205,forecasted,928.0
+27163,Washington,2025,adults,pooled_quarter_ratio,38320.50474759799,forecasted,37127.0
+27165,Watonwan,2025,adults,pooled_quarter_ratio,1418.6705721040817,forecasted,1043.0
+27167,Wilkin,2025,adults,pooled_quarter_ratio,,no_reporting_history,
+27169,Winona,2025,adults,pooled_quarter_ratio,2207.8016641090085,forecasted,2063.0
+27171,Wright,2025,adults,pooled_quarter_ratio,4101.391045901897,forecasted,3932.0
+27173,Yellow Medicine,2025,adults,pooled_quarter_ratio,316.9313671175966,forecasted,331.0
 27001,Aitkin,2025,adults,per_site_ratio,407.9477124183007,forecasted,392.0
 27003,Anoka,2025,adults,per_site_ratio,44764.75600787919,forecasted,36799.0
 27005,Becker,2025,adults,per_site_ratio,1364.0913461538462,forecasted,1040.0
@@ -7655,6 +9134,93 @@ fips,county_name,target_year,metric,method,prediction,forecast_status,actual
 27169,Winona,2025,seniors,pooled_august_july_ratio,491.12235789473675,forecasted,620.0
 27171,Wright,2025,seniors,pooled_august_july_ratio,1047.2619433198383,forecasted,1064.0
 27173,Yellow Medicine,2025,seniors,pooled_august_july_ratio,68.22599355531685,forecasted,76.0
+27001,Aitkin,2025,seniors,pooled_quarter_ratio,301.056627218935,forecasted,265.0
+27003,Anoka,2025,seniors,pooled_quarter_ratio,10017.964558025687,forecasted,8887.0
+27005,Becker,2025,seniors,pooled_quarter_ratio,264.4947721588483,forecasted,230.0
+27007,Beltrami,2025,seniors,pooled_quarter_ratio,455.64568994082845,forecasted,516.0
+27009,Benton,2025,seniors,pooled_quarter_ratio,365.41190908918685,forecasted,351.0
+27011,Big Stone,2025,seniors,pooled_quarter_ratio,12.935803043110736,forecasted,24.0
+27013,Blue Earth,2025,seniors,pooled_quarter_ratio,783.2697163995068,forecasted,739.0
+27015,Brown,2025,seniors,pooled_quarter_ratio,117.3204872955099,forecasted,107.0
+27017,Carlton,2025,seniors,pooled_quarter_ratio,232.7938894075452,forecasted,248.0
+27019,Carver,2025,seniors,pooled_quarter_ratio,779.6288726253505,forecasted,681.0
+27021,Cass,2025,seniors,pooled_quarter_ratio,788.396663795173,forecasted,783.0
+27023,Chippewa,2025,seniors,pooled_quarter_ratio,50.679218137091944,forecasted,53.0
+27025,Chisago,2025,seniors,pooled_quarter_ratio,821.0814473752306,forecasted,819.0
+27027,Clay,2025,seniors,pooled_quarter_ratio,1702.5080724403801,forecasted,1776.0
+27029,Clearwater,2025,seniors,pooled_quarter_ratio,98.45147928994083,forecasted,83.0
+27031,Cook,2025,seniors,pooled_quarter_ratio,123.11720401032431,forecasted,101.0
+27033,Cottonwood,2025,seniors,pooled_quarter_ratio,98.54481942460721,forecasted,97.0
+27035,Crow Wing,2025,seniors,pooled_quarter_ratio,993.916602182339,forecasted,978.0
+27037,Dakota,2025,seniors,pooled_quarter_ratio,4732.743732368486,forecasted,4574.0
+27039,Dodge,2025,seniors,pooled_quarter_ratio,318.14846614463386,forecasted,275.0
+27041,Douglas,2025,seniors,pooled_quarter_ratio,149.93187151310227,forecasted,157.0
+27043,Faribault,2025,seniors,pooled_quarter_ratio,169.5977478712657,forecasted,139.0
+27045,Fillmore,2025,seniors,pooled_quarter_ratio,210.76417736110042,forecasted,199.0
+27047,Freeborn,2025,seniors,pooled_quarter_ratio,429.00408425214033,forecasted,303.0
+27049,Goodhue,2025,seniors,pooled_quarter_ratio,404.24866702528243,forecasted,347.0
+27051,Grant,2025,seniors,pooled_quarter_ratio,44.09372781065089,forecasted,49.0
+27053,Hennepin,2025,seniors,pooled_quarter_ratio,24931.867787264833,forecasted,25940.0
+27055,Houston,2025,seniors,pooled_quarter_ratio,344.9819754539521,forecasted,306.0
+27057,Hubbard,2025,seniors,pooled_quarter_ratio,313.8658792006253,forecasted,288.0
+27059,Isanti,2025,seniors,pooled_quarter_ratio,568.4237541252926,forecasted,455.0
+27061,Itasca,2025,seniors,pooled_quarter_ratio,769.6002295307555,forecasted,292.0
+27063,Jackson,2025,seniors,pooled_quarter_ratio,56.15426542688081,forecasted,57.0
+27065,Kanabec,2025,seniors,pooled_quarter_ratio,189.2821171814235,forecasted,205.0
+27067,Kandiyohi,2025,seniors,pooled_quarter_ratio,225.97332604506886,forecasted,216.0
+27069,Kittson,2025,seniors,pooled_quarter_ratio,46.915857988165676,forecasted,42.0
+27071,Koochiching,2025,seniors,pooled_quarter_ratio,304.6355729224815,forecasted,355.0
+27073,Lac qui Parle,2025,seniors,pooled_quarter_ratio,17.34603550295858,forecasted,19.0
+27075,Lake,2025,seniors,pooled_quarter_ratio,145.8114406534735,forecasted,123.0
+27077,Lake of the Woods,2025,seniors,pooled_quarter_ratio,53.58048620517573,forecasted,46.0
+27079,Le Sueur,2025,seniors,pooled_quarter_ratio,417.9792108930571,forecasted,366.0
+27081,Lincoln,2025,seniors,pooled_quarter_ratio,103.28256307604322,forecasted,98.0
+27083,Lyon,2025,seniors,pooled_quarter_ratio,123.45134262736549,forecasted,124.0
+27085,McLeod,2025,seniors,pooled_quarter_ratio,710.1406215347342,forecasted,534.0
+27087,Mahnomen,2025,seniors,pooled_quarter_ratio,225.54785743773223,forecasted,258.0
+27089,Marshall,2025,seniors,pooled_quarter_ratio,71.08984360038302,forecasted,67.0
+27091,Martin,2025,seniors,pooled_quarter_ratio,208.72255424063118,forecasted,224.0
+27093,Meeker,2025,seniors,pooled_quarter_ratio,175.5241066058784,forecasted,170.0
+27095,Mille Lacs,2025,seniors,pooled_quarter_ratio,306.1783640047614,forecasted,330.0
+27097,Morrison,2025,seniors,pooled_quarter_ratio,234.89303285912126,forecasted,205.0
+27099,Mower,2025,seniors,pooled_quarter_ratio,655.3403175988012,forecasted,604.0
+27101,Murray,2025,seniors,pooled_quarter_ratio,64.94124077350088,forecasted,55.0
+27103,Nicollet,2025,seniors,pooled_quarter_ratio,54.759053254437866,forecasted,50.0
+27105,Nobles,2025,seniors,pooled_quarter_ratio,94.2514961961116,forecasted,91.0
+27107,Norman,2025,seniors,pooled_quarter_ratio,24.75887573964497,forecasted,25.0
+27109,Olmsted,2025,seniors,pooled_quarter_ratio,3765.330398975743,forecasted,3428.0
+27111,Otter Tail,2025,seniors,pooled_quarter_ratio,504.8818632758404,forecasted,463.0
+27113,Pennington,2025,seniors,pooled_quarter_ratio,240.21819771605172,forecasted,201.0
+27115,Pine,2025,seniors,pooled_quarter_ratio,346.171138293145,forecasted,312.0
+27117,Pipestone,2025,seniors,pooled_quarter_ratio,181.45049309664694,forecasted,152.0
+27119,Polk,2025,seniors,pooled_quarter_ratio,274.0797988673591,forecasted,277.0
+27121,Pope,2025,seniors,pooled_quarter_ratio,47.327740521586676,forecasted,41.0
+27123,Ramsey,2025,seniors,pooled_quarter_ratio,6269.510845813938,forecasted,6170.0
+27125,Red Lake,2025,seniors,pooled_quarter_ratio,97.31518106508877,forecasted,92.0
+27127,Redwood,2025,seniors,pooled_quarter_ratio,103.52349834030886,forecasted,95.0
+27129,Renville,2025,seniors,pooled_quarter_ratio,594.2980403169192,forecasted,585.0
+27131,Rice,2025,seniors,pooled_quarter_ratio,1197.377631130278,forecasted,1199.0
+27133,Rock,2025,seniors,pooled_quarter_ratio,92.85427643055033,forecasted,80.0
+27135,Roseau,2025,seniors,pooled_quarter_ratio,48.723534775438935,forecasted,57.0
+27137,St. Louis,2025,seniors,pooled_quarter_ratio,2662.2581817381933,forecasted,2075.0
+27139,Scott,2025,seniors,pooled_quarter_ratio,215.64304707699247,forecasted,240.0
+27141,Sherburne,2025,seniors,pooled_quarter_ratio,1151.3236772102887,forecasted,1039.0
+27143,Sibley,2025,seniors,pooled_quarter_ratio,168.18516962973945,forecasted,187.0
+27145,Stearns,2025,seniors,pooled_quarter_ratio,1136.577934373319,forecasted,1034.0
+27147,Steele,2025,seniors,pooled_quarter_ratio,1755.9623894054664,forecasted,1628.0
+27149,Stevens,2025,seniors,pooled_quarter_ratio,26.867799198320288,forecasted,12.0
+27151,Swift,2025,seniors,pooled_quarter_ratio,108.08617943387176,forecasted,43.0
+27153,Todd,2025,seniors,pooled_quarter_ratio,149.3449244094738,forecasted,128.0
+27155,Traverse,2025,seniors,pooled_quarter_ratio,60.37714285714286,forecasted,52.0
+27157,Wabasha,2025,seniors,pooled_quarter_ratio,408.93406823945287,forecasted,365.0
+27159,Wadena,2025,seniors,pooled_quarter_ratio,69.06623716400881,forecasted,88.0
+27161,Waseca,2025,seniors,pooled_quarter_ratio,353.25781449319913,forecasted,302.0
+27163,Washington,2025,seniors,pooled_quarter_ratio,7779.906694896036,forecasted,7721.0
+27165,Watonwan,2025,seniors,pooled_quarter_ratio,144.80100958265697,forecasted,108.0
+27167,Wilkin,2025,seniors,pooled_quarter_ratio,,no_reporting_history,
+27169,Winona,2025,seniors,pooled_quarter_ratio,460.85341214804413,forecasted,620.0
+27171,Wright,2025,seniors,pooled_quarter_ratio,1106.2898888880252,forecasted,1064.0
+27173,Yellow Medicine,2025,seniors,pooled_quarter_ratio,70.12613546274486,forecasted,76.0
 27001,Aitkin,2025,seniors,per_site_ratio,260.70000000000005,forecasted,265.0
 27003,Anoka,2025,seniors,per_site_ratio,10346.653536141444,forecasted,8887.0
 27005,Becker,2025,seniors,per_site_ratio,332.1780821917808,forecasted,230.0
@@ -7829,264 +9395,264 @@ fips,county_name,target_year,metric,method,prediction,forecast_status,actual
 27169,Winona,2025,seniors,seasonal_naive_drift,451.70125786163527,forecasted,620.0
 27171,Wright,2025,seniors,seasonal_naive_drift,1410.3990326481257,forecasted,1064.0
 27173,Yellow Medicine,2025,seniors,seasonal_naive_drift,101.30232558139535,forecasted,76.0
-27001,Aitkin,2023,individuals,age_group_sum,982.940791083972,forecasted,891.0
-27003,Anoka,2023,individuals,age_group_sum,59094.958324338266,forecasted,68732.0
-27005,Becker,2023,individuals,age_group_sum,1460.0872359714604,forecasted,1588.0
-27007,Beltrami,2023,individuals,age_group_sum,3678.366327170945,forecasted,3384.0
-27009,Benton,2023,individuals,age_group_sum,1304.235675712246,forecasted,1550.0
-27011,Big Stone,2023,individuals,age_group_sum,165.44631768095766,forecasted,216.0
-27013,Blue Earth,2023,individuals,age_group_sum,12045.98057284549,forecasted,14471.0
-27015,Brown,2023,individuals,age_group_sum,723.1211160158532,forecasted,613.0
-27017,Carlton,2023,individuals,age_group_sum,1687.070902412869,forecasted,1680.0
-27019,Carver,2023,individuals,age_group_sum,5351.854669831196,forecasted,5400.0
-27021,Cass,2023,individuals,age_group_sum,3049.4147029425376,forecasted,4309.0
-27023,Chippewa,2023,individuals,age_group_sum,510.2411338487021,forecasted,502.0
-27025,Chisago,2023,individuals,age_group_sum,2295.4572330553437,forecasted,2512.0
-27027,Clay,2023,individuals,age_group_sum,3111.8603444958303,forecasted,3733.0
-27029,Clearwater,2023,individuals,age_group_sum,516.5013930872411,forecasted,467.0
-27031,Cook,2023,individuals,age_group_sum,598.5130359021173,forecasted,465.0
-27033,Cottonwood,2023,individuals,age_group_sum,913.7630880507027,forecasted,1056.0
-27035,Crow Wing,2023,individuals,age_group_sum,3480.9197809985717,forecasted,3770.0
-27037,Dakota,2023,individuals,age_group_sum,25055.56779860022,forecasted,38167.0
-27039,Dodge,2023,individuals,age_group_sum,1939.129219201602,forecasted,1877.0
-27041,Douglas,2023,individuals,age_group_sum,1180.7353651334427,forecasted,1234.0
-27043,Faribault,2023,individuals,age_group_sum,829.6707920613263,forecasted,704.0
-27045,Fillmore,2023,individuals,age_group_sum,896.5335877645547,forecasted,980.0
-27047,Freeborn,2023,individuals,age_group_sum,2563.3660408484398,forecasted,2983.0
-27049,Goodhue,2023,individuals,age_group_sum,2788.9120838879594,forecasted,2968.0
-27051,Grant,2023,individuals,age_group_sum,154.19716568259383,forecasted,203.0
-27053,Hennepin,2023,individuals,age_group_sum,209544.059803057,forecasted,229168.0
-27055,Houston,2023,individuals,age_group_sum,1318.9813076673947,forecasted,1046.0
-27057,Hubbard,2023,individuals,age_group_sum,1799.2582211922988,forecasted,1456.0
-27059,Isanti,2023,individuals,age_group_sum,2898.2991773753824,forecasted,3141.0
-27061,Itasca,2023,individuals,age_group_sum,5394.996246503913,forecasted,4422.0
-27063,Jackson,2023,individuals,age_group_sum,870.9536156631434,forecasted,933.0
-27065,Kanabec,2023,individuals,age_group_sum,784.6371508445512,forecasted,945.0
-27067,Kandiyohi,2023,individuals,age_group_sum,2434.6676543142,forecasted,2316.0
-27069,Kittson,2023,individuals,age_group_sum,315.29751107305475,forecasted,402.0
-27071,Koochiching,2023,individuals,age_group_sum,1481.4405796257993,forecasted,1545.0
-27073,Lac qui Parle,2023,individuals,age_group_sum,84.78009499777957,forecasted,121.0
-27075,Lake,2023,individuals,age_group_sum,640.5834929097466,forecasted,723.0
-27077,Lake of the Woods,2023,individuals,age_group_sum,158.4378433803602,forecasted,150.0
-27079,Le Sueur,2023,individuals,age_group_sum,2086.2252731577673,forecasted,1819.0
-27081,Lincoln,2023,individuals,age_group_sum,121.4948675653115,forecasted,156.0
-27083,Lyon,2023,individuals,age_group_sum,1131.4313840929176,forecasted,1070.0
-27085,McLeod,2023,individuals,age_group_sum,3502.744316700901,forecasted,3179.0
-27087,Mahnomen,2023,individuals,age_group_sum,1425.3124732784208,forecasted,1423.0
-27089,Marshall,2023,individuals,age_group_sum,285.6108437732805,forecasted,330.0
-27091,Martin,2023,individuals,age_group_sum,1251.6136458651101,forecasted,1223.0
-27093,Meeker,2023,individuals,age_group_sum,1096.282733817597,forecasted,1001.0
-27095,Mille Lacs,2023,individuals,age_group_sum,4589.378623130196,forecasted,4671.0
-27097,Morrison,2023,individuals,age_group_sum,1410.776685332075,forecasted,1345.0
-27099,Mower,2023,individuals,age_group_sum,4493.711762927685,forecasted,4104.0
-27101,Murray,2023,individuals,age_group_sum,334.0441469488139,forecasted,317.0
-27103,Nicollet,2023,individuals,age_group_sum,694.6522729933056,forecasted,742.0
-27105,Nobles,2023,individuals,age_group_sum,474.0621132377888,forecasted,550.0
-27107,Norman,2023,individuals,age_group_sum,144.33048852520355,forecasted,130.0
-27109,Olmsted,2023,individuals,age_group_sum,22323.982360189177,forecasted,23030.0
-27111,Otter Tail,2023,individuals,age_group_sum,2095.137571769001,forecasted,2407.0
-27113,Pennington,2023,individuals,age_group_sum,671.7280217485948,forecasted,1027.0
-27115,Pine,2023,individuals,age_group_sum,1797.3423275792325,forecasted,1814.0
-27117,Pipestone,2023,individuals,age_group_sum,1212.7257070639596,forecasted,1474.0
-27119,Polk,2023,individuals,age_group_sum,1672.6409782854253,forecasted,1720.0
-27121,Pope,2023,individuals,age_group_sum,140.7713059559038,forecasted,142.0
-27123,Ramsey,2023,individuals,age_group_sum,59750.433295126204,forecasted,63820.0
-27125,Red Lake,2023,individuals,age_group_sum,219.61627362039545,forecasted,187.0
-27127,Redwood,2023,individuals,age_group_sum,772.9072786203467,forecasted,974.0
-27129,Renville,2023,individuals,age_group_sum,3363.8656932762315,forecasted,3498.0
-27131,Rice,2023,individuals,age_group_sum,13316.794600546988,forecasted,14181.0
-27133,Rock,2023,individuals,age_group_sum,457.82660520560006,forecasted,595.0
-27135,Roseau,2023,individuals,age_group_sum,308.09213926633913,forecasted,439.0
-27137,St. Louis,2023,individuals,age_group_sum,15698.393050544475,forecasted,17000.0
-27139,Scott,2023,individuals,age_group_sum,4904.911605827379,forecasted,5018.0
-27141,Sherburne,2023,individuals,age_group_sum,7708.513323055531,forecasted,10334.0
-27143,Sibley,2023,individuals,age_group_sum,881.6398645401762,forecasted,806.0
-27145,Stearns,2023,individuals,age_group_sum,9999.310125365519,forecasted,10045.0
-27147,Steele,2023,individuals,age_group_sum,10386.10577846109,forecasted,11152.0
-27149,Stevens,2023,individuals,age_group_sum,355.79409691397956,forecasted,1309.0
-27151,Swift,2023,individuals,age_group_sum,373.6231743869669,forecasted,393.0
-27153,Todd,2023,individuals,age_group_sum,1015.3739201984158,forecasted,943.0
-27155,Traverse,2023,individuals,age_group_sum,140.76009562595843,forecasted,89.0
-27157,Wabasha,2023,individuals,age_group_sum,2429.595059012686,forecasted,2466.0
-27159,Wadena,2023,individuals,age_group_sum,625.6752397220471,forecasted,692.0
-27161,Waseca,2023,individuals,age_group_sum,403.65269888837844,forecasted,915.0
-27163,Washington,2023,individuals,age_group_sum,87384.49689653749,forecasted,93887.0
-27165,Watonwan,2023,individuals,age_group_sum,1382.6935749424729,forecasted,1521.0
+27001,Aitkin,2023,individuals,age_group_sum,963.6116417935904,forecasted,891.0
+27003,Anoka,2023,individuals,age_group_sum,60499.04303988163,forecasted,68732.0
+27005,Becker,2023,individuals,age_group_sum,1603.8736615016032,forecasted,1588.0
+27007,Beltrami,2023,individuals,age_group_sum,3555.175059421583,forecasted,3384.0
+27009,Benton,2023,individuals,age_group_sum,1429.8124351142974,forecasted,1550.0
+27011,Big Stone,2023,individuals,age_group_sum,177.15112763804305,forecasted,216.0
+27013,Blue Earth,2023,individuals,age_group_sum,12552.161609376895,forecasted,14471.0
+27015,Brown,2023,individuals,age_group_sum,639.5996570339031,forecasted,613.0
+27017,Carlton,2023,individuals,age_group_sum,1884.2713522291797,forecasted,1680.0
+27019,Carver,2023,individuals,age_group_sum,5030.985595502721,forecasted,5400.0
+27021,Cass,2023,individuals,age_group_sum,3336.3533527102586,forecasted,4309.0
+27023,Chippewa,2023,individuals,age_group_sum,457.22910284626397,forecasted,502.0
+27025,Chisago,2023,individuals,age_group_sum,2443.9254451604384,forecasted,2512.0
+27027,Clay,2023,individuals,age_group_sum,2994.989359511312,forecasted,3733.0
+27029,Clearwater,2023,individuals,age_group_sum,496.2409882156283,forecasted,467.0
+27031,Cook,2023,individuals,age_group_sum,616.9339000714065,forecasted,465.0
+27033,Cottonwood,2023,individuals,age_group_sum,830.2130154352459,forecasted,1056.0
+27035,Crow Wing,2023,individuals,age_group_sum,4260.991949444393,forecasted,3770.0
+27037,Dakota,2023,individuals,age_group_sum,27491.974712846182,forecasted,38167.0
+27039,Dodge,2023,individuals,age_group_sum,1789.2393833365138,forecasted,1877.0
+27041,Douglas,2023,individuals,age_group_sum,1153.783158245901,forecasted,1234.0
+27043,Faribault,2023,individuals,age_group_sum,1005.8885219304639,forecasted,704.0
+27045,Fillmore,2023,individuals,age_group_sum,857.035934332747,forecasted,980.0
+27047,Freeborn,2023,individuals,age_group_sum,2133.858187496934,forecasted,2983.0
+27049,Goodhue,2023,individuals,age_group_sum,2974.4478393934596,forecasted,2968.0
+27051,Grant,2023,individuals,age_group_sum,152.10932813896898,forecasted,203.0
+27053,Hennepin,2023,individuals,age_group_sum,209346.8637499745,forecasted,229168.0
+27055,Houston,2023,individuals,age_group_sum,1386.0355693263764,forecasted,1046.0
+27057,Hubbard,2023,individuals,age_group_sum,1686.639734462576,forecasted,1456.0
+27059,Isanti,2023,individuals,age_group_sum,3043.532166170918,forecasted,3141.0
+27061,Itasca,2023,individuals,age_group_sum,6810.678712084243,forecasted,4422.0
+27063,Jackson,2023,individuals,age_group_sum,831.432385114703,forecasted,933.0
+27065,Kanabec,2023,individuals,age_group_sum,810.0188883510093,forecasted,945.0
+27067,Kandiyohi,2023,individuals,age_group_sum,2373.8692302014183,forecasted,2316.0
+27069,Kittson,2023,individuals,age_group_sum,346.4145831296673,forecasted,402.0
+27071,Koochiching,2023,individuals,age_group_sum,1515.6419978069016,forecasted,1545.0
+27073,Lac qui Parle,2023,individuals,age_group_sum,92.65929372356001,forecasted,121.0
+27075,Lake,2023,individuals,age_group_sum,740.0658428802891,forecasted,723.0
+27077,Lake of the Woods,2023,individuals,age_group_sum,126.46723049821838,forecasted,150.0
+27079,Le Sueur,2023,individuals,age_group_sum,2173.463080632039,forecasted,1819.0
+27081,Lincoln,2023,individuals,age_group_sum,130.83902655175444,forecasted,156.0
+27083,Lyon,2023,individuals,age_group_sum,1053.2462733315604,forecasted,1070.0
+27085,McLeod,2023,individuals,age_group_sum,3213.2989962006814,forecasted,3179.0
+27087,Mahnomen,2023,individuals,age_group_sum,1296.8431180716475,forecasted,1423.0
+27089,Marshall,2023,individuals,age_group_sum,280.15639101423506,forecasted,330.0
+27091,Martin,2023,individuals,age_group_sum,1247.2694822413996,forecasted,1223.0
+27093,Meeker,2023,individuals,age_group_sum,988.7577430418181,forecasted,1001.0
+27095,Mille Lacs,2023,individuals,age_group_sum,4816.532925698614,forecasted,4671.0
+27097,Morrison,2023,individuals,age_group_sum,1376.463603046877,forecasted,1345.0
+27099,Mower,2023,individuals,age_group_sum,3921.4113966416285,forecasted,4104.0
+27101,Murray,2023,individuals,age_group_sum,337.8840576895133,forecasted,317.0
+27103,Nicollet,2023,individuals,age_group_sum,664.929005509031,forecasted,742.0
+27105,Nobles,2023,individuals,age_group_sum,509.307592528913,forecasted,550.0
+27107,Norman,2023,individuals,age_group_sum,139.1491747282568,forecasted,130.0
+27109,Olmsted,2023,individuals,age_group_sum,22257.06767827179,forecasted,23030.0
+27111,Otter Tail,2023,individuals,age_group_sum,2037.9540941768416,forecasted,2407.0
+27113,Pennington,2023,individuals,age_group_sum,734.7558694802304,forecasted,1027.0
+27115,Pine,2023,individuals,age_group_sum,1865.7950325699599,forecasted,1814.0
+27117,Pipestone,2023,individuals,age_group_sum,1303.4112181052703,forecasted,1474.0
+27119,Polk,2023,individuals,age_group_sum,1457.5537633366025,forecasted,1720.0
+27121,Pope,2023,individuals,age_group_sum,177.56529554006124,forecasted,142.0
+27123,Ramsey,2023,individuals,age_group_sum,60119.009549944436,forecasted,63820.0
+27125,Red Lake,2023,individuals,age_group_sum,240.5660145734521,forecasted,187.0
+27127,Redwood,2023,individuals,age_group_sum,860.7263917726036,forecasted,974.0
+27129,Renville,2023,individuals,age_group_sum,3404.761626813871,forecasted,3498.0
+27131,Rice,2023,individuals,age_group_sum,14440.733026335438,forecasted,14181.0
+27133,Rock,2023,individuals,age_group_sum,436.6637960526085,forecasted,595.0
+27135,Roseau,2023,individuals,age_group_sum,320.684496694157,forecasted,439.0
+27137,St. Louis,2023,individuals,age_group_sum,16782.980426376897,forecasted,17000.0
+27139,Scott,2023,individuals,age_group_sum,4663.99830565549,forecasted,5018.0
+27141,Sherburne,2023,individuals,age_group_sum,8427.988402255296,forecasted,10334.0
+27143,Sibley,2023,individuals,age_group_sum,825.0066621541508,forecasted,806.0
+27145,Stearns,2023,individuals,age_group_sum,10430.665435666831,forecasted,10045.0
+27147,Steele,2023,individuals,age_group_sum,10323.853867731481,forecasted,11152.0
+27149,Stevens,2023,individuals,age_group_sum,598.0805973098343,forecasted,1309.0
+27151,Swift,2023,individuals,age_group_sum,340.51463179338333,forecasted,393.0
+27153,Todd,2023,individuals,age_group_sum,941.0341412898052,forecasted,943.0
+27155,Traverse,2023,individuals,age_group_sum,143.53053202909044,forecasted,89.0
+27157,Wabasha,2023,individuals,age_group_sum,2525.397332822395,forecasted,2466.0
+27159,Wadena,2023,individuals,age_group_sum,574.7924662698455,forecasted,692.0
+27161,Waseca,2023,individuals,age_group_sum,666.8337567213194,forecasted,915.0
+27163,Washington,2023,individuals,age_group_sum,85226.1042550524,forecasted,93887.0
+27165,Watonwan,2023,individuals,age_group_sum,1314.0539303816809,forecasted,1521.0
 27167,Wilkin,2023,individuals,age_group_sum,,no_reporting_history,
-27169,Winona,2023,individuals,age_group_sum,2541.2737815678656,forecasted,2430.0
-27171,Wright,2023,individuals,age_group_sum,6685.569317919149,forecasted,7176.0
-27173,Yellow Medicine,2023,individuals,age_group_sum,393.6127912166886,forecasted,454.0
-27001,Aitkin,2024,individuals,age_group_sum,680.7484670638299,forecasted,723.0
-27003,Anoka,2024,individuals,age_group_sum,68206.09554269248,forecasted,75300.0
-27005,Becker,2024,individuals,age_group_sum,2036.708874186032,forecasted,1723.0
-27007,Beltrami,2024,individuals,age_group_sum,4309.149769564869,forecasted,3444.0
-27009,Benton,2024,individuals,age_group_sum,1883.9341448563396,forecasted,1779.0
-27011,Big Stone,2024,individuals,age_group_sum,329.4652902540793,forecasted,243.0
-27013,Blue Earth,2024,individuals,age_group_sum,15679.244224837405,forecasted,14830.0
-27015,Brown,2024,individuals,age_group_sum,891.2810509774822,forecasted,772.0
-27017,Carlton,2024,individuals,age_group_sum,1559.0678452191257,forecasted,1438.0
-27019,Carver,2024,individuals,age_group_sum,8642.30256924038,forecasted,7578.0
-27021,Cass,2024,individuals,age_group_sum,4616.097520025971,forecasted,3766.0
-27023,Chippewa,2024,individuals,age_group_sum,726.6076856860487,forecasted,696.0
-27025,Chisago,2024,individuals,age_group_sum,3062.956375759562,forecasted,2526.0
-27027,Clay,2024,individuals,age_group_sum,6389.121885302198,forecasted,6080.0
-27029,Clearwater,2024,individuals,age_group_sum,495.6533723978365,forecasted,488.0
-27031,Cook,2024,individuals,age_group_sum,587.5530572607322,forecasted,548.0
-27033,Cottonwood,2024,individuals,age_group_sum,1307.4158010999333,forecasted,1131.0
-27035,Crow Wing,2024,individuals,age_group_sum,4956.708539650484,forecasted,4576.0
-27037,Dakota,2024,individuals,age_group_sum,37563.01214227963,forecasted,39690.0
-27039,Dodge,2024,individuals,age_group_sum,2928.573434112206,forecasted,2034.0
-27041,Douglas,2024,individuals,age_group_sum,1522.7182671169683,forecasted,1404.0
-27043,Faribault,2024,individuals,age_group_sum,833.5243122375483,forecasted,812.0
-27045,Fillmore,2024,individuals,age_group_sum,1002.9367587842205,forecasted,986.0
-27047,Freeborn,2024,individuals,age_group_sum,3088.063203001531,forecasted,2817.0
-27049,Goodhue,2024,individuals,age_group_sum,3560.086470076079,forecasted,1959.0
-27051,Grant,2024,individuals,age_group_sum,238.3522878298499,forecasted,188.0
-27053,Hennepin,2024,individuals,age_group_sum,249654.34556696148,forecasted,233218.0
-27055,Houston,2024,individuals,age_group_sum,1550.6683611497062,forecasted,1839.0
-27057,Hubbard,2024,individuals,age_group_sum,1707.5637913629403,forecasted,1588.0
-27059,Isanti,2024,individuals,age_group_sum,4026.518807195086,forecasted,3893.0
-27061,Itasca,2024,individuals,age_group_sum,5982.560209713846,forecasted,4334.0
-27063,Jackson,2024,individuals,age_group_sum,1105.0588078245491,forecasted,1158.0
-27065,Kanabec,2024,individuals,age_group_sum,846.9239879652629,forecasted,958.0
-27067,Kandiyohi,2024,individuals,age_group_sum,2894.076351955428,forecasted,2752.0
-27069,Kittson,2024,individuals,age_group_sum,431.9401037832773,forecasted,336.0
-27071,Koochiching,2024,individuals,age_group_sum,1077.9851182553143,forecasted,1272.0
-27073,Lac qui Parle,2024,individuals,age_group_sum,60.5130038755006,forecasted,120.0
-27075,Lake,2024,individuals,age_group_sum,940.4320715053746,forecasted,611.0
-27077,Lake of the Woods,2024,individuals,age_group_sum,157.80633224594163,forecasted,126.0
-27079,Le Sueur,2024,individuals,age_group_sum,2131.074190039259,forecasted,1883.0
-27081,Lincoln,2024,individuals,age_group_sum,189.35226712355794,forecasted,148.0
-27083,Lyon,2024,individuals,age_group_sum,1468.2703946670813,forecasted,1410.0
-27085,McLeod,2024,individuals,age_group_sum,3590.651889357981,forecasted,3065.0
-27087,Mahnomen,2024,individuals,age_group_sum,1347.497434742114,forecasted,209.0
-27089,Marshall,2024,individuals,age_group_sum,347.55767993297,forecasted,293.0
-27091,Martin,2024,individuals,age_group_sum,1362.3924446822862,forecasted,1314.0
-27093,Meeker,2024,individuals,age_group_sum,1276.5490772122916,forecasted,1173.0
-27095,Mille Lacs,2024,individuals,age_group_sum,1651.3582851238025,forecasted,1810.0
-27097,Morrison,2024,individuals,age_group_sum,1679.4869616197723,forecasted,1538.0
-27099,Mower,2024,individuals,age_group_sum,4275.054588481418,forecasted,4269.0
-27101,Murray,2024,individuals,age_group_sum,456.08172596600235,forecasted,476.0
-27103,Nicollet,2024,individuals,age_group_sum,678.880271707312,forecasted,639.0
-27105,Nobles,2024,individuals,age_group_sum,1640.7299111170303,forecasted,1401.0
-27107,Norman,2024,individuals,age_group_sum,137.5747525881331,forecasted,154.0
-27109,Olmsted,2024,individuals,age_group_sum,34819.541354556895,forecasted,31366.0
-27111,Otter Tail,2024,individuals,age_group_sum,2697.814080266566,forecasted,2717.0
-27113,Pennington,2024,individuals,age_group_sum,1103.7531127724428,forecasted,974.0
-27115,Pine,2024,individuals,age_group_sum,2038.5691443176167,forecasted,1729.0
-27117,Pipestone,2024,individuals,age_group_sum,1089.9951813399869,forecasted,1313.0
-27119,Polk,2024,individuals,age_group_sum,1819.5878725286832,forecasted,1132.0
-27121,Pope,2024,individuals,age_group_sum,233.5163573323199,forecasted,143.0
-27123,Ramsey,2024,individuals,age_group_sum,72305.07824486018,forecasted,66342.0
-27125,Red Lake,2024,individuals,age_group_sum,317.72120770928717,forecasted,207.0
-27127,Redwood,2024,individuals,age_group_sum,1030.2345953541133,forecasted,893.0
-27129,Renville,2024,individuals,age_group_sum,3184.981184960756,forecasted,2532.0
-27131,Rice,2024,individuals,age_group_sum,28637.55969747387,forecasted,14358.0
-27133,Rock,2024,individuals,age_group_sum,547.098000677274,forecasted,657.0
-27135,Roseau,2024,individuals,age_group_sum,653.86386686337,forecasted,593.0
-27137,St. Louis,2024,individuals,age_group_sum,15969.985140655017,forecasted,12856.0
-27139,Scott,2024,individuals,age_group_sum,1880.4867729133082,forecasted,1812.0
-27141,Sherburne,2024,individuals,age_group_sum,8818.162659896698,forecasted,8580.0
-27143,Sibley,2024,individuals,age_group_sum,1025.546928170578,forecasted,845.0
-27145,Stearns,2024,individuals,age_group_sum,14035.917126616221,forecasted,12502.0
-27147,Steele,2024,individuals,age_group_sum,17831.0582851761,forecasted,16291.0
-27149,Stevens,2024,individuals,age_group_sum,0.0,forecasted,408.0
-27151,Swift,2024,individuals,age_group_sum,501.68476299904677,forecasted,491.0
-27153,Todd,2024,individuals,age_group_sum,1558.3641676056504,forecasted,1011.0
-27155,Traverse,2024,individuals,age_group_sum,163.1136294739484,forecasted,156.0
-27157,Wabasha,2024,individuals,age_group_sum,3159.6925958012653,forecasted,2563.0
-27159,Wadena,2024,individuals,age_group_sum,651.6403242755779,forecasted,786.0
-27161,Waseca,2024,individuals,age_group_sum,2382.48459436922,forecasted,1505.0
-27163,Washington,2024,individuals,age_group_sum,94790.38939525285,forecasted,96091.0
-27165,Watonwan,2024,individuals,age_group_sum,1464.6488881399214,forecasted,1755.0
+27169,Winona,2023,individuals,age_group_sum,2415.7986740866395,forecasted,2430.0
+27171,Wright,2023,individuals,age_group_sum,6839.76369156221,forecasted,7176.0
+27173,Yellow Medicine,2023,individuals,age_group_sum,416.825355153146,forecasted,454.0
+27001,Aitkin,2024,individuals,age_group_sum,728.8508423318331,forecasted,723.0
+27003,Anoka,2024,individuals,age_group_sum,75597.63251123297,forecasted,75300.0
+27005,Becker,2024,individuals,age_group_sum,1867.699849760905,forecasted,1723.0
+27007,Beltrami,2024,individuals,age_group_sum,3992.1006778250176,forecasted,3444.0
+27009,Benton,2024,individuals,age_group_sum,1874.2654216777114,forecasted,1779.0
+27011,Big Stone,2024,individuals,age_group_sum,346.8048557707521,forecasted,243.0
+27013,Blue Earth,2024,individuals,age_group_sum,14530.394975344687,forecasted,14830.0
+27015,Brown,2024,individuals,age_group_sum,788.3078796608521,forecasted,772.0
+27017,Carlton,2024,individuals,age_group_sum,1603.5575662893752,forecasted,1438.0
+27019,Carver,2024,individuals,age_group_sum,8184.663537597447,forecasted,7578.0
+27021,Cass,2024,individuals,age_group_sum,3966.578429633976,forecasted,3766.0
+27023,Chippewa,2024,individuals,age_group_sum,622.6779046975076,forecasted,696.0
+27025,Chisago,2024,individuals,age_group_sum,2792.9391686842523,forecasted,2526.0
+27027,Clay,2024,individuals,age_group_sum,6159.774140153035,forecasted,6080.0
+27029,Clearwater,2024,individuals,age_group_sum,527.2977586623467,forecasted,488.0
+27031,Cook,2024,individuals,age_group_sum,534.897411722912,forecasted,548.0
+27033,Cottonwood,2024,individuals,age_group_sum,1133.0430196607335,forecasted,1131.0
+27035,Crow Wing,2024,individuals,age_group_sum,4381.921289564834,forecasted,4576.0
+27037,Dakota,2024,individuals,age_group_sum,34492.77357559592,forecasted,39690.0
+27039,Dodge,2024,individuals,age_group_sum,2610.571558465189,forecasted,2034.0
+27041,Douglas,2024,individuals,age_group_sum,1418.4043342534874,forecasted,1404.0
+27043,Faribault,2024,individuals,age_group_sum,775.8378039440161,forecasted,812.0
+27045,Fillmore,2024,individuals,age_group_sum,1031.1380308863859,forecasted,986.0
+27047,Freeborn,2024,individuals,age_group_sum,3687.8590498545386,forecasted,2817.0
+27049,Goodhue,2024,individuals,age_group_sum,3708.5797123045045,forecasted,1959.0
+27051,Grant,2024,individuals,age_group_sum,162.71793009332683,forecasted,188.0
+27053,Hennepin,2024,individuals,age_group_sum,252477.90827878474,forecasted,233218.0
+27055,Houston,2024,individuals,age_group_sum,1718.3616457035462,forecasted,1839.0
+27057,Hubbard,2024,individuals,age_group_sum,1594.7983628104091,forecasted,1588.0
+27059,Isanti,2024,individuals,age_group_sum,3692.2013252109773,forecasted,3893.0
+27061,Itasca,2024,individuals,age_group_sum,6504.248896879387,forecasted,4334.0
+27063,Jackson,2024,individuals,age_group_sum,1040.7831511326851,forecasted,1158.0
+27065,Kanabec,2024,individuals,age_group_sum,745.8718948212174,forecasted,958.0
+27067,Kandiyohi,2024,individuals,age_group_sum,2742.6039724426314,forecasted,2752.0
+27069,Kittson,2024,individuals,age_group_sum,360.2817947785362,forecasted,336.0
+27071,Koochiching,2024,individuals,age_group_sum,1037.9926242042427,forecasted,1272.0
+27073,Lac qui Parle,2024,individuals,age_group_sum,97.52261369537631,forecasted,120.0
+27075,Lake,2024,individuals,age_group_sum,830.8710236154105,forecasted,611.0
+27077,Lake of the Woods,2024,individuals,age_group_sum,160.54372939979947,forecasted,126.0
+27079,Le Sueur,2024,individuals,age_group_sum,2541.6197292612733,forecasted,1883.0
+27081,Lincoln,2024,individuals,age_group_sum,181.32412468446523,forecasted,148.0
+27083,Lyon,2024,individuals,age_group_sum,1362.0937779207613,forecasted,1410.0
+27085,McLeod,2024,individuals,age_group_sum,2894.1390210101035,forecasted,3065.0
+27087,Mahnomen,2024,individuals,age_group_sum,1055.3231825693779,forecasted,209.0
+27089,Marshall,2024,individuals,age_group_sum,310.3594716708269,forecasted,293.0
+27091,Martin,2024,individuals,age_group_sum,1357.2632731807082,forecasted,1314.0
+27093,Meeker,2024,individuals,age_group_sum,1244.9126000404067,forecasted,1173.0
+27095,Mille Lacs,2024,individuals,age_group_sum,1605.729325442165,forecasted,1810.0
+27097,Morrison,2024,individuals,age_group_sum,1631.4956900349653,forecasted,1538.0
+27099,Mower,2024,individuals,age_group_sum,4564.891906457671,forecasted,4269.0
+27101,Murray,2024,individuals,age_group_sum,430.9744851377724,forecasted,476.0
+27103,Nicollet,2024,individuals,age_group_sum,699.7754967359289,forecasted,639.0
+27105,Nobles,2024,individuals,age_group_sum,1668.7335931191649,forecasted,1401.0
+27107,Norman,2024,individuals,age_group_sum,144.71647758206586,forecasted,154.0
+27109,Olmsted,2024,individuals,age_group_sum,31697.01995357951,forecasted,31366.0
+27111,Otter Tail,2024,individuals,age_group_sum,2498.5149920297536,forecasted,2717.0
+27113,Pennington,2024,individuals,age_group_sum,1037.2911536030424,forecasted,974.0
+27115,Pine,2024,individuals,age_group_sum,1931.0090963188925,forecasted,1729.0
+27117,Pipestone,2024,individuals,age_group_sum,1318.8371428628025,forecasted,1313.0
+27119,Polk,2024,individuals,age_group_sum,2000.201681399764,forecasted,1132.0
+27121,Pope,2024,individuals,age_group_sum,175.39433438065268,forecasted,143.0
+27123,Ramsey,2024,individuals,age_group_sum,67596.91430006479,forecasted,66342.0
+27125,Red Lake,2024,individuals,age_group_sum,287.40621691415214,forecasted,207.0
+27127,Redwood,2024,individuals,age_group_sum,1029.596237339534,forecasted,893.0
+27129,Renville,2024,individuals,age_group_sum,2881.945819426039,forecasted,2532.0
+27131,Rice,2024,individuals,age_group_sum,32630.14832412784,forecasted,14358.0
+27133,Rock,2024,individuals,age_group_sum,612.2057580666493,forecasted,657.0
+27135,Roseau,2024,individuals,age_group_sum,563.4858579723043,forecasted,593.0
+27137,St. Louis,2024,individuals,age_group_sum,14370.845156188201,forecasted,12856.0
+27139,Scott,2024,individuals,age_group_sum,2078.717462614601,forecasted,1812.0
+27141,Sherburne,2024,individuals,age_group_sum,9026.615119303326,forecasted,8580.0
+27143,Sibley,2024,individuals,age_group_sum,907.6106436058936,forecasted,845.0
+27145,Stearns,2024,individuals,age_group_sum,13578.365730116475,forecasted,12502.0
+27147,Steele,2024,individuals,age_group_sum,16013.1614211087,forecasted,16291.0
+27149,Stevens,2024,individuals,age_group_sum,295.57422530464765,forecasted,408.0
+27151,Swift,2024,individuals,age_group_sum,454.6351625875533,forecasted,491.0
+27153,Todd,2024,individuals,age_group_sum,1295.7258429677463,forecasted,1011.0
+27155,Traverse,2024,individuals,age_group_sum,144.54818663549537,forecasted,156.0
+27157,Wabasha,2024,individuals,age_group_sum,2857.8819124778565,forecasted,2563.0
+27159,Wadena,2024,individuals,age_group_sum,701.9244752866749,forecasted,786.0
+27161,Waseca,2024,individuals,age_group_sum,1507.0612902470605,forecasted,1505.0
+27163,Washington,2024,individuals,age_group_sum,96127.81581982652,forecasted,96091.0
+27165,Watonwan,2024,individuals,age_group_sum,1847.6515754197292,forecasted,1755.0
 27167,Wilkin,2024,individuals,age_group_sum,,no_reporting_history,
-27169,Winona,2024,individuals,age_group_sum,3041.60492549097,forecasted,3116.0
-27171,Wright,2024,individuals,age_group_sum,8580.562074855226,forecasted,8128.0
-27173,Yellow Medicine,2024,individuals,age_group_sum,608.2978728713902,forecasted,460.0
-27001,Aitkin,2025,individuals,age_group_sum,791.6244282345729,forecasted,835.0
-27003,Anoka,2025,individuals,age_group_sum,80844.54945279426,forecasted,72272.0
-27005,Becker,2025,individuals,age_group_sum,2323.0985869412657,forecasted,1879.0
-27007,Beltrami,2025,individuals,age_group_sum,3375.34141396371,forecasted,3918.0
-27009,Benton,2025,individuals,age_group_sum,1996.1660656047634,forecasted,1880.0
-27011,Big Stone,2025,individuals,age_group_sum,209.67230532438086,forecasted,256.0
-27013,Blue Earth,2025,individuals,age_group_sum,16719.25442050102,forecasted,15455.0
-27015,Brown,2025,individuals,age_group_sum,850.2526264199489,forecasted,849.0
-27017,Carlton,2025,individuals,age_group_sum,1307.8565416537758,forecasted,1192.0
-27019,Carver,2025,individuals,age_group_sum,8242.46539731689,forecasted,7506.0
-27021,Cass,2025,individuals,age_group_sum,4168.522160431236,forecasted,4222.0
-27023,Chippewa,2025,individuals,age_group_sum,705.6347864370997,forecasted,512.0
-27025,Chisago,2025,individuals,age_group_sum,3704.6687348788173,forecasted,3162.0
-27027,Clay,2025,individuals,age_group_sum,10953.547995268087,forecasted,10464.0
-27029,Clearwater,2025,individuals,age_group_sum,565.58362545455,forecasted,496.0
-27031,Cook,2025,individuals,age_group_sum,571.9090295254871,forecasted,507.0
-27033,Cottonwood,2025,individuals,age_group_sum,1299.2705962971997,forecasted,1113.0
-27035,Crow Wing,2025,individuals,age_group_sum,4818.957921940518,forecasted,4939.0
-27037,Dakota,2025,individuals,age_group_sum,57488.55218303135,forecasted,40014.0
-27039,Dodge,2025,individuals,age_group_sum,2383.239171968169,forecasted,1994.0
-27041,Douglas,2025,individuals,age_group_sum,1710.5475917564277,forecasted,1490.0
-27043,Faribault,2025,individuals,age_group_sum,953.8768576307848,forecasted,762.0
-27045,Fillmore,2025,individuals,age_group_sum,1041.3315567021102,forecasted,983.0
-27047,Freeborn,2025,individuals,age_group_sum,2755.5985960408275,forecasted,2212.0
-27049,Goodhue,2025,individuals,age_group_sum,3963.0254586693814,forecasted,3689.0
-27051,Grant,2025,individuals,age_group_sum,123.71339799420575,forecasted,250.0
-27053,Hennepin,2025,individuals,age_group_sum,261161.85669000656,forecasted,228742.0
-27055,Houston,2025,individuals,age_group_sum,2168.325283911316,forecasted,1675.0
-27057,Hubbard,2025,individuals,age_group_sum,1630.9666503719181,forecasted,1869.0
-27059,Isanti,2025,individuals,age_group_sum,4259.381488952875,forecasted,3870.0
-27061,Itasca,2025,individuals,age_group_sum,4062.9439486913434,forecasted,1191.0
-27063,Jackson,2025,individuals,age_group_sum,1015.7973654628867,forecasted,1091.0
-27065,Kanabec,2025,individuals,age_group_sum,823.0719124024466,forecasted,892.0
-27067,Kandiyohi,2025,individuals,age_group_sum,2990.5684139320515,forecasted,2805.0
-27069,Kittson,2025,individuals,age_group_sum,281.7975854293815,forecasted,214.0
-27071,Koochiching,2025,individuals,age_group_sum,828.8230788203603,forecasted,1315.0
-27073,Lac qui Parle,2025,individuals,age_group_sum,119.01234573452058,forecasted,71.0
-27075,Lake,2025,individuals,age_group_sum,721.4968067976281,forecasted,570.0
-27077,Lake of the Woods,2025,individuals,age_group_sum,166.56493896700192,forecasted,132.0
-27079,Le Sueur,2025,individuals,age_group_sum,2255.668532161111,forecasted,2079.0
-27081,Lincoln,2025,individuals,age_group_sum,193.749144456372,forecasted,149.0
-27083,Lyon,2025,individuals,age_group_sum,1358.4685913540409,forecasted,1501.0
-27085,McLeod,2025,individuals,age_group_sum,3876.2597242903466,forecasted,3306.0
-27087,Mahnomen,2025,individuals,age_group_sum,1007.6509085832627,forecasted,1177.0
-27089,Marshall,2025,individuals,age_group_sum,253.83307118250863,forecasted,285.0
-27091,Martin,2025,individuals,age_group_sum,1445.0919087241664,forecasted,1320.0
-27093,Meeker,2025,individuals,age_group_sum,1317.4245979428724,forecasted,1185.0
-27095,Mille Lacs,2025,individuals,age_group_sum,1328.1118227660827,forecasted,1351.0
-27097,Morrison,2025,individuals,age_group_sum,1587.8385890395748,forecasted,1436.0
-27099,Mower,2025,individuals,age_group_sum,5270.496900086467,forecasted,4995.0
-27101,Murray,2025,individuals,age_group_sum,463.6769938813928,forecasted,425.0
-27103,Nicollet,2025,individuals,age_group_sum,919.4442107590015,forecasted,877.0
-27105,Nobles,2025,individuals,age_group_sum,1869.0719941779305,forecasted,1683.0
-27107,Norman,2025,individuals,age_group_sum,243.30896140475798,forecasted,176.0
-27109,Olmsted,2025,individuals,age_group_sum,32295.063017095632,forecasted,28318.0
-27111,Otter Tail,2025,individuals,age_group_sum,2979.3973836901505,forecasted,2713.0
-27113,Pennington,2025,individuals,age_group_sum,1791.2981751218506,forecasted,1269.0
-27115,Pine,2025,individuals,age_group_sum,1820.022065302498,forecasted,1423.0
-27117,Pipestone,2025,individuals,age_group_sum,1572.641049086483,forecasted,1173.0
-27119,Polk,2025,individuals,age_group_sum,2009.6803032236955,forecasted,2061.0
-27121,Pope,2025,individuals,age_group_sum,147.65603846945027,forecasted,181.0
-27123,Ramsey,2025,individuals,age_group_sum,70859.88325277888,forecasted,65366.0
-27125,Red Lake,2025,individuals,age_group_sum,280.43548039726187,forecasted,256.0
-27127,Redwood,2025,individuals,age_group_sum,1087.2287566874443,forecasted,830.0
-27129,Renville,2025,individuals,age_group_sum,3735.361992026691,forecasted,3132.0
-27131,Rice,2025,individuals,age_group_sum,13446.702195907152,forecasted,13345.0
-27133,Rock,2025,individuals,age_group_sum,965.9753772807295,forecasted,646.0
-27135,Roseau,2025,individuals,age_group_sum,847.8587026023281,forecasted,773.0
-27137,St. Louis,2025,individuals,age_group_sum,18211.696495375814,forecasted,14607.0
-27139,Scott,2025,individuals,age_group_sum,2133.2399726829626,forecasted,2198.0
-27141,Sherburne,2025,individuals,age_group_sum,9468.661582513578,forecasted,9549.0
-27143,Sibley,2025,individuals,age_group_sum,910.5003960408079,forecasted,820.0
-27145,Stearns,2025,individuals,age_group_sum,11244.847017564698,forecasted,10646.0
-27147,Steele,2025,individuals,age_group_sum,19221.575832664203,forecasted,18329.0
-27149,Stevens,2025,individuals,age_group_sum,881.7845236485301,forecasted,693.0
-27151,Swift,2025,individuals,age_group_sum,456.2484803338146,forecasted,398.0
-27153,Todd,2025,individuals,age_group_sum,1229.242959748581,forecasted,1152.0
-27155,Traverse,2025,individuals,age_group_sum,217.67701764499571,forecasted,218.0
-27157,Wabasha,2025,individuals,age_group_sum,3628.2222295141173,forecasted,2951.0
-27159,Wadena,2025,individuals,age_group_sum,784.7133053019671,forecasted,693.0
-27161,Waseca,2025,individuals,age_group_sum,1767.608190824446,forecasted,1697.0
-27163,Washington,2025,individuals,age_group_sum,75774.24569163744,forecasted,69678.0
-27165,Watonwan,2025,individuals,age_group_sum,2488.7255737518667,forecasted,1890.0
+27169,Winona,2024,individuals,age_group_sum,2809.4313436589237,forecasted,3116.0
+27171,Wright,2024,individuals,age_group_sum,7819.370150663515,forecasted,8128.0
+27173,Yellow Medicine,2024,individuals,age_group_sum,543.4831704274084,forecasted,460.0
+27001,Aitkin,2025,individuals,age_group_sum,806.2143901725676,forecasted,835.0
+27003,Anoka,2025,individuals,age_group_sum,76539.74165655696,forecasted,72272.0
+27005,Becker,2025,individuals,age_group_sum,1936.8877452394565,forecasted,1879.0
+27007,Beltrami,2025,individuals,age_group_sum,3479.52855699237,forecasted,3918.0
+27009,Benton,2025,individuals,age_group_sum,2057.822981954097,forecasted,1880.0
+27011,Big Stone,2025,individuals,age_group_sum,202.08644682764802,forecasted,256.0
+27013,Blue Earth,2025,individuals,age_group_sum,15162.444581780346,forecasted,15455.0
+27015,Brown,2025,individuals,age_group_sum,896.0912846941194,forecasted,849.0
+27017,Carlton,2025,individuals,age_group_sum,1209.091098501164,forecasted,1192.0
+27019,Carver,2025,individuals,age_group_sum,8571.7734075322,forecasted,7506.0
+27021,Cass,2025,individuals,age_group_sum,3838.35567902075,forecasted,4222.0
+27023,Chippewa,2025,individuals,age_group_sum,687.6784443601151,forecasted,512.0
+27025,Chisago,2025,individuals,age_group_sum,3289.7918357342737,forecasted,3162.0
+27027,Clay,2025,individuals,age_group_sum,9647.287619294244,forecasted,10464.0
+27029,Clearwater,2025,individuals,age_group_sum,505.73038639405627,forecasted,496.0
+27031,Cook,2025,individuals,age_group_sum,621.1960888267524,forecasted,507.0
+27033,Cottonwood,2025,individuals,age_group_sum,1147.2049913995022,forecasted,1113.0
+27035,Crow Wing,2025,individuals,age_group_sum,4878.878472605074,forecasted,4939.0
+27037,Dakota,2025,individuals,age_group_sum,46416.85761311042,forecasted,40014.0
+27039,Dodge,2025,individuals,age_group_sum,2051.1905603602922,forecasted,1994.0
+27041,Douglas,2025,individuals,age_group_sum,1591.4355090285405,forecasted,1490.0
+27043,Faribault,2025,individuals,age_group_sum,906.3064666406016,forecasted,762.0
+27045,Fillmore,2025,individuals,age_group_sum,976.2455398026149,forecasted,983.0
+27047,Freeborn,2025,individuals,age_group_sum,3051.0079931796377,forecasted,2212.0
+27049,Goodhue,2025,individuals,age_group_sum,3828.5277332990063,forecasted,3689.0
+27051,Grant,2025,individuals,age_group_sum,215.01505529876636,forecasted,250.0
+27053,Hennepin,2025,individuals,age_group_sum,255106.0477528496,forecasted,228742.0
+27055,Houston,2025,individuals,age_group_sum,1977.9146661018103,forecasted,1675.0
+27057,Hubbard,2025,individuals,age_group_sum,1690.3113383089926,forecasted,1869.0
+27059,Isanti,2025,individuals,age_group_sum,4232.17328707135,forecasted,3870.0
+27061,Itasca,2025,individuals,age_group_sum,4410.184959512231,forecasted,1191.0
+27063,Jackson,2025,individuals,age_group_sum,1112.8403433596418,forecasted,1091.0
+27065,Kanabec,2025,individuals,age_group_sum,855.6510781608756,forecasted,892.0
+27067,Kandiyohi,2025,individuals,age_group_sum,2726.5332179666148,forecasted,2805.0
+27069,Kittson,2025,individuals,age_group_sum,249.86514501729536,forecasted,214.0
+27071,Koochiching,2025,individuals,age_group_sum,1057.3925274768665,forecasted,1315.0
+27073,Lac qui Parle,2025,individuals,age_group_sum,104.99295985300182,forecasted,71.0
+27075,Lake,2025,individuals,age_group_sum,599.2063308655861,forecasted,570.0
+27077,Lake of the Woods,2025,individuals,age_group_sum,158.88959578633768,forecasted,132.0
+27079,Le Sueur,2025,individuals,age_group_sum,2249.684563263637,forecasted,2079.0
+27081,Lincoln,2025,individuals,age_group_sum,169.51624820212083,forecasted,149.0
+27083,Lyon,2025,individuals,age_group_sum,1395.1026904264193,forecasted,1501.0
+27085,McLeod,2025,individuals,age_group_sum,3518.838139804792,forecasted,3306.0
+27087,Mahnomen,2025,individuals,age_group_sum,989.5212151205576,forecasted,1177.0
+27089,Marshall,2025,individuals,age_group_sum,277.17465709057063,forecasted,285.0
+27091,Martin,2025,individuals,age_group_sum,1280.7420250590328,forecasted,1320.0
+27093,Meeker,2025,individuals,age_group_sum,1305.9719826984394,forecasted,1185.0
+27095,Mille Lacs,2025,individuals,age_group_sum,1212.727856556099,forecasted,1351.0
+27097,Morrison,2025,individuals,age_group_sum,1489.0975032407318,forecasted,1436.0
+27099,Mower,2025,individuals,age_group_sum,4692.248338780669,forecasted,4995.0
+27101,Murray,2025,individuals,age_group_sum,426.1583319944999,forecasted,425.0
+27103,Nicollet,2025,individuals,age_group_sum,794.7889440963547,forecasted,877.0
+27105,Nobles,2025,individuals,age_group_sum,1755.7581440311544,forecasted,1683.0
+27107,Norman,2025,individuals,age_group_sum,182.12988086373832,forecasted,176.0
+27109,Olmsted,2025,individuals,age_group_sum,30638.330629175325,forecasted,28318.0
+27111,Otter Tail,2025,individuals,age_group_sum,2796.609015309504,forecasted,2713.0
+27113,Pennington,2025,individuals,age_group_sum,1649.7748783507263,forecasted,1269.0
+27115,Pine,2025,individuals,age_group_sum,1644.7576516995855,forecasted,1423.0
+27117,Pipestone,2025,individuals,age_group_sum,1375.2332150019056,forecasted,1173.0
+27119,Polk,2025,individuals,age_group_sum,1808.509191586205,forecasted,2061.0
+27121,Pope,2025,individuals,age_group_sum,168.6554463144081,forecasted,181.0
+27123,Ramsey,2025,individuals,age_group_sum,68231.00399259735,forecasted,65366.0
+27125,Red Lake,2025,individuals,age_group_sum,256.79908121611913,forecasted,256.0
+27127,Redwood,2025,individuals,age_group_sum,935.6567429834645,forecasted,830.0
+27129,Renville,2025,individuals,age_group_sum,3100.142670520201,forecasted,3132.0
+27131,Rice,2025,individuals,age_group_sum,13592.706723120029,forecasted,13345.0
+27133,Rock,2025,individuals,age_group_sum,828.5087024784243,forecasted,646.0
+27135,Roseau,2025,individuals,age_group_sum,866.9548737682004,forecasted,773.0
+27137,St. Louis,2025,individuals,age_group_sum,17276.176597816037,forecasted,14607.0
+27139,Scott,2025,individuals,age_group_sum,2514.811731263329,forecasted,2198.0
+27141,Sherburne,2025,individuals,age_group_sum,9746.120523964653,forecasted,9549.0
+27143,Sibley,2025,individuals,age_group_sum,874.8170415409645,forecasted,820.0
+27145,Stearns,2025,individuals,age_group_sum,10919.06825326273,forecasted,10646.0
+27147,Steele,2025,individuals,age_group_sum,19821.27063445849,forecasted,18329.0
+27149,Stevens,2025,individuals,age_group_sum,769.3965031290496,forecasted,693.0
+27151,Swift,2025,individuals,age_group_sum,494.42239927154696,forecasted,398.0
+27153,Todd,2025,individuals,age_group_sum,1270.438675027293,forecasted,1152.0
+27155,Traverse,2025,individuals,age_group_sum,217.67097830445675,forecasted,218.0
+27157,Wabasha,2025,individuals,age_group_sum,3076.494157543924,forecasted,2951.0
+27159,Wadena,2025,individuals,age_group_sum,670.4392606436417,forecasted,693.0
+27161,Waseca,2025,individuals,age_group_sum,1802.8179302823673,forecasted,1697.0
+27163,Washington,2025,individuals,age_group_sum,71331.01768892643,forecasted,69678.0
+27165,Watonwan,2025,individuals,age_group_sum,2513.1007788243533,forecasted,1890.0
 27167,Wilkin,2025,individuals,age_group_sum,,no_reporting_history,
-27169,Winona,2025,individuals,age_group_sum,3913.002961706784,forecasted,3466.0
-27171,Wright,2025,individuals,age_group_sum,9120.19369142216,forecasted,8370.0
-27173,Yellow Medicine,2025,individuals,age_group_sum,619.4551338424399,forecasted,613.0
+27169,Winona,2025,individuals,age_group_sum,3671.1480834125696,forecasted,3466.0
+27171,Wright,2025,individuals,age_group_sum,8423.869267886483,forecasted,8370.0
+27173,Yellow Medicine,2025,individuals,age_group_sum,599.916603572139,forecasted,613.0

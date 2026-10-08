@@ -382,6 +382,98 @@ def _add_age_sum_candidates(
     return pd.concat([candidates, age_sum], ignore_index=True)
 
 
+def _rural_peer_rate_imputations(
+    panel: pd.DataFrame,
+    counties_without_history: pd.DataFrame,
+    need: pd.DataFrame,
+) -> pd.DataFrame:
+    """Impute counties with no activity history from rural peers' August rates."""
+    output_columns = [
+        "fips",
+        "county_name",
+        "metric",
+        "prediction",
+        "selected_method",
+        "forecast_status",
+    ]
+    if counties_without_history.empty:
+        return pd.DataFrame(columns=output_columns)
+
+    need = need.copy()
+    need["fips"] = need["fips"].astype("string").str.zfill(5)
+    need["year"] = need["year"].astype(int)
+    latest_need_year = int(need["year"].max())
+    target_need = need.loc[need["year"].eq(latest_need_year)]
+    targets = counties_without_history.merge(
+        target_need[["fips", "fi_persons"]],
+        on="fips",
+        how="left",
+        validate="1:1",
+    )
+    if targets["fi_persons"].isna().any() or targets["fi_persons"].le(0).any():
+        missing = targets.loc[
+            targets["fi_persons"].isna() | targets["fi_persons"].le(0),
+            ["fips", "county_name"],
+        ]
+        raise ValueError(
+            "Cannot impute counties without a positive latest food-insecure "
+            f"population estimate: {missing.to_dict('records')}"
+        )
+
+    annual_rates = []
+    for year in BACKTEST_YEARS:
+        denominator_year = min(year, latest_need_year)
+        year_need = need.loc[
+            need["year"].eq(denominator_year),
+            ["fips", "fi_persons", "rucc_2023"],
+        ]
+        august = panel.loc[
+            panel["yearmonth"].eq(year * 100 + 8), ["fips", *METRICS]
+        ]
+        peers = year_need.loc[
+            year_need["rucc_2023"].ge(4) & year_need["fi_persons"].gt(0)
+        ].merge(august, on="fips", how="inner", validate="1:1")
+        peers = peers.dropna(subset=METRICS)
+        if peers.empty:
+            raise ValueError(
+                f"No rural peer August observations available for {year}"
+            )
+        peer_population = peers["fi_persons"].sum()
+        if peer_population <= 0:
+            raise ValueError(
+                f"Rural peer food-insecure population is not positive for {year}"
+            )
+        annual_rates.append(
+            {
+                metric: peers[metric].sum() / peer_population
+                for metric in [cfg.M_VISITS, cfg.M_POUNDS, *cfg.AGE_METRICS]
+            }
+        )
+
+    mean_rates = pd.DataFrame(annual_rates).mean()
+    records = []
+    for county in targets.itertuples(index=False):
+        estimates = {
+            metric: mean_rates[metric] * county.fi_persons
+            for metric in [cfg.M_VISITS, cfg.M_POUNDS, *cfg.AGE_METRICS]
+        }
+        estimates[cfg.M_INDIVIDUALS] = sum(
+            estimates[metric] for metric in cfg.AGE_METRICS
+        )
+        for metric, prediction in estimates.items():
+            records.append(
+                {
+                    "fips": county.fips,
+                    "county_name": county.county_name,
+                    "metric": metric,
+                    "prediction": prediction,
+                    "selected_method": "rural_peer_rate_per_fi_person",
+                    "forecast_status": "imputed_rural_peer_rate",
+                }
+            )
+    return pd.DataFrame.from_records(records, columns=output_columns)
+
+
 def _add_intervals(
     forecasts: pd.DataFrame, backtest: pd.DataFrame
 ) -> tuple[pd.DataFrame, pd.DataFrame]:
@@ -576,6 +668,52 @@ def main() -> None:
     forecast_output, interval_summary = _add_intervals(
         chosen_forecasts, selected_backtest
     )
+    counties_without_history = counties.loc[
+        ~counties["fips"].isin(panel["fips"].unique())
+    ]
+    imputations = _rural_peer_rate_imputations(
+        panel,
+        counties_without_history,
+        qkit.mmg(years=[2023, 2024]),
+    )
+    if not imputations.empty:
+        forecast_output = forecast_output.merge(
+            imputations[
+                [
+                    "fips",
+                    "metric",
+                    "prediction",
+                    "selected_method",
+                    "forecast_status",
+                ]
+            ],
+            on=["fips", "metric"],
+            how="left",
+            suffixes=("", "_imputed"),
+            validate="1:1",
+        )
+        use_imputation = forecast_output["prediction_imputed"].notna()
+        forecast_output.loc[use_imputation, "prediction"] = forecast_output.loc[
+            use_imputation, "prediction_imputed"
+        ]
+        for column in ("selected_method", "forecast_status"):
+            forecast_output.loc[use_imputation, column] = forecast_output.loc[
+                use_imputation, f"{column}_imputed"
+            ]
+        forecast_output = forecast_output.drop(
+            columns=["prediction_imputed", "selected_method_imputed",
+                     "forecast_status_imputed"]
+        )
+        forecast_output.loc[
+            use_imputation,
+            [
+                "lower_80",
+                "upper_80",
+                "n_backtest_rows",
+                "relative_error_q10_pct",
+                "relative_error_q90_pct",
+            ],
+        ] = np.nan
     forecast_output["forecast_as_of"] = cfg.TRAIN_CUTOFF_YM
     forecast_output["target_yearmonth"] = cfg.FORECAST_TARGET_YM
     forecast_output = _add_age_share_checks(forecast_output, panel)
@@ -592,9 +730,12 @@ def main() -> None:
     ):
         raise ValueError("Individuals forecast must equal the sum of age forecasts")
     if forecast_output.loc[
-        forecast_output["forecast_status"].eq("forecasted"), "prediction"
+        forecast_output["forecast_status"].isin(
+            ["forecasted", "imputed_rural_peer_rate"]
+        ),
+        "prediction",
     ].isna().any():
-        raise ValueError("Active counties must have a forecast for every metric")
+        raise ValueError("Every forecasted or imputed county must have predictions")
     forecast_output = forecast_output[
         [
             "fips",
@@ -645,6 +786,13 @@ def main() -> None:
     if not unavailable.empty:
         print("\nNo forecast is reported for counties without activity history:")
         print(unavailable.to_string(index=False))
+    imputed = forecast_output.loc[
+        forecast_output["forecast_status"].eq("imputed_rural_peer_rate"),
+        ["fips", "county_name"],
+    ].drop_duplicates()
+    if not imputed.empty:
+        print("\nRural-peer rate imputations for counties without activity history:")
+        print(imputed.to_string(index=False))
 
 
 if __name__ == "__main__":

@@ -94,6 +94,13 @@ the final results: they predate the pooled-quarter candidate and RMSE-based sele
 The regenerated outputs will also flag age-group shares outside each county's
 historical monthly range rather than clipping them.
 
+Wilkin has no activity history, and organizers have no additional data to provide.
+The pipeline now keeps Wilkin's August 2026 estimates separate from the regular
+forecasts: it scales the mean 2023–2025 August activity rate per food-insecure person
+among rural/nonmetro Minnesota peer counties by Wilkin's latest available need estimate.
+These are fallback imputations, not county-specific forecasts; no county-specific
+prediction intervals are reported.
+
 **Operational takeaway:** Use the regenerated county age forecasts to describe the
 projected age mix and service-planning implications; do not quote the previous totals
 until the updated backtest and forecast tables have been produced.

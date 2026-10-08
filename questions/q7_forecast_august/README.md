@@ -76,6 +76,15 @@ Every fold uses only rows strictly before its August target:
 6. **Per-site ratio:** forecast activity per reporting site and multiply by the
    historical August/July reporting-site ratio.
 
+Counties with no activity history cannot use these county-specific baselines. For
+those counties, `analysis.py` reports a separately labeled rural-peer imputation:
+the mean 2023–2025 August activity per food-insecure person among nonmetro Minnesota
+counties (RUCC 4–9), multiplied by the target county's latest available food-insecure
+population estimate. For 2025, the 2024 need estimate is used because it is the latest
+available. Individuals are derived from the three imputed age-group estimates. These
+rows have no county-specific prediction interval and must not be presented as normal
+model forecasts.
+
 The same candidates are evaluated separately for households, pounds, individuals,
 children, adults and seniors. Method selection now minimizes average fold-level
 county RMSE, matching the prediction metric in the draft graduate rubric. sMAPE, WAPE
@@ -122,12 +131,11 @@ It writes:
   intervals.
 
 The county reference contains all 87 counties, but Wilkin has no activity history in
-the panel. Its forecast rows are retained with blank predictions and status
-`no_reporting_history`; zero is not silently imputed. The processed county-month panel
-also rolls Hennepin and Ramsey up to whole counties and does not retain the split labels.
-The current output therefore forecasts whole counties only. Confirm the required
-geography and Wilkin treatment with the organizers before treating the table as a final
-submission.
+the panel. Its predictions are therefore rural-peer imputations marked
+`imputed_rural_peer_rate`, not county-specific model forecasts; their prediction
+intervals are blank. The processed county-month panel also rolls Hennepin and Ramsey up
+to whole counties and does not retain the split labels. The output therefore covers
+whole counties only.
 
 ---
 
