@@ -104,17 +104,15 @@ Run from the repository root:
 python questions/q7_forecast_august/analysis.py
 ```
 
-Before using the saved Q7 output tables or notebook results, regenerate them from a
-processed panel verified to contain no observations after July 2026. Existing saved
-forecasts predate the pooled-quarter candidate and RMSE-based method selection, so they
-do not reflect the current approach.
-
 For an interactive walkthrough of the data checks, backtests, forecasts and diagnostics,
 open and run [the Q7 notebook](../../notebooks/q7_forecast_august.ipynb) from top to
 bottom. It includes rubric-aligned county RMSE charts and statewide plots comparing each
-candidate with historical actuals and the final August 2026 forecasts. Statewide
-aggregation is for visualization only; it can hide county-level errors. The notebook
-calls the same analysis script; it does not implement a separate forecasting pipeline.
+candidate's fold RMSE with the selected pooled May–July method highlighted for the five
+rubric-scored outcomes, plus statewide plots comparing candidates with historical actuals
+and the final August 2026 forecasts. The all-method RMSE comparison is also saved as
+`outputs/figures/q7_method_rmse_comparison.png`. Statewide aggregation is for
+visualization only; it can hide county-level errors. The notebook calls the same analysis
+script; it does not implement a separate forecasting pipeline.
 
 It writes:
 
