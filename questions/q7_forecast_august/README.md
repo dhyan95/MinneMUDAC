@@ -3,8 +3,8 @@
 **Division:** undergraduate and graduate. **Graduate addendum required** — see
 [addendum.md](addendum.md).
 **Ownership:** Dhyan — county forecasts; Uddam — graduate age-group addendum
-**Status:** age-group seasonal exploration complete; county forecast and age-group
-backtests remain outstanding.
+**Status:** county baselines, backtests, August 2026 forecasts, and age-group analysis
+implemented. Independent leakage audit and organizer clarifications remain outstanding.
 
 ---
 
@@ -58,25 +58,96 @@ forecasts, but evaluate the age predictions directly.
 
 ## Approach
 
-**Baselines first, and they are strong.** Anything more complex has to beat them in a
-backtest or it does not go in.
+`analysis.py` backtests six transparent candidates on August 2023, 2024 and 2025.
+Every fold uses only rows strictly before its August target:
 
-1. **Seasonal naive:** August 2026 = August 2025, per county.
-2. **August/July ratio:** July 2026 × the county's historical August/July ratio.
-3. **Seasonal naive with drift:** August 2025 × the county's year-over-year growth.
+1. **Seasonal naive:** repeat the previous August.
+2. **August/July ratio:** July times the county's median earlier August/July ratio.
+3. **Seasonal naive with drift:** previous August times the latest available
+   year-over-year August growth; when two August observations are not available, it
+   falls back to seasonal naive.
+4. **Pooled August/July ratio:** shrink the county ratio toward the statewide median
+   ratio using two prior-year observations as the statewide prior. This stabilizes
+   counties with short or noisy histories.
+5. **Pooled trailing-quarter ratio:** average the county's May, June and July activity,
+   then scale that recent level by a historical August/(May–July average) ratio. The
+   county ratio is shrunk toward the statewide ratio using the same two-year prior.
+   This tests whether a three-month recent level is more stable than July alone.
+6. **Per-site ratio:** forecast activity per reporting site and multiply by the
+   historical August/July reporting-site ratio.
 
-Then:
+Counties with no activity history cannot use these county-specific baselines. For
+those counties, `analysis.py` reports a separately labeled rural-peer imputation:
+the mean 2023–2025 August activity per food-insecure person among nonmetro Minnesota
+counties (RUCC 4–9), multiplied by the target county's latest available food-insecure
+population estimate. For 2025, the 2024 need estimate is used because it is the latest
+available. Individuals are derived from the three imputed age-group estimates. These
+rows have no county-specific prediction interval and must not be presented as normal
+model forecasts.
 
-4. **Backtest on August 2023, 2024 and 2025.** Train only on data before each target.
-   Report the error metric you expect to be scored on and at least one alternative.
-5. **Pool the small counties.** A county serving 200 households a month is noise under a
-   percentage-error metric, and percentage errors are dominated by exactly those
-   counties.
-6. **Handle reporting composition.** Forecast **per reporting site** and multiply by an
-   expected site count, or model the total and carry the risk explicitly. The site count
-   is part of what you are forecasting whether you acknowledge it or not.
-7. **Only then** try something fitted — county fixed effects with month dummies, or a
-   gradient model with lags. It must beat the baseline in the backtest.
+The same candidates are evaluated separately for households, pounds, individuals,
+children, adults and seniors. Method selection now minimizes average fold-level
+county RMSE, matching the prediction metric in the draft graduate rubric. sMAPE, WAPE
+and MAE remain reported as complementary diagnostics. Individuals is reported as the
+sum of the three selected age-group forecasts, as required by the graduate addendum;
+its independently forecast candidates remain in the backtest for comparison.
+
+The forecast interval uses the 10th and 90th percentiles of the selected method's
+backtest residuals, pooled across counties and folds. It is a rough empirical
+uncertainty range, not a calibrated guarantee: only three August backtest folds are
+available. The script does not fit a more complex model unless a later change first
+defines and validates it against these same leakage-safe baselines.
+
+From the repository root, rebuild the processed inputs if needed, then run the
+prediction pipeline:
+
+```bash
+python src/clean_data.py
+python questions/q7_forecast_august/analysis.py
+```
+
+`analysis.py` reads only the processed county-month panel; its leakage guard rejects
+any row at or after August 2026. It contains the forecast/backtest logic and output
+generation, not exploratory analysis or charts.
+
+The script runs the leakage check, three rolling August backtests, candidate scoring
+and RMSE-based method selection, final August 2026 forecasts, interval and age-share
+checks, the Wilkin rural-peer fallback, and the grading-template export. It writes the
+completed upload file to `outputs/prediction/Graduate_Predictions_Submit.csv`; no
+notebook-only code is required to create the prediction deliverable.
+
+For an interactive walkthrough of the data checks, backtests, forecasts and diagnostics,
+open and run [the Q7 notebook](../../notebooks/q7_forecast_august.ipynb) from top to
+bottom. It includes rubric-aligned county RMSE charts and statewide plots comparing each
+candidate's fold RMSE with the selected pooled May–July method highlighted for the five
+rubric-scored outcomes, plus statewide plots comparing candidates with historical actuals
+and the final August 2026 forecasts. The all-method RMSE comparison is also saved as
+`outputs/figures/q7_method_rmse_comparison.png`. Statewide aggregation is for
+visualization only; it can hide county-level errors. The notebook calls the same analysis
+script; it does not implement a separate forecasting pipeline.
+
+It writes:
+
+- `outputs/tables/q7_backtest_predictions.csv` — county-level actuals and candidate
+  predictions for the three backtest Augusts.
+- `outputs/tables/q7_backtest_scores.csv` — fold and combined RMSE, MSE, sMAPE, WAPE
+  and MAE.
+- `outputs/tables/q7_method_selection.csv` — average and worst-fold scores used to
+  choose each outcome's forecast method, with `selected_for_forecast` marking the
+  final choice (including the required age-sum Individuals forecast).
+- `outputs/tables/q7_forecasts.csv` — August 2026 county predictions, empirical
+  intervals, selected methods and county age-share sanity-check flags.
+- `outputs/tables/q7_uncertainty_calibration.csv` — residual quantiles used for the
+  intervals.
+- `outputs/prediction/Graduate_Predictions_Submit.csv` — grading-template CSV with
+  rounded predictions for all 87 counties and the supplied `YourTeamID` field preserved.
+
+The county reference contains all 87 counties, but Wilkin has no activity history in
+the panel. Its predictions are therefore rural-peer imputations marked
+`imputed_rural_peer_rate`, not county-specific model forecasts; their prediction
+intervals are blank. The processed county-month panel also rolls Hennepin and Ramsey up
+to whole counties and does not retain the split labels. The output therefore covers
+whole counties only.
 
 ---
 
@@ -116,18 +187,18 @@ method needs an adjustment for it.
   households grew +63%. Do not reuse one model's parameters across metrics.
 - **Overfitting 55 months.** With a short panel and 86 counties, a complex model will
   find structure that is not there. The backtest is the only referee.
-- **Are Hennepin and Ramsey scored whole or split?** Our panel rolls them up, and
-  `county_split_label` preserves the split. Ask the organizers, and make sure the code
-  can produce both.
+- **Are Hennepin and Ramsey scored whole or split?** The processed county-month panel
+  rolls them up and does not retain split-level activity. Ask the organizers; if split
+  forecasts are required, rebuild the panel with split labels before forecasting.
 
 ---
 
 ## Deliverables
 
-- [ ] `analysis.py` producing August 2026 predictions for the three main metrics and
+- [x] `analysis.py` producing August 2026 predictions for the three main metrics and
       the three graduate age groups; derive Individuals from age groups where applicable
-- [ ] Backtest results for 2023, 2024 and 2025 against every baseline
-- [ ] A stated uncertainty range, not just a point estimate
-- [ ] [addendum.md](addendum.md) completed — children, seniors, adults, separately
+- [x] Backtest results for 2023, 2024 and 2025 against every baseline
+- [x] A stated uncertainty range, not just a point estimate
+- [x] [addendum.md](addendum.md) completed — children, seniors, adults, separately
 - [ ] **Leakage audit signed off by someone other than the model's author**
 - [ ] Submission in whatever format the organizers specify (ask early)

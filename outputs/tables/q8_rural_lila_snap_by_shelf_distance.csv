@@ -1,0 +1,8 @@
+rural_county_adjacency,food_shelf_distance_band,tracts,population,weighted_mean_snap_grocery_miles,population_within_5_mi_snap_grocery_pct,population_within_10_mi_snap_grocery_pct
+Metro-adjacent rural county,0–5 mi,11.0,30396.0,9.286327611476022,32.4088695881037,43.624161073825505
+Metro-adjacent rural county,5–10 mi,12.0,30463.0,7.739005958204667,10.23208482421298,84.71916751468996
+Metro-adjacent rural county,10–20 mi,11.0,28892.0,12.038042839637276,0.0,38.851585213900044
+Nonadjacent rural county,0–5 mi,8.0,23125.0,7.928406404291816,24.583783783783783,78.78486486486487
+Nonadjacent rural county,5–10 mi,5.0,13451.0,6.581306039297308,46.531856367556315,85.6813619805219
+Nonadjacent rural county,10–20 mi,7.0,19506.0,15.273522679755093,0.0,26.53029836973239
+Nonadjacent rural county,>20 mi,2.0,3729.0,22.800369540965427,0.0,0.0

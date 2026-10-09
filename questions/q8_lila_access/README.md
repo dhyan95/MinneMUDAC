@@ -70,6 +70,9 @@ Read [BLOCK_GEOID.md](../../docs/BLOCK_GEOID.md) for the location precision limi
    behave nothing like rural LILA tracts (ten miles). Split them and report separately —
    USDA's own flags come in both distance definitions (`LILATracts_halfAnd10`,
    `LILATracts_1And10`, `LILATracts_Vehicle`), and which one you pick changes the answer.
+   The notebook also separates Atlas-rural tracts by county RUCC metro adjacency and,
+   within rural LILA, compares SNAP-approved large-grocery proximity across food-shelf
+   distance bands. It intentionally excludes OSM and the broader grocery-type set.
 6. **Limitations, written as analysis, not as an apology.** The 2020 Census Gazetteer
    does not publish a block-centroid file at the URL previously listed in
    `BLOCK_GEOID.md`. Until block coordinates are available, sites use the internal point
@@ -118,6 +121,37 @@ deduplicated. The prepared point data and tract-level distances are written to i
 population-weighted nearest-store and nearest-food-shelf distances, five-mile coverage,
 and the tract-level weighted correlation between those distances by LILA and
 urban/rural group.
+
+The notebook visualizes this comparison in
+`outputs/figures/08_q8_retail_pattern_comparison.png`: one panel compares
+population-weighted five-mile coverage across the food-shelf and grocery sets; the
+other shows the tract-level weighted distance correlations. Positive correlation means
+tracts farther from grocery retailers also tend to be farther from food shelves. This
+describes spatial pattern similarity, not substitution or causation.
+
+### Rural adjacency and SNAP-only follow-up
+
+The Q8 notebook also tests whether the higher food-shelf proximity for rural non-LILA
+tracts is explained by being in a metro-adjacent nonmetro county. It uses 2023 RUCC
+codes 4/6/8 for metro-adjacent rural counties and 5/7/9 for nonadjacent rural counties,
+then compares population-weighted proximity to the same Q8 shelves and active USDA SNAP
+retailers in the `large_grocery` types only (Supermarket, Super Store, Large Grocery
+Store; active as of 2025-12-31). OSM and the broader SNAP grocery-type sensitivity set
+are excluded. Two figures and tables are saved:
+
+- `outputs/figures/08_q8_rural_adjacency_access.png` and
+  `outputs/tables/q8_rural_adjacency_access.csv` compare five-mile coverage for rural
+  LILA and non-LILA residents by county adjacency.
+- `outputs/figures/08_q8_rural_lila_snap_by_shelf_distance.png` and
+  `outputs/tables/q8_rural_lila_snap_by_shelf_distance.csv` compare SNAP grocery
+  distance/coverage for rural LILA residents grouped by nearest-food-shelf distance.
+
+These are notebook-based exploratory follow-ups, not replacements for the core
+`analysis.py` outputs. They use 2020 tract population centers, straight-line distance,
+2019 Atlas classification crosswalked to 2020 tracts, and the locally supplied SNAP
+retailer CSV. RUCC adjacency is county-level and is not a measure of drive access to an
+urban center. Small distance-band populations, retailer inventory completeness, hours,
+prices, benefit acceptance at time of use, and actual trips remain important limitations.
 
 Neither source is a complete inventory of all grocery stores: SNAP omits non-SNAP
 retailers, while OSM completeness depends on mapping. Their dates also differ from the
