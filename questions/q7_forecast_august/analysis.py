@@ -563,6 +563,107 @@ def _add_age_share_checks(
     return out
 
 
+def _write_graduate_submission(forecasts: pd.DataFrame) -> Path:
+    """Fill the grading template from final August forecasts and save the CSV."""
+    template_path = cfg.RAW_REF / "Graduate_Predictions_Submit.csv"
+    output_path = cfg.OUT / "prediction" / "Graduate_Predictions_Submit.csv"
+    submission_columns = {
+        "households": "HouseholdReg_Predicted",
+        "pounds": "PoundsReg_Predicted",
+        "children": "ChildrenReg_Predicted",
+        "seniors": "SeniorsReg_Predicted",
+        "adults": "AdultsReg_Predicted",
+    }
+    submission = pd.read_csv(
+        template_path, dtype=str, keep_default_na=False
+    )
+    required_columns = {
+        "RowID",
+        "County",
+        "YourTeamID",
+        *submission_columns.values(),
+    }
+    if not required_columns.issubset(submission.columns):
+        missing = required_columns - set(submission.columns)
+        raise ValueError(f"Grading template is missing columns: {sorted(missing)}")
+
+    county_rows = submission["County"].str.strip().ne("")
+    template_counties = submission.loc[county_rows, "County"].str.strip()
+    county_keys = template_counties.str.casefold().str.replace(r"\s+", " ", regex=True)
+    if county_keys.duplicated().any():
+        raise ValueError("Grading template contains duplicate named counties")
+    if len(template_counties) != 87:
+        raise ValueError(
+            f"Expected 87 named Minnesota counties in grading template; "
+            f"found {len(template_counties)}"
+        )
+
+    required_forecasts = forecasts.loc[
+        forecasts["metric"].isin(submission_columns)
+        & forecasts["target_yearmonth"].eq(cfg.FORECAST_TARGET_YM)
+    ].copy()
+    required_forecasts["county_key"] = (
+        required_forecasts["county_name"]
+        .astype("string")
+        .str.strip()
+        .str.casefold()
+        .str.replace(r"\s+", " ", regex=True)
+    )
+    if required_forecasts.duplicated(["county_key", "metric"]).any():
+        raise ValueError("Forecast output has duplicate county/metric predictions")
+    template_keys = set(county_keys)
+    forecast_keys = set(required_forecasts["county_key"])
+    if template_keys != forecast_keys:
+        raise ValueError(
+            "Template/forecast county mismatch; "
+            f"missing={sorted(template_keys - forecast_keys)}, "
+            f"extra={sorted(forecast_keys - template_keys)}"
+        )
+    if not required_forecasts["forecast_status"].isin(
+        ["forecasted", "imputed_rural_peer_rate"]
+    ).all():
+        raise ValueError("A required county has no forecast or documented imputation")
+
+    lookup = required_forecasts.set_index(["county_key", "metric"])
+    for row_index in submission.index[county_rows]:
+        county_key = (
+            " ".join(submission.at[row_index, "County"].strip().casefold().split())
+        )
+        for metric, column in submission_columns.items():
+            result = lookup.loc[(county_key, metric)]
+            prediction = pd.to_numeric(result["prediction"], errors="coerce")
+            if pd.isna(prediction) or prediction < 0:
+                raise ValueError(
+                    f"Invalid {metric} prediction for "
+                    f"{submission.at[row_index, 'County']}"
+                )
+            submission.at[row_index, column] = str(
+                int(np.floor(prediction + 0.5))
+            )
+
+    submission = submission.loc[county_rows].copy().reset_index(drop=True)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    submission.to_csv(output_path, index=False)
+    imputed_counties = (
+        required_forecasts.loc[
+            required_forecasts["forecast_status"].eq("imputed_rural_peer_rate"),
+            "county_name",
+        ]
+        .drop_duplicates()
+        .tolist()
+    )
+    print(
+        f"\nWrote grading submission: {output_path.relative_to(ROOT)} "
+        f"({len(submission)} counties)"
+    )
+    if imputed_counties:
+        print(
+            "Rural-peer imputation (not county-specific model forecasts): "
+            + ", ".join(imputed_counties)
+        )
+    return output_path
+
+
 def main() -> None:
     print("=" * 70)
     print("Q7 -- Backtest and forecast August 2026 activity")
@@ -764,6 +865,7 @@ def main() -> None:
     qkit.save(selection_summary, "q7_method_selection")
     qkit.save(forecast_output, "q7_forecasts")
     qkit.save(interval_summary, "q7_uncertainty_calibration")
+    _write_graduate_submission(forecast_output)
 
     print("\nSelected forecast methods:")
     print(

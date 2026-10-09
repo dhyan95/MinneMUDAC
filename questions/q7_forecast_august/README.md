@@ -98,11 +98,23 @@ uncertainty range, not a calibrated guarantee: only three August backtest folds 
 available. The script does not fit a more complex model unless a later change first
 defines and validates it against these same leakage-safe baselines.
 
-Run from the repository root:
+From the repository root, rebuild the processed inputs if needed, then run the
+prediction pipeline:
 
 ```bash
+python src/clean_data.py
 python questions/q7_forecast_august/analysis.py
 ```
+
+`analysis.py` reads only the processed county-month panel; its leakage guard rejects
+any row at or after August 2026. It contains the forecast/backtest logic and output
+generation, not exploratory analysis or charts.
+
+The script runs the leakage check, three rolling August backtests, candidate scoring
+and RMSE-based method selection, final August 2026 forecasts, interval and age-share
+checks, the Wilkin rural-peer fallback, and the grading-template export. It writes the
+completed upload file to `outputs/prediction/Graduate_Predictions_Submit.csv`; no
+notebook-only code is required to create the prediction deliverable.
 
 For an interactive walkthrough of the data checks, backtests, forecasts and diagnostics,
 open and run [the Q7 notebook](../../notebooks/q7_forecast_august.ipynb) from top to
@@ -127,6 +139,8 @@ It writes:
   intervals, selected methods and county age-share sanity-check flags.
 - `outputs/tables/q7_uncertainty_calibration.csv` — residual quantiles used for the
   intervals.
+- `outputs/prediction/Graduate_Predictions_Submit.csv` — grading-template CSV with
+  rounded predictions for all 87 counties and the supplied `YourTeamID` field preserved.
 
 The county reference contains all 87 counties, but Wilkin has no activity history in
 the panel. Its predictions are therefore rural-peer imputations marked
