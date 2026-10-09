@@ -7,7 +7,9 @@ Run from the repo root:
 The script reads processed and external data only. Run clean_data.py and
 build_lila.py first. Site locations are represented by tract internal points;
 the location-error table quantifies the maximum possible displacement within
-each assigned tract.
+each assigned tract. This script is limited to reproducible Q8 metrics and
+supporting outputs; notebook-only exploratory follow-ups, including the rural
+county-adjacency and SNAP-grocery distance splits, do not belong here.
 """
 from __future__ import annotations
 
