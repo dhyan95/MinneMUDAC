@@ -118,6 +118,36 @@ def main() -> None:
     print(corr.to_string(index=False))
     qkit.save(corr, f"{OUT_PREFIX}_correlations")
 
+    # Slide figure: activity per 1,000 residents against the food-insecurity rate, the
+    # latest year, one panel per metric. The grey line is where the points would sit if
+    # every county recorded the same activity per food-insecure person.
+    yr = max(cfg.Q1_YEARS)
+    g = df[df["year"] == yr]
+    fig, axes = plt.subplots(1, len(METRICS), figsize=(15, 4.8), sharey=True)
+    for ax, m in zip(axes, METRICS):
+        x = 1e3 * g[m] / g["population"]
+        y = g["fi_rate"]
+        k = g[m].sum() / g["fi_persons"].sum()
+        ax.scatter(x, y, alpha=0.65, s=34)
+        ax.margins(x=0.14)
+        xs = np.linspace(0, x.max(), 100)
+        slope, intercept = np.polyfit(x, y, 1)
+        ax.plot(xs, slope * xs + intercept, color="red", lw=2, label="actual fit")
+        ax.plot(xs, xs / (1e3 * k), color="grey", ls="--", lw=1.6, label="if activity tracked need")
+        for name in [g.loc[x.idxmax(), "county_name"], "Wilkin"]:
+            r = g[g["county_name"] == name].iloc[0]
+            ax.annotate(name, (1e3 * r[m] / r["population"], r["fi_rate"]),
+                        xytext=(5, 5), textcoords="offset points", fontsize=11)
+        ax.set_title(f"{m}: Spearman {x.corr(y, method='spearman'):.2f}", fontsize=14)
+        ax.set_xlabel(f"{m} per 1,000 residents", fontsize=12)
+        ax.tick_params(labelsize=11)
+    axes[0].set_ylabel("Food-insecurity rate (Feeding America)", fontsize=12)
+    axes[0].legend(loc="upper left", fontsize=11)
+    fig.suptitle(f"Per resident, recorded activity does not follow the food-insecurity rate ({yr})",
+                 fontsize=16, fontweight="bold")
+    plt.tight_layout()
+    savefig(f"{OUT_PREFIX}_per_1k_slide")
+
     # Step 4. Log-log fits, one per metric and year. Slope > 1: activity rises faster
     #   than need. Sub-question 2: R2 by metric. HC3 errors for the interval.
     fig, axes = plt.subplots(len(METRICS), len(cfg.Q1_YEARS), figsize=(15, 12), sharex=True)

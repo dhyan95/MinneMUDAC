@@ -309,6 +309,59 @@ def main():
     plt.tight_layout()
     savefig(f"{OUT_PREFIX}_maps")
 
+    # Slide figures.
+    # 1. Need rank against activity rank, households only, with the counties named.
+    fig, ax = plt.subplots(figsize=(9, 7))
+    d = div["households_rank"] - div["need_rank"]
+    ax.scatter(div["need_rank"], div["households_rank"], alpha=0.65, s=40)
+    ax.plot([1, 87], [1, 87], color="grey", ls="--", lw=1.4, label="need and activity agree")
+    for idx in pd.concat([d.nlargest(6), d.nsmallest(4)]).index:
+        ax.annotate(div.loc[idx, "county_name"], (div.loc[idx, "need_rank"], div.loc[idx, "households_rank"]),
+                    xytext=(6, 5), textcoords="offset points", fontsize=11)
+    ax.invert_xaxis()
+    ax.invert_yaxis()
+    ax.set_xlabel("need rank, Q6 index (1 = most need)", fontsize=13)
+    ax.set_ylabel("recorded households per 1,000 residents, rank (1 = most)", fontsize=13)
+    ax.tick_params(labelsize=11)
+    rho = div["need_index"].corr(div["households_per_1k"], method="spearman")
+    ax.set_title(f"Where need is high, recorded activity is not (Spearman {rho:.2f})\n"
+                 "below the line: need outranks activity", fontsize=15, fontweight="bold")
+    ax.legend(fontsize=11, loc="lower left")
+    plt.tight_layout()
+    savefig(f"{OUT_PREFIX}_divergence_ranks_slide")
+
+    # 2. Three maps on one scale: need by MMG, need by the index, recorded activity.
+    mmg_rank = need.set_index("fips")["fi_rate"].rank(ascending=False).astype(int)
+    act_rank = div.set_index("fips")[[m + "_rank" for m in METRICS]].mean(axis=1).rank().astype(int)
+    geo["mmg_rank"] = geo["fips"].map(mmg_rank)
+    geo["activity_rank"] = geo["fips"].map(act_rank)
+    geo["need_rank"] = geo["fips"].map(need.set_index("fips")["need_rank"])
+    geo["gap"] = geo["mmg_rank"] - geo["need_rank"]
+    movers = geo.reindex(geo["gap"].abs().sort_values(ascending=False).index).head(6)
+    fig, axes = plt.subplots(1, 3, figsize=(18, 6.2))
+    fig.subplots_adjust(left=0.01, right=0.93, top=0.86, bottom=0.02, wspace=0.03)
+    panels = [("mmg_rank", "Need: Feeding America rate"), ("need_rank", "Need: our index"),
+              ("activity_rank", "Recorded activity per 1,000 residents")]
+    for k, (ax, (col, title)) in enumerate(zip(axes, panels)):
+        geo.plot(column=col, cmap="YlOrRd_r", vmin=1, vmax=87, edgecolor="white", lw=0.4, ax=ax)
+        if col == "activity_rank":
+            geo[geo["county_name"] == "Wilkin"].plot(ax=ax, facecolor="none", edgecolor="black", hatch="///", lw=0.6)
+        for j, (_, r) in enumerate(movers.iterrows()):
+            ax.annotate(r["county_name"], (r.geometry.centroid.x, r.geometry.centroid.y),
+                        xytext=(0, 10 if j % 2 else -12), textcoords="offset points", ha="center",
+                        fontsize=10, fontweight="bold",
+                        bbox=dict(boxstyle="round,pad=0.15", fc="white", ec="none", alpha=0.75))
+        ax.set_title(title, fontsize=14, fontweight="bold")
+        ax.set_axis_off()
+    sm = plt.cm.ScalarMappable(cmap="YlOrRd_r", norm=plt.Normalize(1, 87))
+    cbar = fig.colorbar(sm, ax=axes, shrink=0.75, pad=0.01)
+    cbar.set_label("rank (1 = most)", fontsize=12)
+    fig.suptitle("Two measures of need, and where activity is recorded. Hatched: Wilkin, no reporting food shelf",
+                 fontsize=15, fontweight="bold", y=0.97)
+    fig.savefig(cfg.FIG / f"{OUT_PREFIX}_three_maps.png", dpi=150, bbox_inches="tight")
+    plt.close("all")
+    print(f"  -> outputs/figures/{OUT_PREFIX}_three_maps.png")
+
 
 if __name__ == "__main__":
     main()
