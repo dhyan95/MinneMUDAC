@@ -82,7 +82,7 @@ RowID,County,HouseholdReg_Predicted,PoundsReg_Predicted,ChildrenReg_Predicted,Se
 81,Waseca,881,31368,500,373,1084,
 82,Washington,23113,799200,26760,10630,40698,
 83,Watonwan,494,34632,775,129,1186,
-84,Wilkin,200,11491,183,74,299,
+84,Wilkin,0,0,0,0,0,
 85,Winona,1458,61186,766,545,1858,
 86,Wright,2430,217892,3189,1064,3897,
 87,Yellow Medicine,262,19061,225,89,390,
