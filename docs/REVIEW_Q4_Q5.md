@@ -203,3 +203,54 @@ distributed-lag model, the cost-group table. A day, maybe two.
 
 Order I would do it in: fix the Q5 plot and conclusion (an hour), replace Q4 Step 19 (an
 hour), port both to `analysis.py`, write the READMEs, merge.
+
+---
+
+## Follow-up, 16 October: the lag model and the March step, recomputed
+
+Done by Valentino's side of the table after the slide text drifted away from the notebook.
+Both models were rerun from scratch from `data/processed` and the CPI file, not read off
+the notebook. The notebook's numbers reproduce to the decimal.
+
+### Q4, monthly distributed-lag model (lags 0 to 6 in one model, month effects, HAC errors, 46 months)
+
+| lag | households | pounds | individuals |
+|---|---|---|---|
+| 1 | +3.7, p = 0.040 | +7.0, p < 0.001 | +7.7, p < 0.001 |
+| 2 | −6.9, p = 0.012 | −2.3, p = 0.287 | −4.0, p = 0.020 |
+| 4 | +7.3, p = 0.085 | +0.3, p = 0.885 | +0.3, p = 0.897 |
+| sum of lags 0 to 6 | p = 0.18 | p = 0.06 | p = 0.16 |
+
+What the slides may say: one month after a price rise all three metrics go up, households
+by less; two months after, households and individuals drop back; over six months the net
+effect is not different from zero, so a price rise moves visits earlier rather than adding
+them. **What they may not say:** a month-four response in households. Its p-value is 0.085
+and its interval includes zero. The notebook's own conclusion cell already states the
+lag-1 and lag-2 story; the slide text was the thing that drifted.
+
+Two things to keep off every slide and out of every answer:
+
+- The notebook prints "+367% per 1% price change" and "+767%". That multiplies by 100
+  twice. The coefficients are already in percent (3.7% and 7.7%); the chart is right.
+- The month-four bar. If a judge asks, the answer is "not significant, p = 0.085".
+
+### Q5, the March 2023 step, three ways
+
+| check | result |
+|---|---|
+| unit and month fixed effects, February to March 2023 | +0.176 log = +19.3% |
+| unit level, February to March 2023 | median +18.9%, 90% of 78 units up |
+| state total, February to March 2023 | +20.3% |
+| February to March in 2022, 2024, 2025, 2026 (seasonal control) | −4.2%, −1.2%, +3.6%, +8.6% |
+| March 2023 excess over those | +17.4% |
+| year-over-year households: Feb 2023, Mar 2023, Apr 2023, Jun 2023 | −0.4%, +34.5%, +30.2%, +38.0% |
+
+The step is real, it is not the spring rise, and it lands in the month the extra SNAP
+payments ended. One wording to soften: June 2022 is a step of the same size (+0.179) and
+December 2023 is close (−0.162), so "the largest single move" should be "one of the
+largest, and the only one that lines up with a dated policy change".
+
+### CPI note
+
+October 2025 CPI was never published (federal shutdown), so that month and its lags drop
+out of the lag model. That is why n = 46, not 47. Say so if asked, not before.

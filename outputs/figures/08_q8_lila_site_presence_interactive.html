@@ -252,13 +252,13 @@
         
     
             var tile_layer_0f3479e71014bc5e4ed67fc4bd979a0b = L.tileLayer(
-                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",
                 {
   "minZoom": 0,
-  "maxZoom": 19,
+  "maxZoom": 16,
   "maxNativeZoom": 19,
   "noWrap": false,
-  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "attribution": "Tiles &copy; Esri — Esri, DeLorme, NAVTEQ",
   "subdomains": "abc",
   "detectRetina": false,
   "tms": false,
@@ -903,7 +903,7 @@
     
             var layer_control_107e6415385604eaf56a7bc7bb797832_layers = {
                 base_layers : {
-                    "openstreetmap" : tile_layer_0f3479e71014bc5e4ed67fc4bd979a0b,
+                    "basemap" : tile_layer_0f3479e71014bc5e4ed67fc4bd979a0b,
                 },
                 overlays :  {
                     "County site counts" : feature_group_9f1918fe1b3d9868bf266c2fbff42831,
