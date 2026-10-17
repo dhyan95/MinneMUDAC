@@ -243,3 +243,20 @@ Use `--force` to explicitly rebuild the caches. `analysis.py` uses the same cach
 The analysis script writes reproducible tables to `outputs/tables/` and the
 population-weighted distance figure to
 `outputs/figures/08_q8_population_weighted_distance.png`.
+
+---
+
+## Follow-up (16 October): what is the nearest SNAP store, really?
+
+`nearest_store_type.py` asks what kind of store produces the shorter distances when the
+retailer definition is widened. For every tract it takes the nearest SNAP-authorised store
+under four definitions (supermarkets only; plus grocery stores of any size; plus "other"
+stores that sell groceries, which in Minnesota are almost all dollar stores; plus
+convenience stores) and records the store's type and name. Outputs:
+`outputs/tables/q8_nearest_store_type.csv` (one row per tract group and definition, with
+population-weighted mean distance, share within five miles, and the share of residents
+whose nearest store is each type) and `q8_nearest_store_names.csv`.
+
+The store list is USDA's current authorisation snapshot (see the registry), so the
+distances differ slightly from the 2025 historical extract used in
+`compare_retailer_distances.py`. The point of the table is the store type, not the mile.
